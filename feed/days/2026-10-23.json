@@ -1,6 +1,6 @@
 {
   "date": "2026-10-23",
-  "sample": true,
+  "sample": false,
   "editions": [
     {
       "name": "midnight",
@@ -9,125 +9,94 @@
         {
           "id": "2026-10-23-midnight-01",
           "type": "article",
-          "title": "Sample article: how a Friday announcement card is laid out",
-          "summary": "Sample item, not a real story. This day has no noon update, which is what a quiet afternoon looks like.",
-          "source": "Sample Herald",
-          "url": "https://mormonnewsroundup.org/",
-          "thumbnailUrl": "sample:announcement",
-          "publishedAt": "2026-10-23T04:05:00.000Z",
-          "paywalled": false,
+          "title": "Judge dismisses Las Vegas church abuse lawsuit, allows woman to amend claim",
+          "summary": "A federal judge has dismissed a woman's lawsuit against the church but given her 10 days to amend it, according to the Las Vegas Review-Journal. The suit alleges a high priest raped her in the 1990s and that a bishop told her in 1999 not to call police; U.S. District Judge Jennifer Dorsey called the negligence claims “rife with deficiencies.”",
+          "source": "Las Vegas Review-Journal",
+          "url": "https://www.reviewjournal.com/news/civil-courts/judge-dismisses-las-vegas-church-abuse-lawsuit-allows-woman-to-amend-claim-3904303/",
+          "thumbnailUrl": "https://www.reviewjournal.com/wp-content/uploads/2026/10/22222528_web1_gavel1.jpg",
+          "publishedAt": "2026-10-23T23:34:20.000Z",
+          "paywalled": true,
           "tags": [
-            "sample",
-            "article",
-            "announcement"
+            "lawsuit",
+            "abuse",
+            "court"
           ]
         },
         {
           "id": "2026-10-23-midnight-02",
           "type": "article",
-          "title": "Sample article: how a Friday lawsuit card is laid out",
-          "summary": "Sample item, not a real story. Lawsuit is in the title so search can find it. There is no lawsuit.",
-          "source": "Sample Docket",
-          "url": "https://mormonnewsroundup.org/",
-          "thumbnailUrl": "sample:court",
-          "publishedAt": "2026-10-23T04:10:00.000Z",
+          "title": "Latest Latter-day Saint handbook update adds guidance for weekly Sunday meetings",
+          "summary": "The church's latest General Handbook update adds guidance on the new Sunday meeting schedule, including 25-minute quorum and class meetings, and on the new Young Women age-group names, according to the Deseret News. It also adds responsibilities for local leaders, including supporting members with disabilities.",
+          "source": "Deseret News",
+          "url": "https://www.deseret.com/faith/2026/10/23/latest-lds-general-handbook-updates-october-2026/",
+          "thumbnailUrl": "https://www.deseret.com/resizer/v2/NIZUWLE54BDLLCKXLSXBBXFQCQ.JPG?focal=0%2C0&auth=383ae5cdfddbd9f69acb42736d475e05b15c150fcdbe56d1ccd8493b6896ac53&width=630&height=331",
+          "publishedAt": "2026-10-23T21:27:16.000Z",
           "paywalled": false,
           "tags": [
-            "sample",
-            "article",
-            "lawsuit"
+            "announcement",
+            "policy",
+            "handbook"
           ]
         },
         {
           "id": "2026-10-23-midnight-03",
-          "type": "article",
-          "title": "Sample article: how a paywalled scandal card is laid out",
-          "summary": "Sample item, not a real story. The lock is the only “paywall” here. The summary is placeholder text.",
-          "source": "Sample Wire",
-          "url": "https://mormonnewsroundup.org/",
-          "thumbnailUrl": "sample:article",
-          "publishedAt": "2026-10-23T04:15:00.000Z",
-          "paywalled": true,
+          "type": "video",
+          "title": "Tithing Campaign, Dan McClellan Backlash, Abuse Helpline Claims & More - Mormon News | Ep. 2217",
+          "summary": "John Dehlin and Meggan Hayes discuss the church's renewed emphasis on tithing, the backlash involving Dan McClellan, and claims about the church's abuse helpline, according to the episode description. The episode also covers a PRRI survey and Elder Gong's remarks on AI, among other topics.",
+          "source": "Mormon Stories Podcast",
+          "url": "https://www.youtube.com/watch?v=LG3Nqm-FAio",
+          "thumbnailUrl": "https://i.ytimg.com/vi/LG3Nqm-FAio/hqdefault.jpg",
+          "publishedAt": "2026-10-23T19:06:00.000Z",
+          "paywalled": false,
           "tags": [
-            "sample",
-            "article",
-            "scandal"
+            "finances",
+            "tithing",
+            "abuse"
           ]
         },
         {
           "id": "2026-10-23-midnight-04",
-          "type": "video",
-          "title": "Sample video: how a Friday YouTube card is laid out",
-          "summary": "Sample item, not a real story. Older days stay in the archive and load from Today with “Load earlier days”.",
-          "source": "Sample Studio",
-          "url": "https://www.youtube.com/@MormonNewsRoundup",
-          "thumbnailUrl": "sample:video",
-          "publishedAt": "2026-10-23T04:20:00.000Z",
+          "type": "article",
+          "title": "An LDS OB-GYN on Prop 1 and why Idaho's abortion restrictions are 'unsustainable'",
+          "summary": "Idaho OB-GYN Heather Pugmire, a Latter-day Saint, tells the Salt Lake Tribune's Mormon Land podcast she is “quite torn” over Proposition 1, a measure to expand abortion access that the church opposes. She says the state's restrictions make recruiting impossible and that “if laws don't change, I'm not going to be able to keep doing this.”",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/religion/2026/10/23/this-lds-ob-gyn-find-herself-quite/",
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/NYS6KIM4PNB65GOKVJM4OFKEBU.jpg?auth=49289b5bd7532fb6ca912c1a583dad4a04e6722c22a032331bd4f49858242992&width=1200&height=630&quality=88&smart=true",
+          "publishedAt": "2026-10-23T12:00:01.000Z",
           "paywalled": false,
           "tags": [
-            "sample",
-            "video"
+            "politics",
+            "abortion",
+            "idaho"
           ]
         },
         {
           "id": "2026-10-23-midnight-05",
-          "type": "video",
-          "title": "Sample video: how a Friday hearing card is laid out",
-          "summary": "Sample item, not a real story. Newest items in an edition sort above older ones.",
-          "source": "Sample Desk",
-          "url": "https://www.youtube.com/@MormonNewsRoundup",
-          "thumbnailUrl": "sample:video",
-          "publishedAt": "2026-10-23T04:25:00.000Z",
+          "type": "article",
+          "title": "19-year-old LDS missionary has died",
+          "summary": "Braxton Blake Mecham, a 19-year-old missionary serving in the Tennessee Knoxville Mission, died “unexpectedly” Oct. 17 at his home in Morgan, Utah, while home temporarily for a medical procedure, according to the Salt Lake Tribune, citing his family's obituary. No cause of death was given.",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/religion/2026/10/23/19-year-old-lds-missionary-has/",
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/GSSILFI6VFC5XKNVU3QVCBPOKY.jpg?auth=1011bf3fb9c4c165b7299c17c90fc7f1cb85b320c46038ccb9d49f2cda6752b1&width=1200&height=630&quality=88&smart=true",
+          "publishedAt": "2026-10-23T12:00:00.000Z",
           "paywalled": false,
           "tags": [
-            "sample",
-            "video",
-            "hearing"
+            "missionaries"
           ]
         },
         {
           "id": "2026-10-23-midnight-06",
-          "type": "podcast",
-          "title": "Sample podcast: how a Friday episode card is laid out",
-          "summary": "Sample item, not a real story. Podcast search matches the title, the summary, and the source name.",
-          "source": "Sample Studio",
-          "url": "https://podcasts.apple.com/us/podcast/mormon-news-roundup/id1617559003",
-          "thumbnailUrl": "sample:podcast",
-          "publishedAt": "2026-10-23T04:30:00.000Z",
+          "type": "article",
+          "title": "The key message of the LDS Church’s new Visitors’ Center? We’re Christian, darn it.",
+          "summary": "In a Religion News Service column, Jana Riess writes that the church's new Temple Square Visitors' Center emphasizes Jesus Christ, with almost nothing about Joseph Smith or the pioneers, and goes further than the church ever has in demystifying the temple. She calls a sculpture of Christ carrying his cross a departure, since past church presidents discouraged using crosses.",
+          "source": "Religion News Service",
+          "url": "https://religionnews.com/2026/10/23/the-key-message-of-the-lds-churchs-new-visitors-center-were-christian-darn-it/",
+          "thumbnailUrl": "https://media.religionnews.com/uploads/2026/10/RNS-LDS-Visitors-Center1.jpg",
+          "publishedAt": "2026-10-23T11:01:00.000Z",
           "paywalled": false,
           "tags": [
-            "sample",
-            "podcast"
-          ]
-        },
-        {
-          "id": "2026-10-23-midnight-07",
-          "type": "podcast",
-          "title": "Sample podcast: how a bonus audio card is laid out",
-          "summary": "Sample item, not a real story. A second audio card on a midnight-only day.",
-          "source": "Sample Studio",
-          "url": "https://podcasts.apple.com/us/podcast/mormon-news-roundup/id1617559003",
-          "thumbnailUrl": "sample:podcast",
-          "publishedAt": "2026-10-23T04:35:00.000Z",
-          "paywalled": false,
-          "tags": [
-            "sample",
-            "podcast"
-          ]
-        },
-        {
-          "id": "2026-10-23-midnight-08",
-          "type": "tiktok",
-          "title": "Sample TikTok: how a Friday clip card is laid out",
-          "summary": "Sample item, not a real story. That is the whole sample archive for this day.",
-          "source": "Sample Clips",
-          "url": "https://www.tiktok.com/search?q=Mormon%20News%20Roundup",
-          "thumbnailUrl": "sample:tiktok",
-          "publishedAt": "2026-10-23T04:40:00.000Z",
-          "paywalled": false,
-          "tags": [
-            "sample",
-            "tiktok"
+            "column",
+            "temple-square"
           ]
         }
       ]

@@ -1,0 +1,136 @@
+{
+  "date": "2026-10-23",
+  "sample": true,
+  "editions": [
+    {
+      "name": "midnight",
+      "publishedAt": "2026-10-23T04:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-10-23-midnight-01",
+          "type": "article",
+          "title": "Sample article: how a Friday announcement card is laid out",
+          "summary": "Sample item, not a real story. This day has no noon update, which is what a quiet afternoon looks like.",
+          "source": "Sample Herald",
+          "url": "https://mormonnewsroundup.org/",
+          "thumbnailUrl": "sample:announcement",
+          "publishedAt": "2026-10-23T04:05:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "sample",
+            "article",
+            "announcement"
+          ]
+        },
+        {
+          "id": "2026-10-23-midnight-02",
+          "type": "article",
+          "title": "Sample article: how a Friday lawsuit card is laid out",
+          "summary": "Sample item, not a real story. Lawsuit is in the title so search can find it. There is no lawsuit.",
+          "source": "Sample Docket",
+          "url": "https://mormonnewsroundup.org/",
+          "thumbnailUrl": "sample:court",
+          "publishedAt": "2026-10-23T04:10:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "sample",
+            "article",
+            "lawsuit"
+          ]
+        },
+        {
+          "id": "2026-10-23-midnight-03",
+          "type": "article",
+          "title": "Sample article: how a paywalled scandal card is laid out",
+          "summary": "Sample item, not a real story. The lock is the only “paywall” here. The summary is placeholder text.",
+          "source": "Sample Wire",
+          "url": "https://mormonnewsroundup.org/",
+          "thumbnailUrl": "sample:article",
+          "publishedAt": "2026-10-23T04:15:00.000Z",
+          "paywalled": true,
+          "tags": [
+            "sample",
+            "article",
+            "scandal"
+          ]
+        },
+        {
+          "id": "2026-10-23-midnight-04",
+          "type": "video",
+          "title": "Sample video: how a Friday YouTube card is laid out",
+          "summary": "Sample item, not a real story. Older days stay in the archive and load from Today with “Load earlier days”.",
+          "source": "Sample Studio",
+          "url": "https://www.youtube.com/@MormonNewsRoundup",
+          "thumbnailUrl": "sample:video",
+          "publishedAt": "2026-10-23T04:20:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "sample",
+            "video"
+          ]
+        },
+        {
+          "id": "2026-10-23-midnight-05",
+          "type": "video",
+          "title": "Sample video: how a Friday hearing card is laid out",
+          "summary": "Sample item, not a real story. Newest items in an edition sort above older ones.",
+          "source": "Sample Desk",
+          "url": "https://www.youtube.com/@MormonNewsRoundup",
+          "thumbnailUrl": "sample:video",
+          "publishedAt": "2026-10-23T04:25:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "sample",
+            "video",
+            "hearing"
+          ]
+        },
+        {
+          "id": "2026-10-23-midnight-06",
+          "type": "podcast",
+          "title": "Sample podcast: how a Friday episode card is laid out",
+          "summary": "Sample item, not a real story. Podcast search matches the title, the summary, and the source name.",
+          "source": "Sample Studio",
+          "url": "https://podcasts.apple.com/us/podcast/mormon-news-roundup/id1617559003",
+          "thumbnailUrl": "sample:podcast",
+          "publishedAt": "2026-10-23T04:30:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "sample",
+            "podcast"
+          ]
+        },
+        {
+          "id": "2026-10-23-midnight-07",
+          "type": "podcast",
+          "title": "Sample podcast: how a bonus audio card is laid out",
+          "summary": "Sample item, not a real story. A second audio card on a midnight-only day.",
+          "source": "Sample Studio",
+          "url": "https://podcasts.apple.com/us/podcast/mormon-news-roundup/id1617559003",
+          "thumbnailUrl": "sample:podcast",
+          "publishedAt": "2026-10-23T04:35:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "sample",
+            "podcast"
+          ]
+        },
+        {
+          "id": "2026-10-23-midnight-08",
+          "type": "tiktok",
+          "title": "Sample TikTok: how a Friday clip card is laid out",
+          "summary": "Sample item, not a real story. That is the whole sample archive for this day.",
+          "source": "Sample Clips",
+          "url": "https://www.tiktok.com/search?q=Mormon%20News%20Roundup",
+          "thumbnailUrl": "sample:tiktok",
+          "publishedAt": "2026-10-23T04:40:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "sample",
+            "tiktok"
+          ]
+        }
+      ]
+    }
+  ]
+}

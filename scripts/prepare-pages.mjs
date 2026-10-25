@@ -40,6 +40,7 @@ if (!html.includes('apple-mobile-web-app-capable')) {
   await writeFile(indexPath, html);
 }
 
+// feed/ is the public edition. fallback/ is the offline sample and stays out.
 await cp(path.join(root, 'feed'), path.join(dist, 'feed'), { recursive: true });
 await copyFile(indexPath, path.join(dist, '404.html'));
 await writeFile(path.join(dist, '.nojekyll'), '');

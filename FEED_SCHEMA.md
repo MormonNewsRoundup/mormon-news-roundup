@@ -166,9 +166,11 @@ You do not upload a separate host, and you do not edit `constants/config.ts` for
 2. Set `generatedAt` in `feed/index.json` to the current time. The date is already in `days`.
 3. Commit and push to `main` again.
 
-Aim for 8–12 items on a full day. The midnight edition is the main one. Noon is a short update.
+Aim for 8–12 items on a full day. The midnight edition is the main one. Noon is a short update. A shorter day is still valid.
 
-The files in the repo right now are still the sample set: `"sample": true`, and every title and summary contains “Sample”. Keep that until a real story replaces a card. When a day is real, set `"sample": false` on that day file and take “Sample” out of its text. Set `"sample": false` on `feed/index.json` to remove the Sample data banner. Real `thumbnailUrl` values are `https` image addresses. `sample:` tokens stay on the placeholders only.
+The live `feed/` folder is the real edition: `feed/index.json` lists `2026-10-23` and has `"sample": false`, and `feed/days/2026-10-23.json` is that day’s six stories. Today shows whichever date is first in `days`, including when that date is older than the calendar day. Set `"sample": false` on the index to keep the Sample data banner off. Real `thumbnailUrl` values are `https` image addresses.
+
+`fallback/` is the offline sample bundled into the app. GitHub Pages does not publish it. `sample:` thumbnail tokens belong there only.
 
 After the push, wait until the **Deploy to GitHub Pages** action is green, then pull to refresh on the phone. If the action fails, the previous site stays up.
 
@@ -182,7 +184,9 @@ From the project folder, someone technical can run:
 npm run check-feed
 ```
 
-That checks ids, types, dates, edition names, and newest-first order. While `index.json` has `"sample": true`, it also requires the word “Sample” in every title and summary, plus the placeholder mix (every content type, a paywalled card, more than one lawsuit title). A real feed with `"sample": false` only has to match the schema, so an ordinary edition can be pushed.
+That checks ids, types, dates, edition names, newest-first order, and that each `publishedAt` falls on the file’s Eastern Time date. A real item’s `thumbnailUrl` must be `https`. While `index.json` has `"sample": true`, every title and summary must contain “Sample”.
+
+A short day, a missing podcast or TikTok, or fewer than two titles that mention lawsuit is a warning, not a failure. The command still exits successfully so that edition can be pushed.
 
 ## Cache
 

@@ -3,15 +3,17 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { feedBaseUrl, isBundledFeed } from '@/constants/config';
 import type { DayFile, Edition, FeedIndex, FeedItem } from '@/lib/types';
 
-const INDEX_KEY = 'mnr.feed.index.v1';
-const dayKey = (date: string) => `mnr.feed.day.v1.${date}`;
+// v2 drops the sample cache from before the first real edition.
+const INDEX_KEY = 'mnr.feed.index.v2';
+const dayKey = (date: string) => `mnr.feed.day.v2.${date}`;
 
-const bundledIndex = require('../feed/index.json') as FeedIndex;
+// Offline copy only. The website serves feed/, which is not these files.
+const bundledIndex = require('../fallback/index.json') as FeedIndex;
 
 const bundledDays: Record<string, DayFile> = {
-  '2026-10-23': require('../feed/days/2026-10-23.json') as DayFile,
-  '2026-10-24': require('../feed/days/2026-10-24.json') as DayFile,
-  '2026-10-25': require('../feed/days/2026-10-25.json') as DayFile,
+  '2026-10-23': require('../fallback/days/2026-10-23.json') as DayFile,
+  '2026-10-24': require('../fallback/days/2026-10-24.json') as DayFile,
+  '2026-10-25': require('../fallback/days/2026-10-25.json') as DayFile,
 };
 
 function sortItems(items: FeedItem[]): FeedItem[] {

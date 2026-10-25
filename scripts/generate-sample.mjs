@@ -1,13 +1,14 @@
 /**
- * Writes the bundled sample feed. Curators should add real day files on the
- * host (see FEED_SCHEMA.md). Running this overwrites feed/ with placeholders.
+ * Writes the offline sample feed under fallback/. It is bundled into the app
+ * for when the site cannot be reached. It is not copied to GitHub Pages.
+ * Running this does not touch feed/, which is the live edition.
  */
 import { mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const feedDir = path.join(root, 'feed');
+const feedDir = path.join(root, 'fallback');
 
 const URLS = {
   article: 'https://mormonnewsroundup.org/',
