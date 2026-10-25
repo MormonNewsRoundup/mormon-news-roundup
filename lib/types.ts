@@ -1,4 +1,4 @@
-export type ContentType = 'article' | 'video' | 'podcast' | 'tiktok';
+export type ContentType = 'article' | 'video' | 'podcast';
 
 export type EditionName = 'midnight' | 'noon';
 
@@ -35,7 +35,7 @@ export type FeedIndex = {
   days: string[];
 };
 
-export const CONTENT_TYPES: ContentType[] = ['article', 'video', 'podcast', 'tiktok'];
+export const CONTENT_TYPES: ContentType[] = ['article', 'video', 'podcast'];
 
 export function typeLabel(type: ContentType): string {
   switch (type) {
@@ -45,15 +45,18 @@ export function typeLabel(type: ContentType): string {
       return 'Video';
     case 'podcast':
       return 'Podcast';
-    case 'tiktok':
-      return 'TikTok';
   }
 }
 
 export function filterLabel(filter: TypeFilter): string {
-  if (filter === 'all') return 'All';
-  if (filter === 'article') return 'Articles';
-  if (filter === 'video') return 'Videos';
-  if (filter === 'podcast') return 'Podcasts';
-  return 'TikToks';
+  switch (filter) {
+    case 'all':
+      return 'All';
+    case 'article':
+      return 'Articles';
+    case 'video':
+      return 'Videos';
+    case 'podcast':
+      return 'Podcasts';
+  }
 }

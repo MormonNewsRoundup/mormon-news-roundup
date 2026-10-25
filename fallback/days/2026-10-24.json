@@ -26,7 +26,7 @@
           "id": "2026-10-24-noon-02",
           "type": "video",
           "title": "Sample video: how a noon YouTube card is laid out",
-          "summary": "Sample item, not a real story. Share copies the link plus the words “via Mormon News Roundup”.",
+          "summary": "Sample item, not a real story. Share copies the link plus the words \u201cvia Mormon News Roundup\u201d.",
           "source": "Sample Studio",
           "url": "https://www.youtube.com/@MormonNewsRoundup",
           "thumbnailUrl": "sample:video",
@@ -135,36 +135,6 @@
           "tags": [
             "sample",
             "podcast"
-          ]
-        },
-        {
-          "id": "2026-10-24-midnight-06",
-          "type": "tiktok",
-          "title": "Sample TikTok: how a reaction clip card is laid out",
-          "summary": "Sample item, not a real story. Filter chips on Search can show only TikToks. This is one of them.",
-          "source": "Sample Clips",
-          "url": "https://www.tiktok.com/search?q=Mormon%20News%20Roundup",
-          "thumbnailUrl": "sample:tiktok",
-          "publishedAt": "2026-10-24T04:30:00.000Z",
-          "paywalled": false,
-          "tags": [
-            "sample",
-            "tiktok"
-          ]
-        },
-        {
-          "id": "2026-10-24-midnight-07",
-          "type": "tiktok",
-          "title": "Sample TikTok: how a follow-up clip card is laid out",
-          "summary": "Sample item, not a real story. A second short-video card, so the TikTok filter has more than one hit.",
-          "source": "Sample Clips",
-          "url": "https://www.tiktok.com/search?q=Mormon%20News%20Roundup",
-          "thumbnailUrl": "sample:tiktok",
-          "publishedAt": "2026-10-24T04:35:00.000Z",
-          "paywalled": false,
-          "tags": [
-            "sample",
-            "tiktok"
           ]
         }
       ]

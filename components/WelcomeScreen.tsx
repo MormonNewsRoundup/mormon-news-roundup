@@ -19,13 +19,13 @@ export function WelcomeScreen({ onContinue }: WelcomeScreenProps) {
           <Text style={styles.body}>
             A daily feed of hard news about the Latter-day Saint church: lawsuits and legal action,
             court cases, excommunications, scandals, and major official announcements. Articles,
-            videos, podcasts, and TikToks, already sorted.
+            videos, and podcasts, already sorted.
           </Text>
           <View style={styles.disclaimer}>
             <Text style={styles.disclaimerText}>{DISCLAIMER}</Text>
           </View>
           <Text style={styles.note}>
-            Tap a card to open the original article, video, podcast, or TikTok.
+            Tap a card to open the original article, video, or podcast.
           </Text>
         </ScrollView>
         <Pressable

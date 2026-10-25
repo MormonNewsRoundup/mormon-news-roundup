@@ -92,7 +92,7 @@ There is no third edition. A later fix would be a new `name` plus an app update.
 | Field | Required | Type | Notes |
 | --- | --- | --- | --- |
 | `id` | yes | string | Unique across the whole archive. Suggested: `2026-10-25-noon-01`. |
-| `type` | yes | string | `article`, `video`, `podcast`, or `tiktok`. |
+| `type` | yes | string | `article`, `video`, or `podcast`. |
 | `title` | yes | string | The headline. |
 | `summary` | yes | string | One or two sentences. Shown in full on the card. |
 | `source` | yes | string | Publication or show name. Search matches this. |
@@ -107,7 +107,6 @@ What a tap does:
 - `article` — in-app browser (Safari view on iPhone)
 - `video` — the `url`, so YouTube can open
 - `podcast` — the `url`, so Apple Podcasts or the show page can open
-- `tiktok` — the `url`, so TikTok can open
 
 Share sends the title, the `url`, and the line `via Mormon News Roundup`.
 
@@ -139,7 +138,6 @@ Only the bundled preview understands these. A hosted feed should use normal imag
 | `sample:article` | Article |
 | `sample:video` | Video |
 | `sample:podcast` | Podcast |
-| `sample:tiktok` | TikTok |
 | `sample:court` | Court |
 | `sample:announcement` | Announcement |
 
@@ -186,7 +184,7 @@ npm run check-feed
 
 That checks ids, types, dates, edition names, newest-first order, and that each `publishedAt` falls on the file’s Eastern Time date. A real item’s `thumbnailUrl` must be `https`. While `index.json` has `"sample": true`, every title and summary must contain “Sample”.
 
-A short day, a missing podcast or TikTok, or fewer than two titles that mention lawsuit is a warning, not a failure. The command still exits successfully so that edition can be pushed.
+A short day, a missing podcast, or fewer than two titles that mention lawsuit is a warning, not a failure. The command still exits successfully so that edition can be pushed. A `tiktok` type fails the check.
 
 ## Cache
 

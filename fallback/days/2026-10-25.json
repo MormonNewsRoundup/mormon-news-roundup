@@ -40,21 +40,6 @@
           ]
         },
         {
-          "id": "2026-10-25-noon-03",
-          "type": "tiktok",
-          "title": "Sample TikTok: how a short clip card is laid out",
-          "summary": "Sample item, not a real story. A tap hands off to TikTok. The clip itself is not a real post.",
-          "source": "Sample Clips",
-          "url": "https://www.tiktok.com/search?q=Mormon%20News%20Roundup",
-          "thumbnailUrl": "sample:tiktok",
-          "publishedAt": "2026-10-25T16:15:00.000Z",
-          "paywalled": false,
-          "tags": [
-            "sample",
-            "tiktok"
-          ]
-        },
-        {
           "id": "2026-10-25-noon-04",
           "type": "podcast",
           "title": "Sample podcast: how a noon audio brief is laid out",
@@ -136,21 +121,6 @@
           "tags": [
             "sample",
             "podcast"
-          ]
-        },
-        {
-          "id": "2026-10-25-midnight-05",
-          "type": "tiktok",
-          "title": "Sample TikTok: how a midnight clip card is laid out",
-          "summary": "Sample item, not a real story. Short clips sit in the same list as articles. This one does not exist on TikTok.",
-          "source": "Sample Clips",
-          "url": "https://www.tiktok.com/search?q=Mormon%20News%20Roundup",
-          "thumbnailUrl": "sample:tiktok",
-          "publishedAt": "2026-10-25T04:25:00.000Z",
-          "paywalled": false,
-          "tags": [
-            "sample",
-            "tiktok"
           ]
         },
         {

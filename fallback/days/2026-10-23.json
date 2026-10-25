@@ -42,7 +42,7 @@
           "id": "2026-10-23-midnight-03",
           "type": "article",
           "title": "Sample article: how a paywalled scandal card is laid out",
-          "summary": "Sample item, not a real story. The lock is the only “paywall” here. The summary is placeholder text.",
+          "summary": "Sample item, not a real story. The lock is the only \u201cpaywall\u201d here. The summary is placeholder text.",
           "source": "Sample Wire",
           "url": "https://mormonnewsroundup.org/",
           "thumbnailUrl": "sample:article",
@@ -58,7 +58,7 @@
           "id": "2026-10-23-midnight-04",
           "type": "video",
           "title": "Sample video: how a Friday YouTube card is laid out",
-          "summary": "Sample item, not a real story. Older days stay in the archive and load from Today with “Load earlier days”.",
+          "summary": "Sample item, not a real story. Older days stay in the archive and load from Today with \u201cLoad earlier days\u201d.",
           "source": "Sample Studio",
           "url": "https://www.youtube.com/@MormonNewsRoundup",
           "thumbnailUrl": "sample:video",
@@ -113,21 +113,6 @@
           "tags": [
             "sample",
             "podcast"
-          ]
-        },
-        {
-          "id": "2026-10-23-midnight-08",
-          "type": "tiktok",
-          "title": "Sample TikTok: how a Friday clip card is laid out",
-          "summary": "Sample item, not a real story. That is the whole sample archive for this day.",
-          "source": "Sample Clips",
-          "url": "https://www.tiktok.com/search?q=Mormon%20News%20Roundup",
-          "thumbnailUrl": "sample:tiktok",
-          "publishedAt": "2026-10-23T04:40:00.000Z",
-          "paywalled": false,
-          "tags": [
-            "sample",
-            "tiktok"
           ]
         }
       ]

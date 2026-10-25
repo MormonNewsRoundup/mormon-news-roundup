@@ -2,7 +2,7 @@
 
 Your morning Mormon news, already sorted.
 
-This is version 1 of the iPhone app: a daily feed of articles, YouTube videos, podcasts, and TikToks. It is meant for hard news about The Church of Jesus Christ of Latter-day Saints (lawsuits, courts, excommunications, scandals) plus major official announcements. Tapping a card opens the original link. There are no comments, no accounts, and no notifications in this version.
+This is version 1 of the iPhone app: a daily feed of articles, YouTube videos, and podcasts. It is meant for hard news about The Church of Jesus Christ of Latter-day Saints (lawsuits, courts, excommunications, scandals) plus major official announcements. Tapping a card opens the original link. There are no comments, no accounts, and no notifications in this version.
 
 The app is not affiliated with or endorsed by The Church of Jesus Christ of Latter-day Saints.
 
@@ -85,7 +85,7 @@ What is possible:
 Three tabs at the bottom:
 
 - **Today** — the newest day in the feed, even when that day is older than the calendar date. The date is the only heading. Stories are one list, newest first, with the noon stories above the midnight stories and no edition label between them. Pull down to refresh. **Load earlier days** shows older days. Tap a card to open its link. **Share** opens the phone’s share sheet with the link and the words “via Mormon News Roundup”. A small lock means the original link may be paywalled. A gray **Ad** box sits between some cards. That box is a stand-in, not a real advertisement.
-- **Search** — empty until you type or pick a filter (All, Articles, Videos, Podcasts, TikToks). Try `lawsuit` or `podcast`.
+- **Search** — empty until you type or pick a filter (All, Articles, Videos, Podcasts). Try `lawsuit` or `podcast`.
 - **About** — what the app is, the disclaimer, YouTube, the website, a quiet Patreon link, **Remove ads ($0.99, one time)**, and **Restore purchase**.
 
 On About, a dashed box says **Simulate ads removed**. That switch only exists in this preview. Turn it on and the ad boxes disappear. It does not charge you.
@@ -137,7 +137,7 @@ If you ever publish a placeholder day again:
 - Put the word Sample in every title and summary.
 - Set `"sample": true` on that day file and on `feed/index.json`.
 
-Real cards need an `https` picture address in `thumbnailUrl`. Tokens such as `sample:article` belong only in `fallback/`. A day can have fewer than 8 items, and it does not need a podcast, a TikTok, or the word lawsuit. `npm run check-feed` mentions those as warnings and still succeeds.
+Real cards need an `https` picture address in `thumbnailUrl`. Tokens such as `sample:article` belong only in `fallback/`. A day can have fewer than 8 items, and it does not need a podcast or the word lawsuit. `npm run check-feed` mentions those as warnings and still succeeds. The type has to be an article, a video, or a podcast.
 
 The phone saves the last feed it downloaded. If the site cannot be reached, it shows that saved copy. If it has never downloaded one, it shows the sample files built into the app.
 
