@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-25",
+  "sample": false,
+  "editions": [
+    {
+      "name": "midnight",
+      "publishedAt": "2026-10-25T04:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-10-25-midnight-01",
+          "type": "article",
+          "title": "In case you missed it: President Eyring dedicates Church\u2019s 225th temple, plus 9 more stories",
+          "summary": "The Church News rounds up its stories from Oct. 18-24, including President Henry B. Eyring dedicating the church's 225th temple in Montpelier, Idaho, Elder Ronald A. Rasband dedicating Nicaragua's first temple, and the latest General Handbook updates.",
+          "source": "Church News",
+          "url": "https://www.thechurchnews.com/leaders/2026/10/25/week-in-review-president-eyring-montpelier-temple-elder-rasband-nicaragua-temple/",
+          "thumbnailUrl": "https://www.thechurchnews.com/resizer/v2/GBHQIDJ3LVBBVEF57JCDD3NXP4.png?focal=1000%2C405&auth=96facdc71b8daa02d9a60c8e184f70fb8571ce174e85ad8972cd17bb504eb41b&width=630&height=331",
+          "publishedAt": "2026-10-25T16:00:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "announcement",
+            "temples",
+            "week-in-review"
+          ]
+        }
+      ]
+    }
+  ]
+}

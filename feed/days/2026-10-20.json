@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-20",
+  "sample": false,
+  "editions": [
+    {
+      "name": "midnight",
+      "publishedAt": "2026-10-20T04:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-10-20-midnight-01",
+          "type": "article",
+          "title": "BYUI amends security report",
+          "summary": "BYU-Idaho's 2026 Annual Security Report, released Oct. 1, listed zero reported sexual crimes for 2025, but after the student paper's reporting the university released an amended report listing 18 reported incidents \u2014 13 of rape and five of fondling, all associated with off-campus housing \u2014 according to the BYU-Idaho Scroll. The university said the reports were not included in the data available when the report was prepared, and chief compliance officer Nolan Bybee told the Scroll that newly contracted housing complexes were missed and \"I'm ultimately responsible.\"",
+          "source": "BYU-Idaho Scroll",
+          "url": "https://byuiscroll.org/byui-amends-security-report/",
+          "thumbnailUrl": "https://byuiscroll.org/wp-content/uploads/2026/10/IMG_2558.jpeg",
+          "publishedAt": "2026-10-20T16:30:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "byu-idaho",
+            "church-schools",
+            "sexual-assault",
+            "clery-act",
+            "scandal"
+          ]
+        }
+      ]
+    }
+  ]
+}
