@@ -53,9 +53,12 @@
           "iosAppId": "ca-app-pub-3940256099942544~1458002511",
           "userTrackingUsageDescription": "This identifier is used to show ads that are more relevant to you. Ads support Mormon News Roundup. You can remove them with a one-time purchase.",
           "delayAppMeasurementInit": true,
-          "skAdNetworkItems": ["cstr6suwn9.skadnetwork"]
+          "skAdNetworkItems": [
+            "cstr6suwn9.skadnetwork"
+          ]
         }
-      ]
+      ],
+      "@react-native-community/datetimepicker"
     ],
     "extra": {
       "contentRating": "17+"

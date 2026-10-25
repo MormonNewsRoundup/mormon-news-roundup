@@ -19,7 +19,7 @@ import { APP_PITCH, isBundledFeed } from '@/constants/config';
 import { serifFamily } from '@/constants/theme';
 import { getDay, getIndex } from '@/lib/feed';
 import { formatCardDate } from '@/lib/format';
-import { recentStories, TODAY_DAY_LOOKBACK, TODAY_STORY_LIMIT, type DatedStory } from '@/lib/today';
+import { datesWithinFreshWindow, freshStories, recentStories, type DatedStory } from '@/lib/today';
 import type { DayFile, FeedIndex } from '@/lib/types';
 
 type Row =
@@ -44,17 +44,15 @@ function buildRows(stories: DatedStory[], sample: boolean, adsRemoved: boolean):
 }
 
 async function loadRecent(force: boolean): Promise<{ index: FeedIndex; stories: DatedStory[]; more: boolean }> {
+  const now = Date.now();
   const index = await getIndex(force);
-  const dates = index.days.slice(0, TODAY_DAY_LOOKBACK);
+  const dates = datesWithinFreshWindow(index.days, now);
   const loaded: DayFile[] = [];
-  let stories: DatedStory[] = [];
   for (const date of dates) {
     loaded.push(await getDay(date, force));
-    stories = recentStories(loaded, TODAY_STORY_LIMIT);
-    if (stories.length >= TODAY_STORY_LIMIT) break;
   }
-  const more =
-    index.days.length > loaded.length || recentStories(loaded, TODAY_STORY_LIMIT + 1).length > TODAY_STORY_LIMIT;
+  const stories = freshStories(loaded, now);
+  const more = index.days.length > loaded.length || recentStories(loaded, stories.length + 1).length > stories.length;
   return { index, stories, more };
 }
 
@@ -113,7 +111,7 @@ export default function TodayScreen() {
         <View style={styles.fill}>
           <View style={styles.centered}>
             <ActivityIndicator color={theme.header} />
-            <Text style={[styles.status, { color: theme.muted }]}>Gathering the newest stories…</Text>
+            <Text style={[styles.status, { color: theme.muted }]}>Gathering stories from the last 48 hours…</Text>
           </View>
           <ScreenDisclaimer />
         </View>
@@ -128,6 +126,15 @@ export default function TodayScreen() {
               style={[styles.button, { backgroundColor: theme.header }]}>
               <Text style={[styles.buttonText, { color: theme.gold }]}>Try again</Text>
             </Pressable>
+          </View>
+          <ScreenDisclaimer />
+        </View>
+      ) : stories.length === 0 ? (
+        <View style={styles.fill}>
+          <View style={styles.centered}>
+            <Text style={[styles.emptyTitle, { color: theme.text }]}>
+              No new stories in the last 48 hours — check Search for recent coverage
+            </Text>
           </View>
           <ScreenDisclaimer />
         </View>
@@ -190,6 +197,7 @@ const styles = StyleSheet.create({
   },
   status: { fontSize: 15, lineHeight: 21, textAlign: 'center' },
   errorTitle: { fontFamily: serifFamily, fontSize: 24, textAlign: 'center' },
+  emptyTitle: { fontFamily: serifFamily, fontSize: 22, lineHeight: 28, textAlign: 'center' },
   banner: {
     marginHorizontal: 16,
     marginBottom: 16,
