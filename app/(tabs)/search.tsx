@@ -14,6 +14,7 @@ import {
 import { BrandHeader } from '@/components/BrandHeader';
 import { Icon } from '@/components/Icon';
 import { NewsCard } from '@/components/NewsCard';
+import { ScreenDisclaimer } from '@/components/ScreenDisclaimer';
 import { useTheme } from '@/components/useTheme';
 import { getDay, getIndex, itemsFromDays, mapPool } from '@/lib/feed';
 import { searchItems } from '@/lib/search';
@@ -121,9 +122,12 @@ export default function SearchScreen() {
         </ScrollView>
       </View>
       {loading ? (
-        <View style={styles.centered}>
-          <ActivityIndicator color={theme.header} />
-          <Text style={[styles.body, { color: theme.muted }]}>Loading the archive…</Text>
+        <View style={styles.fill}>
+          <View style={styles.centered}>
+            <ActivityIndicator color={theme.header} />
+            <Text style={[styles.body, { color: theme.muted }]}>Loading the archive…</Text>
+          </View>
+          <ScreenDisclaimer />
         </View>
       ) : (
         <FlatList
@@ -139,6 +143,7 @@ export default function SearchScreen() {
             />
           }
           contentContainerStyle={results.length === 0 ? styles.emptyList : styles.list}
+          ListFooterComponent={<ScreenDisclaimer />}
           ListHeaderComponent={
             browsing && !error ? (
               <Text style={[styles.count, { color: theme.muted }]}>
@@ -170,6 +175,7 @@ export default function SearchScreen() {
 
 const styles = StyleSheet.create({
   screen: { flex: 1 },
+  fill: { flex: 1 },
   controls: { paddingTop: 12, gap: 10 },
   field: {
     marginHorizontal: 16,
@@ -189,8 +195,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 14,
     paddingVertical: 8,
   },
-  list: { paddingTop: 8, paddingBottom: 28 },
-  emptyList: { flexGrow: 1 },
+  list: { paddingTop: 8, paddingBottom: 8, flexGrow: 1 },
+  emptyList: { flexGrow: 1, paddingBottom: 8 },
   count: { marginHorizontal: 20, marginBottom: 10, fontSize: 13, fontWeight: '700' },
   centered: {
     flex: 1,

@@ -13,6 +13,7 @@ import { AdBanner } from '@/components/AdBanner';
 import { useAppState } from '@/components/AppState';
 import { BrandHeader } from '@/components/BrandHeader';
 import { NewsCard } from '@/components/NewsCard';
+import { ScreenDisclaimer } from '@/components/ScreenDisclaimer';
 import { useTheme } from '@/components/useTheme';
 import { APP_PITCH, isBundledFeed } from '@/constants/config';
 import { serifFamily } from '@/constants/theme';
@@ -120,20 +121,26 @@ export default function TodayScreen() {
     <View style={[styles.screen, { backgroundColor: theme.background }]}>
       <BrandHeader title="Today" subtitle={APP_PITCH} />
       {loading ? (
-        <View style={styles.centered}>
-          <ActivityIndicator color={theme.header} />
-          <Text style={[styles.status, { color: theme.muted }]}>Gathering today’s edition…</Text>
+        <View style={styles.fill}>
+          <View style={styles.centered}>
+            <ActivityIndicator color={theme.header} />
+            <Text style={[styles.status, { color: theme.muted }]}>Gathering today’s edition…</Text>
+          </View>
+          <ScreenDisclaimer />
         </View>
       ) : error && days.length === 0 ? (
-        <View style={styles.centered}>
-          <Text style={[styles.errorTitle, { color: theme.text }]}>The feed didn’t load</Text>
-          <Text style={[styles.status, { color: theme.muted }]}>{error}</Text>
-          <Pressable
-            accessibilityRole="button"
-            onPress={() => void onRefresh()}
-            style={[styles.button, { backgroundColor: theme.header }]}>
-            <Text style={[styles.buttonText, { color: theme.gold }]}>Try again</Text>
-          </Pressable>
+        <View style={styles.fill}>
+          <View style={styles.centered}>
+            <Text style={[styles.errorTitle, { color: theme.text }]}>The feed didn’t load</Text>
+            <Text style={[styles.status, { color: theme.muted }]}>{error}</Text>
+            <Pressable
+              accessibilityRole="button"
+              onPress={() => void onRefresh()}
+              style={[styles.button, { backgroundColor: theme.header }]}>
+              <Text style={[styles.buttonText, { color: theme.gold }]}>Try again</Text>
+            </Pressable>
+          </View>
+          <ScreenDisclaimer />
         </View>
       ) : (
         <FlatList
@@ -166,6 +173,7 @@ export default function TodayScreen() {
                   {sample ? 'That’s the whole sample archive.' : 'You’re caught up.'}
                 </Text>
               )}
+              <ScreenDisclaimer />
             </View>
           }
           renderItem={({ item }) => {
@@ -193,7 +201,8 @@ export default function TodayScreen() {
 
 const styles = StyleSheet.create({
   screen: { flex: 1 },
-  list: { paddingTop: 16, paddingBottom: 28 },
+  fill: { flex: 1 },
+  list: { paddingTop: 16, paddingBottom: 8, flexGrow: 1 },
   centered: {
     flex: 1,
     alignItems: 'center',
@@ -221,7 +230,7 @@ const styles = StyleSheet.create({
     marginBottom: 8,
     marginTop: 4,
   },
-  footer: { paddingHorizontal: 16, paddingTop: 4, gap: 12 },
+  footer: { marginTop: 'auto', paddingTop: 4, gap: 12 },
   button: {
     minHeight: 48,
     borderRadius: 12,
