@@ -5,9 +5,9 @@ import { Pressable, ScrollView, StyleSheet, Switch, Text, View } from 'react-nat
 import { useAppState } from '@/components/AppState';
 import { BrandHeader } from '@/components/BrandHeader';
 import { Icon } from '@/components/Icon';
+import { ScreenDisclaimer } from '@/components/ScreenDisclaimer';
 import { useTheme } from '@/components/useTheme';
 import {
-  DISCLAIMER,
   PATREON_URL,
   REMOVE_ADS_PRICE_LABEL,
   WEBSITE_URL,
@@ -69,24 +69,20 @@ export default function AboutScreen() {
   return (
     <View style={[styles.screen, { backgroundColor: theme.background }]}>
       <BrandHeader title="About" subtitle="What this app is, and what it isn’t." />
-      <ScrollView contentContainerStyle={styles.content}>
+      <ScrollView style={styles.scroll} contentContainerStyle={styles.content}>
         <Text style={[styles.paragraph, { color: theme.text }]}>
           Mormon News Roundup is a daily, curated feed about the Latter-day Saint church. It leans
           toward hard news that is critical of the institution — lawsuits, court cases,
           excommunications, and scandals — and it also carries major official announcements.
         </Text>
         <Text style={[styles.paragraph, { color: theme.text }]}>
-          Stories are added through the day, Eastern Time. Tap a card to open the original article,
-          video, or podcast. There are no comments and no accounts.
+          Stories are added through the day. Tap a card to open the original article, video, or
+          podcast.
         </Text>
         <Text style={[styles.paragraph, { color: theme.muted }]}>
           Stories can include lawsuits and sexual abuse cases. The App Store listing is meant for
           ages 17+.
         </Text>
-
-        <View style={[styles.disclaimer, { backgroundColor: theme.card, borderColor: theme.gold }]}>
-          <Text style={[styles.disclaimerText, { color: theme.text }]}>{DISCLAIMER}</Text>
-        </View>
 
         <Text style={[styles.section, { color: theme.muted }]}>Links</Text>
         <LinkRow
@@ -160,6 +156,7 @@ export default function AboutScreen() {
         ) : null}
 
         <Text style={[styles.version, { color: theme.muted }]}>Version {version}</Text>
+        <ScreenDisclaimer />
       </ScrollView>
     </View>
   );
@@ -219,15 +216,9 @@ function ActionRow({
 
 const styles = StyleSheet.create({
   screen: { flex: 1 },
-  content: { padding: 20, gap: 12, paddingBottom: 36 },
+  scroll: { flex: 1 },
+  content: { padding: 20, gap: 12, paddingBottom: 8, flexGrow: 1 },
   paragraph: { fontSize: 16, lineHeight: 24 },
-  disclaimer: {
-    borderLeftWidth: 3,
-    borderRadius: 12,
-    padding: 14,
-    marginTop: 4,
-  },
-  disclaimerText: { fontSize: 15, lineHeight: 22, fontWeight: '700' },
   section: {
     marginTop: 10,
     fontSize: 12,

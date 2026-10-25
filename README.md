@@ -84,9 +84,9 @@ What is possible:
 
 Three tabs at the bottom:
 
-- **Today** — the newest day in the feed, even when that day is older than the calendar date. The date is the only heading. Stories are one list, newest first, with the noon stories above the midnight stories and no edition label between them. Pull down to refresh. **Load earlier days** shows older days. Tap a card to open its link. **Share** opens the phone’s share sheet with the link and the words “via Mormon News Roundup”. A small lock means the original link may be paywalled. A gray **Ad** box sits between some cards. That box is a stand-in, not a real advertisement.
-- **Search** — empty until you type or pick a filter (All, Articles, Videos, Podcasts). Try `lawsuit` or `podcast`.
-- **About** — what the app is, the disclaimer, YouTube, the website, a quiet Patreon link, **Remove ads ($0.99, one time)**, and **Restore purchase**.
+- **Today** — the newest day in the feed, even when that day is older than the calendar date. The date is the only heading. No update time and no time zone. Stories are one list, newest first, with the noon stories above the midnight stories and no edition label between them. Pull down to refresh. **Load earlier days** shows older days. Tap a card to open its link. **Share** opens the phone’s share sheet with the link and the words “via Mormon News Roundup”. A small lock means the original link may be paywalled. A gray **Ad** box sits between some cards. That box is a stand-in, not a real advertisement. At the bottom of the list, in small gray type: “Not affiliated with or endorsed by The Church of Jesus Christ of Latter-day Saints.”
+- **Search** — empty until you type or pick a filter (All, Articles, Videos, Podcasts). Try `lawsuit` or `podcast`. The same affiliation line is at the bottom.
+- **About** — what the app is, YouTube, the website, a quiet Patreon link, **Remove ads ($0.99, one time)**, and **Restore purchase**. The same affiliation line is at the bottom, not in a box in the middle.
 
 On About, a dashed box says **Simulate ads removed**. That switch only exists in this preview. Turn it on and the ad boxes disappear. It does not charge you.
 
