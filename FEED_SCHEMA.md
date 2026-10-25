@@ -83,7 +83,7 @@ Path: `feed/days/YYYY-MM-DD.json`. The filename, the `date` field, and the index
 | `publishedAt` | yes | ISO-8601. Midnight is 12:00 a.m. Eastern. Noon is 12:00 p.m. Eastern. In October that is `04:00` UTC and `16:00` UTC. In winter (EST) it is `05:00` UTC and `17:00` UTC. |
 | `items` | yes | Array of cards. Can be empty, but don’t publish an empty edition if you can avoid it. |
 
-The app displays the newest edition first (noon above midnight) and ignores the order in the file.
+The app shows one list for the day. Noon items come first, then midnight items, each newest first. It ignores the order in the file. It does not show an edition name or a divider.
 
 There is no third edition. A later fix would be a new `name` plus an app update. Don’t invent extra names.
 
