@@ -17,13 +17,12 @@ import { useTheme } from '@/components/useTheme';
 import { APP_PITCH, isBundledFeed } from '@/constants/config';
 import { serifFamily } from '@/constants/theme';
 import { getDay, getIndex } from '@/lib/feed';
-import { editionTitle, formatDayHeading, formatEditionTime } from '@/lib/format';
+import { formatDayHeading } from '@/lib/format';
 import type { DayFile, FeedIndex, FeedItem } from '@/lib/types';
 
 type Row =
   | { key: string; kind: 'banner' }
   | { key: string; kind: 'date'; label: string }
-  | { key: string; kind: 'edition'; title: string; time: string }
   | { key: string; kind: 'card'; item: FeedItem }
   | { key: string; kind: 'ad' };
 
@@ -33,13 +32,9 @@ function buildRows(days: DayFile[], sample: boolean, adsRemoved: boolean): Row[]
   let cards = 0;
   for (const day of days) {
     rows.push({ key: `date-${day.date}`, kind: 'date', label: formatDayHeading(day.date) });
+    // Editions stay newest-first (noon, then midnight). Items inside each are newest-first.
+    // The screen shows one list, with no edition heading between them.
     for (const edition of day.editions) {
-      rows.push({
-        key: `edition-${day.date}-${edition.name}`,
-        kind: 'edition',
-        title: editionTitle(edition.name),
-        time: formatEditionTime(edition.publishedAt),
-      });
       for (const item of edition.items) {
         rows.push({ key: item.id, kind: 'card', item });
         cards += 1;
@@ -187,14 +182,6 @@ export default function TodayScreen() {
             if (item.kind === 'date') {
               return <Text style={[styles.date, { color: theme.text }]}>{item.label}</Text>;
             }
-            if (item.kind === 'edition') {
-              return (
-                <View style={styles.edition}>
-                  <Text style={[styles.editionTitle, { color: theme.text }]}>{item.title}</Text>
-                  <Text style={[styles.editionTime, { color: theme.muted }]}>{item.time}</Text>
-                </View>
-              );
-            }
             if (item.kind === 'ad') return <AdBanner />;
             return <NewsCard item={item.item} />;
           }}
@@ -234,18 +221,6 @@ const styles = StyleSheet.create({
     marginBottom: 8,
     marginTop: 4,
   },
-  edition: {
-    marginHorizontal: 20,
-    marginBottom: 10,
-    gap: 2,
-  },
-  editionTitle: {
-    fontSize: 13,
-    fontWeight: '800',
-    letterSpacing: 0.8,
-    textTransform: 'uppercase',
-  },
-  editionTime: { fontSize: 13 },
   footer: { paddingHorizontal: 16, paddingTop: 4, gap: 12 },
   button: {
     minHeight: 48,
