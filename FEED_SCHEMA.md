@@ -166,7 +166,7 @@ You do not upload a separate host, and you do not edit `constants/config.ts` for
 
 Aim for 8–12 items on a full day. The midnight edition is the main one. Noon is a short update. A shorter day is still valid.
 
-The live `feed/` folder is the real edition: `feed/index.json` lists `2026-10-23` and has `"sample": false`, and `feed/days/2026-10-23.json` is that day’s six stories. Today shows whichever date is first in `days`, including when that date is older than the calendar day. Set `"sample": false` on the index to keep the Sample data banner off. Real `thumbnailUrl` values are `https` image addresses.
+The live `feed/` folder is the real edition: `feed/index.json` lists `2026-10-23` and has `"sample": false`, and `feed/days/2026-10-23.json` is that day’s six stories. Today shows the 15 newest stories from the first 7 dates in `days` (newest first), including when the newest date is older than the calendar day. Search still opens every date in `days`. Set `"sample": false` on the index to keep the Sample data banner off. Real `thumbnailUrl` values are `https` image addresses.
 
 `fallback/` is the offline sample bundled into the app. GitHub Pages does not publish it. `sample:` thumbnail tokens belong there only.
 

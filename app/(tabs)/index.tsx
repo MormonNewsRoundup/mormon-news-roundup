@@ -18,62 +18,68 @@ import { useTheme } from '@/components/useTheme';
 import { APP_PITCH, isBundledFeed } from '@/constants/config';
 import { serifFamily } from '@/constants/theme';
 import { getDay, getIndex } from '@/lib/feed';
-import { formatDayHeading } from '@/lib/format';
-import type { DayFile, FeedIndex, FeedItem } from '@/lib/types';
+import { formatCardDate } from '@/lib/format';
+import { recentStories, TODAY_DAY_LOOKBACK, TODAY_STORY_LIMIT, type DatedStory } from '@/lib/today';
+import type { DayFile, FeedIndex } from '@/lib/types';
 
 type Row =
   | { key: string; kind: 'banner' }
-  | { key: string; kind: 'date'; label: string }
-  | { key: string; kind: 'card'; item: FeedItem }
+  | { key: string; kind: 'card'; story: DatedStory }
   | { key: string; kind: 'ad' };
 
-function buildRows(days: DayFile[], sample: boolean, adsRemoved: boolean): Row[] {
+function buildRows(stories: DatedStory[], sample: boolean, adsRemoved: boolean): Row[] {
   const rows: Row[] = [];
   if (sample) rows.push({ key: 'banner', kind: 'banner' });
-  let cards = 0;
-  for (const day of days) {
-    rows.push({ key: `date-${day.date}`, kind: 'date', label: formatDayHeading(day.date) });
-    // Editions stay newest-first (noon, then midnight). Items inside each are newest-first.
-    // The screen shows one list, with no edition heading between them.
-    for (const edition of day.editions) {
-      for (const item of edition.items) {
-        rows.push({ key: item.id, kind: 'card', item });
-        cards += 1;
-        if (!adsRemoved && (cards === 1 || cards % 4 === 0)) {
-          rows.push({ key: `ad-${item.id}`, kind: 'ad' });
-        }
-      }
+  stories.forEach((story, index) => {
+    const cards = index + 1;
+    rows.push({ key: story.item.id, kind: 'card', story });
+    if (!adsRemoved && (cards === 1 || cards % 4 === 0)) {
+      rows.push({ key: `ad-${story.item.id}`, kind: 'ad' });
     }
-  }
-  if (!adsRemoved && cards > 0 && cards % 4 !== 0) {
+  });
+  if (!adsRemoved && stories.length > 0 && stories.length % 4 !== 0) {
     rows.push({ key: 'ad-end', kind: 'ad' });
   }
   return rows;
+}
+
+async function loadRecent(force: boolean): Promise<{ index: FeedIndex; stories: DatedStory[]; more: boolean }> {
+  const index = await getIndex(force);
+  const dates = index.days.slice(0, TODAY_DAY_LOOKBACK);
+  const loaded: DayFile[] = [];
+  let stories: DatedStory[] = [];
+  for (const date of dates) {
+    loaded.push(await getDay(date, force));
+    stories = recentStories(loaded, TODAY_STORY_LIMIT);
+    if (stories.length >= TODAY_STORY_LIMIT) break;
+  }
+  const more =
+    index.days.length > loaded.length || recentStories(loaded, TODAY_STORY_LIMIT + 1).length > TODAY_STORY_LIMIT;
+  return { index, stories, more };
 }
 
 export default function TodayScreen() {
   const theme = useTheme();
   const { adsRemoved } = useAppState();
   const [index, setIndex] = useState<FeedIndex | null>(null);
-  const [days, setDays] = useState<DayFile[]>([]);
+  const [stories, setStories] = useState<DatedStory[]>([]);
+  const [more, setMore] = useState(false);
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
-  const [loadingEarlier, setLoadingEarlier] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const load = useCallback(async (force: boolean, howMany: number) => {
-    const nextIndex = await getIndex(force);
-    const count = Math.min(Math.max(howMany, 1), nextIndex.days.length);
-    const nextDays = await Promise.all(nextIndex.days.slice(0, count).map((date) => getDay(date, force)));
-    setIndex(nextIndex);
-    setDays(nextDays);
+  const load = useCallback(async (force: boolean) => {
+    const next = await loadRecent(force);
+    setIndex(next.index);
+    setStories(next.stories);
+    setMore(next.more);
   }, []);
 
   useEffect(() => {
     let cancelled = false;
     void (async () => {
       try {
-        await load(false, 1);
+        await load(false);
       } catch (err) {
         if (!cancelled) setError(err instanceof Error ? err.message : 'The feed did not load.');
       } finally {
@@ -89,33 +95,16 @@ export default function TodayScreen() {
     setRefreshing(true);
     setError(null);
     try {
-      await load(true, Math.max(days.length, 1));
+      await load(true);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'The feed did not load.');
     } finally {
       setRefreshing(false);
     }
-  }, [days.length, load]);
-
-  const hasEarlier = Boolean(index && days.length < index.days.length);
-
-  const loadEarlier = useCallback(async () => {
-    if (!index || !hasEarlier || loadingEarlier) return;
-    const date = index.days[days.length];
-    setLoadingEarlier(true);
-    setError(null);
-    try {
-      const day = await getDay(date);
-      setDays((current) => [...current, day]);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'That day did not load.');
-    } finally {
-      setLoadingEarlier(false);
-    }
-  }, [days.length, hasEarlier, index, loadingEarlier]);
+  }, [load]);
 
   const sample = Boolean(index?.sample) || isBundledFeed();
-  const rows = useMemo(() => buildRows(days, sample, adsRemoved), [adsRemoved, days, sample]);
+  const rows = useMemo(() => buildRows(stories, sample, adsRemoved), [adsRemoved, sample, stories]);
 
   return (
     <View style={[styles.screen, { backgroundColor: theme.background }]}>
@@ -124,11 +113,11 @@ export default function TodayScreen() {
         <View style={styles.fill}>
           <View style={styles.centered}>
             <ActivityIndicator color={theme.header} />
-            <Text style={[styles.status, { color: theme.muted }]}>Gathering today’s edition…</Text>
+            <Text style={[styles.status, { color: theme.muted }]}>Gathering the newest stories…</Text>
           </View>
           <ScreenDisclaimer />
         </View>
-      ) : error && days.length === 0 ? (
+      ) : error && stories.length === 0 ? (
         <View style={styles.fill}>
           <View style={styles.centered}>
             <Text style={[styles.errorTitle, { color: theme.text }]}>The feed didn’t load</Text>
@@ -158,21 +147,13 @@ export default function TodayScreen() {
           ListFooterComponent={
             <View style={styles.footer}>
               {error ? <Text style={[styles.status, { color: theme.muted }]}>{error}</Text> : null}
-              {hasEarlier ? (
-                <Pressable
-                  accessibilityRole="button"
-                  disabled={loadingEarlier}
-                  onPress={() => void loadEarlier()}
-                  style={[styles.button, { borderColor: theme.header, backgroundColor: theme.card }]}>
-                  <Text style={[styles.buttonText, { color: theme.header }]}>
-                    {loadingEarlier ? 'Loading…' : 'Load earlier days'}
-                  </Text>
-                </Pressable>
-              ) : (
-                <Text style={[styles.status, { color: theme.muted }]}>
-                  {sample ? 'That’s the whole sample archive.' : 'You’re caught up.'}
-                </Text>
-              )}
+              <Text style={[styles.status, { color: theme.muted }]}>
+                {sample && !more
+                  ? 'That’s the whole sample archive.'
+                  : more
+                    ? 'Older stories are in Search.'
+                    : 'You’re caught up.'}
+              </Text>
               <ScreenDisclaimer />
             </View>
           }
@@ -187,11 +168,8 @@ export default function TodayScreen() {
                 </View>
               );
             }
-            if (item.kind === 'date') {
-              return <Text style={[styles.date, { color: theme.text }]}>{item.label}</Text>;
-            }
             if (item.kind === 'ad') return <AdBanner />;
-            return <NewsCard item={item.item} />;
+            return <NewsCard item={item.story.item} dateLabel={formatCardDate(item.story.date)} />;
           }}
         />
       )}
@@ -222,15 +200,7 @@ const styles = StyleSheet.create({
   },
   bannerTitle: { fontWeight: '800', fontSize: 14, letterSpacing: 0.3 },
   bannerBody: { fontSize: 14, lineHeight: 20 },
-  date: {
-    fontFamily: serifFamily,
-    fontSize: 22,
-    lineHeight: 28,
-    marginHorizontal: 20,
-    marginBottom: 8,
-    marginTop: 4,
-  },
-  footer: { marginTop: 'auto', paddingTop: 4, gap: 12 },
+  footer: { marginTop: 'auto', paddingHorizontal: 20, paddingTop: 4, gap: 12 },
   button: {
     minHeight: 48,
     borderRadius: 12,

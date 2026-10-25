@@ -8,7 +8,7 @@ import { badgeColors, serifFamily } from '@/constants/theme';
 import { openItem, shareItem } from '@/lib/links';
 import { typeLabel, type FeedItem } from '@/lib/types';
 
-export function NewsCard({ item }: { item: FeedItem }) {
+export function NewsCard({ item, dateLabel }: { item: FeedItem; dateLabel?: string }) {
   const theme = useTheme();
   const source = thumbnailSource(item.thumbnailUrl);
   const [imageFailed, setImageFailed] = useState(!source);
@@ -26,7 +26,11 @@ export function NewsCard({ item }: { item: FeedItem }) {
       ]}>
       <Pressable
         accessibilityRole="button"
-        accessibilityLabel={`${typeLabel(item.type)}. ${item.title}`}
+        accessibilityLabel={
+          dateLabel
+            ? `${typeLabel(item.type)}. ${dateLabel}. ${item.title}`
+            : `${typeLabel(item.type)}. ${item.title}`
+        }
         onPress={() => void openItem(item)}
         style={({ pressed }) => pressed && styles.pressed}>
         <View style={[styles.thumbWrap, { backgroundColor: theme.header }]}>
@@ -55,6 +59,9 @@ export function NewsCard({ item }: { item: FeedItem }) {
             <Text style={[styles.source, { color: theme.muted }]} numberOfLines={1}>
               {item.source}
             </Text>
+            {dateLabel ? (
+              <Text style={[styles.date, { color: theme.muted }]}>{dateLabel}</Text>
+            ) : null}
             {item.paywalled ? (
               <View
                 style={styles.lock}
@@ -152,6 +159,11 @@ const styles = StyleSheet.create({
     flex: 1,
     fontSize: 13,
     fontWeight: '700',
+    letterSpacing: 0.2,
+  },
+  date: {
+    fontSize: 12,
+    fontWeight: '600',
     letterSpacing: 0.2,
   },
   lock: {
