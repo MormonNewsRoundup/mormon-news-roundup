@@ -3,9 +3,9 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { feedBaseUrl, isBundledFeed } from '@/constants/config';
 import type { DayFile, Edition, FeedIndex, FeedItem } from '@/lib/types';
 
-// v2 drops the sample cache from before the first real edition.
-const INDEX_KEY = 'mnr.feed.index.v2';
-const dayKey = (date: string) => `mnr.feed.day.v2.${date}`;
+// v3 drops the index cached when the feed listed only 2026-10-23.
+const INDEX_KEY = 'mnr.feed.index.v3';
+const dayKey = (date: string) => `mnr.feed.day.v3.${date}`;
 
 // Offline copy only. The website serves feed/, which is not these files.
 const bundledIndex = require('../fallback/index.json') as FeedIndex;
