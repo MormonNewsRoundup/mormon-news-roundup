@@ -71,7 +71,7 @@ for (const file of dayFiles) {
   if (!seenDates.has(date)) fail(`${file} is not listed in index.json`);
 }
 
-const types = new Set(['article', 'video', 'podcast', 'tiktok']);
+const types = new Set(['article', 'video', 'podcast']);
 const ids = new Set();
 let paywalled = 0;
 let itemCount = 0;
@@ -136,7 +136,7 @@ for (const date of index.days ?? []) {
       if (!Array.isArray(entry.tags) || entry.tags.some((tag) => typeof tag !== 'string')) {
         fail(`${label} tags must be an array of strings`);
       }
-      if (!types.has(entry.type)) fail(`${label} type is not article, video, podcast, or tiktok`);
+      if (!types.has(entry.type)) fail(`${label} type is not article, video, or podcast`);
       if (ids.has(entry.id)) fail(`duplicate id ${entry.id}`);
       ids.add(entry.id);
       if (!/^https?:\/\//.test(entry.url ?? '')) fail(`${label} url must be http(s)`);
@@ -180,9 +180,7 @@ for (const date of index.days ?? []) {
     // already reported
   }
 }
-for (const type of ['podcast', 'tiktok']) {
-  if (!presentTypes.has(type)) warn(`no ${type} item in this feed`);
-}
+if (!presentTypes.has('podcast')) warn('no podcast item in this feed');
 const lawsuitHits = titles.filter((title) => /lawsuit/i.test(title));
 if (lawsuitHits.length < 2) warn('fewer than two titles mention lawsuit');
 

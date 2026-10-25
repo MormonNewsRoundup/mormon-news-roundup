@@ -14,7 +14,6 @@ const URLS = {
   article: 'https://mormonnewsroundup.org/',
   video: 'https://www.youtube.com/@MormonNewsRoundup',
   podcast: 'https://podcasts.apple.com/us/podcast/mormon-news-roundup/id1617559003',
-  tiktok: 'https://www.tiktok.com/search?q=Mormon%20News%20Roundup',
 };
 
 function partsInEt(date) {
@@ -99,13 +98,6 @@ const days = [
           tags: ['lawsuit', 'court'],
         },
         {
-          type: 'tiktok',
-          source: 'Sample Clips',
-          thumb: 'tiktok',
-          title: 'Sample TikTok: how a short clip card is laid out',
-          summary: 'A tap hands off to TikTok. The clip itself is not a real post.',
-        },
-        {
           type: 'podcast',
           source: 'Sample Studio',
           thumb: 'podcast',
@@ -144,13 +136,6 @@ const days = [
           thumb: 'podcast',
           title: 'Sample podcast: how a midnight episode card is laid out',
           summary: 'The midnight edition is the main daily drop. This audio card is only a sample.',
-        },
-        {
-          type: 'tiktok',
-          source: 'Sample Clips',
-          thumb: 'tiktok',
-          title: 'Sample TikTok: how a midnight clip card is laid out',
-          summary: 'Short clips sit in the same list as articles. This one does not exist on TikTok.',
         },
         {
           type: 'article',
@@ -247,20 +232,6 @@ const days = [
           title: 'Sample podcast: how an evening episode card is laid out',
           summary: 'Audio items keep a short summary so you can decide before you tap.',
         },
-        {
-          type: 'tiktok',
-          source: 'Sample Clips',
-          thumb: 'tiktok',
-          title: 'Sample TikTok: how a reaction clip card is laid out',
-          summary: 'Filter chips on Search can show only TikToks. This is one of them.',
-        },
-        {
-          type: 'tiktok',
-          source: 'Sample Clips',
-          thumb: 'tiktok',
-          title: 'Sample TikTok: how a follow-up clip card is laid out',
-          summary: 'A second short-video card, so the TikTok filter has more than one hit.',
-        },
       ]),
     ],
   },
@@ -321,13 +292,6 @@ const days = [
           thumb: 'podcast',
           title: 'Sample podcast: how a bonus audio card is laid out',
           summary: 'A second audio card on a midnight-only day.',
-        },
-        {
-          type: 'tiktok',
-          source: 'Sample Clips',
-          thumb: 'tiktok',
-          title: 'Sample TikTok: how a Friday clip card is laid out',
-          summary: 'That is the whole sample archive for this day.',
         },
       ]),
     ],

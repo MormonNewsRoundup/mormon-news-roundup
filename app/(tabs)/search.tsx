@@ -157,7 +157,7 @@ export default function SearchScreen() {
                   ? error
                   : browsing
                     ? `No ${filter === 'all' ? 'items' : filterLabel(filter).toLowerCase()} match that. Try another word, or switch the filter back to All.`
-                    : `Look through ${archive.length} items, newest first. Type a word like “lawsuit” or “podcast”, or pick Articles, Videos, Podcasts, or TikToks to browse.`}
+                    : `Look through ${archive.length} items, newest first. Type a word like “lawsuit” or “podcast”, or pick Articles, Videos, or Podcasts to browse.`}
               </Text>
             </View>
           }

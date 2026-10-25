@@ -77,7 +77,7 @@ export default function AboutScreen() {
         </Text>
         <Text style={[styles.paragraph, { color: theme.text }]}>
           Stories are added through the day, Eastern Time. Tap a card to open the original article,
-          video, podcast, or TikTok. There are no comments and no accounts.
+          video, or podcast. There are no comments and no accounts.
         </Text>
         <Text style={[styles.paragraph, { color: theme.muted }]}>
           Stories can include lawsuits and sexual abuse cases. The App Store listing is meant for

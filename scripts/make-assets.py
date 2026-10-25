@@ -129,7 +129,6 @@ def main() -> None:
     thumbnail("article", "ARTICLE", (29, 24, 56, 255))
     thumbnail("video", "VIDEO", (58, 24, 48, 255))
     thumbnail("podcast", "PODCAST", (36, 24, 72, 255))
-    thumbnail("tiktok", "TIKTOK", (17, 17, 17, 255))
     thumbnail("court", "COURT", (26, 39, 68, 255))
     thumbnail("announcement", "ANNOUNCEMENT", (42, 36, 24, 255))
     print("Assets written.")
