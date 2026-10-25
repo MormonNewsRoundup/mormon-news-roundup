@@ -56,7 +56,7 @@ If you run `npx expo start` yourself, add `--go` (`npx expo start --go`). Withou
 2. Open the iPhone **Camera** app and point it at the QR code.
 3. Tap the banner that appears, and choose **Expo Go**.
 
-The first screen is a short welcome with the disclaimer. Tap **Continue**. Today should show the sample feed.
+The first screen is a short welcome with the disclaimer. Tap **Continue**. Today shows the newest day in the feed, including when that day is not today’s calendar date.
 
 If the QR code never connects, stop the terminal with Ctrl+C and run:
 
@@ -84,24 +84,17 @@ What is possible:
 
 Three tabs at the bottom:
 
-- **Today** — the newest day, with a Midnight edition and, when there is one, a Noon update above it. Pull down to refresh. **Load earlier days** shows older sample days. Tap a card to open its link. **Share** opens the phone’s share sheet with the link and the words “via Mormon News Roundup”. A small lock means the original link may be paywalled. A gray **Ad** box sits between some cards. That box is a stand-in, not a real advertisement.
+- **Today** — the newest day in the feed, even when that day is older than the calendar date. It has a Midnight edition and, when there is one, a Noon update above it. Pull down to refresh. **Load earlier days** shows older days. Tap a card to open its link. **Share** opens the phone’s share sheet with the link and the words “via Mormon News Roundup”. A small lock means the original link may be paywalled. A gray **Ad** box sits between some cards. That box is a stand-in, not a real advertisement.
 - **Search** — empty until you type or pick a filter (All, Articles, Videos, Podcasts, TikToks). Try `lawsuit` or `podcast`.
 - **About** — what the app is, the disclaimer, YouTube, the website, a quiet Patreon link, **Remove ads ($0.99, one time)**, and **Restore purchase**.
 
 On About, a dashed box says **Simulate ads removed**. That switch only exists in this preview. Turn it on and the ad boxes disappear. It does not charge you.
 
-## This feed is sample data
+## What is live now
 
-The cards are **not real news**. Every sample title and summary says “Sample”. They exist so the layout, search, sharing, and links can be tried before the curator is connected.
+The website serves only the files in `feed/`. The first real edition is October 23, 2026: six stories, `"sample": false`. Today shows that day. There is no Sample data banner while the index says `"sample": false`.
 
-The sample files are:
-
-- `feed/index.json`
-- `feed/days/2026-10-23.json`
-- `feed/days/2026-10-24.json`
-- `feed/days/2026-10-25.json`
-
-Links on those cards go to the real show website, the YouTube channel, the Apple Podcasts show page, or a TikTok search. The headlines are still placeholders.
+Placeholder cards still exist, but only inside the app, in `fallback/`. They are used when the phone has never downloaded the feed and cannot reach the site. They are not copied to GitHub Pages. Do not edit `fallback/` to publish a day.
 
 ## Publish a day’s feed
 
@@ -135,17 +128,16 @@ https://mormonnewsroundup.github.io/mormon-news-roundup/feed/index.json
 
 The new date should be first. If that action fails, the previous site stays up. Fix the JSON and push again.
 
-### While the cards are still samples
+### Real cards and the Sample banner
 
-Every title and summary in the repo today says “Sample”, and `feed/index.json` has `"sample": true`. Leave both in place until a real story replaces a card. The app shows a **Sample data** banner while the index says `"sample": true`.
+The app shows a **Sample data** banner only while `feed/index.json` says `"sample": true`. The live index is `"sample": false`, so the banner stays off.
 
-When a day is real news:
+If you ever publish a placeholder day again:
 
-- Take the word Sample out of that day’s titles and summaries.
-- Set `"sample": false` on that day file.
-- Set `"sample": false` on `feed/index.json` when the banner should go away. The banner follows the index.
+- Put the word Sample in every title and summary.
+- Set `"sample": true` on that day file and on `feed/index.json`.
 
-Real cards need a normal `https` picture address in `thumbnailUrl`. Tokens such as `sample:article` are only for these placeholders. The app still draws the built-in pictures for those tokens when the JSON is loaded from the website.
+Real cards need an `https` picture address in `thumbnailUrl`. Tokens such as `sample:article` belong only in `fallback/`. A day can have fewer than 8 items, and it does not need a podcast, a TikTok, or the word lawsuit. `npm run check-feed` mentions those as warnings and still succeeds.
 
 The phone saves the last feed it downloaded. If the site cannot be reached, it shows that saved copy. If it has never downloaded one, it shows the sample files built into the app.
 
@@ -215,7 +207,7 @@ Do these in order when you are ready. None of them are done yet.
 
 ## Still to do
 
-- `FEED_BASE_URL` in `constants/config.ts` is the GitHub Pages feed. A new day is a JSON commit to `main`, not a change to that file. The cards are still the sample set (`"sample": true`) until real stories replace them.
+- `FEED_BASE_URL` in `constants/config.ts` is the GitHub Pages feed. A new day is a JSON commit to `main`, not a change to that file. The live edition is the real October 23 set.
 - AdMob app ids and the banner unit are **Google test ids**. Replace them before anyone sees real ads.
 - The SKAdNetwork list in `app.json` has only Google’s id (`cstr6suwn9.skadnetwork`). Paste Google’s current full list before production ads.
 - The `remove_ads` product does not exist in App Store Connect yet.
@@ -231,7 +223,7 @@ npm install
 npm start          # Expo Go
 npm run web        # browser preview
 npm run typecheck  # TypeScript
-npm run check-feed # sample JSON
+npm run check-feed # live JSON; short days warn, they do not fail
 ```
 
 To work on real ads or purchases locally you need an EAS development build, not Expo Go:
@@ -254,6 +246,7 @@ Useful files:
 | `lib/purchases.ts` | StoreKit, loaded only outside Expo Go |
 | `components/AdBanner.tsx` | Ad box, or the real banner outside Expo Go |
 | `feed/` | The live feed. Pushing changes here to `main` publishes them |
+| `fallback/` | Offline sample inside the app. Not published to the website |
 | `dist/` | Built by GitHub Actions. Not stored in the repo. Locally: `npm run export:web` |
 | `eas.json` | development, preview, and production builds |
 | `FEED_SCHEMA.md` | Rules for the curator’s JSON |

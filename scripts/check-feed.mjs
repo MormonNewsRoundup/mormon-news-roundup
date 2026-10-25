@@ -9,9 +9,14 @@ import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const feedDir = path.join(root, 'feed');
 const errors = [];
+const warnings = [];
 
 function fail(message) {
   errors.push(message);
+}
+
+function warn(message) {
+  warnings.push(message);
 }
 
 function isObject(value) {
@@ -135,8 +140,13 @@ for (const date of index.days ?? []) {
       if (ids.has(entry.id)) fail(`duplicate id ${entry.id}`);
       ids.add(entry.id);
       if (!/^https?:\/\//.test(entry.url ?? '')) fail(`${label} url must be http(s)`);
-      if (!/^https?:\/\//.test(entry.thumbnailUrl ?? '') && !/^sample:[a-z0-9-]+$/.test(entry.thumbnailUrl ?? '')) {
-        fail(`${label} thumbnailUrl must be an http(s) URL or a sample: token`);
+      const thumb = entry.thumbnailUrl ?? '';
+      if (index.sample) {
+        if (!/^https?:\/\//.test(thumb) && !/^sample:[a-z0-9-]+$/.test(thumb)) {
+          fail(`${label} thumbnailUrl must be an https image or a sample: token`);
+        }
+      } else if (!/^https:\/\//.test(thumb)) {
+        fail(`${label} thumbnailUrl must be an https image URL`);
       }
       if (etDate(entry.publishedAt) !== date) {
         fail(`${label} publishedAt must fall on ${date} in Eastern Time`);
@@ -152,11 +162,11 @@ for (const date of index.days ?? []) {
   }
 }
 
-// These extra rules describe the placeholder archive. A real edition only has to
-// match the schema above, so a push of ordinary news still deploys.
-if (index.sample) {
-  if (itemCount < 8) fail('expected a useful sample of at least 8 items');
-  if (paywalled < 1) fail('expected at least one paywalled item so the lock icon can be previewed');
+// A real day can be short, and it does not have to include every format.
+// These stay visible so a curator can see them, and they do not block a push.
+if (itemCount < 8) warn(`only ${itemCount} items; a full day is often 8–12`);
+if (index.sample && paywalled < 1) {
+  warn('sample archive has no paywalled item, so the lock icon is not previewed');
 }
 
 const presentTypes = new Set();
@@ -170,12 +180,15 @@ for (const date of index.days ?? []) {
     // already reported
   }
 }
-if (index.sample) {
-  for (const type of types) {
-    if (!presentTypes.has(type)) fail(`archive is missing a ${type} item`);
-  }
-  const lawsuitHits = titles.filter((title) => /lawsuit/i.test(title));
-  if (lawsuitHits.length < 2) fail('sample search needs more than one lawsuit title');
+for (const type of ['podcast', 'tiktok']) {
+  if (!presentTypes.has(type)) warn(`no ${type} item in this feed`);
+}
+const lawsuitHits = titles.filter((title) => /lawsuit/i.test(title));
+if (lawsuitHits.length < 2) warn('fewer than two titles mention lawsuit');
+
+if (warnings.length) {
+  console.warn(`Feed warnings (${warnings.length}):`);
+  for (const warning of warnings) console.warn(`- ${warning}`);
 }
 
 if (errors.length) {

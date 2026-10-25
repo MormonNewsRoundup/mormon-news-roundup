@@ -25,7 +25,7 @@ export function WelcomeScreen({ onContinue }: WelcomeScreenProps) {
             <Text style={styles.disclaimerText}>{DISCLAIMER}</Text>
           </View>
           <Text style={styles.note}>
-            This preview opens with sample cards so you can look around. They are not real stories.
+            Tap a card to open the original article, video, podcast, or TikTok.
           </Text>
         </ScrollView>
         <Pressable
