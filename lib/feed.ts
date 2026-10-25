@@ -49,8 +49,10 @@ async function writeCache(key: string, value: unknown): Promise<void> {
 async function fetchJson<T>(url: string): Promise<T> {
   // A unique query skips the GitHub Pages cache so a push shows up on refresh.
   const href = `${url}${url.includes('?') ? '&' : '?'}t=${Date.now()}`;
+  // Keep this a "simple" GET. An extra request header makes the browser send
+  // OPTIONS first, and GitHub Pages answers that with 405, so the feed never loads.
   const response = await fetch(href, {
-    headers: { Accept: 'application/json', 'Cache-Control': 'no-cache' },
+    headers: { Accept: 'application/json' },
     cache: 'no-store',
   });
   if (!response.ok) {
