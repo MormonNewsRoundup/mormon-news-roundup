@@ -12,12 +12,14 @@ import {
 } from 'react-native';
 
 import { BrandHeader } from '@/components/BrandHeader';
+import { DateField } from '@/components/DateField';
 import { Icon } from '@/components/Icon';
 import { NewsCard } from '@/components/NewsCard';
 import { ScreenDisclaimer } from '@/components/ScreenDisclaimer';
 import { useTheme } from '@/components/useTheme';
 import { getDay, getIndex, itemsFromDays, mapPool } from '@/lib/feed';
-import { searchItems } from '@/lib/search';
+import { formatPublishedDate } from '@/lib/format';
+import { localDateInputValue, rangeForTimeframe, searchItems, TIMEFRAMES, type Timeframe } from '@/lib/search';
 import { CONTENT_TYPES, filterLabel, type FeedItem, type TypeFilter } from '@/lib/types';
 import { serifFamily } from '@/constants/theme';
 
@@ -28,11 +30,16 @@ export default function SearchScreen() {
   const [archive, setArchive] = useState<FeedItem[]>([]);
   const [query, setQuery] = useState('');
   const [filter, setFilter] = useState<TypeFilter>('all');
+  const [timeframe, setTimeframe] = useState<Timeframe>('any');
+  const [fromDate, setFromDate] = useState('');
+  const [toDate, setToDate] = useState('');
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const load = useCallback(async (force: boolean) => {
+    // Every day listed in the index, not only the fresh Today window.
+    // getDay reads the saved copy first, then the network.
     const index = await getIndex(force);
     const days = await mapPool(index.days, 4, (date) => getDay(date, force));
     setArchive(itemsFromDays(days));
@@ -66,11 +73,23 @@ export default function SearchScreen() {
     }
   }, [load]);
 
-  const browsing = query.trim().length > 0 || filter !== 'all';
+  const browsing = query.trim().length > 0 || filter !== 'all' || timeframe !== 'any';
   const results = useMemo(
-    () => (browsing ? searchItems(archive, query, filter) : []),
-    [archive, browsing, filter, query],
+    () =>
+      browsing
+        ? searchItems(archive, query, filter, rangeForTimeframe(timeframe, Date.now(), fromDate, toDate))
+        : [],
+    [archive, browsing, filter, fromDate, query, timeframe, toDate],
   );
+
+  function chooseTimeframe(next: Timeframe) {
+    setTimeframe(next);
+    if (next === 'custom') {
+      const now = Date.now();
+      setFromDate((current) => current || localDateInputValue(now - 7 * 24 * 60 * 60 * 1000));
+      setToDate((current) => current || localDateInputValue(now));
+    }
+  }
 
   return (
     <View style={[styles.screen, { backgroundColor: theme.background }]}>
@@ -120,6 +139,29 @@ export default function SearchScreen() {
             );
           })}
         </ScrollView>
+        <View style={styles.timeChips}>
+          {TIMEFRAMES.map((option) => {
+            const selected = option.id === timeframe;
+            return (
+              <Pressable
+                key={option.id}
+                accessibilityRole="button"
+                accessibilityState={{ selected }}
+                onPress={() => chooseTimeframe(option.id)}
+                style={[styles.chip, { backgroundColor: selected ? theme.chipActive : theme.chip }]}>
+                <Text style={{ color: selected ? theme.chipActiveText : theme.chipText, fontWeight: '700' }}>
+                  {option.label}
+                </Text>
+              </Pressable>
+            );
+          })}
+        </View>
+        {timeframe === 'custom' ? (
+          <View style={styles.dates}>
+            <DateField label="From" value={fromDate} onChange={setFromDate} />
+            <DateField label="To" value={toDate} onChange={setToDate} />
+          </View>
+        ) : null}
       </View>
       {loading ? (
         <View style={styles.fill}>
@@ -161,12 +203,12 @@ export default function SearchScreen() {
                 {error
                   ? error
                   : browsing
-                    ? `No ${filter === 'all' ? 'items' : filterLabel(filter).toLowerCase()} match that. Try another word, or switch the filter back to All.`
-                    : `Look through ${archive.length} items, newest first. Type a word like “lawsuit” or “podcast”, or pick Articles, Videos, or Podcasts to browse.`}
+                    ? 'Nothing matches that type, time range, and search. Try Any time, or a different word.'
+                    : `Look through ${archive.length} items, newest first. Type a word like “lawsuit” or “podcast”, or pick a type and a time range.`}
               </Text>
             </View>
           }
-          renderItem={({ item }) => <NewsCard item={item} />}
+          renderItem={({ item }) => <NewsCard item={item} dateLabel={formatPublishedDate(item.publishedAt)} />}
         />
       )}
     </View>
@@ -190,6 +232,18 @@ const styles = StyleSheet.create({
   input: { flex: 1, fontSize: 16, paddingVertical: 10 },
   clear: { fontWeight: '700', fontSize: 14 },
   chips: { paddingHorizontal: 16, gap: 8, paddingBottom: 4 },
+  timeChips: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    paddingHorizontal: 16,
+    gap: 8,
+  },
+  dates: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    paddingHorizontal: 16,
+    gap: 12,
+  },
   chip: {
     borderRadius: 999,
     paddingHorizontal: 14,

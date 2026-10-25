@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-24",
+  "sample": false,
+  "editions": [
+    {
+      "name": "midnight",
+      "publishedAt": "2026-10-24T04:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-10-24-midnight-01",
+          "type": "video",
+          "title": "Celebrating 10 Years of Radio Free Mormon!",
+          "summary": "John Dehlin of Mormon Stories interviews Radio Free Mormon about the highs and lows of ten years of podcasting, with listener questions, according to the episode description.",
+          "source": "Mormon Stories Podcast",
+          "url": "https://www.youtube.com/watch?v=WN6YAD4ZWgY",
+          "thumbnailUrl": "https://i.ytimg.com/vi/WN6YAD4ZWgY/hqdefault.jpg",
+          "publishedAt": "2026-10-24T04:02:14.000Z",
+          "paywalled": false,
+          "tags": [
+            "youtube",
+            "mormon-stories",
+            "radio-free-mormon"
+          ]
+        }
+      ]
+    }
+  ]
+}
