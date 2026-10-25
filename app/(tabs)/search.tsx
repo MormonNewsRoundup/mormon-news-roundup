@@ -1,0 +1,204 @@
+import { useCallback, useEffect, useMemo, useState } from 'react';
+import {
+  ActivityIndicator,
+  FlatList,
+  Pressable,
+  RefreshControl,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+} from 'react-native';
+
+import { BrandHeader } from '@/components/BrandHeader';
+import { Icon } from '@/components/Icon';
+import { NewsCard } from '@/components/NewsCard';
+import { useTheme } from '@/components/useTheme';
+import { getDay, getIndex, itemsFromDays, mapPool } from '@/lib/feed';
+import { searchItems } from '@/lib/search';
+import { CONTENT_TYPES, filterLabel, type FeedItem, type TypeFilter } from '@/lib/types';
+import { serifFamily } from '@/constants/theme';
+
+const FILTERS: TypeFilter[] = ['all', ...CONTENT_TYPES];
+
+export default function SearchScreen() {
+  const theme = useTheme();
+  const [archive, setArchive] = useState<FeedItem[]>([]);
+  const [query, setQuery] = useState('');
+  const [filter, setFilter] = useState<TypeFilter>('all');
+  const [loading, setLoading] = useState(true);
+  const [refreshing, setRefreshing] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const load = useCallback(async (force: boolean) => {
+    const index = await getIndex(force);
+    const days = await mapPool(index.days, 4, (date) => getDay(date, force));
+    setArchive(itemsFromDays(days));
+  }, []);
+
+  useEffect(() => {
+    let cancelled = false;
+    void (async () => {
+      try {
+        await load(false);
+      } catch (err) {
+        if (!cancelled) setError(err instanceof Error ? err.message : 'Search could not load the archive.');
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [load]);
+
+  const onRefresh = useCallback(async () => {
+    setRefreshing(true);
+    setError(null);
+    try {
+      await load(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Search could not load the archive.');
+    } finally {
+      setRefreshing(false);
+    }
+  }, [load]);
+
+  const browsing = query.trim().length > 0 || filter !== 'all';
+  const results = useMemo(
+    () => (browsing ? searchItems(archive, query, filter) : []),
+    [archive, browsing, filter, query],
+  );
+
+  return (
+    <View style={[styles.screen, { backgroundColor: theme.background }]}>
+      <BrandHeader title="Search" subtitle="Titles, summaries, and sources." />
+      <View style={styles.controls}>
+        <View style={[styles.field, { backgroundColor: theme.card, borderColor: theme.border }]}>
+          <Icon ios="magnifyingglass" android="search" color={theme.muted} size={18} />
+          <TextInput
+            value={query}
+            onChangeText={setQuery}
+            placeholder="Search the archive"
+            placeholderTextColor={theme.muted}
+            autoCapitalize="none"
+            autoCorrect={false}
+            returnKeyType="search"
+            style={[styles.input, { color: theme.text }]}
+            accessibilityLabel="Search the archive"
+          />
+          {query.length > 0 ? (
+            <Pressable accessibilityLabel="Clear search" onPress={() => setQuery('')} hitSlop={8}>
+              <Text style={[styles.clear, { color: theme.muted }]}>Clear</Text>
+            </Pressable>
+          ) : null}
+        </View>
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={styles.chips}>
+          {FILTERS.map((option) => {
+            const selected = option === filter;
+            return (
+              <Pressable
+                key={option}
+                accessibilityRole="button"
+                accessibilityState={{ selected }}
+                onPress={() => setFilter(option)}
+                style={[
+                  styles.chip,
+                  {
+                    backgroundColor: selected ? theme.chipActive : theme.chip,
+                  },
+                ]}>
+                <Text style={{ color: selected ? theme.chipActiveText : theme.chipText, fontWeight: '700' }}>
+                  {filterLabel(option)}
+                </Text>
+              </Pressable>
+            );
+          })}
+        </ScrollView>
+      </View>
+      {loading ? (
+        <View style={styles.centered}>
+          <ActivityIndicator color={theme.header} />
+          <Text style={[styles.body, { color: theme.muted }]}>Loading the archive…</Text>
+        </View>
+      ) : (
+        <FlatList
+          data={results}
+          keyExtractor={(item) => item.id}
+          keyboardShouldPersistTaps="handled"
+          refreshControl={
+            <RefreshControl
+              refreshing={refreshing}
+              onRefresh={() => void onRefresh()}
+              tintColor={theme.gold}
+              colors={[theme.header]}
+            />
+          }
+          contentContainerStyle={results.length === 0 ? styles.emptyList : styles.list}
+          ListHeaderComponent={
+            browsing && !error ? (
+              <Text style={[styles.count, { color: theme.muted }]}>
+                {results.length === 1 ? '1 item' : `${results.length} items`}
+                {query.trim() ? ` for “${query.trim()}”` : ''}
+              </Text>
+            ) : undefined
+          }
+          ListEmptyComponent={
+            <View style={styles.centered}>
+              <Text style={[styles.emptyTitle, { color: theme.text }]}>
+                {error ? 'Search is unavailable' : browsing ? 'Nothing matches' : 'Search the archive'}
+              </Text>
+              <Text style={[styles.body, { color: theme.muted }]}>
+                {error
+                  ? error
+                  : browsing
+                    ? `No ${filter === 'all' ? 'items' : filterLabel(filter).toLowerCase()} match that. Try another word, or switch the filter back to All.`
+                    : `Look through ${archive.length} items, newest first. Type a word like “lawsuit” or “podcast”, or pick Articles, Videos, Podcasts, or TikToks to browse.`}
+              </Text>
+            </View>
+          }
+          renderItem={({ item }) => <NewsCard item={item} />}
+        />
+      )}
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  screen: { flex: 1 },
+  controls: { paddingTop: 12, gap: 10 },
+  field: {
+    marginHorizontal: 16,
+    minHeight: 48,
+    borderRadius: 12,
+    borderWidth: StyleSheet.hairlineWidth,
+    paddingHorizontal: 12,
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+  },
+  input: { flex: 1, fontSize: 16, paddingVertical: 10 },
+  clear: { fontWeight: '700', fontSize: 14 },
+  chips: { paddingHorizontal: 16, gap: 8, paddingBottom: 4 },
+  chip: {
+    borderRadius: 999,
+    paddingHorizontal: 14,
+    paddingVertical: 8,
+  },
+  list: { paddingTop: 8, paddingBottom: 28 },
+  emptyList: { flexGrow: 1 },
+  count: { marginHorizontal: 20, marginBottom: 10, fontSize: 13, fontWeight: '700' },
+  centered: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 28,
+    gap: 8,
+  },
+  emptyTitle: { fontFamily: serifFamily, fontSize: 26, textAlign: 'center' },
+  body: { fontSize: 15, lineHeight: 22, textAlign: 'center' },
+});

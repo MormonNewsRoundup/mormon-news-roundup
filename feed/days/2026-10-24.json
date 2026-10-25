@@ -1,0 +1,173 @@
+{
+  "date": "2026-10-24",
+  "sample": true,
+  "editions": [
+    {
+      "name": "noon",
+      "publishedAt": "2026-10-24T16:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-10-24-noon-01",
+          "type": "article",
+          "title": "Sample article: how a noon announcement card is laid out",
+          "summary": "Sample item, not a real story. Noon updates are shorter than the midnight edition. This announcement is not real.",
+          "source": "Sample Herald",
+          "url": "https://mormonnewsroundup.org/",
+          "thumbnailUrl": "sample:announcement",
+          "publishedAt": "2026-10-24T16:05:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "sample",
+            "article",
+            "announcement"
+          ]
+        },
+        {
+          "id": "2026-10-24-noon-02",
+          "type": "video",
+          "title": "Sample video: how a noon YouTube card is laid out",
+          "summary": "Sample item, not a real story. Share copies the link plus the words “via Mormon News Roundup”.",
+          "source": "Sample Studio",
+          "url": "https://www.youtube.com/@MormonNewsRoundup",
+          "thumbnailUrl": "sample:video",
+          "publishedAt": "2026-10-24T16:10:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "sample",
+            "video"
+          ]
+        },
+        {
+          "id": "2026-10-24-noon-03",
+          "type": "podcast",
+          "title": "Sample podcast: how a noon show card is laid out",
+          "summary": "Sample item, not a real story. Podcast cards open Apple Podcasts or the show page, not an in-app player.",
+          "source": "Sample Studio",
+          "url": "https://podcasts.apple.com/us/podcast/mormon-news-roundup/id1617559003",
+          "thumbnailUrl": "sample:podcast",
+          "publishedAt": "2026-10-24T16:15:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "sample",
+            "podcast"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "midnight",
+      "publishedAt": "2026-10-24T04:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-10-24-midnight-01",
+          "type": "article",
+          "title": "Sample article: how a paywalled court card is laid out",
+          "summary": "Sample item, not a real story. Another lock icon sample. The underlying link is the public site, not a paywalled paper.",
+          "source": "Sample Docket",
+          "url": "https://mormonnewsroundup.org/",
+          "thumbnailUrl": "sample:court",
+          "publishedAt": "2026-10-24T04:05:00.000Z",
+          "paywalled": true,
+          "tags": [
+            "sample",
+            "article",
+            "court"
+          ]
+        },
+        {
+          "id": "2026-10-24-midnight-02",
+          "type": "article",
+          "title": "Sample article: how a second lawsuit card is laid out",
+          "summary": "Sample item, not a real story. Search matches this because the title says lawsuit. It is still sample copy.",
+          "source": "Sample Desk",
+          "url": "https://mormonnewsroundup.org/",
+          "thumbnailUrl": "sample:article",
+          "publishedAt": "2026-10-24T04:10:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "sample",
+            "article",
+            "lawsuit"
+          ]
+        },
+        {
+          "id": "2026-10-24-midnight-03",
+          "type": "video",
+          "title": "Sample video: how a hearing clip card is laid out",
+          "summary": "Sample item, not a real story. Hearing items are videos in this sample. No hearing is being described.",
+          "source": "Sample Studio",
+          "url": "https://www.youtube.com/@MormonNewsRoundup",
+          "thumbnailUrl": "sample:video",
+          "publishedAt": "2026-10-24T04:15:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "sample",
+            "video",
+            "hearing"
+          ]
+        },
+        {
+          "id": "2026-10-24-midnight-04",
+          "type": "video",
+          "title": "Sample video: how a statement clip card is laid out",
+          "summary": "Sample item, not a real story. Two video cards in one edition stack newest first.",
+          "source": "Sample Desk",
+          "url": "https://www.youtube.com/@MormonNewsRoundup",
+          "thumbnailUrl": "sample:video",
+          "publishedAt": "2026-10-24T04:20:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "sample",
+            "video",
+            "announcement"
+          ]
+        },
+        {
+          "id": "2026-10-24-midnight-05",
+          "type": "podcast",
+          "title": "Sample podcast: how an evening episode card is laid out",
+          "summary": "Sample item, not a real story. Audio items keep a short summary so you can decide before you tap.",
+          "source": "Sample Studio",
+          "url": "https://podcasts.apple.com/us/podcast/mormon-news-roundup/id1617559003",
+          "thumbnailUrl": "sample:podcast",
+          "publishedAt": "2026-10-24T04:25:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "sample",
+            "podcast"
+          ]
+        },
+        {
+          "id": "2026-10-24-midnight-06",
+          "type": "tiktok",
+          "title": "Sample TikTok: how a reaction clip card is laid out",
+          "summary": "Sample item, not a real story. Filter chips on Search can show only TikToks. This is one of them.",
+          "source": "Sample Clips",
+          "url": "https://www.tiktok.com/search?q=Mormon%20News%20Roundup",
+          "thumbnailUrl": "sample:tiktok",
+          "publishedAt": "2026-10-24T04:30:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "sample",
+            "tiktok"
+          ]
+        },
+        {
+          "id": "2026-10-24-midnight-07",
+          "type": "tiktok",
+          "title": "Sample TikTok: how a follow-up clip card is laid out",
+          "summary": "Sample item, not a real story. A second short-video card, so the TikTok filter has more than one hit.",
+          "source": "Sample Clips",
+          "url": "https://www.tiktok.com/search?q=Mormon%20News%20Roundup",
+          "thumbnailUrl": "sample:tiktok",
+          "publishedAt": "2026-10-24T04:35:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "sample",
+            "tiktok"
+          ]
+        }
+      ]
+    }
+  ]
+}
