@@ -19,7 +19,7 @@ export function WelcomeScreen({ onContinue }: WelcomeScreenProps) {
           <Text style={styles.body}>
             A daily feed of hard news about the Latter-day Saint church: lawsuits and legal action,
             court cases, excommunications, scandals, and major official announcements. Articles,
-            videos, and podcasts, already sorted.
+            videos, and podcasts in one place.
           </Text>
           <View style={styles.disclaimer}>
             <Text style={styles.disclaimerText}>{DISCLAIMER}</Text>

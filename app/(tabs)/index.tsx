@@ -107,7 +107,7 @@ export default function TodayScreen() {
 
   return (
     <View style={[styles.screen, { backgroundColor: theme.background }]}>
-      <BrandHeader title="Today" subtitle={APP_PITCH} />
+      <BrandHeader title="Latest Headlines" subtitle={APP_PITCH} />
       {loading ? (
         <View style={styles.fill}>
           <View style={styles.centered}>

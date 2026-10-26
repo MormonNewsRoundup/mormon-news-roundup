@@ -44,7 +44,7 @@ export const REMOVE_ADS_PRODUCT_ID = 'remove_ads';
 
 export const REMOVE_ADS_PRICE_LABEL = '$0.99';
 
-export const APP_PITCH = "Today's Mormon news, already sorted.";
+export const APP_PITCH = 'Your Daily Mormon News: Unfiltered';
 
 export const DISCLAIMER =
   'Not affiliated with or endorsed by The Church of Jesus Christ of Latter-day Saints.';

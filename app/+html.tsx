@@ -13,7 +13,11 @@ export default function Root({ children }: { children: ReactNode }) {
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <title>Mormon News Roundup</title>
-        <meta name="description" content="Today's Mormon news, already sorted." />
+        <meta name="description" content="Your Daily Mormon News: Unfiltered" />
+        <meta property="og:title" content="Mormon News Roundup" />
+        <meta property="og:description" content="Your Daily Mormon News: Unfiltered" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:description" content="Your Daily Mormon News: Unfiltered" />
         <meta name="theme-color" content="#1D1838" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />

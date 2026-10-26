@@ -28,7 +28,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Today',
+          title: 'Latest',
           tabBarIcon: ({ color }) => (
             <Icon ios="newspaper.fill" android="newspaper" color={tabColor(color, theme.tabIcon)} />
           ),

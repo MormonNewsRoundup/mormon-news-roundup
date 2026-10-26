@@ -3,6 +3,7 @@
     "name": "Mormon News Roundup",
     "slug": "mormon-news-roundup",
     "version": "1.0.0",
+    "description": "Your Daily Mormon News: Unfiltered",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "mormonnewsroundup",

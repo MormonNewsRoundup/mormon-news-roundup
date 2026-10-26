@@ -26,7 +26,7 @@ Those URLs are the `feed/` folder in this repository, copied onto GitHub Pages b
 
 Leave `FEED_BASE_URL` alone when you publish a day. An empty string is only a local escape hatch: the app then ignores the network and reads the sample files bundled into the build.
 
-Pull to refresh on Today or Search. The app does not need a restart, and it does not need a new App Store build. If the download fails, the phone shows the last copy it saved. If it has never saved one, it shows the bundled sample.
+Pull to refresh on Latest or Search. The app does not need a restart, and it does not need a new App Store build. If the download fails, the phone shows the last copy it saved. If it has never saved one, it shows the bundled sample.
 
 ## index.json
 
@@ -166,7 +166,7 @@ You do not upload a separate host, and you do not edit `constants/config.ts` for
 
 Aim for 8–12 items on a full day. The midnight edition is the main one. Noon is a short update. A shorter day is still valid.
 
-The live `feed/` folder is the real edition. `feed/index.json` has `"sample": false` and lists `2026-10-25`, `2026-10-24`, `2026-10-23`, and `2026-10-20`. Today shows the 15 newest stories by `publishedAt`, across every date, with no age cutoff. The app loads day files from the newest date forward until it has 15 stories. Search opens every date in `days`. Set `"sample": false` on the index to keep the Sample data banner off. Real `thumbnailUrl` values are `https` image addresses.
+The live `feed/` folder is the real edition. `feed/index.json` has `"sample": false` and lists `2026-10-25`, `2026-10-24`, `2026-10-23`, and `2026-10-20`. Latest Headlines shows the 15 newest stories by `publishedAt`, across every date, with no age cutoff. The app loads day files from the newest date forward until it has 15 stories. Search opens every date in `days`. Set `"sample": false` on the index to keep the Sample data banner off. Real `thumbnailUrl` values are `https` image addresses.
 
 `fallback/` is the offline sample bundled into the app. GitHub Pages does not publish it. `sample:` thumbnail tokens belong there only.
 
