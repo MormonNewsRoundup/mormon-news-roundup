@@ -133,6 +133,9 @@ for (const date of index.days ?? []) {
         }
       }
       if (typeof entry.paywalled !== 'boolean') fail(`${label} paywalled must be true or false`);
+      if ('satire' in entry && typeof entry.satire !== 'boolean') {
+        fail(`${label} satire must be true or false when present`);
+      }
       if (!Array.isArray(entry.tags) || entry.tags.some((tag) => typeof tag !== 'string')) {
         fail(`${label} tags must be an array of strings`);
       }

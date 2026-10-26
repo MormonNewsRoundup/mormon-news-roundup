@@ -101,6 +101,7 @@ There is no third edition. A later fix would be a new `name` plus an app update.
 | `publishedAt` | yes | string | ISO-8601. Must fall on the file’s Eastern Time date. Newest items in an edition are shown first. |
 | `paywalled` | yes | boolean | `true` draws a lock. The card still opens `url`. It does not mean the app sells the article. |
 | `tags` | yes | string[] | For the curator. v1 search does **not** look at tags. Use `[]` if you have none. |
+| `satire` | no | boolean | Optional internal metadata. Omit it, or set `false`, for an ordinary item. `true` marks an occasional humor piece, such as The Babylon Bee. The app does not display this field. The card still shows the source, the `type` (Article, Video, or Podcast), and the publish date, with the same badge as any other item of that type. Search filters on `type`, so a satire article appears under Articles. |
 
 What a tap does:
 

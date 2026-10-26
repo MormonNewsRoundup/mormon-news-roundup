@@ -15,6 +15,8 @@ export type FeedItem = {
   publishedAt: string;
   paywalled: boolean;
   tags: string[];
+  /** Optional internal metadata. The card does not show this. */
+  satire?: boolean;
 };
 
 export type Edition = {
