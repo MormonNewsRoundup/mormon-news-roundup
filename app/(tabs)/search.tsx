@@ -38,7 +38,7 @@ export default function SearchScreen() {
   const [error, setError] = useState<string | null>(null);
 
   const load = useCallback(async (force: boolean) => {
-    // Every day listed in the index, not only the fresh Today window.
+    // Every day listed in the index, not only the stories already shown on Latest.
     // getDay reads the saved copy first, then the network.
     const index = await getIndex(force);
     const days = await mapPool(index.days, 4, (date) => getDay(date, force));
