@@ -18,7 +18,6 @@ import { NewsCard } from '@/components/NewsCard';
 import { ScreenDisclaimer } from '@/components/ScreenDisclaimer';
 import { useTheme } from '@/components/useTheme';
 import { getDay, getIndex, itemsFromDays, mapPool } from '@/lib/feed';
-import { formatPublishedDate } from '@/lib/format';
 import { localDateInputValue, rangeForTimeframe, searchItems, TIMEFRAMES, type Timeframe } from '@/lib/search';
 import { CONTENT_TYPES, filterLabel, type FeedItem, type TypeFilter } from '@/lib/types';
 import { serifFamily } from '@/constants/theme';
@@ -208,7 +207,7 @@ export default function SearchScreen() {
               </Text>
             </View>
           }
-          renderItem={({ item }) => <NewsCard item={item} dateLabel={formatPublishedDate(item.publishedAt)} />}
+          renderItem={({ item }) => <NewsCard item={item} />}
         />
       )}
     </View>

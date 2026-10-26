@@ -18,7 +18,6 @@ import { useTheme } from '@/components/useTheme';
 import { APP_PITCH, isBundledFeed } from '@/constants/config';
 import { serifFamily } from '@/constants/theme';
 import { getDay, getIndex } from '@/lib/feed';
-import { formatCardDate } from '@/lib/format';
 import { datesNewestFirst, recentStories, TODAY_STORY_LIMIT, type DatedStory } from '@/lib/today';
 import type { DayFile, FeedIndex } from '@/lib/types';
 
@@ -178,7 +177,7 @@ export default function TodayScreen() {
               );
             }
             if (item.kind === 'ad') return <AdBanner />;
-            return <NewsCard item={item.story.item} dateLabel={formatCardDate(item.story.date)} />;
+            return <NewsCard item={item.story.item} />;
           }}
         />
       )}
