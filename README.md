@@ -1,6 +1,6 @@
 # Mormon News Roundup
 
-Today's Mormon news, already sorted.
+Your Daily Mormon News: Unfiltered
 
 This is version 1 of the iPhone app: a daily feed of articles, YouTube videos, and podcasts. It is meant for hard news about The Church of Jesus Christ of Latter-day Saints (lawsuits, courts, excommunications, scandals) plus major official announcements. Tapping a card opens the original link. There are no comments, no accounts, and no notifications in this version.
 
@@ -56,7 +56,7 @@ If you run `npx expo start` yourself, add `--go` (`npx expo start --go`). Withou
 2. Open the iPhone **Camera** app and point it at the QR code.
 3. Tap the banner that appears, and choose **Expo Go**.
 
-The first screen is a short welcome with the disclaimer. Tap **Continue**. Today shows the 15 newest stories. Anything older than those 15 is in Search.
+The first screen is a short welcome with the disclaimer. Tap **Continue**. Latest Headlines shows the 15 newest stories. Anything older than those 15 is in Search.
 
 If the QR code never connects, stop the terminal with Ctrl+C and run:
 
@@ -84,15 +84,15 @@ What is possible:
 
 Three tabs at the bottom:
 
-- **Today** — the 15 newest stories across every day in the feed, newest first. There is no age cutoff. When a newer story arrives, the oldest of those 15 drops off the bottom and stays in Search. If the feed has fewer than 15 stories, they all stay on Today. A repeated story is shown once. There is no edition label and no clock time. Each card shows the source, the type, and the full publish date, such as October 23, 2026. That date is the Eastern calendar day of the story, with no clock time and no time zone. Pull down to refresh. Tap a card to open its link. **Share** opens the phone’s share sheet with the link and the words “via Mormon News Roundup”. A small lock means the original link may be paywalled. A gray **Ad** box sits between some cards. That box is a stand-in, not a real advertisement. At the bottom of the list, in small gray type: “Not affiliated with or endorsed by The Church of Jesus Christ of Latter-day Saints.”
-- **Search** — the whole archive. It stays empty until you type or pick a filter. Type chips: All, Articles, Videos, Podcasts. Time chips: Any time, Past week, Past month, Past year, and Custom range (a from date and a to date). The two sets combine. Try `lawsuit` or `podcast`. The same affiliation line is at the bottom.
+- **Latest** — the 15 newest stories across every day in the feed, newest first. The header says Latest Headlines. There is no age cutoff. When a newer story arrives, the oldest of those 15 drops off the bottom and stays in Search. If the feed has fewer than 15 stories, they all stay on Latest. A repeated story is shown once. There is no edition label and no clock time. Each card shows the source, the type, and the full publish date, such as October 23, 2026. That date is the Eastern calendar day of the story, with no clock time and no time zone. Pull down to refresh. Tap a card to open its link. **Share** opens the phone’s share sheet with the link and the words “via Mormon News Roundup”. A small lock means the original link may be paywalled. A gray **Ad** box sits between some cards. That box is a stand-in, not a real advertisement. At the bottom of the list, in small gray type: “Not affiliated with or endorsed by The Church of Jesus Christ of Latter-day Saints.”
+- **Search** — continues after Latest. With no text and the default filters, it shows stories 16 through 65, newest first, using the same order as Latest so those 15 are not repeated. If the archive has 15 or fewer stories, a small gray note says “Older stories will appear here.” Type a word, or change the type or time filter, and Search looks through the whole archive, including the stories on Latest. Type chips: All, Articles, Videos, Podcasts. Time chips: Any time, Past week, Past month, Past year, and Custom range (a from date and a to date). The two sets combine. Try `lawsuit` or `podcast`. The same affiliation line is at the bottom.
 - **About** — what the app is, YouTube, the website, a quiet Patreon link, **Remove ads ($0.99, one time)**, and **Restore purchase**. The same affiliation line is at the bottom, not in a box in the middle.
 
 On About, a dashed box says **Simulate ads removed**. That switch only exists in this preview. Turn it on and the ad boxes disappear. It does not charge you.
 
 ## What is live now
 
-The website serves only the files in `feed/`. The archive days are October 25, 24, 23, and 20, 2026, with `"sample": false`. That archive has fewer than 15 stories, so Today shows all of them, including October 20. There is no Sample data banner while the index says `"sample": false`.
+The website serves only the files in `feed/`. The archive days are October 25, 24, 23, and 20, 2026, with `"sample": false`. That archive has fewer than 15 stories, so Latest shows all of them, including October 20. There is no Sample data banner while the index says `"sample": false`.
 
 Placeholder cards still exist, but only inside the app, in `fallback/`. They are used when the phone has never downloaded the feed and cannot reach the site. They are not copied to GitHub Pages. Do not edit `fallback/` to publish a day.
 
@@ -102,7 +102,7 @@ The phone app and the website both read one public folder:
 
 https://mormonnewsroundup.github.io/mormon-news-roundup/feed
 
-That folder is the `feed/` directory in this repository. `constants/config.ts` already points at it. **Do not edit that address to publish an edition.** Add or edit JSON files, commit them, and push to the `main` branch. That push is the publish button. GitHub Actions rebuilds the website, copies `feed/` onto it, and the new files are public. Pull down on Today in the app to refresh. You do not ship a new app build.
+That folder is the `feed/` directory in this repository. `constants/config.ts` already points at it. **Do not edit that address to publish an edition.** Add or edit JSON files, commit them, and push to the `main` branch. That push is the publish button. GitHub Actions rebuilds the website, copies `feed/` onto it, and the new files are public. Pull down on Latest in the app to refresh. You do not ship a new app build.
 
 Editions go out twice a day, on Eastern Time: midnight, then a noon update. The field rules are in `FEED_SCHEMA.md`.
 
@@ -237,7 +237,7 @@ Useful files:
 
 | File | What it is |
 | --- | --- |
-| `app/(tabs)/index.tsx` | Today |
+| `app/(tabs)/index.tsx` | Latest Headlines |
 | `app/(tabs)/search.tsx` | Search |
 | `app/(tabs)/about.tsx` | About, purchase, preview switch |
 | `components/WelcomeScreen.tsx` | First-launch disclaimer |

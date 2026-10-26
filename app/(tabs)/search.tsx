@@ -17,8 +17,9 @@ import { Icon } from '@/components/Icon';
 import { NewsCard } from '@/components/NewsCard';
 import { ScreenDisclaimer } from '@/components/ScreenDisclaimer';
 import { useTheme } from '@/components/useTheme';
-import { getDay, getIndex, itemsFromDays, mapPool } from '@/lib/feed';
+import { getDay, getIndex, mapPool } from '@/lib/feed';
 import { localDateInputValue, rangeForTimeframe, searchItems, TIMEFRAMES, type Timeframe } from '@/lib/search';
+import { orderedStories, SEARCH_AFTER_TODAY_LIMIT, TODAY_STORY_LIMIT } from '@/lib/today';
 import { CONTENT_TYPES, filterLabel, type FeedItem, type TypeFilter } from '@/lib/types';
 import { serifFamily } from '@/constants/theme';
 
@@ -41,7 +42,7 @@ export default function SearchScreen() {
     // getDay reads the saved copy first, then the network.
     const index = await getIndex(force);
     const days = await mapPool(index.days, 4, (date) => getDay(date, force));
-    setArchive(itemsFromDays(days));
+    setArchive(orderedStories(days).map((entry) => entry.item));
   }, []);
 
   useEffect(() => {
@@ -77,9 +78,10 @@ export default function SearchScreen() {
     () =>
       browsing
         ? searchItems(archive, query, filter, rangeForTimeframe(timeframe, Date.now(), fromDate, toDate))
-        : [],
+        : archive.slice(TODAY_STORY_LIMIT, TODAY_STORY_LIMIT + SEARCH_AFTER_TODAY_LIMIT),
     [archive, browsing, filter, fromDate, query, timeframe, toDate],
   );
+  const showOlderNote = !loading && !error && !browsing && archive.length <= TODAY_STORY_LIMIT;
 
   function chooseTimeframe(next: Timeframe) {
     setTimeframe(next);
@@ -93,6 +95,9 @@ export default function SearchScreen() {
   return (
     <View style={[styles.screen, { backgroundColor: theme.background }]}>
       <BrandHeader title="Search" subtitle="Titles, summaries, and sources." />
+      {showOlderNote ? (
+        <Text style={[styles.olderNote, { color: theme.muted }]}>Older stories will appear here.</Text>
+      ) : null}
       <View style={styles.controls}>
         <View style={[styles.field, { backgroundColor: theme.card, borderColor: theme.border }]}>
           <Icon ios="magnifyingglass" android="search" color={theme.muted} size={18} />
@@ -194,18 +199,18 @@ export default function SearchScreen() {
             ) : undefined
           }
           ListEmptyComponent={
-            <View style={styles.centered}>
-              <Text style={[styles.emptyTitle, { color: theme.text }]}>
-                {error ? 'Search is unavailable' : browsing ? 'Nothing matches' : 'Search the archive'}
-              </Text>
-              <Text style={[styles.body, { color: theme.muted }]}>
-                {error
-                  ? error
-                  : browsing
-                    ? 'Nothing matches that type, time range, and search. Try Any time, or a different word.'
-                    : `Look through ${archive.length} items, newest first. Type a word like “lawsuit” or “podcast”, or pick a type and a time range.`}
-              </Text>
-            </View>
+            !browsing && !error ? undefined : (
+              <View style={styles.centered}>
+                <Text style={[styles.emptyTitle, { color: theme.text }]}>
+                  {error ? 'Search is unavailable' : 'Nothing matches'}
+                </Text>
+                <Text style={[styles.body, { color: theme.muted }]}>
+                  {error
+                    ? error
+                    : 'Nothing matches that type, time range, and search. Try Any time, or a different word.'}
+                </Text>
+              </View>
+            )
           }
           renderItem={({ item }) => <NewsCard item={item} />}
         />
@@ -217,6 +222,13 @@ export default function SearchScreen() {
 const styles = StyleSheet.create({
   screen: { flex: 1 },
   fill: { flex: 1 },
+  olderNote: {
+    fontSize: 13,
+    lineHeight: 18,
+    textAlign: 'center',
+    paddingHorizontal: 20,
+    paddingTop: 12,
+  },
   controls: { paddingTop: 12, gap: 10 },
   field: {
     marginHorizontal: 16,

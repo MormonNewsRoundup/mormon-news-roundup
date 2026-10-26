@@ -13,6 +13,7 @@ import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dist = path.join(root, 'dist');
 const basePath = '/mormon-news-roundup';
+const tagline = 'Your Daily Mormon News: Unfiltered';
 
 const indexPath = path.join(dist, 'index.html');
 let html = await readFile(indexPath, 'utf8');
@@ -25,9 +26,15 @@ if (!html.includes(`${basePath}/_expo/`)) {
   process.exit(1);
 }
 
+function upsertMeta(source, attribute, key, content) {
+  const tag = `<meta ${attribute}="${key}" content="${content}" />`;
+  const pattern = new RegExp(`<meta\\s+${attribute}="${key}"\\s+content="[^"]*"\\s*/?>`, 'i');
+  if (pattern.test(source)) return source.replace(pattern, tag);
+  return source.replace('</head>', `    ${tag}\n</head>`);
+}
+
 if (!html.includes('apple-mobile-web-app-capable')) {
   const tags = `
-    <meta name="description" content="Today's Mormon news, already sorted." />
     <meta name="theme-color" content="#1D1838" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -37,8 +44,61 @@ if (!html.includes('apple-mobile-web-app-capable')) {
     <link rel="apple-touch-icon" href="${basePath}/apple-touch-icon.png" />
 `;
   html = html.replace('</head>', `${tags}</head>`);
-  await writeFile(indexPath, html);
 }
+
+html = upsertMeta(html, 'name', 'description', tagline);
+html = upsertMeta(html, 'property', 'og:title', 'Mormon News Roundup');
+html = upsertMeta(html, 'property', 'og:description', tagline);
+html = upsertMeta(html, 'name', 'twitter:card', 'summary');
+html = upsertMeta(html, 'name', 'twitter:description', tagline);
+
+// GitHub Pages keeps index.html for about 10 minutes, and a home-screen
+// icon can keep that copy longer. The script asks for a fresh copy with a
+// query the CDN has not stored. If the hashed bundles changed, it reloads.
+// There is no service worker; one is not registered.
+const shellCheck = `
+<script>
+(function () {
+  var storageKey = 'mnr.shell.bundle';
+  function bundles(source) {
+    return (String(source).match(/\\/_expo\\/static\\/js\\/web\\/[^"'\\s>]+\\.js/g) || []).sort().join('\\n');
+  }
+  function check() {
+    var current = bundles(document.documentElement.innerHTML);
+    if (!current) return;
+    var page = location.pathname;
+    if (page.endsWith('/index.html')) page = page.slice(0, -'index.html'.length);
+    if (!page.endsWith('/')) page += '/';
+    fetch(page + '?fresh=' + Date.now(), { cache: 'no-store' })
+      .then(function (response) { return response.text(); })
+      .then(function (nextHtml) {
+        var next = bundles(nextHtml);
+        if (!next || next === current) {
+          try { sessionStorage.removeItem(storageKey); } catch (err) {}
+          return;
+        }
+        try {
+          if (sessionStorage.getItem(storageKey) === next) return;
+          sessionStorage.setItem(storageKey, next);
+        } catch (err) {}
+        var dest = new URL(location.href);
+        dest.searchParams.set('v', String(Date.now()));
+        location.replace(dest.toString());
+      })
+      .catch(function () {});
+  }
+  check();
+  document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState === 'visible') check();
+  });
+})();
+</script>
+`;
+if (!html.includes('mnr.shell.bundle')) {
+  html = html.replace('</body>', `${shellCheck}</body>`);
+}
+
+await writeFile(indexPath, html);
 
 // feed/ is the public edition. fallback/ is the offline sample and stays out.
 await cp(path.join(root, 'feed'), path.join(dist, 'feed'), { recursive: true });

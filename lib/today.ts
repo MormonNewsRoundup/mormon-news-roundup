@@ -3,6 +3,9 @@ import type { DayFile, FeedItem } from '@/lib/types';
 /** How many stories Today shows at most. */
 export const TODAY_STORY_LIMIT = 15;
 
+/** How many stories Search shows after Today when no filters are set. */
+export const SEARCH_AFTER_TODAY_LIMIT = 50;
+
 export type DatedStory = {
   item: FeedItem;
   date: string;
@@ -38,4 +41,17 @@ export function recentStories(days: DayFile[], limit = TODAY_STORY_LIMIT): Dated
     if (picked.length >= limit) break;
   }
   return picked;
+}
+
+/** Every unique story, newest first, with the same dedupe as Today. */
+export function orderedStories(days: DayFile[]): DatedStory[] {
+  return recentStories(days, Number.MAX_SAFE_INTEGER);
+}
+
+/**
+ * Search's default list: the stories immediately after Today's, at most 50.
+ * Same order and the same id/url dedupe, so the two screens do not repeat a story.
+ */
+export function storiesAfterToday(days: DayFile[]): DatedStory[] {
+  return orderedStories(days).slice(TODAY_STORY_LIMIT, TODAY_STORY_LIMIT + SEARCH_AFTER_TODAY_LIMIT);
 }

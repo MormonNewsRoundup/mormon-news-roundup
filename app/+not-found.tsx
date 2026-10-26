@@ -10,7 +10,7 @@ export default function NotFoundScreen() {
       <View style={styles.container}>
         <Text style={styles.title}>That screen isn’t in the app.</Text>
         <Link href="/" style={styles.link}>
-          <Text style={styles.linkText}>Back to Today</Text>
+          <Text style={styles.linkText}>Back to Latest</Text>
         </Link>
       </View>
     </>

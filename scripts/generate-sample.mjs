@@ -269,7 +269,7 @@ const days = [
           source: 'Sample Studio',
           thumb: 'video',
           title: 'Sample video: how a Friday YouTube card is laid out',
-          summary: 'Older days stay in the archive and load from Today with “Load earlier days”.',
+          summary: 'Older stories stay in Search.',
         },
         {
           type: 'video',
