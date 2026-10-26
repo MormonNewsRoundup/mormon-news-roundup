@@ -27,7 +27,7 @@ if (!html.includes(`${basePath}/_expo/`)) {
 
 if (!html.includes('apple-mobile-web-app-capable')) {
   const tags = `
-    <meta name="description" content="Your morning Mormon news, already sorted." />
+    <meta name="description" content="Today's Mormon news, already sorted." />
     <meta name="theme-color" content="#1D1838" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />

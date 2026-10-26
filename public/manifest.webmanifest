@@ -1,7 +1,7 @@
 {
   "name": "Mormon News Roundup",
   "short_name": "Mormon News",
-  "description": "Your morning Mormon news, already sorted.",
+  "description": "Today's Mormon news, already sorted.",
   "start_url": "/mormon-news-roundup/",
   "scope": "/mormon-news-roundup/",
   "display": "standalone",
