@@ -1,6 +1,6 @@
 # Mormon News Roundup
 
-Your morning Mormon news, already sorted.
+Today's Mormon news, already sorted.
 
 This is version 1 of the iPhone app: a daily feed of articles, YouTube videos, and podcasts. It is meant for hard news about The Church of Jesus Christ of Latter-day Saints (lawsuits, courts, excommunications, scandals) plus major official announcements. Tapping a card opens the original link. There are no comments, no accounts, and no notifications in this version.
 

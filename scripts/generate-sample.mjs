@@ -229,7 +229,7 @@ const days = [
           type: 'podcast',
           source: 'Sample Studio',
           thumb: 'podcast',
-          title: 'Sample podcast: how an evening episode card is laid out',
+          title: 'Sample podcast: how a podcast episode card is laid out',
           summary: 'Audio items keep a short summary so you can decide before you tap.',
         },
       ]),
@@ -244,7 +244,7 @@ const days = [
           source: 'Sample Herald',
           thumb: 'announcement',
           title: 'Sample article: how a Friday announcement card is laid out',
-          summary: 'This day has no noon update, which is what a quiet afternoon looks like.',
+          summary: 'This day has no noon update, which is what a quiet day looks like.',
           tags: ['announcement'],
         },
         {
