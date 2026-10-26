@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-26",
+  "sample": false,
+  "editions": [
+    {
+      "name": "noon",
+      "publishedAt": "2026-10-26T16:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-10-26-noon-02",
+          "type": "video",
+          "title": "Special Report | Dallin Oaks vs. His Own Words",
+          "summary": "Generally Unquotable compares President Dallin H. Oaks's Oct. 15 call for peacemaking at the G20 Interfaith Forum in Salt Lake City with his earlier teachings, including his 2006 comments on gay children and partners and his counsel against criticizing church leaders, and asks whether those principles apply equally to people who question or leave the church.",
+          "source": "Generally Unquotable",
+          "url": "https://www.youtube.com/watch?v=EaJtjUD5gvU",
+          "thumbnailUrl": "https://i.ytimg.com/vi/EaJtjUD5gvU/hqdefault.jpg",
+          "publishedAt": "2026-10-26T15:00:21.000Z",
+          "paywalled": false,
+          "tags": [
+            "dallin-oaks",
+            "church-leaders",
+            "commentary"
+          ]
+        }
+      ]
+    }
+  ]
+}
