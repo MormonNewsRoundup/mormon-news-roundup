@@ -5,14 +5,18 @@ import { Icon } from '@/components/Icon';
 import { thumbnailSource } from '@/components/thumbnails';
 import { useTheme } from '@/components/useTheme';
 import { badgeColors, serifFamily } from '@/constants/theme';
+import { formatPublishedDate } from '@/lib/format';
 import { openItem, shareItem } from '@/lib/links';
 import { typeLabel, type FeedItem } from '@/lib/types';
 
-export function NewsCard({ item, dateLabel }: { item: FeedItem; dateLabel?: string }) {
+export function NewsCard({ item }: { item: FeedItem }) {
   const theme = useTheme();
   const source = thumbnailSource(item.thumbnailUrl);
   const [imageFailed, setImageFailed] = useState(!source);
   const badge = badgeColors[item.type] ?? badgeColors.article;
+  const published = formatPublishedDate(item.publishedAt);
+  const kind = typeLabel(item.type);
+  const meta = [item.source, kind, published].filter(Boolean).join(' · ');
 
   return (
     <View
@@ -26,11 +30,7 @@ export function NewsCard({ item, dateLabel }: { item: FeedItem; dateLabel?: stri
       ]}>
       <Pressable
         accessibilityRole="button"
-        accessibilityLabel={
-          dateLabel
-            ? `${typeLabel(item.type)}. ${dateLabel}. ${item.title}`
-            : `${typeLabel(item.type)}. ${item.title}`
-        }
+        accessibilityLabel={`${meta}. ${item.title}`}
         onPress={() => void openItem(item)}
         style={({ pressed }) => pressed && styles.pressed}>
         <View style={[styles.thumbWrap, { backgroundColor: theme.header }]}>
@@ -56,12 +56,7 @@ export function NewsCard({ item, dateLabel }: { item: FeedItem; dateLabel?: stri
         </View>
         <View style={styles.body}>
           <View style={styles.metaRow}>
-            <Text style={[styles.source, { color: theme.muted }]} numberOfLines={1}>
-              {item.source}
-            </Text>
-            {dateLabel ? (
-              <Text style={[styles.date, { color: theme.muted }]}>{dateLabel}</Text>
-            ) : null}
+            <Text style={[styles.meta, { color: theme.muted }]}>{meta}</Text>
             {item.paywalled ? (
               <View
                 style={styles.lock}
@@ -152,19 +147,14 @@ const styles = StyleSheet.create({
   },
   metaRow: {
     flexDirection: 'row',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     gap: 8,
   },
-  source: {
+  meta: {
     flex: 1,
     fontSize: 13,
-    fontWeight: '700',
-    letterSpacing: 0.2,
-  },
-  date: {
-    fontSize: 12,
+    lineHeight: 18,
     fontWeight: '600',
-    letterSpacing: 0.2,
   },
   lock: {
     width: 22,
