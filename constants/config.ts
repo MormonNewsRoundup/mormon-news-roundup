@@ -46,6 +46,10 @@ export const REMOVE_ADS_PRICE_LABEL = '$0.99';
 
 export const APP_PITCH = 'Your Daily Mormon News: Unfiltered';
 
+/** Opening paragraph on About. Shown as written, with no extra label. */
+export const ABOUT_INTRO =
+  'Mormon News Roundup is the premier app for a daily, unfiltered look at Mormon news: the headlines, investigations, lawsuits, videos, and podcasts about The Church of Jesus Christ of Latter-day Saints, all in one place.';
+
 export const DISCLAIMER =
   'Not affiliated with or endorsed by The Church of Jesus Christ of Latter-day Saints.';
 

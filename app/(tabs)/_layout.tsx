@@ -29,6 +29,7 @@ export default function TabLayout() {
         name="index"
         options={{
           title: 'Latest',
+          tabBarLabel: 'Latest',
           tabBarIcon: ({ color }) => (
             <Icon ios="newspaper.fill" android="newspaper" color={tabColor(color, theme.tabIcon)} />
           ),

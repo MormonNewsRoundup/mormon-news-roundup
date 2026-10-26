@@ -57,7 +57,7 @@ async function loadRecent(force: boolean): Promise<{ index: FeedIndex; stories: 
   return { index, stories, more };
 }
 
-export default function TodayScreen() {
+export default function LatestScreen() {
   const theme = useTheme();
   const { adsRemoved } = useAppState();
   const [index, setIndex] = useState<FeedIndex | null>(null);

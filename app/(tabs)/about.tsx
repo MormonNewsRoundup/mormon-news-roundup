@@ -8,6 +8,7 @@ import { Icon } from '@/components/Icon';
 import { ScreenDisclaimer } from '@/components/ScreenDisclaimer';
 import { useTheme } from '@/components/useTheme';
 import {
+  ABOUT_INTRO,
   APP_PITCH,
   PATREON_URL,
   REMOVE_ADS_PRICE_LABEL,
@@ -71,11 +72,7 @@ export default function AboutScreen() {
     <View style={[styles.screen, { backgroundColor: theme.background }]}>
       <BrandHeader title="About" subtitle={APP_PITCH} />
       <ScrollView style={styles.scroll} contentContainerStyle={styles.content}>
-        <Text style={[styles.paragraph, { color: theme.text }]}>
-          Mormon News Roundup is the premier app for a daily, unfiltered look at Mormon news: the
-          headlines, investigations, lawsuits, videos, and podcasts about The Church of Jesus Christ
-          of Latter-day Saints, all in one place.
-        </Text>
+        <Text style={[styles.paragraph, { color: theme.text }]}>{ABOUT_INTRO}</Text>
         <Text style={[styles.paragraph, { color: theme.text }]}>
           Tap a card to open the original article, video, or podcast.
         </Text>
