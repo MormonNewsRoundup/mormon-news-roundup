@@ -19,7 +19,7 @@ import { APP_PITCH, isBundledFeed } from '@/constants/config';
 import { serifFamily } from '@/constants/theme';
 import { getDay, getIndex } from '@/lib/feed';
 import { formatCardDate } from '@/lib/format';
-import { datesWithinFreshWindow, freshStories, recentStories, type DatedStory } from '@/lib/today';
+import { datesNewestFirst, recentStories, TODAY_STORY_LIMIT, type DatedStory } from '@/lib/today';
 import type { DayFile, FeedIndex } from '@/lib/types';
 
 type Row =
@@ -44,15 +44,17 @@ function buildRows(stories: DatedStory[], sample: boolean, adsRemoved: boolean):
 }
 
 async function loadRecent(force: boolean): Promise<{ index: FeedIndex; stories: DatedStory[]; more: boolean }> {
-  const now = Date.now();
   const index = await getIndex(force);
-  const dates = datesWithinFreshWindow(index.days, now);
+  const dates = datesNewestFirst(index.days);
   const loaded: DayFile[] = [];
+  let stories: DatedStory[] = [];
   for (const date of dates) {
+    if (stories.length >= TODAY_STORY_LIMIT) break;
     loaded.push(await getDay(date, force));
+    stories = recentStories(loaded);
   }
-  const stories = freshStories(loaded, now);
-  const more = index.days.length > loaded.length || recentStories(loaded, stories.length + 1).length > stories.length;
+  const more =
+    loaded.length < dates.length || recentStories(loaded, TODAY_STORY_LIMIT + 1).length > stories.length;
   return { index, stories, more };
 }
 
@@ -111,7 +113,7 @@ export default function TodayScreen() {
         <View style={styles.fill}>
           <View style={styles.centered}>
             <ActivityIndicator color={theme.header} />
-            <Text style={[styles.status, { color: theme.muted }]}>Gathering stories from the last 48 hours…</Text>
+            <Text style={[styles.status, { color: theme.muted }]}>Gathering the latest stories…</Text>
           </View>
           <ScreenDisclaimer />
         </View>
@@ -133,7 +135,7 @@ export default function TodayScreen() {
         <View style={styles.fill}>
           <View style={styles.centered}>
             <Text style={[styles.emptyTitle, { color: theme.text }]}>
-              No new stories in the last 48 hours — check Search for recent coverage
+              No stories in the feed yet.
             </Text>
           </View>
           <ScreenDisclaimer />
