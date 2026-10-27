@@ -6,7 +6,7 @@
  *
  * Usage: node scripts/prepare-pages.mjs
  */
-import { copyFile, cp, readFile, writeFile } from 'node:fs/promises';
+import { copyFile, cp, readdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -151,8 +151,38 @@ self.addEventListener('fetch', function (event) {
 `;
 await writeFile(path.join(dist, 'sw.js'), serviceWorker);
 
-// feed/ is the public edition. fallback/ is the offline sample and stays out.
+// feed/ is the public edition, including feed/images/. fallback/ stays out.
 await cp(path.join(root, 'feed'), path.join(dist, 'feed'), { recursive: true });
+
+async function filesUnder(dir) {
+  const entries = await readdir(dir, { withFileTypes: true });
+  const files = [];
+  for (const entry of entries) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) files.push(...(await filesUnder(full)));
+    else files.push(full);
+  }
+  return files;
+}
+
+const imageRoot = path.join(root, 'feed', 'images');
+let imageCount = 0;
+try {
+  const images = await filesUnder(imageRoot);
+  imageCount = images.length;
+  for (const file of images) {
+    const rel = path.relative(path.join(root, 'feed'), file);
+    const dest = path.join(dist, 'feed', rel);
+    try {
+      await readFile(dest);
+    } catch {
+      console.error(`Feed image was not copied to dist/feed/${rel}`);
+      process.exit(1);
+    }
+  }
+} catch (error) {
+  if (error?.code !== 'ENOENT') throw error;
+}
 await copyFile(indexPath, path.join(dist, '404.html'));
 await writeFile(path.join(dist, '.nojekyll'), '');
 
@@ -162,4 +192,4 @@ if (!Array.isArray(feedIndex.days) || feedIndex.days.length === 0) {
   process.exit(1);
 }
 
-console.log(`Pages bundle ready. Feed days: ${feedIndex.days.join(', ')}`);
+console.log(`Pages bundle ready. Feed days: ${feedIndex.days.join(', ')}. Feed images: ${imageCount}`);
