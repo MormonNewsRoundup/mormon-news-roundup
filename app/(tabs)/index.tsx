@@ -17,7 +17,7 @@ import { ScreenDisclaimer } from '@/components/ScreenDisclaimer';
 import { useTheme } from '@/components/useTheme';
 import { APP_PITCH, isBundledFeed } from '@/constants/config';
 import { serifFamily } from '@/constants/theme';
-import { getDay, getIndex } from '@/lib/feed';
+import { getDay, getIndex, subscribeFeedRefresh } from '@/lib/feed';
 import { datesNewestFirst, recentStories, TODAY_STORY_LIMIT, type DatedStory } from '@/lib/today';
 import type { DayFile, FeedIndex } from '@/lib/types';
 
@@ -88,6 +88,14 @@ export default function LatestScreen() {
     return () => {
       cancelled = true;
     };
+  }, [load]);
+
+  useEffect(() => {
+    return subscribeFeedRefresh(() => {
+      void load(true).catch((err) => {
+        setError(err instanceof Error ? err.message : 'The feed did not load.');
+      });
+    });
   }, [load]);
 
   const onRefresh = useCallback(async () => {
