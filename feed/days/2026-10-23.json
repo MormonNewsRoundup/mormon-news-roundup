@@ -98,6 +98,21 @@
             "column",
             "temple-square"
           ]
+        },
+        {
+          "id": "2026-10-23-midnight-07",
+          "type": "article",
+          "title": "Church of Jesus Christ of Latter-day Saints buys prime commercial land for new Metro East church",
+          "summary": "The St. Louis Business Journal reports that the church acquired a nearly 5-acre commercial site in Fairview Heights, Illinois, to replace its crowded Bunkum Road meetinghouse as membership grows across the Metro East, with leaders hoping to break ground in 2027.",
+          "source": "St. Louis Business Journal",
+          "url": "https://www.bizjournals.com/stlouis/news/2026/10/23/church-jesus-christ-latter-day-saints-buying-land.html",
+          "thumbnailUrl": "https://media.bizj.us/view/img/13299391/mormon-church-fairview-heights-illinois-property-aerial-view-of-plot-1*1200xx1186-667-83-0.jpg",
+          "publishedAt": "2026-10-23T23:17:00.000Z",
+          "paywalled": true,
+          "tags": [
+            "real-estate",
+            "church-finances"
+          ]
         }
       ]
     }
