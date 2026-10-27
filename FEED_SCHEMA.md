@@ -92,22 +92,26 @@ There is no third edition. A later fix would be a new `name` plus an app update.
 | Field | Required | Type | Notes |
 | --- | --- | --- | --- |
 | `id` | yes | string | Unique across the whole archive. Suggested: `2026-10-25-noon-01`. |
-| `type` | yes | string | `article`, `video`, or `podcast`. |
+| `type` | yes | string | `article`, `video`, `podcast`, or `reddit`. |
 | `title` | yes | string | The headline. |
 | `summary` | yes | string | One or two sentences. Shown in full on the card. |
-| `source` | yes | string | Publication or show name. Search matches this. |
-| `url` | yes | string | Absolute `http` or `https` link opened when the card is tapped. |
-| `thumbnailUrl` | yes | string | Absolute `https` image URL. The bundled sample uses `sample:article` and similar tokens; don’t use those in a hosted feed. |
+| `source` | yes | string | Publication or show name. Search matches this. For a Reddit post this is often the subreddit, such as `r/exmormon`. |
+| `url` | yes | string | Absolute `http` or `https` link opened when the card is tapped. A `reddit` item must be a reddit.com post permalink: host `reddit.com` or a subdomain such as `www`, `old`, or `np`, and a path that contains `/comments/` plus the post id. |
+| `thumbnailUrl` | yes, except `reddit` | string | Absolute `https` image URL. The bundled sample uses `sample:article` and similar tokens; don’t use those in a hosted feed. A `reddit` item may omit this field or set it to `""` when the post has no image. If it is set to a non-empty value, that value must still be `https`. |
 | `publishedAt` | yes | string | ISO-8601. Must fall on the file’s Eastern Time date. Newest items in an edition are shown first. |
 | `paywalled` | yes | boolean | `true` draws a lock. The card still opens `url`. It does not mean the app sells the article. |
 | `tags` | yes | string[] | For the curator. v1 search does **not** look at tags. Use `[]` if you have none. |
-| `satire` | no | boolean | Optional internal metadata. Omit it, or set `false`, for an ordinary item. `true` marks an occasional humor piece, such as The Babylon Bee. The app does not display this field. The card still shows the source, the `type` (Article, Video, or Podcast), and the publish date, with the same badge as any other item of that type. Search filters on `type`, so a satire article appears under Articles. |
+| `subreddit` | no | string | Optional, for `reddit` items. Example: `r/exmormon`. Omit it when you have nothing to store. The card does not print this field by itself; put the name readers should see in `source`. |
+| `satire` | no | boolean | Optional internal metadata. Omit it, or set `false`, for an ordinary item. `true` marks an occasional humor piece, such as The Babylon Bee. The app does not display this field. The card still shows the source, the type label (Article, Video, Podcast, or Reddit), and the publish date, with the same badge style as any other item of that type. Search filters on `type`. |
 
 What a tap does:
 
 - `article` — in-app browser (Safari view on iPhone)
 - `video` — the `url`, so YouTube can open
 - `podcast` — the `url`, so Apple Podcasts or the show page can open
+- `reddit` — the permalink, so Reddit can open
+
+A Reddit card’s line under the picture is `source · Reddit · October 26, 2026`. With no picture, the card shows an orange tile with `r/` instead of a broken image. Search has a Reddit chip.
 
 Share sends the title, the `url`, and the line `via Mormon News Roundup`.
 
@@ -128,11 +132,28 @@ Share sends the title, the `url`, and the line `via Mormon News Roundup`.
 }
 ```
 
-That example is the shape, not a story to publish. The files in this repo are labeled sample on purpose.
+That example is the shape, not a story to publish.
+
+A Reddit post uses the same fields. `thumbnailUrl` may be left out. `subreddit` is optional.
+
+```json
+{
+  "id": "2026-10-26-noon-03",
+  "type": "reddit",
+  "title": "Headline of the thread",
+  "summary": "One or two sentences from the curator. This example is only the shape.",
+  "source": "r/exmormon",
+  "url": "https://www.reddit.com/r/exmormon/comments/exampleid/headline_of_the_thread/",
+  "subreddit": "r/exmormon",
+  "publishedAt": "2026-10-26T16:12:00.000Z",
+  "paywalled": false,
+  "tags": []
+}
+```
 
 ## Sample thumbnail tokens
 
-Only the bundled preview understands these. A hosted feed should use normal image URLs. If an image fails, the card shows a plain colored block with the type name.
+Only the bundled preview understands these. A hosted feed should use normal image URLs. If an image fails, the card shows a plain colored block with the type name. A Reddit post with no image shows an orange tile with `r/` instead.
 
 | Token | Picture |
 | --- | --- |
@@ -183,7 +204,7 @@ From the project folder, someone technical can run:
 npm run check-feed
 ```
 
-That checks ids, types, dates, edition names, newest-first order, and that each `publishedAt` falls on the file’s Eastern Time date. A real item’s `thumbnailUrl` must be `https`. While `index.json` has `"sample": true`, every title and summary must contain “Sample”.
+That checks ids, types, dates, edition names, newest-first order, and that each `publishedAt` falls on the file’s Eastern Time date. A real item’s `thumbnailUrl` must be `https`, except a `reddit` item may omit it. A `reddit` url must be a reddit.com post permalink. While `index.json` has `"sample": true`, every title and summary must contain “Sample”.
 
 A short day, a missing podcast, or fewer than two titles that mention lawsuit is a warning, not a failure. The command still exits successfully so that edition can be pushed. A `tiktok` type fails the check.
 

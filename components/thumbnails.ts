@@ -8,7 +8,8 @@ const SAMPLE_THUMBS: Record<string, ImageSourcePropType> = {
   announcement: require('../assets/sample/announcement.png'),
 };
 
-export function thumbnailSource(url: string): ImageSourcePropType | null {
+export function thumbnailSource(url: string | undefined): ImageSourcePropType | null {
+  if (!url) return null;
   if (url.startsWith('sample:')) {
     return SAMPLE_THUMBS[url.slice('sample:'.length)] ?? null;
   }

@@ -1,4 +1,4 @@
-export type ContentType = 'article' | 'video' | 'podcast';
+export type ContentType = 'article' | 'video' | 'podcast' | 'reddit';
 
 export type EditionName = 'midnight' | 'noon';
 
@@ -11,10 +11,13 @@ export type FeedItem = {
   summary: string;
   source: string;
   url: string;
-  thumbnailUrl: string;
+  /** Required https image, except a reddit item may omit it or leave it empty. */
+  thumbnailUrl?: string;
   publishedAt: string;
   paywalled: boolean;
   tags: string[];
+  /** Optional. Example: "r/exmormon". The card does not print this on its own. */
+  subreddit?: string;
   /** Optional internal metadata. The card does not show this. */
   satire?: boolean;
 };
@@ -37,7 +40,7 @@ export type FeedIndex = {
   days: string[];
 };
 
-export const CONTENT_TYPES: ContentType[] = ['article', 'video', 'podcast'];
+export const CONTENT_TYPES: ContentType[] = ['article', 'video', 'podcast', 'reddit'];
 
 export function typeLabel(type: ContentType): string {
   switch (type) {
@@ -47,6 +50,8 @@ export function typeLabel(type: ContentType): string {
       return 'Video';
     case 'podcast':
       return 'Podcast';
+    case 'reddit':
+      return 'Reddit';
   }
 }
 
@@ -60,5 +65,7 @@ export function filterLabel(filter: TypeFilter): string {
       return 'Videos';
     case 'podcast':
       return 'Podcasts';
+    case 'reddit':
+      return 'Reddit';
   }
 }

@@ -42,7 +42,7 @@ export async function shareItem(item: FeedItem): Promise<void> {
   }
 }
 
-/** Articles open in the in-app browser. Video and podcast links open in their own apps. */
+/** Articles open in the in-app browser. Video, podcast, and Reddit links open in their own apps. */
 export async function openItem(item: FeedItem): Promise<void> {
   try {
     if (item.type === 'article') {

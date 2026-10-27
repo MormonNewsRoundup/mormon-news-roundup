@@ -9,14 +9,18 @@ import { formatPublishedDate } from '@/lib/format';
 import { openItem, shareItem } from '@/lib/links';
 import { typeLabel, type FeedItem } from '@/lib/types';
 
+const REDDIT_ORANGE = '#FF4500';
+
 export function NewsCard({ item }: { item: FeedItem }) {
   const theme = useTheme();
-  const source = thumbnailSource(item.thumbnailUrl);
+  const thumbUrl = item.thumbnailUrl?.trim() ?? '';
+  const source = thumbnailSource(thumbUrl);
   const [imageFailed, setImageFailed] = useState(!source);
   const badge = badgeColors[item.type] ?? badgeColors.article;
   const published = formatPublishedDate(item.publishedAt);
   const kind = typeLabel(item.type);
   const meta = [item.source, kind, published].filter(Boolean).join(' · ');
+  const redditPlaceholder = item.type === 'reddit' && (!source || imageFailed);
 
   return (
     <View
@@ -33,7 +37,11 @@ export function NewsCard({ item }: { item: FeedItem }) {
         accessibilityLabel={`${meta}. ${item.title}`}
         onPress={() => void openItem(item)}
         style={({ pressed }) => pressed && styles.pressed}>
-        <View style={[styles.thumbWrap, { backgroundColor: theme.header }]}>
+        <View
+          style={[
+            styles.thumbWrap,
+            { backgroundColor: redditPlaceholder ? REDDIT_ORANGE : theme.header },
+          ]}>
           {source && !imageFailed ? (
             <Image
               source={source}
@@ -44,10 +52,16 @@ export function NewsCard({ item }: { item: FeedItem }) {
             />
           ) : (
             <View style={styles.fallback}>
-              {item.thumbnailUrl.startsWith('sample:') ? (
-                <Text style={styles.fallbackKicker}>SAMPLE</Text>
-              ) : null}
-              <Text style={styles.fallbackLabel}>{typeLabel(item.type).toUpperCase()}</Text>
+              {redditPlaceholder ? (
+                <Text style={styles.redditMark}>r/</Text>
+              ) : (
+                <>
+                  {thumbUrl.startsWith('sample:') ? (
+                    <Text style={styles.fallbackKicker}>SAMPLE</Text>
+                  ) : null}
+                  <Text style={styles.fallbackLabel}>{typeLabel(item.type).toUpperCase()}</Text>
+                </>
+              )}
             </View>
           )}
           <View style={[styles.badge, { backgroundColor: badge.background }]}>
@@ -125,6 +139,12 @@ const styles = StyleSheet.create({
     color: '#F6F1E7',
     fontFamily: serifFamily,
     fontSize: 28,
+  },
+  redditMark: {
+    color: '#FFFFFF',
+    fontSize: 64,
+    fontWeight: '800',
+    letterSpacing: -1,
   },
   badge: {
     position: 'absolute',

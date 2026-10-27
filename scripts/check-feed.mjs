@@ -71,7 +71,20 @@ for (const file of dayFiles) {
   if (!seenDates.has(date)) fail(`${file} is not listed in index.json`);
 }
 
-const types = new Set(['article', 'video', 'podcast']);
+const types = new Set(['article', 'video', 'podcast', 'reddit']);
+
+function isRedditPermalink(value) {
+  let url;
+  try {
+    url = new URL(value);
+  } catch {
+    return false;
+  }
+  if (url.protocol !== 'https:' && url.protocol !== 'http:') return false;
+  const host = url.hostname.toLowerCase();
+  if (host !== 'reddit.com' && !host.endsWith('.reddit.com')) return false;
+  return /\/comments\/[a-z0-9]+/i.test(url.pathname);
+}
 const ids = new Set();
 let paywalled = 0;
 let itemCount = 0;
@@ -127,7 +140,7 @@ for (const date of index.days ?? []) {
         fail(`${date} has an item that is not an object`);
         continue;
       }
-      for (const key of ['id', 'type', 'title', 'summary', 'source', 'url', 'thumbnailUrl', 'publishedAt']) {
+      for (const key of ['id', 'type', 'title', 'summary', 'source', 'url', 'publishedAt']) {
         if (typeof entry[key] !== 'string' || entry[key].trim() === '') {
           fail(`${label} is missing ${key}`);
         }
@@ -136,20 +149,34 @@ for (const date of index.days ?? []) {
       if ('satire' in entry && typeof entry.satire !== 'boolean') {
         fail(`${label} satire must be true or false when present`);
       }
+      if ('subreddit' in entry && (typeof entry.subreddit !== 'string' || entry.subreddit.trim() === '')) {
+        fail(`${label} subreddit must be a non-empty string when present`);
+      }
       if (!Array.isArray(entry.tags) || entry.tags.some((tag) => typeof tag !== 'string')) {
         fail(`${label} tags must be an array of strings`);
       }
-      if (!types.has(entry.type)) fail(`${label} type is not article, video, or podcast`);
+      if (!types.has(entry.type)) fail(`${label} type is not article, video, podcast, or reddit`);
       if (ids.has(entry.id)) fail(`duplicate id ${entry.id}`);
       ids.add(entry.id);
       if (!/^https?:\/\//.test(entry.url ?? '')) fail(`${label} url must be http(s)`);
-      const thumb = entry.thumbnailUrl ?? '';
-      if (index.sample) {
-        if (!/^https?:\/\//.test(thumb) && !/^sample:[a-z0-9-]+$/.test(thumb)) {
-          fail(`${label} thumbnailUrl must be an https image or a sample: token`);
+      if (entry.type === 'reddit' && !isRedditPermalink(entry.url)) {
+        fail(`${label} url must be a reddit.com post permalink`);
+      }
+      const thumb = typeof entry.thumbnailUrl === 'string' ? entry.thumbnailUrl.trim() : '';
+      const thumbMissing = entry.thumbnailUrl == null || thumb === '';
+      const redditWithoutImage = entry.type === 'reddit' && thumbMissing;
+      if (entry.type !== 'reddit' && thumbMissing) {
+        fail(`${label} is missing thumbnailUrl`);
+      } else if (entry.type === 'reddit' && !thumbMissing && typeof entry.thumbnailUrl !== 'string') {
+        fail(`${label} thumbnailUrl must be a string when present`);
+      } else if (!redditWithoutImage) {
+        if (index.sample) {
+          if (!/^https?:\/\//.test(thumb) && !/^sample:[a-z0-9-]+$/.test(thumb)) {
+            fail(`${label} thumbnailUrl must be an https image or a sample: token`);
+          }
+        } else if (!/^https:\/\//.test(thumb)) {
+          fail(`${label} thumbnailUrl must be an https image URL`);
         }
-      } else if (!/^https:\/\//.test(thumb)) {
-        fail(`${label} thumbnailUrl must be an https image URL`);
       }
       if (etDate(entry.publishedAt) !== date) {
         fail(`${label} publishedAt must fall on ${date} in Eastern Time`);

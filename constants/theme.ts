@@ -83,4 +83,5 @@ export const badgeColors: Record<string, { background: string; text: string }> =
   article: { background: '#1D1838', text: '#F5E6B3' },
   video: { background: '#8C2F39', text: '#FFFFFF' },
   podcast: { background: '#3F2D86', text: '#FFFFFF' },
+  reddit: { background: '#FFFFFF', text: '#FF4500' },
 };
