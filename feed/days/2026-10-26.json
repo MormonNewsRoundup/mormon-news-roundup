@@ -21,6 +21,161 @@
             "church-leaders",
             "commentary"
           ]
+        },
+        {
+          "id": "2026-10-26-noon-03",
+          "type": "podcast",
+          "title": "Why Are Mormons Going MAGA?",
+          "summary": "On a Sunstone podcast episode, journalist Sarah McCammon, who covered evangelicals' shift from reviling Donald Trump to embracing him, argues that Latter-day Saints seem to have followed a similar path and discusses how to find firm ground in today's political and religious landscape.",
+          "source": "Sunstone",
+          "url": "https://sunstone.org/why-are-mormons-going-maga/",
+          "thumbnailUrl": "https://sunstone.org/wp-content/uploads/2019/01/SunstonePodcast-1-1.jpg",
+          "publishedAt": "2026-10-26T05:06:42.000Z",
+          "tags": [
+            "politics",
+            "trump"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-26-noon-04",
+          "type": "article",
+          "title": "Downtown Salt Lake City will be busy in 2027. What streets will close?",
+          "summary": "The Deseret News reports that sections of North Temple, South Temple and West Temple will close beginning in March 2027 for the Salt Lake Temple open house, which runs April 5 to Oct. 1, and that traffic is the top concern church community relations manager Juan Becerra has heard at Salt Lake City community council meetings.",
+          "source": "Deseret News",
+          "url": "https://www.deseret.com/utah/2026/10/26/downtown-salt-lake-city-will-be-busy-in-2027-what-streets-will-close/",
+          "thumbnailUrl": "https://www.deseret.com/resizer/v2/L44OGMNZXH26LZT2E4KA7BQA7A.jpg?focal=0%2C0&auth=ddfb2190e7158ed0cd5f6e57a69667bea6e8d7aedf53524176ab59b7a5e77cd7&width=630&height=331",
+          "publishedAt": "2026-10-26T22:15:34.000Z",
+          "tags": [
+            "salt-lake-temple",
+            "temple-square"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-26-noon-05",
+          "type": "video",
+          "title": "The Glorious Polygamous Gospel of LDS Influencing 😂 Meet Jasmine!",
+          "summary": "Mormon News Roundup's parody introduces Jasmine, an LDS-positive influencer, to satirize apologetics, faith-promoting spin, nonprofit money and the explaining away of Joseph Smith's polygamy and other difficult history.",
+          "source": "Mormon News Roundup",
+          "url": "https://www.youtube.com/watch?v=dtwHELdSUHs",
+          "thumbnailUrl": "https://i.ytimg.com/vi/dtwHELdSUHs/hqdefault.jpg",
+          "publishedAt": "2026-10-26T04:00:16.000Z",
+          "satire": true,
+          "tags": [
+            "satire",
+            "apologetics",
+            "polygamy"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-26-noon-06",
+          "type": "podcast",
+          "title": "481: On Devout LDS Parents w/ Queer Children with Dr. Brad Reedy",
+          "summary": "On Latter Day Struggles, host Valerie talks with Salt Lake City psychotherapist Dr. Brad Reedy about families with a queer child and devout Latter-day Saint parents, and how to restore the child's self-love while honoring the parents' fears and loyalties.",
+          "source": "Latter Day Struggles",
+          "url": "https://www.buzzsprout.com/2363568/episodes/20018772",
+          "thumbnailUrl": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/9a/9e/a8/9a9ea856-02bb-ebb6-dfed-502f70077b20/mza_8582509169586554029.jpg/600x600bb.jpg",
+          "publishedAt": "2026-10-26T15:00:00.000Z",
+          "tags": [
+            "lgbtq",
+            "families"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-26-noon-07",
+          "type": "article",
+          "title": "Elder Gilbert dedicates Cody Wyoming Temple, his first since becoming an Apostle",
+          "summary": "Church News reports that Elder Clark G. Gilbert dedicated the Cody Wyoming Temple, the church's 227th dedicated temple and third in Wyoming, his first temple dedication since becoming an Apostle in February 2026.",
+          "source": "Church News",
+          "url": "https://www.thechurchnews.com/temples/2026/10/26/elder-clark-g-gilbert-dedicates-cody-wyoming-temple-his-first-since-becoming-an-apostle/",
+          "thumbnailUrl": "https://www.thechurchnews.com/resizer/v2/X6Z47262UZA57KIZZ2MFBDUNLY.JPG?focal=1235%2C662&auth=e1de557131bd62475ed7b95c650c9a6de0ba70e8df4f5e3073066f31555283a7&width=630&height=331",
+          "publishedAt": "2026-10-26T16:12:15.000Z",
+          "tags": [
+            "temples",
+            "cody-wyoming"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-26-noon-08",
+          "type": "article",
+          "title": "Groundbreaking announced for Lehi temple",
+          "summary": "KSL reports that the Church of Jesus Christ announced Elder John A. McCune of the Utah Area Presidency will preside at the groundbreaking for the Lehi Utah Temple on Dec. 5.",
+          "source": "KSL",
+          "url": "https://www.ksl.com/article/51641309/groundbreaking-announced-for-lehi-temple",
+          "thumbnailUrl": "https://img.ksl.com/slc/3206/320698/32069840.jpeg?filter=kslv2/responsive_story_lg",
+          "publishedAt": "2026-10-26T23:44:00.000Z",
+          "tags": [
+            "temples",
+            "lehi"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-26-noon-10",
+          "type": "article",
+          "title": "Hug-a-Grandparent project, hospital kits and beach cleanups part of Primary service activities around the world",
+          "summary": "Church News rounds up recent service projects by Primary children reported in the church's Friend magazine, including a Hug-a-Grandparent project, a book drive in England and a health clinic cleanup in Togo.",
+          "source": "Church News",
+          "url": "https://www.thechurchnews.com/living-faith/2026/10/26/recent-primary-service-activities-around-the-world-peru-canada-japan-england-togo-micronesia/",
+          "thumbnailUrl": "https://www.thechurchnews.com/resizer/v2/4GK2NK7IBFFXXMSMDLGWGA7HKQ.jpg?focal=548%2C316&auth=d24eb9014d8b488732ebae63d587a911d6743c4a9ca2108818d1174b0b9aacd3&width=630&height=331",
+          "publishedAt": "2026-10-26T19:58:56.000Z",
+          "tags": [
+            "primary",
+            "service"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-26-noon-11",
+          "type": "reddit",
+          "title": "Church-owned company receives permission for 1,357 acre housing and commercial development project in Shafter, California",
+          "summary": "An r/exmormon post shares a California CEQA notice and city records the poster says show Land Reserve, Inc., a church-owned company, and two partners received approval for a 1,357-acre Shafter development with 5,334 homes, schools, parks and 129 acres of commercial space.",
+          "source": "r/exmormon",
+          "subreddit": "r/exmormon",
+          "url": "https://www.reddit.com/r/exmormon/comments/1xfs9l5/churchowned_company_receives_permission_for_1357/",
+          "thumbnailUrl": "https://preview.redd.it/l5agex628sxh1.jpeg?width=640&crop=smart&auto=webp&s=b97ed6a11dd2a66ecda8c4c1f72c29577dc4ab07",
+          "publishedAt": "2026-10-26T09:40:14.000Z",
+          "tags": [
+            "church-finances",
+            "real-estate"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-26-noon-12",
+          "type": "reddit",
+          "title": "172 temples in the pipeline, and the new prophet hit the brakes. Was the temple boom Nelson's vanity project?",
+          "summary": "An r/exmormon post contrasts the 172 temples announced or under construction at the end of 2025 with President Dallin H. Oaks's slower pace of announcements and asks how many will never be built.",
+          "source": "r/exmormon",
+          "subreddit": "r/exmormon",
+          "url": "https://www.reddit.com/r/exmormon/comments/1xfqyzc/172_temples_in_the_pipeline_and_the_new_prophet/",
+          "thumbnailUrl": "",
+          "publishedAt": "2026-10-26T08:18:54.000Z",
+          "tags": [
+            "temples",
+            "dallin-oaks"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-26-noon-13",
+          "type": "reddit",
+          "title": "Can the Church Withhold Access to Jesus Christ?",
+          "summary": "An r/mormon post argues that by tying the Holy Ghost and covenants to membership, the church in effect claims it can control members' access to Jesus Christ, citing an October 2026 general conference talk by Elder David A. Bednar.",
+          "source": "r/mormon",
+          "subreddit": "r/mormon",
+          "url": "https://www.reddit.com/r/mormon/comments/1xg4na7/can_the_church_withhold_access_to_jesus_christ/",
+          "thumbnailUrl": "",
+          "publishedAt": "2026-10-26T18:15:07.000Z",
+          "tags": [
+            "doctrine",
+            "church-discipline"
+          ],
+          "paywalled": false
         }
       ]
     }
