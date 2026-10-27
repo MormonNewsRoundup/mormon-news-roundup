@@ -1,6 +1,8 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { AppState, type AppStateStatus } from 'react-native';
 
 import { feedBaseUrl, isBundledFeed } from '@/constants/config';
+import { networkFirst } from '@/lib/networkFirst';
 import type { DayFile, Edition, FeedIndex, FeedItem } from '@/lib/types';
 
 // v3 drops the index cached when the feed listed only 2026-10-23.
@@ -77,27 +79,24 @@ function assertDay(value: DayFile, date: string): DayFile {
   return prepareDay(value);
 }
 
-export async function getIndex(force = false): Promise<FeedIndex> {
+export async function getIndex(_force = false): Promise<FeedIndex> {
   if (isBundledFeed()) return assertIndex(bundledIndex);
 
-  if (!force) {
-    const cached = await readCache<FeedIndex>(INDEX_KEY);
-    if (cached?.days?.length) return cached;
-  }
-
-  try {
-    const fresh = assertIndex(await fetchJson<FeedIndex>(`${feedBaseUrl()}/index.json`));
-    await writeCache(INDEX_KEY, fresh);
-    return fresh;
-  } catch {
-    const cached = await readCache<FeedIndex>(INDEX_KEY);
-    if (cached?.days?.length) return cached;
-    // Last resort when the phone has never saved a copy and the site is unreachable.
-    return assertIndex(bundledIndex);
-  }
+  return networkFirst(
+    async () => {
+      const fresh = assertIndex(await fetchJson<FeedIndex>(`${feedBaseUrl()}/index.json`));
+      await writeCache(INDEX_KEY, fresh);
+      return fresh;
+    },
+    async () => {
+      const cached = await readCache<FeedIndex>(INDEX_KEY);
+      return cached?.days?.length ? cached : null;
+    },
+    () => assertIndex(bundledIndex),
+  );
 }
 
-export async function getDay(date: string, force = false): Promise<DayFile> {
+export async function getDay(date: string, _force = false): Promise<DayFile> {
   if (isBundledFeed()) {
     const bundled = bundledDays[date];
     if (!bundled) {
@@ -109,22 +108,44 @@ export async function getDay(date: string, force = false): Promise<DayFile> {
   }
 
   const key = dayKey(date);
-  if (!force) {
-    const cached = await readCache<DayFile>(key);
-    if (cached) return assertDay(cached, date);
-  }
+  return networkFirst(
+    async () => {
+      const fresh = assertDay(await fetchJson<DayFile>(`${feedBaseUrl()}/days/${date}.json`), date);
+      await writeCache(key, fresh);
+      return fresh;
+    },
+    () => readCache<DayFile>(key),
+    () => bundledDays[date] ?? null,
+  ).then((day) => assertDay(day, date));
+}
 
-  try {
-    const fresh = assertDay(await fetchJson<DayFile>(`${feedBaseUrl()}/days/${date}.json`), date);
-    await writeCache(key, fresh);
-    return fresh;
-  } catch (error) {
-    const cached = await readCache<DayFile>(key);
-    if (cached) return assertDay(cached, date);
-    const bundled = bundledDays[date];
-    if (bundled) return assertDay(bundled, date);
-    throw error;
-  }
+/**
+ * Reload when the phone app becomes active, or when a browser tab is shown again.
+ * Web fires both events for one visibility change; the short wait keeps a single reload.
+ */
+export function subscribeFeedRefresh(refresh: () => void): () => void {
+  let timer: ReturnType<typeof setTimeout> | null = null;
+  const schedule = () => {
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(() => {
+      timer = null;
+      refresh();
+    }, 50);
+  };
+  const onAppState = (state: AppStateStatus) => {
+    if (state === 'active') schedule();
+  };
+  const subscription = AppState.addEventListener('change', onAppState);
+  const doc = globalThis.document;
+  const onVisibility = () => {
+    if (doc?.visibilityState === 'visible') schedule();
+  };
+  doc?.addEventListener?.('visibilitychange', onVisibility);
+  return () => {
+    subscription?.remove();
+    doc?.removeEventListener?.('visibilitychange', onVisibility);
+    if (timer) clearTimeout(timer);
+  };
 }
 
 export async function mapPool<T, R>(

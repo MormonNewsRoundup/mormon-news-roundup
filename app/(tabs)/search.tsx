@@ -17,7 +17,7 @@ import { Icon } from '@/components/Icon';
 import { NewsCard } from '@/components/NewsCard';
 import { ScreenDisclaimer } from '@/components/ScreenDisclaimer';
 import { useTheme } from '@/components/useTheme';
-import { getDay, getIndex, mapPool } from '@/lib/feed';
+import { getDay, getIndex, mapPool, subscribeFeedRefresh } from '@/lib/feed';
 import { localDateInputValue, rangeForTimeframe, searchItems, TIMEFRAMES, type Timeframe } from '@/lib/search';
 import { orderedStories, SEARCH_AFTER_TODAY_LIMIT, TODAY_STORY_LIMIT } from '@/lib/today';
 import { CONTENT_TYPES, filterLabel, type FeedItem, type TypeFilter } from '@/lib/types';
@@ -39,7 +39,7 @@ export default function SearchScreen() {
 
   const load = useCallback(async (force: boolean) => {
     // Every day listed in the index, not only the stories already shown on Latest.
-    // getDay reads the saved copy first, then the network.
+    // getIndex and getDay ask the network first, then the saved copy.
     const index = await getIndex(force);
     const days = await mapPool(index.days, 4, (date) => getDay(date, force));
     setArchive(orderedStories(days).map((entry) => entry.item));
@@ -59,6 +59,14 @@ export default function SearchScreen() {
     return () => {
       cancelled = true;
     };
+  }, [load]);
+
+  useEffect(() => {
+    return subscribeFeedRefresh(() => {
+      void load(true).catch((err) => {
+        setError(err instanceof Error ? err.message : 'Search could not load the archive.');
+      });
+    });
   }, [load]);
 
   const onRefresh = useCallback(async () => {

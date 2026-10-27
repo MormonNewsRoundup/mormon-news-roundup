@@ -210,4 +210,4 @@ A short day, a missing podcast, or fewer than two titles that mention lawsuit is
 
 ## Cache
 
-The phone stores the index and each day in AsyncStorage after a successful download. Search reads that cache, then filters on the device. A few thousand items is the size this is built for. Pull to refresh bypasses the cache and downloads again. If the download fails, the cached copy stays on screen.
+The phone asks the network for the index and each day whenever Latest or Search loads, when you pull to refresh, and when the app or browser tab is shown again. A successful download is saved. Search then filters on the device. A few thousand items is the size this is built for. If the download fails, the saved copy stays on screen. If there is no saved copy, the bundled sample is the last resort.
