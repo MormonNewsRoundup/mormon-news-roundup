@@ -1,0 +1,171 @@
+{
+  "date": "2026-10-27",
+  "sample": false,
+  "editions": [
+    {
+      "name": "noon",
+      "publishedAt": "2026-10-27T16:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-10-27-noon-01",
+          "type": "video",
+          "title": "I Am All Made of Hinges… | LDS Children’s Song HORROR",
+          "summary": "Mormon News Roundup's horror parody short reimagines the Primary children's song \"I Am All Made of Hinges\" with uncanny movements, distorted faces and unnatural smiles.",
+          "source": "Mormon News Roundup",
+          "url": "https://www.youtube.com/watch?v=2j0KPWaLBLU",
+          "thumbnailUrl": "https://i.ytimg.com/vi/2j0KPWaLBLU/maxresdefault.jpg",
+          "publishedAt": "2026-10-27T16:00:35.000Z",
+          "satire": true,
+          "tags": [
+            "satire",
+            "primary",
+            "parody"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-27-noon-02",
+          "type": "video",
+          "title": "Mormon News Update | October 27, 2026 📱",
+          "summary": "Generally Unquotable covers an 85-page federal complaint against Davis School District, former Syracuse High School principal Jed Johansen and others that alleges female students were subjected to harassment, cyberbullying and nonconsensual image distribution while officials failed to protect them, and says the former principal expressed concern about the accused boys' futures, including their ability to serve LDS missions. The update also covers a proposed $695,000 land purchase for a meetinghouse in Fairview Heights, Illinois, and the Temple Square visitors' center.",
+          "source": "Generally Unquotable",
+          "url": "https://www.youtube.com/watch?v=rhOlTnsP-Y4",
+          "thumbnailUrl": "https://i.ytimg.com/vi/rhOlTnsP-Y4/maxresdefault.jpg",
+          "publishedAt": "2026-10-27T16:00:07.000Z",
+          "tags": [
+            "lawsuit",
+            "davis-school-district",
+            "real-estate",
+            "news-update"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-27-noon-03",
+          "type": "podcast",
+          "title": "Samuel Brunson: Between the Temple and the Tax Collector Final",
+          "summary": "On Mormon Discussions, Bill Reel talks with Loyola University Chicago law professor Samuel Brunson, author of \"Between the Temple and the Tax Collector,\" about religious freedom, tax law and the LDS Church's financial practices.",
+          "source": "Mormon Discussions",
+          "url": "https://mormondiscussionpodcast.org/2026/10/samuel-brunson-between-the-temple-and-the-tax-collector-final/",
+          "thumbnailUrl": "https://mormondiscussionpodcast.org/wp-content/uploads/sites/2/2026/10/maxresdefault.jpg",
+          "publishedAt": "2026-10-27T15:00:11.000Z",
+          "tags": [
+            "church-finances",
+            "taxes",
+            "religious-freedom"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-27-noon-04",
+          "type": "article",
+          "title": "BYU-led team releases a new global food pyramid",
+          "summary": "ABC4 reports that a team of 22 nutrition researchers led by BYU professor Karen Della Corte has released what researchers call the first international food guide pyramid designed to reflect broad scientific agreement across countries, drawing on national dietary recommendations and more than 200 studies.",
+          "source": "ABC4",
+          "url": "https://www.abc4.com/news/science/byu-new-global-food-pyramid/",
+          "thumbnailUrl": "https://www.abc4.com/wp-content/uploads/sites/4/2026/10/Courtesy-BYU-Aaron-Cornia.jpg?w=1280",
+          "publishedAt": "2026-10-27T14:53:34.000Z",
+          "tags": [
+            "byu",
+            "research"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-27-noon-05",
+          "type": "article",
+          "title": "New initiative honors Mexican-American War veterans interred in Lehi",
+          "summary": "The Lehi Free Press reports that the Lehi Chapter of the Sons of Utah Pioneers and the Mormon Battalion Association launched a project on Oct. 17 to honor Mormon Battalion members buried in Lehi at their graves.",
+          "source": "Lehi Free Press",
+          "url": "https://lehifreepress.com/2026/10/27/new-initiative-honors-mexican-american-war-veterans-interred-in-lehi/",
+          "thumbnailUrl": "https://lehifreepress.com/wp-content/uploads/2026/10/LFP-2026-Sharing-the-background-and-contributions-of-the-Mormon-Battalion-during-the-service-at-the-Lehi-City-Cemetery-1000x600.jpeg",
+          "publishedAt": "2026-10-27T13:59:03.000Z",
+          "tags": [
+            "history",
+            "mormon-battalion"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-27-noon-06",
+          "type": "article",
+          "title": "BYU Law Launches Religious Liberty Clinic to Prepare Next Generation of Appellate Advocates",
+          "summary": "In a release on PR Newswire, BYU Law announces a Religious Liberty Clinic that opens in Winter Semester 2027 under associate professor Kelsey Baer Flores, joining law schools such as Harvard, Yale and Stanford that have similar clinics.",
+          "source": "PR Newswire",
+          "url": "https://www.prnewswire.com/news-releases/byu-law-launches-religious-liberty-clinic-to-prepare-next-generation-of-appellate-advocates-302920121.html",
+          "thumbnailUrl": "https://mmx.prnewswire.com/media/MS488287/BYULAW-EPS-color-transparent-ID-273e1600b67d.jpg?id=OA3040241&p=facebook",
+          "publishedAt": "2026-10-27T13:00:00.000Z",
+          "tags": [
+            "byu",
+            "religious-freedom"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-27-noon-07",
+          "type": "reddit",
+          "title": "We're back! Free Mormon resignation for Europe via GDPR 🇪🇺",
+          "summary": "An r/exmormon post says the MormonExit (MormonenAustritt) website has relaunched with free information and resignation letter templates for leaving the LDS Church, including requests under the EU's General Data Protection Regulation to delete personal data.",
+          "source": "r/exmormon",
+          "subreddit": "r/exmormon",
+          "url": "https://www.reddit.com/r/exmormon/comments/1xgr9zl/were_back_free_mormon_resignation_for_europe_via/",
+          "thumbnailUrl": "https://mormonnewsroundup.github.io/mormon-news-roundup/feed/images/reddit/2026-10-27-noon-07.jpg",
+          "publishedAt": "2026-10-27T12:32:48.000Z",
+          "tags": [
+            "resignation",
+            "europe",
+            "privacy"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-27-noon-08",
+          "type": "article",
+          "title": "Ghana to host Church of Jesus Christ of Latter-day Saints' education centre",
+          "summary": "The Ghana News Agency reports that a BYU-Pathway Global Education Center with more than 100 computers is under construction in Accra near the church's temple, and that Elder Clark G. Gilbert said it will be dedicated early next year.",
+          "source": "Ghana News Agency",
+          "url": "https://gna.org.gh/2026/10/ghana-to-host-church-of-jesus-christ-of-latter-day-saints-education-centre/",
+          "thumbnailUrl": "https://gna.org.gh/web/wp-content/uploads/2026/10/Education-Centre-Church-1.jpg",
+          "publishedAt": "2026-10-27T08:05:47.000Z",
+          "tags": [
+            "byu-pathway",
+            "africa",
+            "education"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-27-noon-09",
+          "type": "reddit",
+          "title": "Outline of a metaphorical, modernist Mormonism",
+          "summary": "An r/mormon post outlines a modernist Mormonism that would not require belief in an interventionist God, would read the Book of Mormon as scripture without requiring it to be historical, would disavow past abuses such as the race-based priesthood and temple ban, and would accept evolution.",
+          "source": "r/mormon",
+          "subreddit": "r/mormon",
+          "url": "https://www.reddit.com/r/mormon/comments/1xgkxle/outline_of_a_metaphorical_modernist_mormonism/",
+          "thumbnailUrl": "https://mormonnewsroundup.github.io/mormon-news-roundup/feed/images/reddit/2026-10-27-noon-09.jpg",
+          "publishedAt": "2026-10-27T06:17:38.000Z",
+          "tags": [
+            "doctrine",
+            "faith-transition"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-27-noon-10",
+          "type": "video",
+          "title": "dismissal of the tithing lawsuit against The Church of Jesus Christ of Latter-Day Saints #ldsnews",
+          "summary": "A Cultural Hall short discusses the dismissal of a long-running tithing lawsuit against the church and says that while it was dismissed, others will be sure to follow.",
+          "source": "The Cultural Hall",
+          "url": "https://www.youtube.com/watch?v=CnmUsiG-Ezk",
+          "thumbnailUrl": "https://i.ytimg.com/vi/CnmUsiG-Ezk/maxresdefault.jpg",
+          "publishedAt": "2026-10-27T04:00:08.000Z",
+          "tags": [
+            "tithing",
+            "lawsuit"
+          ],
+          "paywalled": false
+        }
+      ]
+    }
+  ]
+}
