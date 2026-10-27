@@ -2,7 +2,7 @@
 
 Your Daily Mormon News: Unfiltered
 
-This is version 1 of the iPhone app: a daily feed of articles, YouTube videos, and podcasts. It is meant for hard news about The Church of Jesus Christ of Latter-day Saints (lawsuits, courts, excommunications, scandals) plus major official announcements. Tapping a card opens the original link. There are no comments, no accounts, and no notifications in this version.
+This is version 1 of the iPhone app: a daily feed of articles, YouTube videos, podcasts, and Reddit posts. It is meant for hard news about The Church of Jesus Christ of Latter-day Saints (lawsuits, courts, excommunications, scandals) plus major official announcements. Tapping a card opens the original link. There are no comments, no accounts, and no notifications in this version.
 
 The app is not affiliated with or endorsed by The Church of Jesus Christ of Latter-day Saints.
 
@@ -85,7 +85,7 @@ What is possible:
 Three tabs at the bottom:
 
 - **Latest** — the 15 newest stories across every day in the feed, newest first. The header says Latest Headlines. There is no age cutoff. When a newer story arrives, the oldest of those 15 drops off the bottom and stays in Search. If the feed has fewer than 15 stories, they all stay on Latest. A repeated story is shown once. There is no edition label and no clock time. Each card shows the source, the type, and the full publish date, such as October 23, 2026. That date is the Eastern calendar day of the story, with no clock time and no time zone. Pull down to refresh. Tap a card to open its link. **Share** opens the phone’s share sheet with the link and the words “via Mormon News Roundup”. A small lock means the original link may be paywalled. A gray **Ad** box sits between some cards. That box is a stand-in, not a real advertisement. At the bottom of the list, in small gray type: “Not affiliated with or endorsed by The Church of Jesus Christ of Latter-day Saints.”
-- **Search** — continues after Latest. With no text and the default filters, it shows stories 16 through 65, newest first, using the same order as Latest so those 15 are not repeated. If the archive has 15 or fewer stories, a small gray note says “Older stories will appear here.” Type a word, or change the type or time filter, and Search looks through the whole archive, including the stories on Latest. Type chips: All, Articles, Videos, Podcasts. Time chips: Any time, Past week, Past month, Past year, and Custom range (a from date and a to date). The two sets combine. Try `lawsuit` or `podcast`. The same affiliation line is at the bottom.
+- **Search** — continues after Latest. With no text and the default filters, it shows stories 16 through 65, newest first, using the same order as Latest so those 15 are not repeated. If the archive has 15 or fewer stories, a small gray note says “Older stories will appear here.” Type a word, or change the type or time filter, and Search looks through the whole archive, including the stories on Latest. Type chips: All, Articles, Videos, Podcasts, Reddit. Time chips: Any time, Past week, Past month, Past year, and Custom range (a from date and a to date). The two sets combine. Try `lawsuit` or `podcast`. The same affiliation line is at the bottom.
 - **About** — what the app is, YouTube, the website, a quiet Patreon link, **Remove ads ($0.99, one time)**, and **Restore purchase**. The same affiliation line is at the bottom, not in a box in the middle.
 
 On About, a dashed box says **Simulate ads removed**. That switch only exists in this preview. Turn it on and the ad boxes disappear. It does not charge you.
@@ -137,7 +137,7 @@ If you ever publish a placeholder day again:
 - Put the word Sample in every title and summary.
 - Set `"sample": true` on that day file and on `feed/index.json`.
 
-Real cards need an `https` picture address in `thumbnailUrl`. Tokens such as `sample:article` belong only in `fallback/`. A day can have fewer than 8 items, and it does not need a podcast or the word lawsuit. `npm run check-feed` mentions those as warnings and still succeeds. The type has to be an article, a video, or a podcast.
+Real cards need an `https` picture address in `thumbnailUrl`. A Reddit post may leave that field out when it has no image. Tokens such as `sample:article` belong only in `fallback/`. A day can have fewer than 8 items, and it does not need a podcast or the word lawsuit. `npm run check-feed` mentions those as warnings and still succeeds. The type has to be an article, a video, a podcast, or a Reddit post.
 
 The phone saves the last feed it downloaded. If the site cannot be reached, it shows that saved copy. If it has never downloaded one, it shows the sample files built into the app.
 

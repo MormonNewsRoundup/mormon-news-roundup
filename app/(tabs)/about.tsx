@@ -74,7 +74,7 @@ export default function AboutScreen() {
       <ScrollView style={styles.scroll} contentContainerStyle={styles.content}>
         <Text style={[styles.paragraph, { color: theme.text }]}>{ABOUT_INTRO}</Text>
         <Text style={[styles.paragraph, { color: theme.text }]}>
-          Tap a card to open the original article, video, or podcast.
+          Tap a card to open the original article, video, podcast, or Reddit post.
         </Text>
         <Text style={[styles.paragraph, { color: theme.muted }]}>
           Stories can include lawsuits and sexual abuse cases. The App Store listing is meant for
