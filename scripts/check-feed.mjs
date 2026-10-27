@@ -2,7 +2,7 @@
  * Checks feed/index.json and feed/days/*.json against FEED_SCHEMA.md.
  * Usage: npm run check-feed
  */
-import { readdir, readFile } from 'node:fs/promises';
+import { access, readdir, readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -84,6 +84,32 @@ function isRedditPermalink(value) {
   const host = url.hostname.toLowerCase();
   if (host !== 'reddit.com' && !host.endsWith('.reddit.com')) return false;
   return /\/comments\/[a-z0-9]+/i.test(url.pathname);
+}
+
+// The public image URL is not live until this commit is deployed, so a picture
+// hosted with the feed is checked against the file in this repo.
+const PAGES_IMAGE_ROOT = '/mormon-news-roundup/feed/images/';
+
+function repoImageFile(thumb) {
+  let url;
+  try {
+    url = new URL(thumb);
+  } catch {
+    return null;
+  }
+  if (url.protocol !== 'https:' || url.hostname !== 'mormonnewsroundup.github.io') return null;
+  if (!url.pathname.startsWith(PAGES_IMAGE_ROOT)) return null;
+  let relative;
+  try {
+    relative = decodeURIComponent(url.pathname.slice(PAGES_IMAGE_ROOT.length));
+  } catch {
+    return { error: 'unreadable path' };
+  }
+  const parts = relative.split('/');
+  if (!relative || parts.some((part) => part === '' || part === '.' || part === '..')) {
+    return { error: 'path must stay inside feed/images/' };
+  }
+  return { relative: `feed/images/${relative}`, file: path.join(feedDir, 'images', ...parts) };
 }
 const ids = new Set();
 let paywalled = 0;
@@ -176,6 +202,16 @@ for (const date of index.days ?? []) {
           }
         } else if (!/^https:\/\//.test(thumb)) {
           fail(`${label} thumbnailUrl must be an https image URL`);
+        }
+        const localImage = repoImageFile(thumb);
+        if (localImage?.error) {
+          fail(`${label} thumbnailUrl ${localImage.error}`);
+        } else if (localImage) {
+          try {
+            await access(localImage.file);
+          } catch {
+            fail(`${label} thumbnailUrl points at ${localImage.relative}, which is not in the repo`);
+          }
         }
       }
       if (etDate(entry.publishedAt) !== date) {

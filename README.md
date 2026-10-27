@@ -137,7 +137,7 @@ If you ever publish a placeholder day again:
 - Put the word Sample in every title and summary.
 - Set `"sample": true` on that day file and on `feed/index.json`.
 
-Real cards need an `https` picture address in `thumbnailUrl`. A Reddit post may leave that field out when it has no image. Tokens such as `sample:article` belong only in `fallback/`. A day can have fewer than 8 items, and it does not need a podcast or the word lawsuit. `npm run check-feed` mentions those as warnings and still succeeds. The type has to be an article, a video, a podcast, or a Reddit post.
+Real cards need an `https` picture address in `thumbnailUrl`. A Reddit post may leave that field out when it has no image. A generated Reddit picture belongs at `feed/images/reddit/<item-id>.jpg`, and `thumbnailUrl` is that file’s Pages address. Tokens such as `sample:article` belong only in `fallback/`. A day can have fewer than 8 items, and it does not need a podcast or the word lawsuit. `npm run check-feed` mentions those as warnings and still succeeds. The type has to be an article, a video, a podcast, or a Reddit post.
 
 The phone saves the last feed it downloaded. If the site cannot be reached, it shows that saved copy. If it has never downloaded one, it shows the sample files built into the app.
 
