@@ -30,6 +30,43 @@ export function isOwnChannelItem(item: FeedItem): boolean {
   return name === OWN_CHANNEL_SOURCE;
 }
 
+const GENERALLY_UNQUOTABLE = 'generally unquotable';
+
+/** A Generally Unquotable YouTube video, matched on source or channel, ignoring case. */
+export function isGenerallyUnquotableItem(item: FeedItem): boolean {
+  if (item.type !== 'video') return false;
+  const names = [item.source, item.channel].filter((value): value is string => typeof value === 'string');
+  return names.some((value) => value.trim().toLowerCase() === GENERALLY_UNQUOTABLE);
+}
+
+export type CappedSubreddit = 'exmormon' | 'mormon';
+
+function mentionsSubreddit(item: FeedItem, name: CappedSubreddit): boolean {
+  const blob = [item.source, item.subreddit, item.url].filter((value) => typeof value === 'string').join('\n');
+  const token = new RegExp(`(?:^|[^a-z0-9])r/${name}(?:[^a-z0-9]|$)`, 'i');
+  const path = new RegExp(`/r/${name}(?:/|[?#]|$)`, 'i');
+  return token.test(blob) || path.test(blob);
+}
+
+/**
+ * r/exmormon or r/mormon on a Reddit post. Exmormon is checked first so it is
+ * not treated as r/mormon. Source, subreddit, and the post URL all count.
+ */
+export function cappedSubreddit(item: FeedItem): CappedSubreddit | null {
+  if (item.type !== 'reddit') return null;
+  if (mentionsSubreddit(item, 'exmormon')) return 'exmormon';
+  if (mentionsSubreddit(item, 'mormon')) return 'mormon';
+  return null;
+}
+
+/** Groups that may appear at most once in Latest: the newest item only. */
+function cappedGroup(item: FeedItem): string | null {
+  const subreddit = cappedSubreddit(item);
+  if (subreddit) return subreddit;
+  if (isGenerallyUnquotableItem(item)) return 'generally-unquotable';
+  return null;
+}
+
 function dedupeNewest(days: DayFile[]): DatedStory[] {
   const flat: DatedStory[] = [];
   for (const day of days) {
@@ -53,17 +90,25 @@ function dedupeNewest(days: DayFile[]): DatedStory[] {
 }
 
 /**
- * Latest Headlines. Newest first, with exactly one own-channel video when the
- * feed has any: the newest one. Older own-channel videos are skipped and the
- * next other stories fill the list. If that newest video would land past the
- * last slot, it takes the last slot.
+ * Latest Headlines. Newest first. Exactly one own-channel video when the feed
+ * has any: the newest one, placed in the last slot if it would otherwise fall
+ * off the list. At most one r/exmormon post, one r/mormon post, and one
+ * Generally Unquotable video: the newest of each. Older ones are skipped and
+ * the next eligible stories fill the list.
  */
 export function latestStories(days: DayFile[], limit = TODAY_STORY_LIMIT): DatedStory[] {
   const all = dedupeNewest(days);
   const newestOwn = all.find((entry) => isOwnChannelItem(entry.item));
+  const newestCapped = new Map<string, string>();
+  for (const entry of all) {
+    const group = cappedGroup(entry.item);
+    if (group && !newestCapped.has(group)) newestCapped.set(group, entry.item.id);
+  }
   const picked: DatedStory[] = [];
   for (const entry of all) {
     if (isOwnChannelItem(entry.item) && entry.item.id !== newestOwn?.item.id) continue;
+    const group = cappedGroup(entry.item);
+    if (group && newestCapped.get(group) !== entry.item.id) continue;
     picked.push(entry);
     if (picked.length >= limit) break;
   }
@@ -81,7 +126,8 @@ export function recentStories(days: DayFile[], limit = TODAY_STORY_LIMIT): Dated
 
 /**
  * Latest first, then every other unique story newest first.
- * Skipped older own-channel videos stay in this list so Search can find them.
+ * Skipped older own-channel videos, subreddit posts, and Generally Unquotable
+ * videos stay in this list so Search can find them.
  */
 export function orderedStories(days: DayFile[]): DatedStory[] {
   const latest = latestStories(days);
