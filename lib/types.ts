@@ -18,6 +18,11 @@ export type FeedItem = {
   tags: string[];
   /** Optional. Example: "r/exmormon". The card does not print this on its own. */
   subreddit?: string;
+  /**
+   * Optional channel name. A Mormon News Roundup YouTube video can set this
+   * to "Mormon News Roundup". When it is absent, source is used instead.
+   */
+  channel?: string;
   /** Optional internal metadata. The card does not show this. */
   satire?: boolean;
 };

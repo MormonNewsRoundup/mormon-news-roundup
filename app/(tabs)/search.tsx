@@ -42,6 +42,7 @@ export default function SearchScreen() {
     // getIndex and getDay ask the network first, then the saved copy.
     const index = await getIndex(force);
     const days = await mapPool(index.days, 4, (date) => getDay(date, force));
+    // orderedStories starts with the Latest 15, then the rest, including older own-channel videos.
     setArchive(orderedStories(days).map((entry) => entry.item));
   }, []);
 

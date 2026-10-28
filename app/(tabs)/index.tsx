@@ -18,7 +18,7 @@ import { useTheme } from '@/components/useTheme';
 import { APP_PITCH, isBundledFeed } from '@/constants/config';
 import { serifFamily } from '@/constants/theme';
 import { getDay, getIndex, subscribeFeedRefresh } from '@/lib/feed';
-import { datesNewestFirst, recentStories, TODAY_STORY_LIMIT, type DatedStory } from '@/lib/today';
+import { datesNewestFirst, isOwnChannelItem, orderedStories, recentStories, TODAY_STORY_LIMIT, type DatedStory } from '@/lib/today';
 import type { DayFile, FeedIndex } from '@/lib/types';
 
 type Row =
@@ -48,12 +48,15 @@ async function loadRecent(force: boolean): Promise<{ index: FeedIndex; stories: 
   const loaded: DayFile[] = [];
   let stories: DatedStory[] = [];
   for (const date of dates) {
-    if (stories.length >= TODAY_STORY_LIMIT) break;
     loaded.push(await getDay(date, force));
     stories = recentStories(loaded);
+    const seenOwn = loaded.some((day) =>
+      day.editions.some((edition) => edition.items.some((item) => isOwnChannelItem(item))),
+    );
+    // Keep reading until the newest own-channel video is in hand, then stop at 15.
+    if (stories.length >= TODAY_STORY_LIMIT && seenOwn) break;
   }
-  const more =
-    loaded.length < dates.length || recentStories(loaded, TODAY_STORY_LIMIT + 1).length > stories.length;
+  const more = loaded.length < dates.length || orderedStories(loaded).length > stories.length;
   return { index, stories, more };
 }
 
