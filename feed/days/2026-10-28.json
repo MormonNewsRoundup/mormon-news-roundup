@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-28",
+  "sample": false,
+  "editions": [
+    {
+      "name": "midnight",
+      "publishedAt": "2026-10-28T04:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-10-28-midnight-01",
+          "type": "video",
+          "title": "That Time the Mormon God Sent an Angel to Joseph Smith’s Wife 😳 | “Accept the Polygamy or Die”",
+          "summary": "Mormon News Roundup's short dramatizes Joseph Smith's practice of plural marriage from Emma Smith's perspective, as an angel appears to deliver a revelation that her husband is supposed to marry other women.",
+          "source": "Mormon News Roundup",
+          "url": "https://www.youtube.com/watch?v=jZXjvC02uO4",
+          "thumbnailUrl": "https://i.ytimg.com/vi/jZXjvC02uO4/hqdefault.jpg",
+          "publishedAt": "2026-10-28T04:00:39.000Z",
+          "tags": [
+            "polygamy",
+            "emma-smith",
+            "church-history"
+          ],
+          "paywalled": false
+        }
+      ]
+    }
+  ]
+}
