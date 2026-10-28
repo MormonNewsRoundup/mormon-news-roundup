@@ -70,7 +70,9 @@
       "@react-native-community/datetimepicker"
     ],
     "extra": {
-      "contentRating": "17+"
+      "contentRating": "17+",
+      "privacyPolicyUrl": "https://mormonnewsroundup.org/privacy",
+      "supportUrl": "https://mormonnewsroundup.org/app-support"
     },
     "experiments": {
       "typedRoutes": true,

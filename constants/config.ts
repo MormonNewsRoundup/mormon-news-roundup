@@ -39,6 +39,10 @@ export const WEBSITE_URL = 'https://mormonnewsroundup.org';
 /** The public news page on the show's website. */
 export const BREAKING_NEWS_URL = 'https://mormonnewsroundup.org/breaking-news';
 
+/** App Store privacy policy and support pages. Also listed in app.json extra. */
+export const PRIVACY_POLICY_URL = 'https://mormonnewsroundup.org/privacy';
+export const APP_SUPPORT_URL = 'https://mormonnewsroundup.org/app-support';
+
 /**
  * Non-consumable App Store / Play product. Create this exact id in
  * App Store Connect for $0.99 before a production build can sell it.
