@@ -86,7 +86,7 @@ Three tabs at the bottom:
 
 - **Latest** — up to 15 stories across every day in the feed, newest first. The header says Latest Headlines. There is no age cutoff. Exactly one video from the Mormon News Roundup YouTube channel is included, and it is the newest one. At most one r/exmormon post, one r/mormon post, and one Generally Unquotable video are included, each the newest. Older items from those sources are left out of these 15 and stay in Search. When a newer story arrives, the oldest of those 15 drops off the bottom and stays in Search. If the feed has fewer than 15 stories, they all stay on Latest. A repeated story is shown once. There is no edition label and no clock time. Each card shows the source, the type, and the full publish date, such as October 23, 2026. That date is the Eastern calendar day of the story, with no clock time and no time zone. Pull down to refresh. Tap a card to open its link. **Share** opens the phone’s share sheet with the link and the words “via Mormon News Roundup”. A small lock means the original link may be paywalled. A gray **Ad** box sits between some cards. That box is a stand-in, not a real advertisement. At the bottom of the list, in small gray type: “Not affiliated with or endorsed by The Church of Jesus Christ of Latter-day Saints.”
 - **Search** — continues after Latest. With no text and the default filters, it shows stories 16 through 65, newest first, using the same order as Latest so those 15 are not repeated. If the archive has 15 or fewer stories, a small gray note says “Older stories will appear here.” Type a word, or change the type or time filter, and Search looks through the whole archive, including the stories on Latest. Type chips: All, Articles, Videos, Podcasts, Reddit. Time chips: Any time, Past week, Past month, Past year, and Custom range (a from date and a to date). The two sets combine. Try `lawsuit` or `podcast`. The same affiliation line is at the bottom.
-- **About** — what the app is, YouTube, the website, a **Read on the web** link to `https://mormonnewsroundup.org/breaking-news`, a quiet Patreon link, **Remove ads ($0.99, one time)**, and **Restore purchase**. The same affiliation line is at the bottom, not in a box in the middle.
+- **About** — what the app is, YouTube, the website, **Read on the web**, **Privacy Policy**, **App Support**, a quiet Patreon link, **Remove ads ($0.99, one time)**, and **Restore purchase**. The same affiliation line is at the bottom, not in a box in the middle.
 
 On About, a dashed box says **Simulate ads removed**. That switch only exists in this preview. Turn it on and the ad boxes disappear. It does not charge you.
 
@@ -179,7 +179,7 @@ Do these in order when you are ready. None of them are done yet.
 
 3. **App Store Connect** — [https://appstoreconnect.apple.com](https://appstoreconnect.apple.com). Create an app named **Mormon News Roundup**. The bundle id is `com.mormonnewsroundup.app` (set in `app.json`). Change that id before the first upload if you want a different one. After the first upload it is painful to change.
 4. **Age rating 17+.** The questionnaire should reflect lawsuits and sexual abuse coverage. Say that plainly in the listing.
-5. **Privacy policy and support URLs**, hosted on mormonnewsroundup.org. Apple requires both. They are not on the site yet. A short page is enough. The site already lists the contact email `kolob@mormonnewsroundup.org` if you want the support page to point there. Put the privacy policy URL and the support URL in the App Store Connect listing.
+5. **Privacy policy and support URLs.** Apple requires both in the App Store Connect listing. They are live: `https://mormonnewsroundup.org/privacy` and `https://mormonnewsroundup.org/app-support`. The same addresses are in `app.json` under `expo.extra` and on the About screen.
 6. **Privacy answers.** The app has no accounts and does not collect a name or email. If ads are on, say so: Google AdMob uses an advertising identifier. The app asks with Apple’s tracking prompt (the text is already in `app.json`). If someone buys Remove ads, stop requesting ads.
 7. **AdMob.** Create an account, add an iOS app, and create a banner unit. Then replace the test values:
    - `app.json` — the `iosAppId` and `androidAppId` (they contain `~`)
@@ -211,7 +211,7 @@ Do these in order when you are ready. None of them are done yet.
 - AdMob app ids and the banner unit are **Google test ids**. Replace them before anyone sees real ads.
 - The SKAdNetwork list in `app.json` has only Google’s id (`cstr6suwn9.skadnetwork`). Paste Google’s current full list before production ads.
 - The `remove_ads` product does not exist in App Store Connect yet.
-- Privacy policy and support pages on mormonnewsroundup.org are not created yet.
+- Privacy policy: `https://mormonnewsroundup.org/privacy`. Support: `https://mormonnewsroundup.org/app-support`. Paste both into the App Store Connect listing.
 - The Expo project is not linked yet. `npx eas-cli@latest init` does that.
 - Purchases are remembered on the phone after StoreKit says they succeeded. There is no receipt server in v1.
 - The YouTube link is the one published on mormonnewsroundup.org: `https://www.youtube.com/@MormonNewsRoundup`. Patreon is `https://www.patreon.com/MormonNewsRoundup`.

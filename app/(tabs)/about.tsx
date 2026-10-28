@@ -10,8 +10,10 @@ import { useTheme } from '@/components/useTheme';
 import {
   ABOUT_INTRO,
   APP_PITCH,
+  APP_SUPPORT_URL,
   BREAKING_NEWS_URL,
   PATREON_URL,
+  PRIVACY_POLICY_URL,
   REMOVE_ADS_PRICE_LABEL,
   WEBSITE_URL,
   YOUTUBE_CHANNEL_URL,
@@ -97,6 +99,16 @@ export default function AboutScreen() {
           label="Read on the web"
           detail={BREAKING_NEWS_URL.replace('https://', '')}
           onPress={() => void openExternal(BREAKING_NEWS_URL)}
+        />
+        <LinkRow
+          label="Privacy Policy"
+          detail={PRIVACY_POLICY_URL.replace('https://', '')}
+          onPress={() => void openExternal(PRIVACY_POLICY_URL)}
+        />
+        <LinkRow
+          label="App Support"
+          detail={APP_SUPPORT_URL.replace('https://', '')}
+          onPress={() => void openExternal(APP_SUPPORT_URL)}
         />
 
         <Text style={[styles.section, { color: theme.muted }]}>Support</Text>
