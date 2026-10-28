@@ -164,6 +164,39 @@
             "lawsuit"
           ],
           "paywalled": false
+        },
+        {
+          "id": "2026-10-27-noon-11",
+          "type": "article",
+          "title": "Idaho Falls man who sexually assaulted a 15-year-old in his Tesla gets a rider",
+          "summary": "East Idaho News reports that Krew Zaugg, 22, of Idaho Falls, who pleaded guilty to battery with intent to commit a serious felony after being accused of sexually assaulting a 15-year-old girl in 2025, was sentenced to a prison \"rider\" treatment program with an underlying sentence of four to 14 years. The victim's stepmother told the court Zaugg had recently returned from a Latter-day Saint mission when the assault happened.",
+          "source": "East Idaho News",
+          "url": "https://www.eastidahonews.com/2026/10/idaho-falls-man-who-sexually-assaulted-a-15-year-old-in-his-tesla-gets-a-rider/",
+          "thumbnailUrl": "https://s3.us-west-2.amazonaws.com/assets.eastidahonews.com/wp-content/uploads/2026/10/ZauggEdit.jpg",
+          "publishedAt": "2026-10-27T23:12:00.000Z",
+          "tags": [
+            "abuse",
+            "court",
+            "missionary",
+            "idaho"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-27-noon-12",
+          "type": "article",
+          "title": "Fairpark rezone pitch would add townhomes at current LDS Church site",
+          "summary": "Building Salt Lake reports that developers have filed to rezone a former LDS Church building site at 660 N. Redwood Road in Salt Lake City's Fairpark neighborhood for 88 rental townhomes, and that city filings include an agreement for Garbett Realty to buy the 3.58-acre property from the church for $5 million. County records show the church still owns the site while the sale is pending.",
+          "source": "Building Salt Lake",
+          "url": "https://buildingsaltlake.com/fairpark-rezone-pitch-would-add-townhomes-at-current-lds-church-site/",
+          "thumbnailUrl": "https://bslbucketmain.s3.us-west-1.amazonaws.com/wp-content/uploads/2026/10/Screenshot-2026-10-26-at-4.40.46-PM.png",
+          "publishedAt": "2026-10-27T18:46:04.000Z",
+          "tags": [
+            "real-estate",
+            "church-business",
+            "salt-lake-city"
+          ],
+          "paywalled": false
         }
       ]
     }
