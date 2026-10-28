@@ -36,6 +36,9 @@ export const PATREON_URL = 'https://www.patreon.com/MormonNewsRoundup';
 
 export const WEBSITE_URL = 'https://mormonnewsroundup.org';
 
+/** The public news page on the show's website. */
+export const BREAKING_NEWS_URL = 'https://mormonnewsroundup.org/breaking-news';
+
 /**
  * Non-consumable App Store / Play product. Create this exact id in
  * App Store Connect for $0.99 before a production build can sell it.

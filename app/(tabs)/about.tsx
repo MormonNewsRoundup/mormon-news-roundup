@@ -10,6 +10,7 @@ import { useTheme } from '@/components/useTheme';
 import {
   ABOUT_INTRO,
   APP_PITCH,
+  BREAKING_NEWS_URL,
   PATREON_URL,
   REMOVE_ADS_PRICE_LABEL,
   WEBSITE_URL,
@@ -91,6 +92,11 @@ export default function AboutScreen() {
           label="mormonnewsroundup.org"
           detail="The show’s website"
           onPress={() => void openExternal(WEBSITE_URL)}
+        />
+        <LinkRow
+          label="Read on the web"
+          detail={BREAKING_NEWS_URL.replace('https://', '')}
+          onPress={() => void openExternal(BREAKING_NEWS_URL)}
         />
 
         <Text style={[styles.section, { color: theme.muted }]}>Support</Text>
