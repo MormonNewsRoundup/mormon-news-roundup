@@ -3,6 +3,158 @@
   "sample": false,
   "editions": [
     {
+      "name": "noon",
+      "publishedAt": "2026-10-28T16:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-10-28-noon-01",
+          "type": "video",
+          "title": "Mormon News Update | October 28, 2026 🧤",
+          "summary": "Generally Unquotable's Mormon news update covers changes to the church's FSY youth program, the closure of the Deseret Industries store in Preston, Idaho, Church News coverage of land for the Cody Wyoming Temple, and the Archdiocese of New York's $800 million agreement in principle to settle clergy abuse claims.",
+          "source": "Generally Unquotable",
+          "url": "https://www.youtube.com/watch?v=vdWjCyLxGSo",
+          "thumbnailUrl": "https://i.ytimg.com/vi/vdWjCyLxGSo/hqdefault.jpg",
+          "publishedAt": "2026-10-28T16:00:28.000Z",
+          "tags": [
+            "fsy",
+            "deseret-industries",
+            "abuse"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-28-noon-02",
+          "type": "reddit",
+          "title": "Cannery Dilemma - Oh No!",
+          "summary": "An r/exmormon post shares a church message saying a cannery needs 12 volunteers for a Friday shift or may have to skip it, and questions why the church relies on unpaid volunteer labor rather than paid jobs.",
+          "source": "r/exmormon",
+          "subreddit": "r/exmormon",
+          "url": "https://www.reddit.com/r/exmormon/comments/1xhq0ps/cannery_dilemma_oh_no/",
+          "thumbnailUrl": "https://mormonnewsroundup.github.io/mormon-news-roundup/feed/images/reddit/2026-10-28-noon-02.jpg",
+          "publishedAt": "2026-10-28T14:44:39.000Z",
+          "tags": [
+            "welfare",
+            "volunteer-labor"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-28-noon-03",
+          "type": "article",
+          "title": "Elder Kearon urges reflection on cellphone, social media use",
+          "summary": "Church News reports that Elder Patrick Kearon of the Quorum of the Twelve Apostles urged Ensign College students to reflect on their cellphone and social media use and to act on revelation for their own personal course corrections.",
+          "source": "Church News",
+          "url": "https://www.thechurchnews.com/leaders/2026/10/28/elder-patrick-kearon-on-cellphone-social-media-use-ensign-college-devotional/",
+          "thumbnailUrl": "https://www.thechurchnews.com/resizer/v2/LXYPYZFT3JB2VJ6CDJORD55G24.JPG?focal=1525%2C504&auth=aa46b485dd5f0eaedff16a830859bb252d52c19c83233c6d1f81a671f33dea28&width=630&height=331",
+          "publishedAt": "2026-10-28T14:39:29.000Z",
+          "tags": [
+            "church-leaders",
+            "social-media",
+            "ensign-college"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-28-noon-04",
+          "type": "reddit",
+          "title": "Stake Fast Email",
+          "summary": "An r/mormon post shares a stake email inviting all members to a November 1 fast to pray about whom to invite to church, saying each member has a \"sacred covenant responsibility\" to take part in the gathering under the stake president's keys.",
+          "source": "r/mormon",
+          "subreddit": "r/mormon",
+          "url": "https://www.reddit.com/r/mormon/comments/1xhp1k1/stake_fast_email/",
+          "thumbnailUrl": "https://mormonnewsroundup.github.io/mormon-news-roundup/feed/images/reddit/2026-10-28-noon-04.jpg",
+          "publishedAt": "2026-10-28T14:06:41.000Z",
+          "tags": [
+            "missionary-work",
+            "church-leaders"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-28-noon-05",
+          "type": "podcast",
+          "title": "‘Mormon Land’: Would Joseph Smith be a progressive or conservative in today’s political landscape?",
+          "summary": "On The Salt Lake Tribune's Mormon Land podcast, historian Benjamin Park looks at Joseph Smith's 1844 presidential campaign and what political lessons Latter-day Saints can learn from it.",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/religion/2026/10/28/mormon-land-podcast/",
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/DSLP7JA3QZCVNOQHOSR7M4V7RY.jpg?auth=481506bda524471e9b82a79c0ef2b99be87b56d1f68352d484f0550c0b119128&width=1200&height=630&quality=88&smart=true",
+          "publishedAt": "2026-10-28T12:00:01.000Z",
+          "tags": [
+            "joseph-smith",
+            "politics",
+            "church-history"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-28-noon-06",
+          "type": "article",
+          "title": "Holy Halloween! For LDS kids, sometimes there’s nothing scarier than the Holy ‘Ghost.’",
+          "summary": "The Salt Lake Tribune notes that Latter-day Saints, unlike most Christians, refer to the \"Holy Ghost\" more often than the \"Holy Spirit,\" and that the term can prompt some interesting responses from kids.",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/religion/2026/10/28/holy-halloween-story-lds-kids/",
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/VIASVX4FZNALJB2JU5KUTNX2FQ.jpeg?auth=73b04b5625433ac26cbb668ee170d1211dfb58eaf02f5b40eddaec690af060bb&width=1200&height=630&quality=88&smart=true",
+          "publishedAt": "2026-10-28T12:00:00.000Z",
+          "tags": [
+            "culture",
+            "halloween",
+            "doctrine"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-28-noon-07",
+          "type": "article",
+          "title": "Guest Column: LDS faith makes room for heart-breaking pregnancy cases - Idaho's abortion law doesn't",
+          "summary": "In an Idaho County Free Press guest column, Latter-day Saint family physician Dr. Eliessa Bell writes that she felt torn after the church urged members to oppose Proposition 1 and gave $1 million to a PAC opposing it, because the church's abortion policy allows exceptions that Idaho's law does not.",
+          "source": "Idaho County Free Press",
+          "url": "https://www.idahocountyfreepress.com/opinion/guest-column-lds-faith-makes-room-for-heart-breaking-pregnancy-cases---idahos-abortion/article_fd0a94b8-86d3-4c37-b959-94fd029c9cbb.html",
+          "thumbnailUrl": "https://bloximages.newyork1.vip.townnews.com/idahocountyfreepress.com/content/tncms/assets/v3/editorial/a/0d/a0dd44f2-46f4-11ea-a986-37a3929caab8/5c48b9086b301.image.jpg?crop=359%2C360%2C104%2C16&resize=200%2C201&order=crop%2Cresize",
+          "publishedAt": "2026-10-28T11:00:00.000Z",
+          "tags": [
+            "abortion",
+            "idaho",
+            "politics"
+          ],
+          "paywalled": true
+        },
+        {
+          "id": "2026-10-28-noon-08",
+          "type": "reddit",
+          "title": "Women can now serve at 18 and Oaks wants them married younger. A race against the exit door?",
+          "summary": "An r/exmormon post connects the lower missionary age for women and President Dallin H. Oaks' hope for earlier marriages with survey data reported by The Salt Lake Tribune on young women leaving the faith, and asks whether the changes aim to keep them from leaving.",
+          "source": "r/exmormon",
+          "subreddit": "r/exmormon",
+          "url": "https://www.reddit.com/r/exmormon/comments/1xhi8uz/women_can_now_serve_at_18_and_oaks_wants_them/",
+          "thumbnailUrl": "https://mormonnewsroundup.github.io/mormon-news-roundup/feed/images/reddit/2026-10-28-noon-08.jpg",
+          "publishedAt": "2026-10-28T08:15:10.000Z",
+          "tags": [
+            "missionaries",
+            "women",
+            "dallin-oaks"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-28-noon-09",
+          "type": "article",
+          "title": "Despite its midterm campaigning, the LDS Church has a nuanced abortion stance",
+          "summary": "KUER reports that the LDS Church is actively working against two abortion ballot measures in Idaho and another in Nevada, though one researcher says the faith's abortion policy is generous compared with those of other conservative religions.",
+          "source": "KUER",
+          "url": "https://www.kuer.org/politics-government/2026-10-28/lds-church-2026-midterms-idaho-nevada-abortion-propositions",
+          "thumbnailUrl": "https://npr.brightspotcdn.com/dims4/default/edba959/2147483647/strip/true/crop/3900x2048+0+276/resize/1200x630!/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fec%2Fc8%2Fd4fea9a64c699136863c2f7e5793%2Fballot-5.jpg",
+          "publishedAt": "2026-10-28T04:00:00.000Z",
+          "tags": [
+            "abortion",
+            "politics",
+            "idaho",
+            "nevada"
+          ],
+          "paywalled": false
+        }
+      ]
+    },
+    {
       "name": "midnight",
       "publishedAt": "2026-10-28T04:00:00.000Z",
       "items": [
