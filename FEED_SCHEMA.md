@@ -188,7 +188,7 @@ You do not upload a separate host, and you do not edit `constants/config.ts` for
 
 Aim for 8–12 items on a full day. The midnight edition is the main one. Noon is a short update. A shorter day is still valid.
 
-The live `feed/` folder is the real edition. `feed/index.json` has `"sample": false` and lists `2026-10-25`, `2026-10-24`, `2026-10-23`, and `2026-10-20`. Latest Headlines shows up to 15 stories by `publishedAt`, across every date, with no age cutoff, and exactly one Mormon News Roundup YouTube video (the newest). Older videos from that channel stay in Search. The app loads day files from the newest date forward until that list is full and includes that video, when the feed has one. Search opens every date in `days`. Set `"sample": false` on the index to keep the Sample data banner off. Real `thumbnailUrl` values are `https` image addresses.
+The live `feed/` folder is the real edition. `feed/index.json` has `"sample": false` and lists `2026-10-25`, `2026-10-24`, `2026-10-23`, and `2026-10-20`. Latest Headlines shows up to 15 stories by `publishedAt`, across every date, with no age cutoff, and exactly one Mormon News Roundup YouTube video (the newest). It also keeps at most one r/exmormon post, one r/mormon post, and one Generally Unquotable video, each the newest. Older items from those sources stay in Search. The app loads day files from the newest date forward until that list is full and includes that video, when the feed has one. Search opens every date in `days`. Set `"sample": false` on the index to keep the Sample data banner off. Real `thumbnailUrl` values are `https` image addresses.
 
 `fallback/` is the offline sample bundled into the app. GitHub Pages does not publish it. `sample:` thumbnail tokens belong there only.
 

@@ -4,11 +4,19 @@ import path from 'node:path';
 import test from 'node:test';
 import { fileURLToPath } from 'node:url';
 
-import { isOwnChannelItem, latestStories, orderedStories, storiesAfterLatest, TODAY_STORY_LIMIT } from '../lib/today.ts';
+import {
+  cappedSubreddit,
+  isGenerallyUnquotableItem,
+  isOwnChannelItem,
+  latestStories,
+  orderedStories,
+  storiesAfterLatest,
+  TODAY_STORY_LIMIT,
+} from '../lib/today.ts';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
-function story(id, publishedAt, source, type = 'video') {
+function story(id, publishedAt, source, type = 'video', extra = {}) {
   return {
     item: {
       id,
@@ -20,6 +28,7 @@ function story(id, publishedAt, source, type = 'video') {
       publishedAt,
       paywalled: false,
       tags: [],
+      ...extra,
     },
     date: publishedAt.slice(0, 10),
   };
@@ -53,6 +62,40 @@ test('the current feed Latest list has exactly one own-channel video, the newest
   const newest = [...allOwn].sort((a, b) => b.item.publishedAt.localeCompare(a.item.publishedAt))[0];
   assert.equal(own[0].item.id, newest.item.id);
   console.log(`Latest own-channel item: ${own[0].item.id} ${own[0].item.title}`);
+
+  const archive = orderedStories(days);
+  for (const subreddit of ['exmormon', 'mormon']) {
+    const group = archive.filter((entry) => cappedSubreddit(entry.item) === subreddit);
+    const shown = latest.filter((entry) => cappedSubreddit(entry.item) === subreddit);
+    assert.ok(shown.length <= 1, `${subreddit} appears ${shown.length} times`);
+    if (group.length === 0) continue;
+    const newest = [...group].sort((a, b) => b.item.publishedAt.localeCompare(a.item.publishedAt))[0];
+    if (shown.length === 1) {
+      assert.equal(shown[0].item.id, newest.item.id);
+      console.log(`Latest r/${subreddit}: ${shown[0].item.id} ${shown[0].item.title}`);
+    }
+    for (const older of group) {
+      if (older.item.id === newest.item.id) continue;
+      assert.equal(latest.some((entry) => entry.item.id === older.item.id), false);
+      assert.equal(archive.some((entry) => entry.item.id === older.item.id), true);
+    }
+  }
+
+  const guAll = archive.filter((entry) => isGenerallyUnquotableItem(entry.item));
+  const guShown = latest.filter((entry) => isGenerallyUnquotableItem(entry.item));
+  assert.ok(guShown.length <= 1);
+  if (guAll.length > 0) {
+    const newestGu = [...guAll].sort((a, b) => b.item.publishedAt.localeCompare(a.item.publishedAt))[0];
+    if (guShown.length === 1) {
+      assert.equal(guShown[0].item.id, newestGu.item.id);
+      console.log(`Latest Generally Unquotable: ${guShown[0].item.id} ${guShown[0].item.title}`);
+    }
+    for (const older of guAll) {
+      if (older.item.id === newestGu.item.id) continue;
+      assert.equal(latest.some((entry) => entry.item.id === older.item.id), false);
+      assert.equal(archive.some((entry) => entry.item.id === older.item.id), true);
+    }
+  }
 
   const olderOwn = allOwn.filter((entry) => entry.item.id !== newest.item.id);
   const after = storiesAfterLatest(days);
@@ -98,6 +141,51 @@ test('an own-channel video older than the first 15 takes the last slot', () => {
   assert.equal(latest.some((entry) => entry.item.id === 'other-14'), false);
   const archive = orderedStories([day('2026-10-28', items.slice(0, 16)), day('2026-10-20', [items[16]])]);
   assert.equal(archive[15].item.id, 'other-14');
+});
+
+test('older posts from the same subreddit are skipped and the list backfills', () => {
+  const reddit = (id, publishedAt, name) =>
+    story(id, publishedAt, `r/${name}`, 'reddit', {
+      subreddit: `r/${name}`,
+      url: `https://www.reddit.com/r/${name}/comments/${id}/post/`,
+    }).item;
+  const days = [
+    day('2026-10-28', [
+      reddit('ex-new', '2026-10-28T15:00:00.000Z', 'exmormon'),
+      reddit('mo-new', '2026-10-28T14:00:00.000Z', 'mormon'),
+      reddit('ex-old', '2026-10-28T13:00:00.000Z', 'exmormon'),
+      story('filler', '2026-10-28T12:00:00.000Z', 'KSL', 'article').item,
+      reddit('mo-old', '2026-10-28T11:00:00.000Z', 'mormon'),
+    ]),
+  ];
+  const latest = latestStories(days, 3);
+  assert.deepEqual(
+    latest.map((entry) => entry.item.id),
+    ['ex-new', 'mo-new', 'filler'],
+  );
+  const archive = orderedStories(days);
+  for (const id of ['ex-old', 'mo-old']) {
+    assert.equal(latest.some((entry) => entry.item.id === id), false);
+    assert.ok(archive.findIndex((entry) => entry.item.id === id) >= 3);
+  }
+});
+
+test('an older Generally Unquotable video is skipped and the list backfills', () => {
+  const days = [
+    day('2026-10-28', [
+      story('gu-new', '2026-10-28T16:00:00.000Z', 'Generally Unquotable').item,
+      story('gu-old', '2026-10-28T12:00:00.000Z', 'generally unquotable').item,
+      story('other', '2026-10-28T11:00:00.000Z', 'KSL', 'article').item,
+    ]),
+  ];
+  const latest = latestStories(days, 2);
+  assert.deepEqual(
+    latest.map((entry) => entry.item.id),
+    ['gu-new', 'other'],
+  );
+  const archive = orderedStories(days);
+  assert.equal(latest.some((entry) => entry.item.id === 'gu-old'), false);
+  assert.ok(archive.findIndex((entry) => entry.item.id === 'gu-old') >= 2);
 });
 
 test('a feed with no own-channel video stays the plain newest 15', () => {
