@@ -9,9 +9,11 @@ import { ScreenDisclaimer } from '@/components/ScreenDisclaimer';
 import { useTheme } from '@/components/useTheme';
 import {
   ABOUT_INTRO,
+  ADS_ENABLED,
   APP_PITCH,
   APP_SUPPORT_URL,
   BREAKING_NEWS_URL,
+  IAP_ENABLED,
   PATREON_URL,
   PRIVACY_POLICY_URL,
   REMOVE_ADS_PRICE_LABEL,
@@ -121,49 +123,57 @@ export default function AboutScreen() {
           </Text>
         </Pressable>
 
-        <Text style={[styles.section, { color: theme.muted }]}>Ads</Text>
-        <Text style={[styles.paragraph, { color: theme.muted }]}>
-          {canUseIap()
-            ? `Remove ads is a one-time purchase of ${REMOVE_ADS_PRICE_LABEL}. Restore puts it back on this Apple ID if you already bought it.`
-            : 'This preview shows a labeled ad box. A real Google test banner, and the one-time purchase, turn on in an EAS build. Deleting the app clears the purchase on this phone until you restore it.'}
-        </Text>
-        <ActionRow
-          label={adsRemoved ? 'Ads removed' : 'Remove ads'}
-          detail={
-            adsRemoved
-              ? 'Banner spots stay hidden on this phone.'
-              : `${REMOVE_ADS_PRICE_LABEL}, one time`
-          }
-          busy={busy === 'buy'}
-          disabled={adsRemoved}
-          onPress={() => void onRemoveAds()}
-        />
-        <ActionRow
-          label="Restore purchase"
-          detail="Already bought it on this Apple ID?"
-          busy={busy === 'restore'}
-          onPress={() => void onRestore()}
-        />
+        {IAP_ENABLED ? (
+          <>
+            <Text style={[styles.section, { color: theme.muted }]}>Ads</Text>
+            <Text style={[styles.paragraph, { color: theme.muted }]}>
+              {canUseIap()
+                ? `Remove ads is a one-time purchase of ${REMOVE_ADS_PRICE_LABEL}. Restore puts it back on this Apple ID if you already bought it.`
+                : 'This preview shows a labeled ad box. A real Google test banner, and the one-time purchase, turn on in an EAS build. Deleting the app clears the purchase on this phone until you restore it.'}
+            </Text>
+            <ActionRow
+              label={adsRemoved ? 'Ads removed' : 'Remove ads'}
+              detail={
+                adsRemoved
+                  ? 'Banner spots stay hidden on this phone.'
+                  : `${REMOVE_ADS_PRICE_LABEL}, one time`
+              }
+              busy={busy === 'buy'}
+              disabled={adsRemoved}
+              onPress={() => void onRemoveAds()}
+            />
+            <ActionRow
+              label="Restore purchase"
+              detail="Already bought it on this Apple ID?"
+              busy={busy === 'restore'}
+              onPress={() => void onRestore()}
+            />
+          </>
+        ) : null}
 
         {showPreviewTools() ? (
           <View style={[styles.preview, { borderColor: theme.border, backgroundColor: theme.card }]}>
             <Text style={[styles.previewKicker, { color: theme.muted }]}>
               {previewRuntimeLabel()}
             </Text>
-            <View style={styles.switchRow}>
-              <Text style={[styles.switchLabel, { color: theme.text }]}>Simulate ads removed</Text>
-              <Switch
-                accessibilityLabel="Simulate ads removed"
-                value={adsRemoved}
-                onValueChange={(value) => void setAdsRemoved(value)}
-                trackColor={{ false: theme.border, true: theme.header }}
-                thumbColor={theme.gold}
-              />
-            </View>
-            <Text style={[styles.previewNote, { color: theme.muted }]}>
-              This switch is only in the preview. It does not charge you, and it is hidden in the
-              App Store build.
-            </Text>
+            {ADS_ENABLED ? (
+              <>
+                <View style={styles.switchRow}>
+                  <Text style={[styles.switchLabel, { color: theme.text }]}>Simulate ads removed</Text>
+                  <Switch
+                    accessibilityLabel="Simulate ads removed"
+                    value={adsRemoved}
+                    onValueChange={(value) => void setAdsRemoved(value)}
+                    trackColor={{ false: theme.border, true: theme.header }}
+                    thumbColor={theme.gold}
+                  />
+                </View>
+                <Text style={[styles.previewNote, { color: theme.muted }]}>
+                  This switch is only in the preview. It does not charge you, and it is hidden in the
+                  App Store build.
+                </Text>
+              </>
+            ) : null}
             <Pressable accessibilityRole="button" onPress={() => void replayWelcome()}>
               <Text style={[styles.patreon, { color: theme.link }]}>Show the welcome screen again</Text>
             </Pressable>

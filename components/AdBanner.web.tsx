@@ -2,6 +2,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import { useAppState } from '@/components/AppState';
 import { useTheme } from '@/components/useTheme';
+import { ADS_ENABLED } from '@/constants/config';
 
 /**
  * Web never loads react-native-google-mobile-ads. The native file does, and
@@ -10,7 +11,7 @@ import { useTheme } from '@/components/useTheme';
 export function AdBanner() {
   const { adsRemoved } = useAppState();
   const theme = useTheme();
-  if (adsRemoved) return null;
+  if (!ADS_ENABLED || adsRemoved) return null;
 
   return (
     <View

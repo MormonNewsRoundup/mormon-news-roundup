@@ -84,11 +84,11 @@ What is possible:
 
 Three tabs at the bottom:
 
-- **Latest** — up to 15 stories across every day in the feed, newest first. The header says Latest Headlines. There is no age cutoff. Exactly one video from the Mormon News Roundup YouTube channel is included, and it is the newest one. At most one r/exmormon post, one r/mormon post, and one Generally Unquotable video are included, each the newest. Older items from those sources are left out of these 15 and stay in Search. When a newer story arrives, the oldest of those 15 drops off the bottom and stays in Search. If the feed has fewer than 15 stories, they all stay on Latest. A repeated story is shown once. There is no edition label and no clock time. Each card shows the source, the type, and the full publish date, such as October 23, 2026. That date is the Eastern calendar day of the story, with no clock time and no time zone. Pull down to refresh. Tap a card to open its link. **Share** opens the phone’s share sheet with the link and the words “via Mormon News Roundup”. A small lock means the original link may be paywalled. A gray **Ad** box sits between some cards. That box is a stand-in, not a real advertisement. At the bottom of the list, in small gray type: “Not affiliated with or endorsed by The Church of Jesus Christ of Latter-day Saints.”
+- **Latest** — up to 15 stories across every day in the feed, newest first. The header says Latest Headlines. There is no age cutoff. Exactly one video from the Mormon News Roundup YouTube channel is included, and it is the newest one. At most one r/exmormon post, one r/mormon post, and one Generally Unquotable video are included, each the newest. Older items from those sources are left out of these 15 and stay in Search. When a newer story arrives, the oldest of those 15 drops off the bottom and stays in Search. If the feed has fewer than 15 stories, they all stay on Latest. A repeated story is shown once. There is no edition label and no clock time. Each card shows the source, the type, and the full publish date, such as October 23, 2026. That date is the Eastern calendar day of the story, with no clock time and no time zone. Pull down to refresh. Tap a card to open its link. **Share** opens the phone’s share sheet with the link and the words “via Mormon News Roundup”. A small lock means the original link may be paywalled. v1 has no ad boxes between cards. At the bottom of the list, in small gray type: “Not affiliated with or endorsed by The Church of Jesus Christ of Latter-day Saints.”
 - **Search** — continues after Latest. With no text and the default filters, it shows stories 16 through 65, newest first, using the same order as Latest so those 15 are not repeated. If the archive has 15 or fewer stories, a small gray note says “Older stories will appear here.” Type a word, or change the type or time filter, and Search looks through the whole archive, including the stories on Latest. Type chips: All, Articles, Videos, Podcasts, Reddit. Time chips: Any time, Past week, Past month, Past year, and Custom range (a from date and a to date). The two sets combine. Try `lawsuit` or `podcast`. The same affiliation line is at the bottom.
-- **About** — what the app is, YouTube, the website, **Read on the web**, **Privacy Policy**, **App Support**, a quiet Patreon link, **Remove ads ($0.99, one time)**, and **Restore purchase**. The same affiliation line is at the bottom, not in a box in the middle.
+- **About** — what the app is, YouTube, the website, **Read on the web**, **Privacy Policy**, **App Support**, and a quiet Patreon link. The same affiliation line is at the bottom, not in a box in the middle. Remove ads and Restore purchase stay hidden while `IAP_ENABLED` is false.
 
-On About, a dashed box says **Simulate ads removed**. That switch only exists in this preview. Turn it on and the ad boxes disappear. It does not charge you.
+The v1 App Store app does not show ad boxes. `ADS_ENABLED` in `constants/config.ts` is false, so Latest does not insert ad slots.
 
 ## What is live now
 
@@ -149,17 +149,21 @@ npm run check-feed
 
 ## Ads and the $0.99 purchase
 
-Both are wired up, and both are **safe in Expo Go**. The real Apple and Google libraries are not inside Expo Go. If the app imported them anyway, Expo Go would crash. Instead:
+v1 ships with both **off**. `ADS_ENABLED` and `IAP_ENABLED` in `constants/config.ts` are `false`. Latest has no ad slots, About has no Remove ads or Restore purchase rows, and nothing shows a “Loading test ad…” line. The App Store privacy answers for this version are **Data Not Collected**. Do not turn either switch on without the owner’s approval.
 
-- Expo Go and the browser preview show a labeled **Ad** box.
-- **Remove ads** and **Restore purchase** explain that the store build is required, and point you at the simulate switch.
-- An EAS development build or a TestFlight / App Store build loads Google’s **test** banner and can start a real StoreKit purchase.
+`react-native-google-mobile-ads`, `expo-iap`, and `expo-dev-client` are not installed. `app.json` has no AdMob plugin, no StoreKit plugin, and no tracking-permission text. The production EAS profile builds a normal release app.
 
-The test ad ids are Google’s public samples, not a live Mormon News Roundup ad account. Do not click your own live ads later. Replace the test ids before the App Store version (see the list below).
+### Turning ads and the remove-ads purchase back on
 
-The product id to create in App Store Connect is exactly `remove_ads`, non-consumable, $0.99. “Non-consumable” means the person buys it once. There is no login. The phone remembers the purchase. If they delete the app, **Restore purchase** asks Apple and turns ads off again.
+1. Get the owner’s approval.
+2. Set `ADS_ENABLED` and `IAP_ENABLED` to `true` in `constants/config.ts`.
+3. Install the packages again: `npx expo install react-native-google-mobile-ads expo-iap`.
+4. Put the AdMob and `expo-iap` config plugins back in `app.json`, including `NSUserTrackingUsageDescription` only if ads will use the advertising identifier. The old plugin block is in git history.
+5. Restore `components/NativeAdBanner.tsx` and the StoreKit flow in `lib/purchases.ts` from git history (the commit before v1 removed them). `AdBanner` already skips its work while `ADS_ENABLED` is false.
+6. Create the AdMob app and banner unit, and the non-consumable App Store product `remove_ads` at $0.99. Replace Google’s test ids before anyone sees real ads.
+7. Update the App Store privacy answers. Ads mean the listing is no longer “Data Not Collected”.
 
-v1 does not send receipts to a server, because there is no server. The App Store’s own purchase record is the source of truth, via Restore.
+The product id, when you create it, is exactly `remove_ads`. There is no login. v1 does not send receipts to a server.
 
 ## Path to the App Store
 
@@ -180,19 +184,16 @@ Do these in order when you are ready. None of them are done yet.
 3. **App Store Connect** — [https://appstoreconnect.apple.com](https://appstoreconnect.apple.com). Create an app named **Mormon News Roundup**. The bundle id is `com.mormonnewsroundup.app` (set in `app.json`). Change that id before the first upload if you want a different one. After the first upload it is painful to change.
 4. **Age rating 17+.** The questionnaire should reflect lawsuits and sexual abuse coverage. Say that plainly in the listing.
 5. **Privacy policy and support URLs.** Apple requires both in the App Store Connect listing. They are live: `https://mormonnewsroundup.org/privacy` and `https://mormonnewsroundup.org/app-support`. The same addresses are in `app.json` under `expo.extra` and on the About screen.
-6. **Privacy answers.** The app has no accounts and does not collect a name or email. If ads are on, say so: Google AdMob uses an advertising identifier. The app asks with Apple’s tracking prompt (the text is already in `app.json`). If someone buys Remove ads, stop requesting ads.
-7. **AdMob.** Create an account, add an iOS app, and create a banner unit. Then replace the test values:
-   - `app.json` — the `iosAppId` and `androidAppId` (they contain `~`)
-   - `components/NativeAdBanner.tsx` — `TestIds.BANNER` becomes your banner unit id (it contains `/`)
-   - Add Google’s full SKAdNetwork id list to the ads plugin in `app.json`. Only Google’s own id is filled in today.
-8. **In-app purchase.** In App Store Connect, finish Agreements, Tax, and Banking. Create a non-consumable product with product id `remove_ads` and price $0.99. The id has to match `constants/config.ts`.
+6. **Privacy answers.** v1 is **Data Not Collected**. The app has no accounts, no advertising identifier, and no tracking prompt. When ads are approved later, update these answers before shipping that build.
+7. **AdMob and the $0.99 purchase** come later, and only with the owner’s approval. The steps are under **Turning ads and the remove-ads purchase back on** above. Do not add them to this first binary.
+8. **iPhone only.** `ios.supportsTablet` is false so Apple does not ask for iPad screenshots. `ios.buildNumber` starts at `"1"`. `eas.json` uses `appVersionSource: "remote"` and production `autoIncrement`.
 9. **Build in the cloud** (no Mac):
 
    ```bash
    npx eas-cli@latest build --platform ios --profile production
    ```
 
-   `eas.json` also has a `development` profile (for a private test app that can show real test ads and purchases) and a `preview` profile (an internal install). Those two need the Apple account so the iPhone can be registered. Expo Go does not.
+   `eas.json` also has a `development` profile and a `preview` profile. Both are internal installs of a normal release app. `expo-dev-client` is not installed, so production is not a dev client. Expo Go does not build the store app.
 
 10. **Upload to App Store Connect:**
 
@@ -200,7 +201,7 @@ Do these in order when you are ready. None of them are done yet.
     npx eas-cli@latest submit --platform ios --profile production
     ```
 
-11. **TestFlight.** Install Apple’s TestFlight app. Add yourself as a tester. Try search, a card, share, a test ad, the purchase, and restore. Use a Sandbox tester for the purchase so you are not charged while testing.
+11. **TestFlight.** Install Apple’s TestFlight app. Add yourself as a tester. Try search, a card, and share. This build has no ad and no purchase.
 12. **Submit for review** from App Store Connect once the listing, screenshots, privacy policy, support URL, age rating, and ads/purchase setup are in place.
 
 `eas.json` is already set for those three build types. You do not need to create an `ios` folder. EAS creates the native project on their servers from `app.json`.
@@ -208,12 +209,10 @@ Do these in order when you are ready. None of them are done yet.
 ## Still to do
 
 - `FEED_BASE_URL` in `constants/config.ts` is the GitHub Pages feed. A new day is a JSON commit to `main`, not a change to that file. The live edition is the real October 23 set.
-- AdMob app ids and the banner unit are **Google test ids**. Replace them before anyone sees real ads.
-- The SKAdNetwork list in `app.json` has only Google’s id (`cstr6suwn9.skadnetwork`). Paste Google’s current full list before production ads.
-- The `remove_ads` product does not exist in App Store Connect yet.
+- Ads and the $0.99 purchase are off for v1. See **Turning ads and the remove-ads purchase back on**. Do not add the AdMob or StoreKit packages until the owner says so.
 - Privacy policy: `https://mormonnewsroundup.org/privacy`. Support: `https://mormonnewsroundup.org/app-support`. Paste both into the App Store Connect listing.
 - The Expo project is not linked yet. `npx eas-cli@latest init` does that.
-- Purchases are remembered on the phone after StoreKit says they succeeded. There is no receipt server in v1.
+- There is no StoreKit purchase in v1, and no receipt server.
 - The YouTube link is the one published on mormonnewsroundup.org: `https://www.youtube.com/@MormonNewsRoundup`. Patreon is `https://www.patreon.com/MormonNewsRoundup`.
 
 ## For a helper
@@ -226,12 +225,7 @@ npm run typecheck  # TypeScript
 npm run check-feed # live JSON; short days warn, they do not fail
 ```
 
-To work on real ads or purchases locally you need an EAS development build, not Expo Go:
-
-```bash
-npx eas-cli@latest build --platform ios --profile development
-npx expo start --dev-client
-```
+The store build does not include the Expo dev client. `npm start` still opens Expo Go for day-to-day preview. A dev-client binary needs `expo-dev-client` installed again, the plugin added back to `app.json`, and `developmentClient: true` on the development profile in `eas.json`.
 
 Useful files:
 

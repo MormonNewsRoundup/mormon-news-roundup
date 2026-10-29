@@ -15,7 +15,7 @@ import { BrandHeader } from '@/components/BrandHeader';
 import { NewsCard } from '@/components/NewsCard';
 import { ScreenDisclaimer } from '@/components/ScreenDisclaimer';
 import { useTheme } from '@/components/useTheme';
-import { APP_PITCH, isBundledFeed } from '@/constants/config';
+import { ADS_ENABLED, APP_PITCH, isBundledFeed } from '@/constants/config';
 import { serifFamily } from '@/constants/theme';
 import { getDay, getIndex, subscribeFeedRefresh } from '@/lib/feed';
 import { datesNewestFirst, isOwnChannelItem, orderedStories, recentStories, TODAY_STORY_LIMIT, type DatedStory } from '@/lib/today';
@@ -32,11 +32,11 @@ function buildRows(stories: DatedStory[], sample: boolean, adsRemoved: boolean):
   stories.forEach((story, index) => {
     const cards = index + 1;
     rows.push({ key: story.item.id, kind: 'card', story });
-    if (!adsRemoved && (cards === 1 || cards % 4 === 0)) {
+    if (ADS_ENABLED && !adsRemoved && (cards === 1 || cards % 4 === 0)) {
       rows.push({ key: `ad-${story.item.id}`, kind: 'ad' });
     }
   });
-  if (!adsRemoved && stories.length > 0 && stories.length % 4 !== 0) {
+  if (ADS_ENABLED && !adsRemoved && stories.length > 0 && stories.length % 4 !== 0) {
     rows.push({ key: 'ad-end', kind: 'ad' });
   }
   return rows;

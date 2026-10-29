@@ -1,6 +1,8 @@
 import Constants, { ExecutionEnvironment } from 'expo-constants';
 import { Platform } from 'react-native';
 
+import { ADS_ENABLED, IAP_ENABLED } from '@/constants/config';
+
 /** True when the JS is running inside the Expo Go app, not a store build. */
 export function isExpoGo(): boolean {
   return Constants.executionEnvironment === ExecutionEnvironment.StoreClient;
@@ -11,11 +13,11 @@ export function isExpoGo(): boolean {
  * preview, and importing them there crashes the app. Call this before require().
  */
 export function canUseNativeAds(): boolean {
-  return Platform.OS !== 'web' && !isExpoGo();
+  return ADS_ENABLED && Platform.OS !== 'web' && !isExpoGo();
 }
 
 export function canUseIap(): boolean {
-  return (Platform.OS === 'ios' || Platform.OS === 'android') && !isExpoGo();
+  return IAP_ENABLED && (Platform.OS === 'ios' || Platform.OS === 'android') && !isExpoGo();
 }
 
 /** The pretend “ads removed” switch is only for previews and dev builds. */
