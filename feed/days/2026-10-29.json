@@ -3,6 +3,124 @@
   "sample": false,
   "editions": [
     {
+      "name": "noon",
+      "publishedAt": "2026-10-29T16:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-10-29-noon-06",
+          "type": "video",
+          "title": "I Asked BYU–Idaho Students About the Mormon Racist Priesthood Ban… 😬",
+          "summary": "A Mormon News Roundup Short, which describes itself as a satirical street-interview video, asks BYU–Idaho students in Rexburg about the church's historical priesthood and temple restrictions on Black members, which ended in 1978, and how that history is explained.",
+          "source": "Mormon News Roundup",
+          "url": "https://www.youtube.com/watch?v=YWN18oBj-_0",
+          "thumbnailUrl": "https://i.ytimg.com/vi/YWN18oBj-_0/maxresdefault.jpg",
+          "publishedAt": "2026-10-29T16:00:15.000Z",
+          "tags": [
+            "priesthood-ban",
+            "race",
+            "byu-idaho"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-29-noon-02",
+          "type": "video",
+          "title": "Special Report | Trapped By Covenants 🩹",
+          "summary": "Generally Unquotable's special report examines Elder Dale G. Renlund's 2024 BYU devotional on making multiple covenants and asks whether his exercise-band demonstration instead illustrates how difficult it can become to leave the church.",
+          "source": "Generally Unquotable",
+          "url": "https://www.youtube.com/watch?v=U7XcLlCycfw",
+          "thumbnailUrl": "https://i.ytimg.com/vi/U7XcLlCycfw/hqdefault.jpg",
+          "publishedAt": "2026-10-29T16:00:05.000Z",
+          "tags": [
+            "covenants",
+            "dale-renlund",
+            "byu"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-29-noon-03",
+          "type": "reddit",
+          "title": "Church ads not revealing its name. Is that just modern marketing or milk before meat 2.0?",
+          "summary": "An r/exmormon post cites Jana Riess' view in The Salt Lake Tribune that church-linked social media ads that often leave out the church's name help drive record convert numbers, and asks where normal religious advertising ends and deceptive outreach begins.",
+          "source": "r/exmormon",
+          "subreddit": "r/exmormon",
+          "url": "https://www.reddit.com/r/exmormon/comments/1xik1nv/church_ads_not_revealing_its_name_is_that_just/",
+          "thumbnailUrl": "https://mormonnewsroundup.github.io/mormon-news-roundup/feed/images/reddit/2026-10-29-noon-03.jpg",
+          "publishedAt": "2026-10-29T13:31:01.000Z",
+          "tags": [
+            "missionary-work",
+            "advertising",
+            "converts"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-29-noon-07",
+          "type": "article",
+          "title": "LDS-owned land in Lee’s Summit adds plan for industrial park",
+          "summary": "The Kansas City Business Journal reports that an 11-building industrial park with up to 3 million square feet could fill undeveloped church-owned land near Interstate 470 and Todd George Parkway as part of the larger Arborside development, with a federal records center already under contract at the site.",
+          "source": "Kansas City Business Journal",
+          "url": "https://www.bizjournals.com/kansascity/news/2026/10/29/commerce-park-at-arborside-industrial-park-newmark.html",
+          "thumbnailUrl": "https://media.bizj.us/view/img/12239485/20220328leessummitmormonland189av*1200xx6439-3628-0-389.jpg",
+          "publishedAt": "2026-10-29T12:12:00.000Z",
+          "tags": [
+            "real-estate",
+            "church-finances"
+          ],
+          "paywalled": true
+        },
+        {
+          "id": "2026-10-29-noon-01",
+          "type": "article",
+          "title": "Latest from Mormon Land: Historian Richard Bushman sought a blessing from a surprising apostle",
+          "summary": "The Salt Lake Tribune's Mormon Land newsletter shares takeaways from a new biography of historian Richard Bushman, including that he dodged a Mark Hofmann forgery and received a blessing from academic-wary apostle Boyd K. Packer.",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/religion/2026/10/29/words-wisdom-patriarch-mormon/",
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/TD3S3AAX3NDPZNOQ7JFTBOHBDE.JPG?auth=ef5136fefc2f09655e2fde923b67471ade810507feb88b5721301e8de8ee1452&width=1200&height=630&quality=88&smart=true",
+          "publishedAt": "2026-10-29T12:00:00.000Z",
+          "tags": [
+            "richard-bushman",
+            "church-history",
+            "mark-hofmann"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-29-noon-04",
+          "type": "article",
+          "title": "A Standard Polygamy Narrative?",
+          "summary": "A Times & Seasons post by Stephen Fleming argues the church's common narrative on polygamy leaves historical and theological questions unaddressed, including men being sealed to additional wives after a wife dies and Wilford Woodruff's explanation for ending the practice.",
+          "source": "Times & Seasons",
+          "url": "https://timesandseasons.org/index.php/2026/10/a-standard-polygamy-narrative/",
+          "thumbnailUrl": "https://timesandseasons.org/wp-content/uploads/2024/12/Times-and-Seasons-Banner-2.1-800x450.jpg",
+          "publishedAt": "2026-10-29T10:21:43.000Z",
+          "tags": [
+            "polygamy",
+            "church-history",
+            "sealings"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-29-noon-05",
+          "type": "reddit",
+          "title": "Patriarchal blessings and predestination",
+          "summary": "An r/mormon post describes a coworker who says she isn't worried about her husband failing to become a doctor because his patriarchal blessing says he will, and asks for opinions on the difference between patriarchal blessings and predestination.",
+          "source": "r/mormon",
+          "subreddit": "r/mormon",
+          "url": "https://www.reddit.com/r/mormon/comments/1xiagpr/patriarchal_blessings_and_predestination/",
+          "thumbnailUrl": "https://mormonnewsroundup.github.io/mormon-news-roundup/feed/images/reddit/2026-10-29-noon-05.jpg",
+          "publishedAt": "2026-10-29T04:33:12.000Z",
+          "tags": [
+            "patriarchal-blessings",
+            "doctrine"
+          ],
+          "paywalled": false
+        }
+      ]
+    },
+    {
       "name": "midnight",
       "publishedAt": "2026-10-29T04:00:00.000Z",
       "items": [
