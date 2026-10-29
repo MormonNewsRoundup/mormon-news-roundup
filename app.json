@@ -23,7 +23,7 @@
     "android": {
       "package": "com.mormonnewsroundup.app",
       "adaptiveIcon": {
-        "backgroundColor": "#1D1838",
+        "backgroundColor": "#1B1A5E",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
@@ -50,7 +50,7 @@
         {
           "image": "./assets/images/splash-icon.png",
           "resizeMode": "contain",
-          "backgroundColor": "#1D1838"
+          "backgroundColor": "#1B1A5E"
         }
       ],
       "@react-native-community/datetimepicker",
@@ -60,11 +60,21 @@
     "extra": {
       "contentRating": "17+",
       "privacyPolicyUrl": "https://mormonnewsroundup.org/privacy",
-      "supportUrl": "https://mormonnewsroundup.org/app-support"
+      "supportUrl": "https://mormonnewsroundup.org/app-support",
+      "router": {
+        "asyncRoutes": {
+          "web": false,
+          "default": false
+        }
+      },
+      "eas": {
+        "projectId": "7dab3c0c-fd55-4428-b899-495045a2490c"
+      }
     },
     "experiments": {
       "typedRoutes": true,
       "baseUrl": "/mormon-news-roundup"
-    }
+    },
+    "owner": "mormonnewsroundup"
   }
 }

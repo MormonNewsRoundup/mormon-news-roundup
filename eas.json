@@ -18,10 +18,22 @@
       }
     },
     "production": {
-      "autoIncrement": true
+      "autoIncrement": true,
+      "credentialsSource": "local"
     }
   },
   "submit": {
-    "production": {}
+    "production": {
+      "ios": {
+        "appleTeamId": "Z6674LPGMM",
+        "sku": "mormonnewsroundup-ios",
+        "language": "en-US",
+        "companyName": "Burke David Sorenson",
+        "ascAppId": "6828436962",
+        "ascApiKeyPath": "./credentials/ios/AuthKey_FW5399TRWW.p8",
+        "ascApiKeyIssuerId": "c8bcc26c-e78c-4466-9bbf-02ca0bb539d4",
+        "ascApiKeyId": "FW5399TRWW"
+      }
+    }
   }
 }

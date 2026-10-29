@@ -31,7 +31,7 @@ function previewPurchaseMessage(): string {
 
 export default function AboutScreen() {
   const theme = useTheme();
-  const { adsRemoved, setAdsRemoved, replayWelcome } = useAppState();
+  const { adsRemoved, setAdsRemoved } = useAppState();
   const [busy, setBusy] = useState<'buy' | 'restore' | null>(null);
   const version = Constants.expoConfig?.version ?? '1.0.0';
 
@@ -174,9 +174,6 @@ export default function AboutScreen() {
                 </Text>
               </>
             ) : null}
-            <Pressable accessibilityRole="button" onPress={() => void replayWelcome()}>
-              <Text style={[styles.patreon, { color: theme.link }]}>Show the welcome screen again</Text>
-            </Pressable>
           </View>
         ) : null}
 

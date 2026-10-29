@@ -56,7 +56,7 @@ If you run `npx expo start` yourself, add `--go` (`npx expo start --go`). Withou
 2. Open the iPhone **Camera** app and point it at the QR code.
 3. Tap the banner that appears, and choose **Expo Go**.
 
-The first screen is a short welcome with the disclaimer. Tap **Continue**. Latest Headlines shows up to 15 stories, newest first, and exactly one Mormon News Roundup YouTube video: the newest one. Anything after those 15 is in Search.
+Latest Headlines shows up to 15 stories, newest first, and exactly one Mormon News Roundup YouTube video: the newest one. Anything after those 15 is in Search.
 
 If the QR code never connects, stop the terminal with Ctrl+C and run:
 
@@ -234,7 +234,6 @@ Useful files:
 | `app/(tabs)/index.tsx` | Latest Headlines |
 | `app/(tabs)/search.tsx` | Search |
 | `app/(tabs)/about.tsx` | About, purchase, preview switch |
-| `components/WelcomeScreen.tsx` | First-launch disclaimer |
 | `constants/config.ts` | Feed URL, product id, public links |
 | `lib/feed.ts` | Download and cache |
 | `lib/purchases.ts` | StoreKit, loaded only outside Expo Go |
