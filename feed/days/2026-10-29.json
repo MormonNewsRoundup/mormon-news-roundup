@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-29",
+  "sample": false,
+  "editions": [
+    {
+      "name": "midnight",
+      "publishedAt": "2026-10-29T04:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-10-29-midnight-01",
+          "type": "article",
+          "title": "Latter-day Saint Cooper Pratt makes history in helping lead the Milwaukee Brewers to World Series title",
+          "summary": "The Deseret News reports that Latter-day Saint rookie shortstop Cooper Pratt batted .421 with a home run and seven RBI to help the Milwaukee Brewers capture their first-ever championship.",
+          "source": "Deseret News",
+          "url": "https://www.deseret.com/sports/2026/10/28/cooper-pratt-latter-day-saint-world-series-champion-milwaukee-brewers-2026/",
+          "thumbnailUrl": "https://www.deseret.com/resizer/v2/M2QKFUVDLNE6FMRNEA6ZGGJIOA.jpg?focal=0%2C0&auth=be86190a3b97470c2e9c29379d7796bacf78846b78b0e58721943768b72e1493&width=630&height=331",
+          "publishedAt": "2026-10-29T04:02:34.600Z",
+          "tags": [
+            "sports",
+            "culture",
+            "word-of-wisdom"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-29-midnight-02",
+          "type": "video",
+          "title": "Despite the circumstances she was reminded of whose church this is and that He will make it right",
+          "summary": "In a clip from The Cultural Hall, guest Robin Ritch shares the story of a woman she interviewed for her book Using Friction to Grow who was excommunicated by her bishop.",
+          "source": "The Cultural Hall",
+          "url": "https://www.youtube.com/watch?v=xHBZObA80pc",
+          "thumbnailUrl": "https://i.ytimg.com/vi/xHBZObA80pc/maxresdefault.jpg",
+          "publishedAt": "2026-10-29T04:00:08.000Z",
+          "tags": [
+            "excommunication",
+            "church-discipline"
+          ],
+          "paywalled": false
+        }
+      ]
+    }
+  ]
+}

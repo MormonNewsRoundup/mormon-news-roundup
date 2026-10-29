@@ -7,6 +7,23 @@
       "publishedAt": "2026-10-28T16:00:00.000Z",
       "items": [
         {
+          "id": "2026-10-28-noon-10",
+          "type": "article",
+          "title": "Big 12 fines UCF $100,000 for fan behavior aimed at BYU, LDS church",
+          "summary": "The Associated Press, via FOX 13, reports that the Big 12 fined UCF $100,000 for fans' derogatory chants aimed at The Church of Jesus Christ of Latter-day Saints during the BYU game, and announced that a second confirmed incident in a game will bring an in-game penalty and a possible additional fine of up to $500,000.",
+          "source": "FOX 13 News (AP)",
+          "url": "https://www.fox13now.com/sports/byu-cougars/big-12-fines-ucf-100-000-for-fan-behavior-aimed-at-byu-lds-church",
+          "thumbnailUrl": "https://ewscripps.brightspotcdn.com/dims4/default/e7f0839/2147483647/strip/true/crop/5787x3038+0+410/resize/1200x630!/quality/90/?url=http%3A%2F%2Fewscripps-brightspot.s3.amazonaws.com%2Fe3%2F0e%2F15942a3345a18b5655b6e90a0649%2Fap26298028505636.jpg",
+          "publishedAt": "2026-10-29T00:59:08.000Z",
+          "tags": [
+            "byu",
+            "big-12",
+            "anti-mormon-chants",
+            "religious-discrimination"
+          ],
+          "paywalled": false
+        },
+        {
           "id": "2026-10-28-noon-01",
           "type": "video",
           "title": "Mormon News Update | October 28, 2026 🧤",
@@ -151,6 +168,38 @@
             "nevada"
           ],
           "paywalled": false
+        },
+        {
+          "id": "2026-10-28-noon-11",
+          "type": "podcast",
+          "title": "Joseph Smith's Animal Sacrifices | Ep. 2219",
+          "summary": "Mormon Stories Podcast examines historical accounts of Joseph Smith's treasure-digging activities and the use of animal sacrifice to locate buried treasure.",
+          "source": "Mormon Stories Podcast",
+          "url": "https://www.mormonstories.org/joseph-smiths-animal-sacrifices/",
+          "thumbnailUrl": "https://www.mormonstories.org/wp-content/uploads/2026/10/Second-Class-Saints-Wicked-Listen-Learn-Love-podcast-CES-Letter-Fanny-Alger-Brad-Wilcox-LDSD-masonic-lodge-episode-MS-Tom-Phillips-MS-Leah-Cody-Young-MS-Ryan-Huey-1.png",
+          "publishedAt": "2026-10-28T16:26:52.000Z",
+          "tags": [
+            "joseph-smith",
+            "treasure-digging",
+            "church-history"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-28-noon-12",
+          "type": "article",
+          "title": "Does Jesus Condone Sin?",
+          "summary": "On the By Common Consent blog, a writer responds to Elder Gilbert's General Conference warning against condoning sin, suspecting it has much to do with polling suggesting Latter-day Saints are more accepting of LGBT people, and argues Jesus' relationship to sin is more complex than assumed.",
+          "source": "By Common Consent",
+          "url": "https://bycommonconsent.com/2026/10/28/does-jesus-condone-sin/",
+          "thumbnailUrl": "https://i0.wp.com/bycommonconsent.com/wp-content/uploads/2026/10/Christ_heals_tne_man_with_paralysed_hand.jpg",
+          "publishedAt": "2026-10-28T18:30:01.000Z",
+          "tags": [
+            "general-conference",
+            "lgbtq",
+            "church-leaders"
+          ],
+          "paywalled": false
         }
       ]
     },
@@ -159,18 +208,18 @@
       "publishedAt": "2026-10-28T04:00:00.000Z",
       "items": [
         {
-          "id": "2026-10-28-midnight-01",
+          "id": "2026-10-28-midnight-02",
           "type": "video",
-          "title": "That Time the Mormon God Sent an Angel to Joseph Smith’s Wife 😳 | “Accept the Polygamy or Die”",
-          "summary": "Mormon News Roundup's short dramatizes Joseph Smith's practice of plural marriage from Emma Smith's perspective, as an angel appears to deliver a revelation that her husband is supposed to marry other women.",
+          "title": "The GLARING Hole in Evangelical Efforts to Understand Mormonism | Hello Saints' Blind Spot",
+          "summary": "Mormon News Roundup's episode takes a critical look at Pastor Jeff McCullough's Hello Saints channel and its outreach to Latter-day Saints, questioning the apparent absence of substantive conversations with people who have left the church.",
           "source": "Mormon News Roundup",
-          "url": "https://www.youtube.com/watch?v=jZXjvC02uO4",
-          "thumbnailUrl": "https://i.ytimg.com/vi/jZXjvC02uO4/hqdefault.jpg",
-          "publishedAt": "2026-10-28T04:00:39.000Z",
+          "url": "https://www.youtube.com/watch?v=giUVXLsobSw",
+          "thumbnailUrl": "https://i.ytimg.com/vi/giUVXLsobSw/maxresdefault.jpg",
+          "publishedAt": "2026-10-29T01:30:09.000Z",
           "tags": [
-            "polygamy",
-            "emma-smith",
-            "church-history"
+            "evangelicals",
+            "hello-saints",
+            "ex-mormons"
           ],
           "paywalled": false
         }
