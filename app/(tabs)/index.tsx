@@ -45,18 +45,30 @@ function buildRows(stories: DatedStory[], sample: boolean, adsRemoved: boolean):
 async function loadRecent(force: boolean): Promise<{ index: FeedIndex; stories: DatedStory[]; more: boolean }> {
   const index = await getIndex(force);
   const dates = datesNewestFirst(index.days);
+  const pinned = index.pinned ?? null;
   const loaded: DayFile[] = [];
+  const loadedDates = new Set<string>();
+
+  // Load the pin's day up front so an older pin still appears when Latest stops early.
+  if (pinned?.date && dates.includes(pinned.date)) {
+    loaded.push(await getDay(pinned.date, force));
+    loadedDates.add(pinned.date);
+  }
+
   let stories: DatedStory[] = [];
   for (const date of dates) {
-    loaded.push(await getDay(date, force));
-    stories = recentStories(loaded);
+    if (!loadedDates.has(date)) {
+      loaded.push(await getDay(date, force));
+      loadedDates.add(date);
+    }
+    stories = recentStories(loaded, TODAY_STORY_LIMIT, pinned);
     const seenOwn = loaded.some((day) =>
       day.editions.some((edition) => edition.items.some((item) => isOwnChannelItem(item))),
     );
     // Keep reading until the newest own-channel video is in hand, then stop at 15.
     if (stories.length >= TODAY_STORY_LIMIT && seenOwn) break;
   }
-  const more = loaded.length < dates.length || orderedStories(loaded).length > stories.length;
+  const more = loaded.length < dates.length || orderedStories(loaded, pinned).length > stories.length;
   return { index, stories, more };
 }
 
@@ -188,7 +200,7 @@ export default function LatestScreen() {
               );
             }
             if (item.kind === 'ad') return <AdBanner />;
-            return <NewsCard item={item.story.item} />;
+            return <NewsCard item={item.story.item} pinned={Boolean(item.story.pinned)} />;
           }}
         />
       )}

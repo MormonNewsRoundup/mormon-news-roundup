@@ -1,4 +1,4 @@
-import type { DayFile, FeedItem } from '@/lib/types';
+import type { DayFile, FeedItem, PinnedStory } from '@/lib/types';
 
 /** How many stories Latest shows at most. */
 export const TODAY_STORY_LIMIT = 15;
@@ -12,6 +12,8 @@ export const OWN_CHANNEL_SOURCE = 'Mormon News Roundup';
 export type DatedStory = {
   item: FeedItem;
   date: string;
+  /** True when this entry is the index pin shown first on Latest. */
+  pinned?: boolean;
 };
 
 /** Index dates, newest calendar day first. */
@@ -89,39 +91,62 @@ function dedupeNewest(days: DayFile[]): DatedStory[] {
   return unique;
 }
 
+function findPinned(all: DatedStory[], pinned?: PinnedStory | null): DatedStory | null {
+  if (!pinned || typeof pinned.id !== 'string' || pinned.id.trim() === '') return null;
+  const found = all.find((entry) => entry.item.id === pinned.id);
+  if (!found) return null;
+  return { ...found, pinned: true };
+}
+
 /**
  * Latest Headlines. Newest first. Exactly one own-channel video when the feed
  * has any: the newest one, placed in the last slot if it would otherwise fall
  * off the list. At most one r/exmormon post, one r/mormon post, and one
  * Generally Unquotable video: the newest of each. Older ones are skipped and
  * the next eligible stories fill the list.
+ *
+ * When `pinned` is set and that item is in `days`, it is shown first, once,
+ * and is exempt from the own-channel / subreddit / Generally Unquotable caps.
+ * The remaining slots still follow those rules and the overall limit.
  */
-export function latestStories(days: DayFile[], limit = TODAY_STORY_LIMIT): DatedStory[] {
+export function latestStories(
+  days: DayFile[],
+  limit = TODAY_STORY_LIMIT,
+  pinned?: PinnedStory | null,
+): DatedStory[] {
   const all = dedupeNewest(days);
-  const newestOwn = all.find((entry) => isOwnChannelItem(entry.item));
+  const pinnedEntry = findPinned(all, pinned);
+  const pool = pinnedEntry ? all.filter((entry) => entry.item.id !== pinnedEntry.item.id) : all;
+  const restLimit = pinnedEntry ? Math.max(0, limit - 1) : limit;
+
+  const newestOwn = pool.find((entry) => isOwnChannelItem(entry.item));
   const newestCapped = new Map<string, string>();
-  for (const entry of all) {
+  for (const entry of pool) {
     const group = cappedGroup(entry.item);
     if (group && !newestCapped.has(group)) newestCapped.set(group, entry.item.id);
   }
   const picked: DatedStory[] = [];
-  for (const entry of all) {
+  for (const entry of pool) {
     if (isOwnChannelItem(entry.item) && entry.item.id !== newestOwn?.item.id) continue;
     const group = cappedGroup(entry.item);
     if (group && newestCapped.get(group) !== entry.item.id) continue;
     picked.push(entry);
-    if (picked.length >= limit) break;
+    if (picked.length >= restLimit) break;
   }
   if (newestOwn && !picked.some((entry) => entry.item.id === newestOwn.item.id)) {
-    if (picked.length < limit) picked.push(newestOwn);
-    else picked[picked.length - 1] = newestOwn;
+    if (picked.length < restLimit) picked.push(newestOwn);
+    else if (restLimit > 0) picked[picked.length - 1] = newestOwn;
   }
-  return picked;
+  return pinnedEntry ? [pinnedEntry, ...picked] : picked;
 }
 
 /** Latest's list. Same rule as latestStories. */
-export function recentStories(days: DayFile[], limit = TODAY_STORY_LIMIT): DatedStory[] {
-  return latestStories(days, limit);
+export function recentStories(
+  days: DayFile[],
+  limit = TODAY_STORY_LIMIT,
+  pinned?: PinnedStory | null,
+): DatedStory[] {
+  return latestStories(days, limit, pinned);
 }
 
 /**
@@ -129,8 +154,8 @@ export function recentStories(days: DayFile[], limit = TODAY_STORY_LIMIT): Dated
  * Skipped older own-channel videos, subreddit posts, and Generally Unquotable
  * videos stay in this list so Search can find them.
  */
-export function orderedStories(days: DayFile[]): DatedStory[] {
-  const latest = latestStories(days);
+export function orderedStories(days: DayFile[], pinned?: PinnedStory | null): DatedStory[] {
+  const latest = latestStories(days, TODAY_STORY_LIMIT, pinned);
   const shown = new Set(latest.map((entry) => entry.item.id));
   const rest = dedupeNewest(days).filter((entry) => !shown.has(entry.item.id));
   return [...latest, ...rest];
@@ -140,6 +165,6 @@ export function orderedStories(days: DayFile[]): DatedStory[] {
  * Search's default list: the stories immediately after Latest, at most 50.
  * Same order as orderedStories, so the two screens do not repeat a story.
  */
-export function storiesAfterLatest(days: DayFile[]): DatedStory[] {
-  return orderedStories(days).slice(TODAY_STORY_LIMIT, TODAY_STORY_LIMIT + SEARCH_AFTER_TODAY_LIMIT);
+export function storiesAfterLatest(days: DayFile[], pinned?: PinnedStory | null): DatedStory[] {
+  return orderedStories(days, pinned).slice(TODAY_STORY_LIMIT, TODAY_STORY_LIMIT + SEARCH_AFTER_TODAY_LIMIT);
 }

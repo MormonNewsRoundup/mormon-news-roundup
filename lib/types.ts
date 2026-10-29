@@ -39,10 +39,22 @@ export type DayFile = {
   editions: Edition[];
 };
 
+/** Optional pin in feed/index.json. Absent or null means no pin. */
+export type PinnedStory = {
+  id: string;
+  /** YYYY-MM-DD of the day file that contains the item. */
+  date: string;
+};
+
 export type FeedIndex = {
   generatedAt: string;
   sample?: boolean;
   days: string[];
+  /**
+   * Optional. When set, Latest shows this item first.
+   * Null or omitted means no pin. Old clients ignore the field.
+   */
+  pinned?: PinnedStory | null;
 };
 
 export const CONTENT_TYPES: ContentType[] = ['article', 'video', 'podcast', 'reddit'];

@@ -11,7 +11,7 @@ import { typeLabel, type FeedItem } from '@/lib/types';
 
 const REDDIT_ORANGE = '#FF4500';
 
-export function NewsCard({ item }: { item: FeedItem }) {
+export function NewsCard({ item, pinned = false }: { item: FeedItem; pinned?: boolean }) {
   const theme = useTheme();
   const thumbUrl = item.thumbnailUrl?.trim() ?? '';
   const source = thumbnailSource(thumbUrl);
@@ -34,7 +34,7 @@ export function NewsCard({ item }: { item: FeedItem }) {
       ]}>
       <Pressable
         accessibilityRole="button"
-        accessibilityLabel={`${meta}. ${item.title}`}
+        accessibilityLabel={`${pinned ? 'Pinned. ' : ''}${meta}. ${item.title}`}
         onPress={() => void openItem(item)}
         style={({ pressed }) => pressed && styles.pressed}>
         <View
@@ -67,6 +67,13 @@ export function NewsCard({ item }: { item: FeedItem }) {
           <View style={[styles.badge, { backgroundColor: badge.background }]}>
             <Text style={[styles.badgeText, { color: badge.text }]}>{typeLabel(item.type)}</Text>
           </View>
+          {pinned ? (
+            <View
+              style={[styles.pinnedBadge, { backgroundColor: theme.gold }]}
+              accessibilityLabel="Pinned">
+              <Text style={[styles.badgeText, { color: theme.header }]}>Pinned</Text>
+            </View>
+          ) : null}
         </View>
         <View style={styles.body}>
           <View style={styles.metaRow}>
@@ -150,6 +157,14 @@ const styles = StyleSheet.create({
     position: 'absolute',
     left: 12,
     bottom: 12,
+    borderRadius: 999,
+    paddingHorizontal: 10,
+    paddingVertical: 4,
+  },
+  pinnedBadge: {
+    position: 'absolute',
+    right: 12,
+    top: 12,
     borderRadius: 999,
     paddingHorizontal: 10,
     paddingVertical: 4,
