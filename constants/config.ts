@@ -51,6 +51,15 @@ export const REMOVE_ADS_PRODUCT_ID = 'remove_ads';
 
 export const REMOVE_ADS_PRICE_LABEL = '$0.99';
 
+/**
+ * v1 App Store build: no ads and no in-app purchase. The listing says
+ * "Data Not Collected". Both stay false until the owner approves them.
+ * Turning either one on also means reinstalling the native packages.
+ * See README, "Turning ads and the remove-ads purchase back on".
+ */
+export const ADS_ENABLED = false;
+export const IAP_ENABLED = false;
+
 export const APP_PITCH = 'Your Daily Mormon News: Unfiltered';
 
 /** Opening paragraph on About. Shown as written, with no extra label. */

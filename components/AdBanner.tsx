@@ -2,6 +2,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import { useAppState } from '@/components/AppState';
 import { useTheme } from '@/components/useTheme';
+import { ADS_ENABLED } from '@/constants/config';
 import { canUseNativeAds } from '@/lib/runtime';
 
 function AdPlaceholder({ label }: { label: string }) {
@@ -23,7 +24,7 @@ function AdPlaceholder({ label }: { label: string }) {
  */
 export function AdBanner() {
   const { adsRemoved } = useAppState();
-  if (adsRemoved) return null;
+  if (!ADS_ENABLED || adsRemoved) return null;
 
   if (!canUseNativeAds()) {
     return (
