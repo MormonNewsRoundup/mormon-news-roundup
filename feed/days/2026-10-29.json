@@ -101,6 +101,22 @@
             "doctrine"
           ],
           "paywalled": false
+        },
+        {
+          "id": "2026-10-29-noon-08",
+          "type": "podcast",
+          "title": "But It’s The Pelvic Thrust – AoN -1082",
+          "summary": "The Cultural Hall Podcast's Kurt and Richie share Halloween plans and discuss a sacrament meeting the youth led, pushing back on listeners who criticized the change and arguing against rigid church norms.",
+          "source": "The Cultural Hall Podcast",
+          "url": "https://theculturalhall.com/2026/10/29/25041/",
+          "thumbnailUrl": "https://theculturalhall.com/wp-content/uploads/2021/12/TCH-3000x3000-1-scaled.jpg",
+          "publishedAt": "2026-10-29T20:22:10.000Z",
+          "tags": [
+            "culture",
+            "youth",
+            "halloween"
+          ],
+          "paywalled": false
         }
       ]
     },
