@@ -38,6 +38,171 @@
           "paywalled": false
         }
       ]
+    },
+    {
+      "name": "noon",
+      "publishedAt": "2026-10-30T16:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-10-30-noon-01",
+          "type": "article",
+          "title": "Tribune editorial: Harsh treatment of immigrants makes hypocrites of Utah’s many religious followers",
+          "summary": "The Salt Lake Tribune's editorial board argues that Utah law enforcement's cooperation with ICE clashes with the teachings of Latter-day Saints and other faiths about treating all people as children of God, and urges agencies to end their formal ICE agreements.",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/opinion/editorial/2026/10/30/tribune-editorial-utahs-harsh/",
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/NSEFFOKNSVEP3D5WMJUVJTODXA.JPG?auth=554ec0e55fd50b88923789f3d20db38fbeecfac559bd6db656aed32048400ca5&width=1200&height=630&quality=88&smart=true",
+          "publishedAt": "2026-10-30T12:00:00.000Z",
+          "tags": [
+            "immigration",
+            "politics",
+            "utah"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-30-noon-02",
+          "type": "article",
+          "title": "Idaho’s abortion ban is driving OB-GYNs away. A Mormon doctor says it's unsustainable.",
+          "summary": "Friendly Atheist's Hemant Mehta criticizes the church's $1 million donation against Idaho's Prop 1 and highlights Latter-day Saint OB-GYN Heather Pugmire, who says the state's abortion ban is driving doctors away and that the church's stance has left her torn.",
+          "source": "Friendly Atheist",
+          "url": "https://www.friendlyatheist.com/p/idahos-abortion-ban-is-driving-ob",
+          "thumbnailUrl": "https://substackcdn.com/image/fetch/$s_!fKMN!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff38d40f2-67b5-4e4f-96e7-8cb4885d91c0_1200x668.png",
+          "publishedAt": "2026-10-30T13:02:38.000Z",
+          "tags": [
+            "abortion",
+            "idaho",
+            "politics",
+            "church-finances"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-30-noon-03",
+          "type": "article",
+          "title": "Latter-day Saints Have More Leavers Over Time (In The US)",
+          "summary": "Mormon Metrics' Alex Bass compares GSS, Pew Religious Landscape Study and Global Flourishing Study data and finds that converts used to outnumber leavers in the U.S. before about 2008, but leavers now outnumber joiners by roughly 2 to 1.",
+          "source": "Mormon Metrics",
+          "url": "https://mormonmetrics.substack.com/p/latter-day-saints-have-more-leavers",
+          "thumbnailUrl": "https://images.unsplash.com/photo-1504150558240-0b4fd8946624?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMDAzMzh8MHwxfHNlYXJjaHwxMXx8dHJhdmVsfGVufDB8fHx8MTc5MzAzMzMzNnww&ixlib=rb-4.1.0&q=80&w=1080",
+          "publishedAt": "2026-10-30T13:02:04.000Z",
+          "tags": [
+            "membership",
+            "data",
+            "faith-crisis"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-30-noon-04",
+          "type": "article",
+          "title": "Church issues statement on drought and the Great Salt Lake",
+          "summary": "Church News reports that the church released a statement on the Western drought and the Great Salt Lake's low water levels that urges members to conserve water and calls for prayer and fasting, along with a list of its own conservation efforts.",
+          "source": "Church News",
+          "url": "https://www.thechurchnews.com/living-faith/2026/10/30/church-statement-drought-great-salt-lake-water-conservation/",
+          "thumbnailUrl": "https://www.thechurchnews.com/resizer/v2/LEIUBXQLCBFSVLFFLBPG7FQJL4.JPG?focal=1678%2C1043&auth=630d0af62c1c2e5cdbaf3dddd59a44ae54c3f4ba832895b42e7b5f4d15127854&width=630&height=331",
+          "publishedAt": "2026-10-30T13:00:00.000Z",
+          "tags": [
+            "great-salt-lake",
+            "environment",
+            "church-statement"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-30-noon-05",
+          "type": "article",
+          "title": "Church of Jesus Christ releases 8 more hymns, unveils new hymnbook official cover",
+          "summary": "East Idaho News reports that the church released eight more songs for its coming hymnbook, including \"Be Thou My Vision\" and \"O Come, O Come, Emmanuel,\" and unveiled the cover of Hymns for Home and Church, which is expected in print in late 2027.",
+          "source": "East Idaho News",
+          "url": "https://www.eastidahonews.com/2026/10/church-of-jesus-christ-releases-8-more-hymns-unveils-new-hymnbook-official-cover/",
+          "thumbnailUrl": "https://s3.us-west-2.amazonaws.com/assets.eastidahonews.com/wp-content/uploads/2026/10/hymnbook-cover.jpg",
+          "publishedAt": "2026-10-30T13:30:00.000Z",
+          "tags": [
+            "hymns",
+            "church-policy"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-30-noon-06",
+          "type": "article",
+          "title": "BYU backup quarterback’s post after UCF loss sparks debate over faith and football",
+          "summary": "The Deseret News reports that BYU backup quarterback Treyson Bourguet's post urging fans not to lose faith after the loss to UCF drew both praise and objections online over mixing religion and football.",
+          "source": "Deseret News",
+          "url": "https://www.deseret.com/faith/2026/10/30/byu-football-faith-quarterback-treyson-bourguet-faces-backlash/",
+          "thumbnailUrl": "https://www.deseret.com/resizer/v2/HIOGMMIU6ZF3BE6F7MIAMS63XM.JPG?focal=0%2C0&auth=99a35e218e11af3ec9ad8af73e21b05becd7784bb3242680eeed84cc0ab5bddc&width=630&height=331",
+          "publishedAt": "2026-10-30T10:00:00.000Z",
+          "tags": [
+            "byu",
+            "football",
+            "faith"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-30-noon-07",
+          "type": "article",
+          "title": "LDS founder Joseph Smith’s presidential campaign and the not-so-secret ballots in Nauvoo",
+          "summary": "The Salt Lake Tribune looks back at Joseph Smith's 1844 presidential campaign and Nauvoo's open voting practices, and asks what lessons Latter-day Saints might take from it ahead of the 2026 election.",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/religion/2026/10/30/lds-founder-joseph-smith-stood-up/",
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/W4FJMLCLMNFARPUMTUEYUA4KZE.jpg?auth=a8e5ecbeeba99cab9412cfada5ddd396e0b4df83caea62e279792521cf52d07a&width=1200&height=630&quality=88&focal=2718,363",
+          "publishedAt": "2026-10-30T12:00:00.000Z",
+          "tags": [
+            "joseph-smith",
+            "history",
+            "politics"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-30-noon-08",
+          "type": "video",
+          "title": "Elizabeth Holmes & the Mormon Connection: The Letter Defending Her",
+          "summary": "OuterSnarkness hosts Kirsten and Megan break down a sentencing letter from Susan Evans, a lifelong Latter-day Saint and BYU graduate whose son is Elizabeth Holmes' partner, that defended the convicted Theranos founder by pointing to Mormon values of honesty.",
+          "source": "OuterSnarkness",
+          "url": "https://www.youtube.com/watch?v=GmbrF8WuiAc",
+          "thumbnailUrl": "https://i.ytimg.com/vi/GmbrF8WuiAc/maxresdefault.jpg",
+          "publishedAt": "2026-10-30T14:47:24.000Z",
+          "tags": [
+            "elizabeth-holmes",
+            "byu",
+            "culture"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-30-noon-09",
+          "type": "video",
+          "title": "FAIR Friday | Casey Griffiths 😅",
+          "summary": "Generally Unquotable breaks down a presentation that Latter-day Saint scholar Casey Griffiths gave at FAIR, the church-defending apologetics group.",
+          "source": "Generally Unquotable",
+          "url": "https://www.youtube.com/watch?v=kVn0Y_dEVek",
+          "thumbnailUrl": "https://i.ytimg.com/vi/kVn0Y_dEVek/maxresdefault.jpg",
+          "publishedAt": "2026-10-30T13:00:13.000Z",
+          "tags": [
+            "apologetics",
+            "fair"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-30-noon-10",
+          "type": "reddit",
+          "title": "52 years in. Got the resignation confirmation today. I’M FREE!",
+          "summary": "An r/exmormon post from a member of 52 years says an attorney confirmed that their name has been removed from church records, and they celebrate leaving even though they are surrounded by believing neighbors.",
+          "source": "r/exmormon",
+          "subreddit": "r/exmormon",
+          "url": "https://www.reddit.com/r/exmormon/comments/1xjix3o/52_years_in_got_the_resignation_confirmation/",
+          "thumbnailUrl": "https://mormonnewsroundup.github.io/mormon-news-roundup/feed/images/reddit/2026-10-30-noon-10.jpg",
+          "publishedAt": "2026-10-30T15:46:50.000Z",
+          "tags": [
+            "resignation",
+            "leaving-the-church"
+          ],
+          "paywalled": false
+        }
+      ]
     }
   ]
 }
