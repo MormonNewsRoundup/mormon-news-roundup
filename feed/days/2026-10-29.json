@@ -7,22 +7,6 @@
       "publishedAt": "2026-10-29T16:00:00.000Z",
       "items": [
         {
-          "id": "2026-10-29-noon-06",
-          "type": "video",
-          "title": "I Asked BYU–Idaho Students About the Mormon Racist Priesthood Ban… 😬",
-          "summary": "A Mormon News Roundup Short, which describes itself as a satirical street-interview video, asks BYU–Idaho students in Rexburg about the church's historical priesthood and temple restrictions on Black members, which ended in 1978, and how that history is explained.",
-          "source": "Mormon News Roundup",
-          "url": "https://www.youtube.com/watch?v=YWN18oBj-_0",
-          "thumbnailUrl": "https://i.ytimg.com/vi/YWN18oBj-_0/maxresdefault.jpg",
-          "publishedAt": "2026-10-29T16:00:15.000Z",
-          "tags": [
-            "priesthood-ban",
-            "race",
-            "byu-idaho"
-          ],
-          "paywalled": false
-        },
-        {
           "id": "2026-10-29-noon-02",
           "type": "video",
           "title": "Special Report | Trapped By Covenants 🩹",
@@ -154,6 +138,102 @@
             "church-discipline"
           ],
           "paywalled": false
+        },
+        {
+          "id": "2026-10-29-midnight-03",
+          "type": "video",
+          "title": "The Dark History of Mormon Polygamy: Joseph Smith's 84 Wives & the Secrets of Plural Marriage",
+          "summary": "Mormon News Roundup traces plural marriage from a reported 1831 revelation through Section 132, Emma Smith's resistance and the estimates that Joseph Smith was sealed to as many as 84 women, to posthumous sealings in the late 1800s.",
+          "source": "Mormon News Roundup",
+          "url": "https://www.youtube.com/watch?v=M9CHsMAVtN0",
+          "thumbnailUrl": "https://i.ytimg.com/vi/M9CHsMAVtN0/maxresdefault.jpg",
+          "publishedAt": "2026-10-30T01:30:09.000Z",
+          "tags": [
+            "polygamy",
+            "church-history",
+            "joseph-smith"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-29-midnight-04",
+          "type": "podcast",
+          "title": "Elizabeth Holmes’ Mormon Connection, Ted Bundy & BYU Controversies - Mormon News | Ep. 2220",
+          "summary": "On Mormon Stories Podcast, John Dehlin and Meggan Hayes discuss a Latter-day Saint letter of support filed before Elizabeth Holmes' sentencing, a returned missionary's sentence in an Idaho assault case involving a 15-year-old, Elder Ronald Rasband's BYU devotional claims about church growth, and the Big 12 fine against UCF.",
+          "source": "Mormon Stories Podcast",
+          "url": "https://www.youtube.com/watch?v=ZNLjVAEuAyw",
+          "thumbnailUrl": "https://i.ytimg.com/vi/ZNLjVAEuAyw/maxresdefault.jpg",
+          "publishedAt": "2026-10-29T16:35:54.000Z",
+          "tags": [
+            "news",
+            "byu",
+            "abuse"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-29-midnight-05",
+          "type": "video",
+          "title": "LDS Church: Growing or Shrinking? What the Data Reveals !",
+          "summary": "On Mormon Discussion Podcast, Bill Reel and Mormon Metrics researcher Alex Bass look at what survey data shows about Latter-day Saint membership, retention, conversion and people leaving the church.",
+          "source": "Mormon Discussion Podcast",
+          "url": "https://www.youtube.com/watch?v=8iU9MANgz8A",
+          "thumbnailUrl": "https://i.ytimg.com/vi/8iU9MANgz8A/maxresdefault.jpg",
+          "publishedAt": "2026-10-29T17:40:46.000Z",
+          "tags": [
+            "membership",
+            "statistics",
+            "disaffiliation"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-29-midnight-06",
+          "type": "article",
+          "title": "Hobbs’ lieutenant governor candidate appeals to Mormons who feel conflicted about the Republican Party",
+          "summary": "Cronkite News reports that former Mesa Mayor John Giles, a Latter-day Saint who left the GOP and is Gov. Katie Hobbs' running mate, is courting church members uneasy with the party's direction, while their opponent, Rep. Andy Biggs, is also a Latter-day Saint and a Trump ally.",
+          "source": "Cronkite News",
+          "url": "https://cronkitenews.azpbs.org/2026/10/29/hobbs-lieutenant-governor-candidate-mormon-voters/",
+          "thumbnailUrl": "https://cronkitenews.azpbs.org/wp-content/uploads/2026/10/biggs-giles.jpg",
+          "publishedAt": "2026-10-29T16:32:53.000Z",
+          "tags": [
+            "politics",
+            "arizona",
+            "elections"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-29-midnight-07",
+          "type": "article",
+          "title": "Church of Jesus Christ donates $3M to Utah's effort to remove phragmites along Great Salt Lake",
+          "summary": "Utah News Dispatch reports that The Church of Jesus Christ of Latter-day Saints will donate $3 million to the state's work removing invasive phragmites around the Great Salt Lake, a gift Gov. Spencer Cox announced Thursday.",
+          "source": "Utah News Dispatch",
+          "url": "https://utahnewsdispatch.com/2026/10/29/church-of-jesus-christ-donates-3m-to-utahs-effort-to-remove-phragmites-along-great-salt-lake/",
+          "thumbnailUrl": "https://utahnewsdispatch.com/wp-content/uploads/2024/11/DSCF2323-2048x1365.jpeg",
+          "publishedAt": "2026-10-29T22:21:01.000Z",
+          "tags": [
+            "great-salt-lake",
+            "church-finances",
+            "utah"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-29-midnight-08",
+          "type": "article",
+          "title": "IT'S GO TIME: Mormons Prepare For One Evening Of Year When Everyone Will Answer Their Door",
+          "summary": "The Babylon Bee jokes that Latter-day Saint missionaries are gearing up for Halloween, the one night of the year when everyone opens their doors.",
+          "source": "The Babylon Bee",
+          "url": "https://babylonbee.com/news/its-go-time-mormons-prepare-for-one-evening-of-year-when-everyone-will-answer-their-door/",
+          "thumbnailUrl": "https://media.babylonbee.com/articles/6ae39691505846ae3969150585.jpg",
+          "publishedAt": "2026-10-29T18:57:20.000Z",
+          "tags": [
+            "missionaries",
+            "halloween"
+          ],
+          "paywalled": false,
+          "satire": true
         }
       ]
     }
