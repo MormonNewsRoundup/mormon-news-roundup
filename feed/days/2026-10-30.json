@@ -248,6 +248,22 @@
             "culture"
           ],
           "paywalled": false
+        },
+        {
+          "id": "2026-10-30-noon-15",
+          "type": "article",
+          "title": "BREAKING: New lawsuit says a Mormon bishop was told Jared Harding Wilson had abused children, then Wilson allegedly raped an 11-year-old inside a Raleigh stake center",
+          "summary": "FLOODLIT reports that a woman sued the Church of Jesus Christ of Latter-day Saints on Oct. 20 in Wake County Superior Court, alleging that convicted child sex abuser Jared Harding Wilson raped her when she was 11 inside a Raleigh, North Carolina, stake center in 2010 after a bishop had been told Wilson abused children. The allegations have not been proven in court.",
+          "source": "FLOODLIT",
+          "url": "https://floodlit.org/raleigh-lawsuit/",
+          "thumbnailUrl": "https://floodlit.org/wp-content/uploads/2026/10/2-graphic-A-side-by-side.png",
+          "publishedAt": "2026-10-30T21:18:44.000Z",
+          "tags": [
+            "lawsuit",
+            "abuse",
+            "north-carolina"
+          ],
+          "paywalled": false
         }
       ]
     }

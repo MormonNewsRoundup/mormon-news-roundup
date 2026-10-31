@@ -22,6 +22,107 @@
           ]
         }
       ]
+    },
+    {
+      "name": "noon",
+      "publishedAt": "2026-10-31T16:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-10-31-noon-01",
+          "type": "article",
+          "title": "New ebook tells the story of Joseph Smith’s faith and financial sacrifice",
+          "summary": "Deseret News reports that the Church Historian’s Press has released a Joseph Smith Papers ebook drawing on nearly 2,000 financial documents about Joseph Smith’s debts, land dealings and business ventures, which an archivist on the project says were often grounded in his revelations.",
+          "source": "Deseret News",
+          "url": "https://www.deseret.com/faith/2026/10/31/joseph-smith-papers-ebook-explores-the-prophets-financial-records/",
+          "thumbnailUrl": "https://www.deseret.com/resizer/v2/FFHBXQYAMFAQ3JTJQXU5YGKH5M.jpeg?focal=0%2C0&auth=f68b7bba0a82935983cb2e16f1cd836fc4c80ccf2c4b5a818d94ddeaffa4fdbc&width=630&height=331",
+          "publishedAt": "2026-10-31T10:00:00.000Z",
+          "tags": [
+            "joseph-smith",
+            "church-finances",
+            "church-history"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-31-noon-02",
+          "type": "video",
+          "title": "Why U.S. Churches Don’t Have to File Financial Returns!",
+          "summary": "In a Mormon Discussion clip, Bill Reel asks law professor and tax scholar Samuel Brunson why U.S. churches don’t have to file financial returns, and how that applies to the finances of the Church of Jesus Christ of Latter-day Saints.",
+          "source": "Mormon Discussion Podcast",
+          "url": "https://www.youtube.com/watch?v=pew47xYjlzw",
+          "thumbnailUrl": "https://i.ytimg.com/vi/pew47xYjlzw/maxresdefault.jpg",
+          "publishedAt": "2026-10-31T15:00:03.000Z",
+          "tags": [
+            "church-finances",
+            "taxes"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-31-noon-03",
+          "type": "podcast",
+          "title": "10/31 – Fanta Soars & Cookies Crumbl",
+          "summary": "This Week in Latter-days runs through the week’s Latter-day Saint headlines, including the Big 12’s updated discriminatory conduct policy, eight new songs added to the church hymnbook, an apostle’s missionary-record announcement at a BYU devotional and growing Crumbl Cookies store closures.",
+          "source": "This Week in Latter-days",
+          "url": "https://podcasts.apple.com/us/podcast/10-31-fanta-soars-cookies-crumbl/id354973564?i=1000799093259",
+          "thumbnailUrl": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/a6/b4/02/a6b402da-091b-4f6d-2521-0a2a9d14a2af/mza_11984887553399239809.jpeg/600x600bb.jpg",
+          "publishedAt": "2026-10-31T14:49:07.000Z",
+          "tags": [
+            "news",
+            "byu",
+            "big-12"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-31-noon-04",
+          "type": "podcast",
+          "title": "There’s Not Room for All That Oxen – Temple Ticker – 1083",
+          "summary": "The Cultural Hall Podcast’s Temple Ticker covers recent temple dedications in Nicaragua, Idaho and Wyoming, the Torreón Mexico Temple open house, groundbreakings in Vienna and Lehi, a new El Paso temple site and Salt Lake Temple renovation updates.",
+          "source": "The Cultural Hall Podcast",
+          "url": "https://podcasts.apple.com/us/podcast/theres-not-room-for-all-that-oxen-temple-ticker-1083/id459622595?i=1000799067520",
+          "thumbnailUrl": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/6d/5d/f1/6d5df1c0-9bcd-f8d8-1366-a025a3765bbb/mza_10827362808649391640.jpg/600x600bb.jpg",
+          "publishedAt": "2026-10-31T12:00:03.000Z",
+          "tags": [
+            "temples",
+            "salt-lake-temple"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-31-noon-05",
+          "type": "reddit",
+          "title": "F the Mormons chants",
+          "summary": "An r/mormon post asks whether the Big 12’s new sanctions over anti-Mormon chants aimed at BYU will backfire, pointing to the conference’s earlier crackdown on the “horns down” gesture, which the poster says only made the gesture more popular.",
+          "source": "r/mormon",
+          "subreddit": "r/mormon",
+          "url": "https://www.reddit.com/r/mormon/comments/1xk9njm/f_the_mormons_chants/",
+          "thumbnailUrl": "https://mormonnewsroundup.github.io/mormon-news-roundup/feed/images/reddit/2026-10-31-noon-05.jpg",
+          "publishedAt": "2026-10-31T13:02:28.000Z",
+          "tags": [
+            "byu",
+            "big-12",
+            "discrimination"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-31-noon-06",
+          "type": "reddit",
+          "title": "How’d you guys get through interviews and such?",
+          "summary": "An r/exmormon post from a BYU student who says they have no plans to leave the church describes the anxiety of ecclesiastical endorsement interviews and of being treated as a “project,” and asks former members how they got through the interviews at church schools.",
+          "source": "r/exmormon",
+          "subreddit": "r/exmormon",
+          "url": "https://www.reddit.com/r/exmormon/comments/1xk39ko/howd_you_guys_get_through_interviews_and_such/",
+          "thumbnailUrl": "https://mormonnewsroundup.github.io/mormon-news-roundup/feed/images/reddit/2026-10-31-noon-06.jpg",
+          "publishedAt": "2026-10-31T06:49:13.000Z",
+          "tags": [
+            "byu",
+            "ecclesiastical-endorsement"
+          ],
+          "paywalled": false
+        }
+      ]
     }
   ]
 }
