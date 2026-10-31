@@ -10,6 +10,7 @@ import {
   isOwnChannelItem,
   latestStories,
   orderedStories,
+  SEARCH_AFTER_TODAY_LIMIT,
   storiesAfterLatest,
   TODAY_STORY_LIMIT,
 } from '../lib/today.ts';
@@ -98,14 +99,18 @@ test('the current feed Latest list has exactly one own-channel video, the newest
   }
 
   const olderOwn = allOwn.filter((entry) => entry.item.id !== newest.item.id);
+  const ordered = orderedStories(days);
   const after = storiesAfterLatest(days);
+  const searchEnd = TODAY_STORY_LIMIT + SEARCH_AFTER_TODAY_LIMIT;
   for (const entry of olderOwn) {
     assert.equal(latest.some((shown) => shown.item.id === entry.item.id), false);
-    assert.equal(
-      orderedStories(days).some((shown) => shown.item.id === entry.item.id),
-      true,
-    );
-    assert.equal(after.some((shown) => shown.item.id === entry.item.id), true);
+    const index = ordered.findIndex((shown) => shown.item.id === entry.item.id);
+    assert.ok(index >= TODAY_STORY_LIMIT, `${entry.item.id} should stay in the archive after Latest`);
+    // Default Search is the next 50 stories. Older own-channel videos inside
+    // that window must be listed there. Past it, they stay searchable in the archive.
+    if (index < searchEnd) {
+      assert.equal(after.some((shown) => shown.item.id === entry.item.id), true);
+    }
   }
 });
 

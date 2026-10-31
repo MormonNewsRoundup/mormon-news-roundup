@@ -7,21 +7,6 @@
       "publishedAt": "2026-10-30T04:00:00.000Z",
       "items": [
         {
-          "id": "2026-10-30-midnight-01",
-          "type": "video",
-          "title": "Nothing’s Gonna Stop Us From Building Temples 😂 | Starship Official Music Video!",
-          "summary": "Mormon News Roundup's music-video parody shows missionaries as a construction crew putting up temples everywhere, a jab at the church's fast pace of temple building.",
-          "source": "Mormon News Roundup",
-          "url": "https://www.youtube.com/watch?v=HG2XtO5CWyk",
-          "thumbnailUrl": "https://i.ytimg.com/vi/HG2XtO5CWyk/maxresdefault.jpg",
-          "publishedAt": "2026-10-30T04:00:06.000Z",
-          "tags": [
-            "temples",
-            "parody"
-          ],
-          "paywalled": false
-        },
-        {
           "id": "2026-10-30-midnight-02",
           "type": "reddit",
           "title": "\"Torn\" Book Club — Day 13 of 32: When Culture Becomes Gospel",
@@ -199,6 +184,68 @@
           "tags": [
             "resignation",
             "leaving-the-church"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-30-noon-11",
+          "type": "video",
+          "title": "Finally Leaving Mormonism — What Happened? Carl Crusher's POWERFUL Story",
+          "summary": "Mormon News Roundup shares the story of Carl Crusher, known for the Crusher Crew's desert Southwest explorations, who says he left the Church of Jesus Christ of Latter-day Saints after 38 years as a devout believer.",
+          "source": "Mormon News Roundup",
+          "url": "https://www.youtube.com/watch?v=8OhMWnUw1MM",
+          "thumbnailUrl": "https://i.ytimg.com/vi/8OhMWnUw1MM/sddefault.jpg",
+          "publishedAt": "2026-10-31T01:30:07.000Z",
+          "tags": [
+            "leaving-the-church",
+            "faith-crisis"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-30-noon-12",
+          "type": "article",
+          "title": "Utah State football players, fans targeted by religious discrimination at Texas State game",
+          "summary": "KUTV reports that the Pac-12 says it is reviewing fan conduct standards and investigating what it calls religiously discriminatory conduct directed at Utah State players and fans during last week's game at Texas State.",
+          "source": "KUTV",
+          "url": "https://kutv.com/news/local/utah-state-football-players-fans-targeted-by-religious-discrimination-at-texas-state-game",
+          "thumbnailUrl": "https://kutv.com/resources/media2/16x9/2230/1320/20x248/90/5e53900c-0092-4544-a59e-e392e354c5ea-AP26262770733114.jpg",
+          "publishedAt": "2026-10-30T20:32:20.000Z",
+          "tags": [
+            "anti-mormon",
+            "sports",
+            "religious-discrimination"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-10-30-noon-13",
+          "type": "article",
+          "title": "Ko Olina Resort and two LDS deals top Hawaii vacant land sales in 2025",
+          "summary": "Pacific Business News' ranking of Hawaii's 2025 vacant land sales says two deals involving the Church of Jesus Christ of Latter-day Saints were among the largest, including a $60 million sale of a 14-acre parcel listed as church land in Aiea, Oahu.",
+          "source": "Pacific Business News",
+          "url": "https://www.bizjournals.com/pacific/research/lists/2026/vacant-land-transactions-hawaii-2025.html",
+          "thumbnailUrl": "https://media.bizj.us/view/img/13234143/the-list-default-1*1200xx1200-675-0-113.png",
+          "publishedAt": "2026-10-30T17:13:00.000Z",
+          "paywalled": true,
+          "tags": [
+            "church-real-estate",
+            "hawaii",
+            "church-finances"
+          ]
+        },
+        {
+          "id": "2026-10-30-noon-14",
+          "type": "podcast",
+          "title": "Ep361: Do Mormons Celebrate Halloween? With Lila Tueller",
+          "summary": "On the Mormonish Podcast, Rebecca and Landon talk with Lila Tueller about Latter-day Saint Halloween traditions, from ward parties and trunk-or-treats to questions about where members draw the line on costumes and spooky decorations.",
+          "source": "Mormonish Podcast",
+          "url": "https://podcasts.apple.com/us/podcast/ep361-do-mormons-celebrate-halloween-with-lila-tueller/id1655254481?i=1000798948102",
+          "thumbnailUrl": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/c8/f2/20/c8f22098-1baf-82d9-d2e6-378fedacb95f/mza_4423832993572776904.jpg/600x600bb.jpg",
+          "publishedAt": "2026-10-30T19:00:00.000Z",
+          "tags": [
+            "halloween",
+            "culture"
           ],
           "paywalled": false
         }

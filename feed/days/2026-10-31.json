@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-31",
+  "sample": false,
+  "editions": [
+    {
+      "name": "midnight",
+      "publishedAt": "2026-10-31T04:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-10-31-midnight-01",
+          "type": "video",
+          "title": "The Most Interesting Ex-Mormon in the World 😂",
+          "summary": "Mormon News Roundup's comedy Short pays tongue-in-cheek tribute to ex-Mormons who have studied church history, left the covenant path and skip Sunday services.",
+          "source": "Mormon News Roundup",
+          "url": "https://www.youtube.com/watch?v=IORhLJuV_RU",
+          "thumbnailUrl": "https://i.ytimg.com/vi/IORhLJuV_RU/maxresdefault.jpg",
+          "publishedAt": "2026-10-31T04:00:01.000Z",
+          "paywalled": false,
+          "tags": [
+            "humor",
+            "exmormon"
+          ]
+        }
+      ]
+    }
+  ]
+}
