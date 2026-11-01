@@ -22,6 +22,156 @@
           ]
         }
       ]
+    },
+    {
+      "name": "noon",
+      "publishedAt": "2026-11-01T17:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-11-01-noon-01",
+          "type": "article",
+          "title": "Should BYU’s first touchdown vs. Arizona State have counted? Big 12 says no in latest officiating gaffe.",
+          "summary": "The Salt Lake Tribune reports that the Big 12 acknowledged its replay officials incorrectly awarded BYU a first-quarter touchdown after a fumble in the Cougars’ 27-20 win over Arizona State, the conference’s third officiating admission involving BYU this season.",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/sports/byu-cougars/2026/11/01/another-controversial-call-goes/",
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/Q3NNKS4BKJDJNGKQTSD4DX4OPA.jpg?auth=48e3b4a55398753d3ecce6e67d83f52bd57bfab256d9338195defe5443d855fd&width=1200&height=630&quality=88&focal=1016,571",
+          "publishedAt": "2026-11-01T13:00:00.000Z",
+          "tags": [
+            "byu",
+            "big-12",
+            "football"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-11-01-noon-02",
+          "type": "article",
+          "title": "Is God making a comeback with young adults? Survey shows a return to religion. Here’s what that looks like in Utah.",
+          "summary": "The Salt Lake Tribune profiles a 19-year-old Orem native raised in a devout Latter-day Saint family who stopped believing and found a new religious home in a Presbyterian community, as Utah religious leaders say they are seeing new interest in religious community among young adults.",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/religion/2026/11/01/utahs-young-adults-are-returning/",
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/HK6TAR3M45GLVNTCHCGME6TQG4.JPG?auth=0f14c5fd78e6c2233c4d64b1ce2b63c6de313b4457546e994ce2bfac1e7ba8dd&width=1200&height=630&quality=88&smart=true",
+          "publishedAt": "2026-11-01T13:00:00.000Z",
+          "tags": [
+            "young-adults",
+            "faith-transition",
+            "utah"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-11-01-noon-03",
+          "type": "video",
+          "title": "LDS Missionary Discussion #7 (If the Church Was Honest): Tithing & Wealth",
+          "summary": "In a Mormon Discussion Inc. video, Bill Reel, playing “Elder Reel,” imagines an honest missionary lesson on tithing, fast offerings, temple worthiness, pay for General Authorities, and the church’s investments and financial transparency.",
+          "source": "Mormon Discussion Inc.",
+          "url": "https://www.youtube.com/watch?v=oV-SxuYvcvQ",
+          "thumbnailUrl": "https://i.ytimg.com/vi/oV-SxuYvcvQ/maxresdefault.jpg",
+          "publishedAt": "2026-11-01T15:00:06.000Z",
+          "tags": [
+            "tithing",
+            "church-finances",
+            "missionaries"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-11-01-noon-04",
+          "type": "podcast",
+          "title": "Young Women Are Leaving the Mormon Church. What’s Driving Them Out?",
+          "summary": "Postmormon Postmortem looks at why young women are leaving the church, examining retention data, Jana Riess’s research, BYU findings, past teachings telling Mormon mothers to quit their jobs, and what General Conference offered women questioning their faith.",
+          "source": "Postmormon Postmortem",
+          "url": "https://podcasts.apple.com/us/podcast/young-women-are-leaving-the-mormon-church-whats/id1871046580?i=1000799227404",
+          "thumbnailUrl": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/1a/e1/2a/1ae12af7-b06c-cbbe-d3e0-f75a9fa73fb6/mza_14346408413861396349.jpg/600x600bb.jpg",
+          "publishedAt": "2026-11-01T14:00:01.000Z",
+          "tags": [
+            "women",
+            "retention",
+            "faith-transition"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-11-01-noon-05",
+          "type": "article",
+          "title": "‘Mormon Wives’ Star Slammed for ‘Distasteful’ Halloween Costume",
+          "summary": "In Touch Weekly reports that McCall DaPron of “The Secret Lives of Mormon Wives: Orange County” drew backlash for a family Halloween costume recreating the Kennedys on the day JFK was assassinated, and that she has since deleted the Instagram post.",
+          "source": "In Touch Weekly",
+          "url": "https://intouchweekly.com/mormon-wives-star-slammed-for-disastasteful-halloween-costume/",
+          "thumbnailUrl": "https://intouchweekly.com/wp-content/uploads/2026/11/McCall-DaPron-e1793551431390-1000x600.jpg",
+          "publishedAt": "2026-11-01T16:47:05.000Z",
+          "tags": [
+            "mormon-wives",
+            "entertainment"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-11-01-noon-06",
+          "type": "article",
+          "title": "Where Day of the Dead and Latter-day Saint belief intersect",
+          "summary": "Deseret News reports on a new video in which apostle Elder Neil L. Andersen, standing in a Mexican cemetery, connects Day of the Dead traditions with Latter-day Saint beliefs about remembering ancestors, family history and temple work.",
+          "source": "Deseret News",
+          "url": "https://www.deseret.com/faith/2026/11/01/connections-between-day-of-the-dead-and-latter-day-saint-faith/",
+          "thumbnailUrl": "https://www.deseret.com/resizer/v2/YDXZOCX76DMETD4ZZAMFTBB4X4.jpg?focal=0%2C0&auth=bad97256e1787db81d2bf5fd585d6100603c4eab404a8e89c9516b7db591af89&width=630&height=331",
+          "publishedAt": "2026-11-01T11:00:01.000Z",
+          "tags": [
+            "day-of-the-dead",
+            "family-history",
+            "temples"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-11-01-noon-07",
+          "type": "article",
+          "title": "Parable of the Wheat & Tares",
+          "summary": "A Wheat & Tares blog post urges readers raised in the church to set aside what they have been told scriptures mean and rereads parables such as the Lost Coin in a new light, contrasting that reading with the church’s interpretation about reclaiming less-active members.",
+          "source": "Wheat & Tares",
+          "url": "https://wheatandtares.org/2026/11/01/parable-of-the-wheat-tares/",
+          "thumbnailUrl": "https://wheatandtares.org/wp-content/uploads/2026/10/wheat-and-tares-at-sunrise.png",
+          "publishedAt": "2026-11-01T10:29:00.000Z",
+          "tags": [
+            "scripture",
+            "blog"
+          ],
+          "paywalled": false
+        },
+        {
+          "id": "2026-11-01-noon-08",
+          "type": "reddit",
+          "title": "Does freedom of religion give the LDS church a pass to shield child sex crimes?",
+          "summary": "An r/mormon post shares an Arizona’s Family report on an Arizona abuse case and argues that the bishop’s failure to report it to police, after being advised by church lawyers, together with other cases shows the church is complicit, calling for a federal investigation.",
+          "source": "r/mormon",
+          "subreddit": "r/mormon",
+          "url": "https://www.reddit.com/r/mormon/comments/1xl3v20/does_freedom_of_religion_give_the_lds_church_a/",
+          "publishedAt": "2026-11-01T14:03:45.000Z",
+          "tags": [
+            "abuse",
+            "clergy-reporting",
+            "arizona"
+          ],
+          "paywalled": false,
+          "thumbnailUrl": "https://mormonnewsroundup.github.io/mormon-news-roundup/feed/images/reddit/2026-11-01-noon-08.jpg"
+        },
+        {
+          "id": "2026-11-01-noon-09",
+          "type": "reddit",
+          "title": "If only there was a $330 Billion corporation in SLC that could bail out and take over this 34 year run homeless cleanup nonprofit...",
+          "summary": "An r/exmormon post shares a KSL report that the Utah nonprofit Advantage Services is shutting down and leaving 125 people unemployed, and suggests the church’s corporation could step in to save it.",
+          "source": "r/exmormon",
+          "subreddit": "r/exmormon",
+          "url": "https://www.reddit.com/r/exmormon/comments/1xl66p9/if_only_there_was_a_330_billion_corporation_in/",
+          "publishedAt": "2026-11-01T15:40:43.000Z",
+          "tags": [
+            "church-finances",
+            "homelessness",
+            "utah"
+          ],
+          "paywalled": false,
+          "thumbnailUrl": "https://mormonnewsroundup.github.io/mormon-news-roundup/feed/images/reddit/2026-11-01-noon-09.jpg"
+        }
+      ]
     }
   ]
 }
