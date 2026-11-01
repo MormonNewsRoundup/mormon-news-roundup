@@ -7,18 +7,19 @@
       "publishedAt": "2026-10-31T04:00:00.000Z",
       "items": [
         {
-          "id": "2026-10-31-midnight-01",
+          "id": "2026-10-31-midnight-02",
           "type": "video",
-          "title": "The Most Interesting Ex-Mormon in the World 😂",
-          "summary": "Mormon News Roundup's comedy Short pays tongue-in-cheek tribute to ex-Mormons who have studied church history, left the covenant path and skip Sunday services.",
+          "title": "Did the LDS Church Rewrite Its Own History? Polygamy, Censorship & Hidden Records",
+          "summary": "Mormon News Roundup examines how the church has handled its own history, including the polygamy reversal, Word of Wisdom passages edited out of published histories, revisions to Lucy Mack Smith's biography and decades of restricted access to diaries and Council of Fifty records.",
           "source": "Mormon News Roundup",
-          "url": "https://www.youtube.com/watch?v=IORhLJuV_RU",
-          "thumbnailUrl": "https://i.ytimg.com/vi/IORhLJuV_RU/maxresdefault.jpg",
-          "publishedAt": "2026-10-31T04:00:01.000Z",
+          "url": "https://www.youtube.com/watch?v=FpbhB8xK6jQ",
+          "thumbnailUrl": "https://i.ytimg.com/vi/FpbhB8xK6jQ/maxresdefault.jpg",
+          "publishedAt": "2026-11-01T01:30:07.000Z",
           "paywalled": false,
           "tags": [
-            "humor",
-            "exmormon"
+            "church-history",
+            "polygamy",
+            "censorship"
           ]
         }
       ]
@@ -121,6 +122,23 @@
             "ecclesiastical-endorsement"
           ],
           "paywalled": false
+        },
+        {
+          "id": "2026-10-31-noon-07",
+          "type": "article",
+          "title": "BYU faced anti-LDS chants. Now the controversy has spread to another Utah school",
+          "summary": "USA Today reports that the Pac-12 condemned \"religiously discriminatory conduct\" after Texas State fans used the anti-Mormon chant against Utah State on Oct. 24, and said it will work to strengthen fan conduct standards, following the Big 12's $100,000 fine of UCF over chants aimed at BYU.",
+          "source": "USA Today",
+          "url": "https://www.usatoday.com/story/sports/ncaaf/pac12/2026/10/31/pac-12-anti-mormon-chants-lds-utah-state-texas-state-college-football/92532777007/",
+          "thumbnailUrl": "https://www.usatoday.com/gcdn/authoring/authoring-images/2026/08/16/USAT/91330870007-getty-images-123495049.jpg?crop=4895,2754,x0,y0&width=3200&height=1801&format=pjpg&auto=webp",
+          "publishedAt": "2026-10-31T13:41:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "byu",
+            "utah-state",
+            "anti-mormon-chants",
+            "religious-discrimination"
+          ]
         }
       ]
     }
