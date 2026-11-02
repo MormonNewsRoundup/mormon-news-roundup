@@ -23,6 +23,142 @@
           ]
         }
       ]
+    },
+    {
+      "name": "noon",
+      "publishedAt": "2026-11-02T17:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-11-02-noon-03",
+          "type": "article",
+          "title": "Familiar faces rejoin ‘The Book of Mormon’ on Broadway: Nikki M. James and Rory O’Malley",
+          "summary": "The Associated Press reports that original cast members Nikki M. James and Rory O’Malley have returned to the musical satire “The Book of Mormon” on Broadway for the first time in about 12 years, and notes that creators made minor script changes during the pandemic, including giving James' character more agency.",
+          "source": "Associated Press",
+          "url": "https://apnews.com/article/book-mormon-2026-2f9d3e8638e863b5c8177afd1f3429b0",
+          "thumbnailUrl": "https://bloximages.newyork1.vip.townnews.com/kdhnews.com/content/tncms/assets/v3/editorial/d/30/d307e6f5-296b-5611-bc9d-2d18e30e73b1/6ae86dbb0995c.image.jpg?crop=1763%2C926%2C0%2C124&resize=1200%2C630&order=crop%2Cresize",
+          "publishedAt": "2026-11-02T11:01:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "book-of-mormon-musical",
+            "broadway",
+            "culture"
+          ]
+        },
+        {
+          "id": "2026-11-02-noon-04",
+          "type": "article",
+          "title": "Rescuing Joseph Smith from False Polygamy Narratives",
+          "summary": "In a Public Square Magazine essay, Brian Hales argues that the historical record, including more than 130 eyewitness statements and the church's own Gospel Topics essay, shows Joseph Smith initiated plural marriage, and criticizes Latter-day Saints who deny it, some of whom he notes have been excommunicated.",
+          "source": "Public Square Magazine",
+          "url": "https://publicsquaremag.org/faith/church-history/joseph-smith-polygamy-evidence/",
+          "thumbnailUrl": "https://publicsquaremag.org/wp-content/uploads/2026/10/Polygamy.jpg",
+          "publishedAt": "2026-11-02T15:35:35.000Z",
+          "paywalled": false,
+          "tags": [
+            "polygamy",
+            "joseph-smith",
+            "church-history"
+          ]
+        },
+        {
+          "id": "2026-11-02-noon-05",
+          "type": "video",
+          "title": "Do Children Matter to God?  MNU | November 2, 2026",
+          "summary": "Generally Unquotable's Mormon news roundup covers eight new hymns, a pending $5 million sale of a Salt Lake City meetinghouse site slated for 88 rental townhomes, former Utah Rep. Trevor Lee's resignation amid felony mortgage fraud charges, and what the host calls the church's failures to prioritize child protection.",
+          "source": "Generally Unquotable",
+          "url": "https://www.youtube.com/watch?v=YIAbEGphUUw",
+          "thumbnailUrl": "https://i.ytimg.com/vi/YIAbEGphUUw/maxresdefault.jpg",
+          "publishedAt": "2026-11-02T16:00:37.000Z",
+          "paywalled": false,
+          "tags": [
+            "child-protection",
+            "real-estate",
+            "news-roundup"
+          ]
+        },
+        {
+          "id": "2026-11-02-noon-06",
+          "type": "video",
+          "title": "Were Early Mormons Socialists? Mailbag Monday!",
+          "summary": "Historian Benjamin Park examines Joseph Smith's law of consecration and the United Order, how later church leaders reframed that economic past as they embraced capitalism, and viewer questions on polygamous ancestors, Utah's Dream Mine and the Emma Smith–Brigham Young rivalry.",
+          "source": "Benjamin Park, Historian",
+          "url": "https://www.youtube.com/watch?v=nSBszk46Gd8",
+          "thumbnailUrl": "https://i.ytimg.com/vi/nSBszk46Gd8/maxresdefault.jpg",
+          "publishedAt": "2026-11-02T15:00:19.000Z",
+          "paywalled": false,
+          "tags": [
+            "church-history",
+            "united-order",
+            "consecration"
+          ]
+        },
+        {
+          "id": "2026-11-02-noon-07",
+          "type": "podcast",
+          "title": "Immigrant Mormons Asked for Help. Here’s What The Church Said.",
+          "summary": "Postmormon Postmortem asks what the church is doing about mass deportation and family separation, citing immigrant members' requests for housing help, work, sanctuary and public defense as reported to The Salt Lake Tribune, and contrasts the church's response with Catholic, Episcopal and Southern Baptist responses and its $1 million effort against an Idaho abortion ballot measure.",
+          "source": "Postmormon Postmortem",
+          "url": "https://podcasts.apple.com/us/podcast/immigrant-mormons-asked-for-help-heres-what-the-church-said/id1871046580?i=1000799424730",
+          "thumbnailUrl": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/6e/d9/f9/6ed9f957-137b-42f4-6866-fff0a96d3774/mza_3159142783990155601.jpg/600x600bb.jpg",
+          "publishedAt": "2026-11-02T15:00:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "immigration",
+            "deportation",
+            "church-response"
+          ]
+        },
+        {
+          "id": "2026-11-02-noon-08",
+          "type": "podcast",
+          "title": "483: Finding Hidden Wisdom Because of my Mormon Faith Crisis",
+          "summary": "On Latter Day Struggles, host Valerie Hamaker appears as a guest on the Hidden Wisdom podcast with Meghan Farner, discussing her resignation from the LDS church and her work with people healing from Mormon faith crises.",
+          "source": "Latter Day Struggles",
+          "url": "https://podcasts.apple.com/us/podcast/483-finding-hidden-wisdom-because-of-my-mormon-faith-crisis/id1612326898?i=1000799433096",
+          "thumbnailUrl": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/9a/9e/a8/9a9ea856-02bb-ebb6-dfed-502f70077b20/mza_8582509169586554029.jpg/600x600bb.jpg",
+          "publishedAt": "2026-11-02T16:00:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "faith-crisis",
+            "resignation",
+            "spirituality"
+          ]
+        },
+        {
+          "id": "2026-11-02-noon-09",
+          "type": "reddit",
+          "title": "Change just a few words from this sister's testimony and you'll get the story of my deconstruction...",
+          "summary": "An r/exmormon post describes a Relief Society discussion of President Dallin H. Oaks' conference talk on \"secular\" versus \"faith-based\" ways of gaining knowledge, and says a convert's testimony about adding a faithful lens mirrors, in reverse, the poster's own path out of the church.",
+          "source": "r/exmormon",
+          "subreddit": "r/exmormon",
+          "url": "https://www.reddit.com/r/exmormon/comments/1xlzmng/change_just_a_few_words_from_this_sisters/",
+          "publishedAt": "2026-11-02T15:06:18.000Z",
+          "paywalled": false,
+          "tags": [
+            "dallin-h-oaks",
+            "deconstruction",
+            "relief-society"
+          ],
+          "thumbnailUrl": "https://mormonnewsroundup.github.io/mormon-news-roundup/feed/images/reddit/2026-11-02-noon-09.jpg"
+        },
+        {
+          "id": "2026-11-02-noon-10",
+          "type": "reddit",
+          "title": "Treasure Seekers - Failed treasure findings, a sign of a failure in the other person.",
+          "summary": "An r/mormon post compares historical accounts of treasure seekers, including a 1729 Benjamin Franklin piece and William Stafford's 1833 statement about the Smiths, which blamed failed digs on participants' mistakes, and argues that church culture follows the same pattern.",
+          "source": "r/mormon",
+          "subreddit": "r/mormon",
+          "url": "https://www.reddit.com/r/mormon/comments/1xlyk9e/treasure_seekers_failed_treasure_findings_a_sign/",
+          "publishedAt": "2026-11-02T14:24:38.000Z",
+          "paywalled": false,
+          "tags": [
+            "treasure-digging",
+            "joseph-smith",
+            "church-history"
+          ],
+          "thumbnailUrl": "https://mormonnewsroundup.github.io/mormon-news-roundup/feed/images/reddit/2026-11-02-noon-10.jpg"
+        }
+      ]
     }
   ]
 }
