@@ -1,0 +1,28 @@
+{
+  "date": "2026-11-02",
+  "sample": false,
+  "editions": [
+    {
+      "name": "midnight",
+      "publishedAt": "2026-11-02T05:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-11-02-midnight-01",
+          "type": "video",
+          "title": "When Jehovah Sent Moses a TikTok About Genocide",
+          "summary": "Mormon News Roundup's Short imagines the God of the Old Testament sending Moses a TikTok about war and destruction, raising the question of how a perfectly loving Jesus squares with Old Testament violence if Jesus is Jehovah.",
+          "source": "Mormon News Roundup",
+          "url": "https://www.youtube.com/watch?v=D2WoC1DlGe0",
+          "thumbnailUrl": "https://i.ytimg.com/vi/D2WoC1DlGe0/maxresdefault.jpg",
+          "publishedAt": "2026-11-02T05:00:24.000Z",
+          "paywalled": false,
+          "tags": [
+            "old-testament",
+            "jehovah",
+            "humor"
+          ]
+        }
+      ]
+    }
+  ]
+}

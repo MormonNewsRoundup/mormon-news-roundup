@@ -9,16 +9,17 @@
         {
           "id": "2026-11-01-midnight-01",
           "type": "video",
-          "title": "Mormon Missionary Asks Me for a Wake-Up Call… Gets a VERY Different Answer 😂",
-          "summary": "Mormon News Roundup's comedy Short imagines a missionary asking for a wake-up call and getting a very different kind of wake-up than he expected.",
+          "title": "Gordon B. Hinckley’s LOST National Press Club Briefing in Washington DC! 🚨 WORLD EXCLUSIVE 🚨",
+          "summary": "Mormon News Roundup presents rare archival footage of then-church president Gordon B. Hinckley's 2000 National Press Club briefing, where he fielded reporters' questions about the church, its public image and its charitable giving.",
           "source": "Mormon News Roundup",
-          "url": "https://www.youtube.com/watch?v=Xjsog-doyGc",
-          "thumbnailUrl": "https://i.ytimg.com/vi/Xjsog-doyGc/maxresdefault.jpg",
-          "publishedAt": "2026-11-01T04:00:03.000Z",
+          "url": "https://www.youtube.com/watch?v=JuDo4q37UnI",
+          "thumbnailUrl": "https://i.ytimg.com/vi/JuDo4q37UnI/maxresdefault.jpg",
+          "publishedAt": "2026-11-02T02:30:06.000Z",
           "paywalled": false,
           "tags": [
-            "humor",
-            "missionaries"
+            "gordon-b-hinckley",
+            "church-history",
+            "media"
           ]
         }
       ]
@@ -170,6 +171,54 @@
           ],
           "paywalled": false,
           "thumbnailUrl": "https://mormonnewsroundup.github.io/mormon-news-roundup/feed/images/reddit/2026-11-01-noon-09.jpg"
+        },
+        {
+          "id": "2026-11-01-noon-10",
+          "type": "article",
+          "title": "Neighbors Living Next To Cody LDS Temple Say Lights As Intrusive As They Feared",
+          "summary": "Cowboy State Daily reports that people living near the newly opened Cody Wyoming Temple say its lights and parking-lot traffic are as intrusive as they feared, with one resident saying the light keeps her babies awake.",
+          "source": "Cowboy State Daily",
+          "url": "https://cowboystatedaily.com/2026/11/01/cody-neighbors-near-lds-temple-say-lights-are-as-intrusive-as-they-feared/",
+          "thumbnailUrl": "https://cowboystatedaily.imgix.net/Cody-Temple-lights-2-11.1.26.jpg?w=1200&q=75&auto=format%2Ccompress",
+          "publishedAt": "2026-11-01T18:48:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "temples",
+            "cody-wyoming",
+            "neighbors"
+          ]
+        },
+        {
+          "id": "2026-11-01-noon-11",
+          "type": "article",
+          "title": "Provo City Council Weighs Adding New Bars; BYU and Residents Push Back",
+          "summary": "The Cougar Chronicle reports that a BYU representative, speaking on behalf of the university president's council, joined residents in opposing a proposed tavern license for the former B&H Pharmacy building in downtown Provo.",
+          "source": "The Cougar Chronicle",
+          "url": "https://thecougarchronicle.com/provo-city-council-byu-opposes-downtown-bar",
+          "thumbnailUrl": "https://cdn.thecougarchronicle.com/1793575702426-PROVOAVTIVITIESFarmersMarketlores_4d84f410-5a68-4669-bf65-bcca4156b131.jpg",
+          "publishedAt": "2026-11-01T17:48:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "byu",
+            "provo",
+            "alcohol"
+          ]
+        },
+        {
+          "id": "2026-11-01-noon-12",
+          "type": "video",
+          "title": "The Five Spookiest Things Joseph Smith Ever Did",
+          "summary": "In a Nemo the Mormon video, Nemo examines the role of magical thinking, folk magic and ritual in Joseph Smith's early treasure-digging years.",
+          "source": "Nemo the Mormon",
+          "url": "https://www.youtube.com/watch?v=GuP48IxF8s4",
+          "thumbnailUrl": "https://i.ytimg.com/vi/GuP48IxF8s4/maxresdefault.jpg",
+          "publishedAt": "2026-11-01T20:00:06.000Z",
+          "paywalled": false,
+          "tags": [
+            "joseph-smith",
+            "folk-magic",
+            "church-history"
+          ]
         }
       ]
     }
