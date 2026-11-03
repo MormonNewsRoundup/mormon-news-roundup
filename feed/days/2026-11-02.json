@@ -9,17 +9,17 @@
         {
           "id": "2026-11-02-midnight-01",
           "type": "video",
-          "title": "When Jehovah Sent Moses a TikTok About Genocide",
-          "summary": "Mormon News Roundup's Short imagines the God of the Old Testament sending Moses a TikTok about war and destruction, raising the question of how a perfectly loving Jesus squares with Old Testament violence if Jesus is Jehovah.",
+          "title": "Covering Up the Book of Mormon’s Black Hole",
+          "summary": "Mormon News Roundup examines the 1828 loss of 116 Book of Mormon manuscript pages by Martin Harris, Joseph Smith's claim that the Small Plates of Nephi replaced them, and the \"Black Hole\" theory that the vaguer replacement text avoided contradictions.",
           "source": "Mormon News Roundup",
-          "url": "https://www.youtube.com/watch?v=D2WoC1DlGe0",
-          "thumbnailUrl": "https://i.ytimg.com/vi/D2WoC1DlGe0/maxresdefault.jpg",
-          "publishedAt": "2026-11-02T05:00:24.000Z",
+          "url": "https://www.youtube.com/watch?v=jF_4uHltNc0",
+          "thumbnailUrl": "https://i.ytimg.com/vi/jF_4uHltNc0/maxresdefault.jpg",
+          "publishedAt": "2026-11-03T02:30:06.000Z",
           "paywalled": false,
           "tags": [
-            "old-testament",
-            "jehovah",
-            "humor"
+            "book-of-mormon",
+            "church-history",
+            "116-pages"
           ]
         }
       ]
@@ -58,6 +58,38 @@
             "polygamy",
             "joseph-smith",
             "church-history"
+          ]
+        },
+        {
+          "id": "2026-11-02-noon-11",
+          "type": "article",
+          "title": "LDS apostle speaks out against online anonymity, calls it spiritually dangerous",
+          "summary": "The Salt Lake Tribune reports that apostle Quentin L. Cook said in a worldwide devotional that “hiding in the darkness of anonymity to say unkind or cruel things about another individual is incompatible with being a light.”",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/religion/2026/11/02/lds-apostle-quentin-cook-speaks/",
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/HX2URTYUMBARZJTOKB7DTUHFNA.jpg?auth=f73cc91ce25a18c97c6ffe1275ffd9daeddd5efe0ded916b2226b1437c154b6b&width=1200&height=630&quality=88&smart=true",
+          "publishedAt": "2026-11-02T19:03:47.000Z",
+          "paywalled": false,
+          "tags": [
+            "quentin-l-cook",
+            "apostles",
+            "online-behavior"
+          ]
+        },
+        {
+          "id": "2026-11-02-noon-12",
+          "type": "article",
+          "title": "'Disrespectful' fans face removal from Rice-Eccles Stadium for misconduct during BYU game",
+          "summary": "KUTV reports the University of Utah urged fans to avoid personal attacks, vulgar chants and discriminatory or derogatory language at the Nov. 7 game against BYU, warning that inappropriate behavior could lead to removal under updated Big 12 guidance.",
+          "source": "KUTV",
+          "url": "https://kutv.com/news/local/fans-could-be-removed-from-rice-eccles-stadium-for-misconduct-during-byu-game",
+          "thumbnailUrl": "https://kutv.com/resources/media/d85abebf-6737-42fb-ac2e-385a813c5e7c-jumbo16x9_kutvbrianholywarmoney0829194.PNG?1567133138435",
+          "publishedAt": "2026-11-02T19:08:33.000Z",
+          "paywalled": false,
+          "tags": [
+            "byu",
+            "university-of-utah",
+            "anti-mormon-chants"
           ]
         },
         {
