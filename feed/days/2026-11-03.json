@@ -23,6 +23,158 @@
           ]
         }
       ]
+    },
+    {
+      "name": "noon",
+      "publishedAt": "2026-11-03T17:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-11-03-noon-01",
+          "type": "article",
+          "title": "In the wake of shooting, LDS Church puts a Utah meetinghouse up for sale",
+          "summary": "The Salt Lake Tribune reports that the church has signed a $5 million purchase and sale agreement with Garbett Homes for the Redwood Road meetinghouse in Salt Lake City's Fairpark neighborhood, where two people died in a January shooting outside a funeral; a church spokesperson cited the building's age, and the developer says the deal is in \"a bit of a holding pattern\" pending a plan for 88 rental town homes.",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/religion/2026/11/03/lds-church-sell-meetinghouse-site/",
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/XYELVS5GZFASZBASTEDUNQWUDI.jpg?auth=b740dde02da212d3b7080a7ec0265d771753f298f907ba2e59257a97e1521e8a&width=1200&height=630&quality=88&smart=true",
+          "publishedAt": "2026-11-03T13:00:01.000Z",
+          "paywalled": false,
+          "tags": [
+            "real-estate",
+            "meetinghouse",
+            "salt-lake-city"
+          ]
+        },
+        {
+          "id": "2026-11-03-noon-02",
+          "type": "article",
+          "title": "When the Church Takes a Political Position, Election Eve Edition",
+          "summary": "In a Times and Seasons post, Stephen C. argues that the church picks its political battles, taking official positions mainly where its influence could be decisive, such as abortion measures in Nevada and Idaho, rather than in symbolic fights, and includes a chart of the church's official political involvement over the past 50 years.",
+          "source": "Times and Seasons",
+          "url": "https://timesandseasons.org/index.php/2026/11/when-the-church-takes-a-political-position-election-eve-edition/",
+          "thumbnailUrl": "https://timesandseasons.org/wp-content/uploads/2024/12/Times-and-Seasons-Banner-2.1-800x450.jpg",
+          "publishedAt": "2026-11-03T09:22:38.000Z",
+          "paywalled": false,
+          "tags": [
+            "politics",
+            "election",
+            "church-positions"
+          ]
+        },
+        {
+          "id": "2026-11-03-noon-03",
+          "type": "article",
+          "title": "Happy (U.S.) Election Day!",
+          "summary": "A By Common Consent post argues that Latter-day Saints have both a civic and a religious obligation to vote, and says voting well means becoming informed, citing Ronald Reagan, a call from then-Elder Dallin H. Oaks and the Book of Mormon's Mosiah.",
+          "source": "By Common Consent",
+          "url": "https://bycommonconsent.com/2026/11/03/happy-u-s-election-day/",
+          "thumbnailUrl": "https://i0.wp.com/bycommonconsent.com/wp-content/uploads/2026/11/IMG_3985.jpg?w=1200",
+          "publishedAt": "2026-11-03T14:44:20.000Z",
+          "paywalled": false,
+          "tags": [
+            "election",
+            "voting",
+            "politics"
+          ]
+        },
+        {
+          "id": "2026-11-03-noon-04",
+          "type": "article",
+          "title": "Letter: Time for Utah’s governor to troll BYU about respect for the game of football and BYU’s honor code",
+          "summary": "In a letter to The Salt Lake Tribune, Notre Dame alumnus John Scott argues that a BYU defensive lineman's conduct during BYU's 28-24 win over Notre Dame conflicts with BYU's honor code, says he emailed BYU urging consequences, and calls on Utah's governor to publicly troll BYU over it.",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/opinion/letters/2026/11/03/letter-time-utahs-governor-troll/",
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/7AUYKXE3P5BULJMOG5DBGGCNY4.JPG?auth=4a4ae4e7d135c30d04edaee9f86ae7a1ddcb2ee7446a4412d4378b6f95fa1409&width=1200&height=630&quality=88&smart=true",
+          "publishedAt": "2026-11-03T13:00:01.000Z",
+          "paywalled": false,
+          "tags": [
+            "byu",
+            "honor-code",
+            "football"
+          ]
+        },
+        {
+          "id": "2026-11-03-noon-05",
+          "type": "video",
+          "title": "Are BYU Athletes Breaking the Rules?? MNU | 11.3.26",
+          "summary": "Generally Unquotable's Mormon news roundup covers a listener's 1972 BYU haircut account and whether BYU athletes are held to different grooming standards, an Exponent II essay about calling the bishop, neighbors' complaints about the Cody Wyoming Temple, and Dale Renlund's October General Conference talk.",
+          "source": "Generally Unquotable",
+          "url": "https://www.youtube.com/watch?v=J6mnRX0N3d0",
+          "thumbnailUrl": "https://i.ytimg.com/vi/J6mnRX0N3d0/maxresdefault.jpg",
+          "publishedAt": "2026-11-03T16:00:06.000Z",
+          "paywalled": false,
+          "tags": [
+            "byu",
+            "honor-code",
+            "news-roundup"
+          ]
+        },
+        {
+          "id": "2026-11-03-noon-06",
+          "type": "podcast",
+          "title": "LDS Missionary Avoids Lengthy Prison Sentence",
+          "summary": "Mormon Discussions' Mormon Newscast covers the criminal case of former missionary Krew Zaugg, his guilty plea and a sentencing decision the show says has generated significant controversy, along with Handbook changes, BYU Law's new Religious Liberty Clinic and backlash over the Cody Wyoming Temple.",
+          "source": "Mormon Discussions",
+          "url": "https://podcasts.apple.com/us/podcast/lds-missionary-avoids-lengthy-prison-sentence/id562296100?i=1000799624052",
+          "thumbnailUrl": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts113/v4/eb/5c/42/eb5c42f0-760d-d610-625e-a600d0980cbb/mza_1798379407746540759.jpg/600x600bb.jpg",
+          "publishedAt": "2026-11-03T14:09:33.000Z",
+          "paywalled": false,
+          "tags": [
+            "missionaries",
+            "courts",
+            "news-roundup"
+          ]
+        },
+        {
+          "id": "2026-11-03-noon-07",
+          "type": "podcast",
+          "title": "It’s Not the Altitude",
+          "summary": "Camp Shame opens its second season, in which host Kate Kelly, a queer ex-Mormon who was excommunicated from her own community, traces the rise, fall and shifting identity of conversion therapy in Utah.",
+          "source": "Camp Shame",
+          "url": "https://podcasts.apple.com/us/podcast/its-not-the-altitude/id1808700817?i=1000799566106",
+          "thumbnailUrl": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/47/4c/0b/474c0bef-7df9-bd8d-84fe-6da2eb69b4ce/mza_1881654154471766987.jpg/600x600bb.jpg",
+          "publishedAt": "2026-11-03T08:00:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "conversion-therapy",
+            "lgbtq",
+            "kate-kelly"
+          ]
+        },
+        {
+          "id": "2026-11-03-noon-08",
+          "type": "reddit",
+          "title": "The church is publishing William Clayton's polygamy diaries with Yale next year. Peak inoculation?",
+          "summary": "An r/exmormon post notes that the church is publishing an annotated edition of the Nauvoo diaries of Joseph Smith's scribe William Clayton, which include plural marriage material, with Yale University Press next year, and asks whether reading them in a church-published edition would have changed users' faith crises.",
+          "source": "r/exmormon",
+          "subreddit": "r/exmormon",
+          "url": "https://www.reddit.com/r/exmormon/comments/1xmox0e/the_church_is_publishing_william_claytons/",
+          "publishedAt": "2026-11-03T09:54:21.000Z",
+          "paywalled": false,
+          "tags": [
+            "william-clayton",
+            "polygamy",
+            "church-history"
+          ],
+          "thumbnailUrl": "https://mormonnewsroundup.github.io/mormon-news-roundup/feed/images/reddit/2026-11-03-noon-08.jpg"
+        },
+        {
+          "id": "2026-11-03-noon-09",
+          "type": "reddit",
+          "title": "The Church is more concerned with defending Joseph’s reputation than standing for truth. My tussle with the fine folks at FAIR.",
+          "summary": "An r/mormon post argues that Jacob 2 in the Book of Mormon conflicts with D&C 132 and the \"Happiness Letter\" on David and Solomon's plural wives, and describes what the poster calls deflection from FAIR when asked about Joseph Smith's pursuit of Zina Huntington.",
+          "source": "r/mormon",
+          "subreddit": "r/mormon",
+          "url": "https://www.reddit.com/r/mormon/comments/1xmyb0f/the_church_is_more_concerned_with_defending/",
+          "publishedAt": "2026-11-03T16:55:32.000Z",
+          "paywalled": false,
+          "tags": [
+            "polygamy",
+            "joseph-smith",
+            "apologetics"
+          ],
+          "thumbnailUrl": "https://mormonnewsroundup.github.io/mormon-news-roundup/feed/images/reddit/2026-11-03-noon-09.jpg"
+        }
+      ]
     }
   ]
 }
