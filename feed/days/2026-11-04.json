@@ -23,6 +23,179 @@
           ]
         }
       ]
+    },
+    {
+      "name": "noon",
+      "publishedAt": "2026-11-04T17:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-11-04-noon-01",
+          "type": "video",
+          "title": "He Took 20 WIVES | The FLDS Splinter Cult Of Samuel Bateman",
+          "summary": "Kallmekris profiles Samuel Bateman and the FLDS splinter group he led, in a long-form video that cites reporting from outlets including CBS News, Rolling Stone and The Salt Lake Tribune.",
+          "source": "Kallmekris",
+          "url": "https://www.youtube.com/watch?v=hkUKs-_cFx4",
+          "thumbnailUrl": "https://i.ytimg.com/vi/hkUKs-_cFx4/maxresdefault.jpg",
+          "publishedAt": "2026-11-04T16:47:01.000Z",
+          "paywalled": false,
+          "tags": [
+            "flds",
+            "polygamy",
+            "samuel bateman"
+          ]
+        },
+        {
+          "id": "2026-11-04-noon-02",
+          "type": "reddit",
+          "title": "Glad I'm already out (Prop 1)",
+          "summary": "An r/mormon post from a former member who says they left the church in 2020 reacts to the Idaho Prop 1 result, saying it sickens them that the church spent so much to defeat the abortion-rights initiative and that it would have been a \"big shelf breaker\" had they still been active.",
+          "source": "r/mormon",
+          "subreddit": "r/mormon",
+          "url": "https://www.reddit.com/r/mormon/comments/1xns98l/glad_im_already_out_prop_1/",
+          "thumbnailUrl": "https://mormonnewsroundup.github.io/mormon-news-roundup/feed/images/reddit/2026-11-04-noon-02.jpg",
+          "publishedAt": "2026-11-04T16:13:44.000Z",
+          "paywalled": false,
+          "tags": [
+            "reddit",
+            "idaho",
+            "prop 1",
+            "abortion"
+          ]
+        },
+        {
+          "id": "2026-11-04-noon-03",
+          "type": "podcast",
+          "title": "Ezra Taft Benson Saw Communism Everywhere",
+          "summary": "Postmormon Postmortem traces Ezra Taft Benson's anti-communism, from a 1936 First Presidency statement to the John Birch Society and his linking of the civil rights movement to a communist takeover, including a 1965 general conference passage the episode says is missing from the published report.",
+          "source": "Postmormon Postmortem",
+          "url": "https://podcasts.apple.com/us/podcast/ezra-taft-benson-saw-communism-everywhere/id1871046580?i=1000799814989",
+          "thumbnailUrl": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/3e/1f/c7/3e1fc760-b609-e608-0f26-dff5c8c303b5/mza_6070671033167337095.jpg/600x600bb.jpg",
+          "publishedAt": "2026-11-04T14:00:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "podcast",
+            "ezra taft benson",
+            "history",
+            "byu"
+          ]
+        },
+        {
+          "id": "2026-11-04-noon-04",
+          "type": "article",
+          "title": "Big 12 Conference taking executive action to fix officiating after 2 screwups at BYU games",
+          "summary": "ClutchPoints reports, citing KSL's Jon Wilner, that the Big 12 is holding an executive meeting this week with everyone involved in officiating to evaluate the entire operation, after rule-application errors in three straight BYU games against Notre Dame, UCF and Arizona State.",
+          "source": "ClutchPoints",
+          "url": "https://clutchpoints.com/ncaa-football/big-12-news-conference-taking-executive-action-fix-officiating-after-2-screwups-at-byu-games",
+          "thumbnailUrl": "https://wp.clutchpoints.com/wp-content/uploads/2026/11/Conference-taking-executive-action-to-fix-officiating-after-2-screwups-at-BYU-games.jpg",
+          "publishedAt": "2026-11-04T13:51:23.000Z",
+          "paywalled": false,
+          "tags": [
+            "byu",
+            "football",
+            "big 12"
+          ]
+        },
+        {
+          "id": "2026-11-04-noon-05",
+          "type": "article",
+          "title": "Provo leaders say no to a new bar downtown. Here’s why.",
+          "summary": "The Salt Lake Tribune reports that the Provo City Council voted 4-3 against a proposed bar on Center Street, in a city with one stand-alone bar; Downtown Provo Inc. director Quinn Peterson, who identifies himself as a Latter-day Saint who doesn’t drink, said he recognizes the city’s “heavily saturated religious culture.”",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/news/2026/11/04/provo-leaders-say-no-new-bar/",
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/HABDR3IN3FDHBDQRYDTD5UX6PA.png?auth=77c915133bb71d7923d92fa330a5c70883b1bf5d9de7227cf20f0c02873fb45a&width=1200&height=630&quality=88&smart=true",
+          "publishedAt": "2026-11-04T13:00:01.000Z",
+          "paywalled": false,
+          "tags": [
+            "provo",
+            "alcohol",
+            "utah"
+          ]
+        },
+        {
+          "id": "2026-11-04-noon-06",
+          "type": "article",
+          "title": "Letter: All bets are off? The LDS Church’s vilification of gambling is perplexing.",
+          "summary": "In a letter to The Salt Lake Tribune, Tom Day of Cottonwood Heights calls the general conference condemnation of gambling perplexing, contrasting it with conference talks describing financial returns for paying tithing.",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/opinion/letters/2026/11/04/letter-all-bets-off-lds-churchs/",
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/QKG5H2R7NFH7ZC3UUHGTS4374Y.jpg?auth=4102a40ed93826a9425e070c80473ed9591141d234e04b1e39800a446eed1570&width=1200&height=630&quality=88&smart=true",
+          "publishedAt": "2026-11-04T13:00:01.000Z",
+          "paywalled": false,
+          "tags": [
+            "gambling",
+            "tithing",
+            "general conference",
+            "opinion"
+          ]
+        },
+        {
+          "id": "2026-11-04-noon-07",
+          "type": "article",
+          "title": "Utah’s biggest university has fewer students. It points to an LDS Church change allowing women as young as 18 to serve missions.",
+          "summary": "The Salt Lake Tribune reports that Utah Valley University’s enrollment fell by 985 students, or 2%, the largest decline in the state, and that UVU points to the church lowering the missionary age for women to 18, though the drop was split about evenly between men and women.",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/news/education/2026/11/04/utah-valley-university-points/",
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/J6P3YPMALVBXZOQPU6CNRSBN2U.JPG?auth=04abc47d860ec4978c902c5aa1db213d3a15757ec310d749533ff8c042a2dfc6&width=1200&height=630&quality=88&smart=true",
+          "publishedAt": "2026-11-04T13:00:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "uvu",
+            "missionaries",
+            "enrollment",
+            "education"
+          ]
+        },
+        {
+          "id": "2026-11-04-noon-08",
+          "type": "article",
+          "title": "Restoration",
+          "summary": "In a Wheat & Tares post, Hawkgrrrl uses the restoration of an antique child’s table and chair from the author’s grandparents’ restaurant to reflect on the church’s teaching that Christianity was “restored” through Joseph Smith, a belief affirmed in temple recommend interviews.",
+          "source": "Wheat & Tares",
+          "url": "https://wheatandtares.org/2026/11/04/restoration/",
+          "thumbnailUrl": "https://wheatandtares.org/wp-content/uploads/2026/11/table.webp",
+          "publishedAt": "2026-11-04T09:31:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "blog",
+            "restoration",
+            "temple recommend"
+          ]
+        },
+        {
+          "id": "2026-11-04-noon-09",
+          "type": "article",
+          "title": "Idaho voters reject abortion rights initiative Prop 1",
+          "summary": "The Idaho Capital Sun reports that Idaho voters rejected Proposition 1, the ballot initiative that sought to legalize abortion up to fetal viability, which the Idaho GOP, the Salt Lake City-based Church of Jesus Christ of Latter-day Saints and the Roman Catholic Diocese of Boise strongly opposed.",
+          "source": "Idaho Capital Sun",
+          "url": "https://idahocapitalsun.com/2026/11/04/idaho-voters-reject-abortion-rights-initiative-prop-1/",
+          "thumbnailUrl": "https://idahocapitalsun.com/wp-content/uploads/2026/11/110326ElectionPatSutphin104-2048x1365.jpg",
+          "publishedAt": "2026-11-04T07:47:46.000Z",
+          "paywalled": false,
+          "tags": [
+            "idaho",
+            "prop 1",
+            "abortion",
+            "election"
+          ]
+        },
+        {
+          "id": "2026-11-04-noon-10",
+          "type": "reddit",
+          "title": "The new emblems for youth are here. “Gatherers of Light will receive a medallion.” What’s next, Weavers of Spells will receive a new wand? And it’s about time the CTR ring was replaced with a temple ring. And why is a fifteen year old being given an oil vile? Hmmm",
+          "summary": "An r/exmormon post shares a screenshot of the church’s new Children and Youth emblems, including a crystal Christus statue, a temple ring, a medallion and an oil vial, and questions why a 15-year-old would be given an oil vial.",
+          "source": "r/exmormon",
+          "subreddit": "r/exmormon",
+          "url": "https://www.reddit.com/r/exmormon/comments/1xngc87/the_new_emblems_for_youth_are_here_gatherers_of/",
+          "thumbnailUrl": "https://mormonnewsroundup.github.io/mormon-news-roundup/feed/images/reddit/2026-11-04-noon-10.jpg",
+          "publishedAt": "2026-11-04T05:45:38.000Z",
+          "paywalled": false,
+          "tags": [
+            "reddit",
+            "youth",
+            "children and youth"
+          ]
+        }
+      ]
     }
   ]
 }
