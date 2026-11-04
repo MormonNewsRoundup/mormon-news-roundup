@@ -7,19 +7,19 @@
       "publishedAt": "2026-11-03T05:00:00.000Z",
       "items": [
         {
-          "id": "2026-11-03-midnight-01",
+          "id": "2026-11-03-midnight-02",
           "type": "video",
-          "title": "I Tried to Marry Mormon Church Leader Sherie Dew 😂💍Are We Not All SEXY!?",
-          "summary": "Mormon News Roundup's comedic Short follows the host's increasingly desperate attempts to win over church leader Sheri Dew with motorcades, flowers, an engagement ring and run-ins at church events and airports.",
+          "title": "My Father Lost Everything to Addiction—Then Found His Way Back to the LDS Church",
+          "summary": "Mormon News Roundup tells the story of the host's father, a returned missionary and Utah dentist married in the Salt Lake Temple, whose alcoholism and opioid addiction contributed to the collapse of his marriage before he found his way back to the LDS Church.",
           "source": "Mormon News Roundup",
-          "url": "https://www.youtube.com/watch?v=VUU1PePATQs",
-          "thumbnailUrl": "https://i.ytimg.com/vi/VUU1PePATQs/maxresdefault.jpg",
-          "publishedAt": "2026-11-03T05:00:40.000Z",
+          "url": "https://www.youtube.com/watch?v=6dsarkgrku0",
+          "thumbnailUrl": "https://i.ytimg.com/vi/6dsarkgrku0/hqdefault.jpg",
+          "publishedAt": "2026-11-04T02:30:09.000Z",
           "paywalled": false,
           "tags": [
-            "sheri-dew",
-            "humor",
-            "shorts"
+            "addiction",
+            "family",
+            "faith-journey"
           ]
         }
       ]
@@ -173,6 +173,55 @@
             "apologetics"
           ],
           "thumbnailUrl": "https://mormonnewsroundup.github.io/mormon-news-roundup/feed/images/reddit/2026-11-03-noon-09.jpg"
+        },
+        {
+          "id": "2026-11-03-noon-10",
+          "type": "article",
+          "title": "Idaho abortion measure clings to lead — despite LDS Church opposition",
+          "summary": "The Salt Lake Tribune reports that early unofficial results showed Idaho's Proposition 1, which would restore abortion rights, ahead 52% to 48%, after the LDS Church opposed the measure and gave $1 million to the Too Extreme for Idaho PAC; the church also opposed Nevada's Question 6.",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/religion/2026/11/03/lds-church-opposed-prop-1-idaho/",
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/JUCCZRC7V5HUJGAWQZFLNZS5K4.png?auth=52dac1b3f54d6f85c98bcf6ccc03bbd360c8e7ca988cf9f48bf930ba0d1a9566&width=1200&height=630&quality=88&smart=true",
+          "publishedAt": "2026-11-04T03:00:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "idaho",
+            "abortion",
+            "election",
+            "politics"
+          ]
+        },
+        {
+          "id": "2026-11-03-noon-11",
+          "type": "article",
+          "title": "What Title IX changes mean for BYU students",
+          "summary": "The Daily Universe reports that the 2020 Title IX regulations are back in effect after a 2025 court injunction and explains how BYU's Title IX Office and Sexual Harassment Policy handle cases, including that the office can offer amnesty from the Honor Code Office.",
+          "source": "The Daily Universe",
+          "url": "https://universe.byu.edu/campus/what-title-ix-changes-mean-for-byu-students",
+          "thumbnailUrl": "https://brightspotcdn.byu.edu/dims4/default/698135c/2147483647/strip/true/crop/1212x1212+303+0/resize/1200x1200!/quality/90/?url=https%3A%2F%2Fbrigham-young-brightspot-us-east-2.s3.us-east-2.amazonaws.com%2F53%2F88%2F5322e9f345eb9ee9bda70c9b424c%2Fdsc03128-1.jpg",
+          "publishedAt": "2026-11-03T18:53:53.000Z",
+          "paywalled": false,
+          "tags": [
+            "byu",
+            "title-ix",
+            "honor-code"
+          ]
+        },
+        {
+          "id": "2026-11-03-noon-12",
+          "type": "article",
+          "title": "Church of Jesus Christ of Latter-day Saints introduces changes to Children and Youth Program",
+          "summary": "ABC4 reports that the church will refine its Children and Youth program starting in January 2027 around the pillars Believe, Belong and Become, retiring other emblems in favor of new recognition items such as a temple ring at age 8, a crystal statue of the Savior at 11, and a locket or oil vial at 16.",
+          "source": "ABC4",
+          "url": "https://www.abc4.com/news/religion/lds-church-changes-children-youth-program/",
+          "thumbnailUrl": "https://www.abc4.com/wp-content/uploads/sites/4/2026/06/y73bor8snuh7rrcq6ny9f9u8kiqvxoom9ul9uzty.jpeg?w=1280",
+          "publishedAt": "2026-11-04T01:10:50.000Z",
+          "paywalled": false,
+          "tags": [
+            "children-and-youth",
+            "youth",
+            "church-policy"
+          ]
         }
       ]
     }
