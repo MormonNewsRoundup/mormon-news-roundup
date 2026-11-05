@@ -7,19 +7,20 @@
       "publishedAt": "2026-11-04T05:00:00.000Z",
       "items": [
         {
-          "id": "2026-11-04-midnight-01",
+          "id": "2026-11-04-midnight-02",
           "type": "video",
-          "title": "PAY YOUR TITHING OR BURN! 🚀 Mormon Space Disco Music Video Gets WILD",
-          "summary": "Mormon News Roundup's comedic music-video Short sets tithing, celestial marriage, garments, the coffee prohibition and Kolob to a space-disco dance party.",
+          "title": "Book of Mormon Authorship: The Evidence That Challenges the Official Story",
+          "summary": "Mormon News Roundup examines who wrote the Book of Mormon, looking at James Adair's 1775 history, stylometric studies including the 1979 BYU authorship study, and B. H. Roberts' private research into Joseph Smith's 19th-century environment.",
           "source": "Mormon News Roundup",
-          "url": "https://www.youtube.com/watch?v=K5RbCrE8sQE",
-          "thumbnailUrl": "https://i.ytimg.com/vi/K5RbCrE8sQE/maxresdefault.jpg",
-          "publishedAt": "2026-11-04T05:00:38.000Z",
+          "url": "https://www.youtube.com/watch?v=Gk_tbvc0aUk",
+          "thumbnailUrl": "https://i.ytimg.com/vi/Gk_tbvc0aUk/maxresdefault.jpg",
+          "publishedAt": "2026-11-05T02:30:08.000Z",
           "paywalled": false,
           "tags": [
-            "tithing",
-            "humor",
-            "shorts"
+            "book of mormon",
+            "history",
+            "b. h. roberts",
+            "byu"
           ]
         }
       ]
@@ -28,6 +29,22 @@
       "name": "noon",
       "publishedAt": "2026-11-04T17:00:00.000Z",
       "items": [
+        {
+          "id": "2026-11-04-noon-13",
+          "type": "article",
+          "title": "'Secret Lives of Mormon Wives' star Jen Affleck files for divorce from Zac Affleck",
+          "summary": "ABC News reports that \"The Secret Lives of Mormon Wives\" star Jen Affleck, who is pregnant with the couple's fourth child, filed for divorce from Zac Affleck in the Fourth Judicial District Court in Provo, Utah, after seven years of marriage.",
+          "source": "ABC News",
+          "url": "https://abcnews.com/GMA/Culture/secret-lives-mormon-wives-star-jen-affleck-files/story?id=137864021",
+          "thumbnailUrl": "https://i.abcnewsfe.com/a/7ed70941-5bed-4a27-a11b-fba729197111/jen2-hulu-ab-261104_1793843268483_hpMain_16x9.jpg?w=1600",
+          "publishedAt": "2026-11-05T02:28:57.000Z",
+          "paywalled": false,
+          "tags": [
+            "secret lives of mormon wives",
+            "divorce",
+            "momtok"
+          ]
+        },
         {
           "id": "2026-11-04-noon-01",
           "type": "video",
@@ -60,6 +77,37 @@
             "idaho",
             "prop 1",
             "abortion"
+          ]
+        },
+        {
+          "id": "2026-11-04-noon-12",
+          "type": "video",
+          "title": "Mormons You Should Know About: Alex Boye",
+          "summary": "Generally Unquotable profiles Latter-day Saint singer Alex Boyé in its \"Mormons You Should Know About\" series.",
+          "source": "Generally Unquotable",
+          "url": "https://www.youtube.com/watch?v=gy7d3cHz39g",
+          "thumbnailUrl": "https://i.ytimg.com/vi/gy7d3cHz39g/maxresdefault.jpg",
+          "publishedAt": "2026-11-04T16:00:01.000Z",
+          "paywalled": false,
+          "tags": [
+            "generally unquotable",
+            "alex boye"
+          ]
+        },
+        {
+          "id": "2026-11-04-noon-11",
+          "type": "article",
+          "title": "The Utah-BYU Holy War has evolved into one of college football’s top rivalries",
+          "summary": "KUER reports that No. 3 Utah and No. 7 BYU meet Saturday as top-10 teams for the first time in the rivalry's history, with a conference championship and College Football Playoff implications on the line.",
+          "source": "KUER",
+          "url": "https://www.kuer.org/sports-recreation/2026-11-04/utah-brigham-young-university-football-holy-war-rivalry",
+          "thumbnailUrl": "https://npr.brightspotcdn.com/dims4/default/54c64b4/2147483647/strip/true/crop/3900x2048+0+276/resize/1200x630!/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F4a%2F57%2F09206df042d4ba7868f488dfcf0c%2Fimg-5665.jpg",
+          "publishedAt": "2026-11-04T14:54:44.000Z",
+          "paywalled": false,
+          "tags": [
+            "byu",
+            "holy war",
+            "football"
           ]
         },
         {
