@@ -24,6 +24,115 @@
           ]
         }
       ]
+    },
+    {
+      "name": "noon",
+      "publishedAt": "2026-11-05T17:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-11-05-noon-01",
+          "type": "video",
+          "title": "Mormon Youth Activity: Bound and Blindfolded | MNU: 11.5.26",
+          "summary": "Generally Unquotable looks at a November 2026 For the Strength of Youth magazine activity in which teens blindfold and restrain a volunteer and complete gospel tasks to free them, along with Fort Worth Texas Temple usage figures, the Pacific Area Presidency's call to fast over Australian missionary visa delays, and survey data on young adults returning to religion.",
+          "source": "Generally Unquotable",
+          "url": "https://www.youtube.com/watch?v=z_dP7nyDVuw",
+          "thumbnailUrl": "https://i.ytimg.com/vi/z_dP7nyDVuw/maxresdefault.jpg",
+          "publishedAt": "2026-11-05T16:00:35.000Z",
+          "paywalled": false,
+          "tags": [
+            "for the strength of youth",
+            "youth",
+            "temples",
+            "missionaries",
+            "australia"
+          ]
+        },
+        {
+          "id": "2026-11-05-noon-02",
+          "type": "article",
+          "title": "Do BYU fans hate Utah more, or vice versa? A new poll offers some answers.",
+          "summary": "The Salt Lake Tribune reports on a Y2 Analytics poll released Thursday finding Utah fandom nearly split between BYU and Utah, with Utah rated more favorably statewide, younger respondents less favorable toward BYU, and Latter-day Saint respondents more likely than any other religious group to watch the game.",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/sports/byu-cougars/2026/11/05/new-poll-reveals-how-utahns-feel/",
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/YBII3EJWP5GCFLCH7ELLQPARDY.jpg?auth=c83c1cdb3df8771fcc526ce9cf49ef6e909890148cd14cfd18ece66077b957d3&width=1200&height=630&quality=88&smart=true",
+          "publishedAt": "2026-11-05T16:00:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "byu",
+            "poll",
+            "rivalry",
+            "utah"
+          ]
+        },
+        {
+          "id": "2026-11-05-noon-03",
+          "type": "article",
+          "title": "BYU-Idaho confirms 1,000 more fall 2026 deferments after missionary age change",
+          "summary": "KBOI reports that BYU-Idaho says about 1,000 more students deferred fall 2026 enrollment to serve missions than a year earlier, after the church lowered the minimum missionary age for women from 19 to 18, while campus enrollment fell 1.4% to 24,111.",
+          "source": "KBOI",
+          "url": "https://idahonews.com/news/local/byu-idaho-confirms-1000-more-fall-2026-deferments-after-missionary-age-change",
+          "thumbnailUrl": "https://idahonews.com/resources/media/0dede6a9-6c7d-4df0-a90e-2a3eaee6205e-jumbo16x9_BYUidaho.PNG?1602558331982",
+          "publishedAt": "2026-11-05T15:36:04.000Z",
+          "paywalled": false,
+          "tags": [
+            "byu-idaho",
+            "enrollment",
+            "missionaries",
+            "missionary age"
+          ]
+        },
+        {
+          "id": "2026-11-05-noon-04",
+          "type": "article",
+          "title": "Latest from Mormon Land: Is Halloween a godsend for Latter-day Saint missionaries?",
+          "summary": "The Salt Lake Tribune's weekly Mormon Land newsletter rounds up a Babylon Bee spoof about missionaries and Halloween, the release of eight more songs for the church's coming hymnal \"Hymns for Home and Church,\" and changes to the Children and Youth program.",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/religion/2026/11/05/why-halloween-could-be-godsend-lds/",
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/5EYFRIYQSBG7TPCOPIK5H55NUE.jpeg?auth=c84db3a3b2d695b3c2b6126291885adac83c288d09fbed57f279fa24e36d0e25&width=1200&height=630&quality=88&smart=true",
+          "publishedAt": "2026-11-05T13:00:01.000Z",
+          "paywalled": false,
+          "tags": [
+            "mormon land",
+            "missionaries",
+            "hymnbook",
+            "children and youth"
+          ]
+        },
+        {
+          "id": "2026-11-05-noon-05",
+          "type": "reddit",
+          "title": "Odd Things Happening At Church?",
+          "summary": "An r/mormon post argues that church activities the poster calls odd, including newly published ritual-style activities, are designed to engineer emotional experiences, and cites psychiatrist Robert Jay Lifton's concept of \"mystical manipulation.\"",
+          "source": "r/mormon",
+          "url": "https://www.reddit.com/r/mormon/comments/1xohtev/odd_things_happening_at_church/",
+          "subreddit": "r/mormon",
+          "thumbnailUrl": "https://mormonnewsroundup.github.io/mormon-news-roundup/feed/images/reddit/2026-11-05-noon-05.jpg",
+          "publishedAt": "2026-11-05T12:49:37.000Z",
+          "paywalled": false,
+          "tags": [
+            "reddit",
+            "youth",
+            "activities"
+          ]
+        },
+        {
+          "id": "2026-11-05-noon-06",
+          "type": "reddit",
+          "title": "Are missionaries ignorant, or are they taught incorrect information?",
+          "summary": "An r/exmormon post says LDS missionaries told the poster that Martin Luther was killed for translating the Bible and that the Bible gathered errors through repeated translations, and asks whether missionaries are uninformed or are taught incorrect information at church or the MTC.",
+          "source": "r/exmormon",
+          "url": "https://www.reddit.com/r/exmormon/comments/1xogvhr/are_missionaries_ignorant_or_are_they_taught/",
+          "subreddit": "r/exmormon",
+          "thumbnailUrl": "https://mormonnewsroundup.github.io/mormon-news-roundup/feed/images/reddit/2026-11-05-noon-06.jpg",
+          "publishedAt": "2026-11-05T12:00:46.000Z",
+          "paywalled": false,
+          "tags": [
+            "reddit",
+            "missionaries",
+            "bible"
+          ]
+        }
+      ]
     }
   ]
 }
