@@ -7,20 +7,20 @@
       "publishedAt": "2026-11-05T05:00:00.000Z",
       "items": [
         {
-          "id": "2026-11-05-midnight-01",
+          "id": "2026-11-05-midnight-02",
           "type": "video",
-          "title": "Is Jasmine at Scripture Central a Sweet Spirit? or a just paid puppet of Mormon Inc? FIND OUT! ❤️‍🔥",
-          "summary": "A Mormon News Roundup Short offers a tongue-in-cheek tribute to Jasmine of Scripture Central, the LDS apologetics channel.",
+          "title": "Throwback Thursday: Patrick Mason on Mormonism, the Environment & Church Transparency | MNRU Ep. 83",
+          "summary": "A Mormon News Roundup throwback episode revisits a conversation with historian Patrick Mason covering the church's approach to environmental stewardship, Mitt Romney's views, the Cody, Wyoming temple controversy, the Provo Temple rebuild, and questions about the scale and transparency of the church's humanitarian donations.",
           "source": "Mormon News Roundup",
-          "url": "https://www.youtube.com/watch?v=6mDglXFnfZY",
-          "thumbnailUrl": "https://i.ytimg.com/vi/6mDglXFnfZY/maxresdefault.jpg",
-          "publishedAt": "2026-11-05T05:00:26.000Z",
+          "url": "https://www.youtube.com/watch?v=BwvbtYGwVPA",
+          "thumbnailUrl": "https://i.ytimg.com/vi/BwvbtYGwVPA/hqdefault.jpg",
+          "publishedAt": "2026-11-06T02:30:08.000Z",
           "paywalled": false,
           "tags": [
-            "scripture central",
-            "apologetics",
-            "humor",
-            "shorts"
+            "patrick mason",
+            "environment",
+            "provo temple",
+            "transparency"
           ]
         }
       ]
@@ -29,6 +29,39 @@
       "name": "noon",
       "publishedAt": "2026-11-05T17:00:00.000Z",
       "items": [
+        {
+          "id": "2026-11-05-noon-07",
+          "type": "podcast",
+          "title": "A Funny Thing Happened at the Houdini Seance! RFM: 489",
+          "summary": "Radio Free Mormon's episode 489 revisits Harry Houdini's death on its 100th anniversary and the annual séances his widow held to receive a prearranged password from him.",
+          "source": "Radio Free Mormon",
+          "url": "https://podcasts.apple.com/us/podcast/a-funny-thing-happened-at-the-houdini-seance-rfm-489/id1357701901?i=1000800119407",
+          "thumbnailUrl": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/a7/15/a1/a715a192-192d-2d45-c117-5b066e953108/mza_16909349119521494534.png/600x600bb.jpg",
+          "publishedAt": "2026-11-05T21:11:35.000Z",
+          "paywalled": false,
+          "tags": [
+            "podcast",
+            "radio free mormon",
+            "houdini"
+          ]
+        },
+        {
+          "id": "2026-11-05-noon-08",
+          "type": "article",
+          "title": "The Holy War Has Never Had More At Stake",
+          "summary": "The Daily Wire, republishing a Sport & State piece, says No. 7 BYU (7-1) visits No. 3 Utah (8-0) in a Holy War with Big 12 title and College Football Playoff implications, and describes it as the first meeting in the rivalry's history with both teams ranked inside the AP Top 10.",
+          "source": "The Daily Wire",
+          "url": "https://www.dailywire.com/news/the-holy-war-has-never-had-more-at-stake",
+          "thumbnailUrl": "https://dw-wp-production.imgix.net/2026/11/SSHolyWar-copy.jpg?ar=16%3A9&auto=compress&crop=faces&cs=origin&fit=crop&w=1200&h=800&ixlib=react-9.11.0",
+          "publishedAt": "2026-11-05T20:46:42.000Z",
+          "paywalled": false,
+          "tags": [
+            "byu",
+            "utah",
+            "holy war",
+            "football"
+          ]
+        },
         {
           "id": "2026-11-05-noon-01",
           "type": "video",
