@@ -6,6 +6,200 @@
       "name": "midnight",
       "publishedAt": "2026-11-06T05:00:00.000Z",
       "items": []
+    },
+    {
+      "name": "noon",
+      "publishedAt": "2026-11-06T17:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-11-06-noon-01",
+          "type": "article",
+          "title": "LDS Church joins the tech gold rush, leasing some of its ranchland for a data center",
+          "summary": "The Salt Lake Tribune reports that church-owned Farmland Reserve plans to lease up to 3,710 acres of Triangle Ranch in Texas's Cottle County to developer Aetheris for a roughly 96-megawatt data center, with AgReserves saying the project fits a long-term investment strategy and is not church-affiliated.",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/religion/2026/11/06/data-center-proposed-texas-land/",
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/PWDCLULVIBCJNDSVEXVXTQ4JS4.jpg?auth=4be361f2f2ec03cd12239e9722e156b18be1b384e8940695cc2df02af8f8a6dd&width=1200&height=630&quality=88&smart=true",
+          "publishedAt": "2026-11-06T13:00:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "farmland reserve",
+            "data center",
+            "texas",
+            "agreserves",
+            "church finances"
+          ]
+        },
+        {
+          "id": "2026-11-06-noon-02",
+          "type": "video",
+          "title": "The Graves of Mormon Prophets: What They DIDN'T Want You To See",
+          "summary": "A Mormon News Roundup Short visits Salt Lake City Cemetery at night to locate the graves of several Latter-day Saint prophets and comment on what the markers do and do not highlight.",
+          "source": "Mormon News Roundup",
+          "url": "https://www.youtube.com/watch?v=aAy8RE8pu28",
+          "thumbnailUrl": "https://i.ytimg.com/vi/aAy8RE8pu28/hqdefault.jpg",
+          "publishedAt": "2026-11-06T17:00:33.000Z",
+          "paywalled": false,
+          "tags": [
+            "own-channel",
+            "short",
+            "prophets",
+            "cemetery"
+          ]
+        },
+        {
+          "id": "2026-11-06-noon-03",
+          "type": "article",
+          "title": "Construction begins on Ohio's third Latter-day Saints temple",
+          "summary": "WVXU reports that The Church of Jesus Christ of Latter-day Saints breaks ground Saturday on a nearly 30,000-square-foot temple in Mason, Ohio, intended to serve about 20,000 members in Cincinnati, Dayton and Northern Kentucky who previously traveled to Columbus.",
+          "source": "WVXU",
+          "url": "https://www.wvxu.org/local-news/2026-11-06/latter-day-saints-temple-cincinnati-ohio",
+          "thumbnailUrl": "https://npr.brightspotcdn.com/7c/a4/31dadd2a4ae38a618e5cb1b7105c/cincinnati-temple-final-9-14-26.jpg",
+          "publishedAt": "2026-11-06T09:48:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "temple",
+            "ohio",
+            "cincinnati",
+            "mason"
+          ]
+        },
+        {
+          "id": "2026-11-06-noon-04",
+          "type": "video",
+          "title": "FAIR Friday: Thomas Alexander",
+          "summary": "Generally Unquotable examines a FAIR presentation by historian Thomas G. Alexander on the 1844\u20131847 succession crisis after Joseph Smith's death.",
+          "source": "Generally Unquotable",
+          "url": "https://www.youtube.com/watch?v=JbiFRTuKcK4",
+          "thumbnailUrl": "https://i.ytimg.com/vi/JbiFRTuKcK4/hqdefault.jpg",
+          "publishedAt": "2026-11-06T14:00:11.000Z",
+          "paywalled": false,
+          "tags": [
+            "fair",
+            "succession",
+            "history",
+            "thomas alexander"
+          ]
+        },
+        {
+          "id": "2026-11-06-noon-05",
+          "type": "podcast",
+          "title": "Heavenly Mothers, Second Anointings, & Church in Centennial Park (Tom Bennett 5 of 5)",
+          "summary": "Gospel Tangents concludes its series with Centennial Park's Tom Bennett on fundamentalist teachings about Heavenly Mothers, women and priesthood, the second anointing, courtship practices, and what visitors can expect at a Centennial Park service.",
+          "source": "Gospel Tangents",
+          "url": "https://podcasts.apple.com/us/podcast/heavenly-mothers-second-anointings-church-in-centennial/id1203894370?i=1000800261533",
+          "thumbnailUrl": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/be/05/e6/be05e6d2-3e35-8069-d78a-77e47cdc9e60/mza_16997231771614271634.jpg/600x600bb.jpg",
+          "publishedAt": "2026-11-06T14:53:51.000Z",
+          "paywalled": false,
+          "tags": [
+            "podcast",
+            "centennial park",
+            "fundamentalist",
+            "heavenly mother"
+          ]
+        },
+        {
+          "id": "2026-11-06-noon-06",
+          "type": "article",
+          "title": "Gordon Monson: 50 things guaranteed to happen in the BYU-Utah rivalry game",
+          "summary": "The Salt Lake Tribune's Gordon Monson offers his annual list of tongue-in-cheek predictions for Saturday's top-10 Holy War at Rice-Eccles Stadium, covering players, coaches, fans and the rivalry's religious undertones.",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/sports/byu-cougars/2026/11/06/monson-50-predictions-byu-utah/",
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/ECWHUNQWC5E4ZMT3IBAOBLTISA.jpg?auth=022ea65cec897b9973851a3ae3fcac786496701db5ec5563b9d043f40c376c95&width=1200&height=630&quality=88&smart=true",
+          "publishedAt": "2026-11-06T13:00:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "byu",
+            "utah",
+            "holy war",
+            "football"
+          ]
+        },
+        {
+          "id": "2026-11-06-noon-07",
+          "type": "article",
+          "title": "How to watch no. 7 BYU Football at no. 3 Utah",
+          "summary": "Yahoo Sports / SB Nation outlines Saturday's Holy War broadcast details\u201410 a.m. MT on ABC from Rice-Eccles Stadium\u2014as No. 7 BYU (7-1) visits undefeated No. 3 Utah (8-0) with Big 12 and College Football Playoff stakes.",
+          "source": "Yahoo Sports",
+          "url": "https://sports.yahoo.com/articles/watch-no-7-byu-football-064300475.html",
+          "thumbnailUrl": "https://media.zenfs.com/en/sb_nation_articles_115/745a8c45e6ae47935034906fb2f1ef0b.jpg",
+          "publishedAt": "2026-11-06T06:43:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "byu",
+            "utah",
+            "holy war",
+            "football"
+          ]
+        },
+        {
+          "id": "2026-11-06-noon-08",
+          "type": "article",
+          "title": "A Utah football legend has a message for Devon Dampier ahead of BYU showdown",
+          "summary": "The Salt Lake Tribune talks with former Utah quarterback Brian Johnson, who led the 2008 undefeated Utes past BYU, about what current quarterback Devon Dampier faces as No. 3 Utah hosts No. 7 BYU with a perfect season on the line.",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/sports/utah-utes/2026/11/06/what-brian-johnson-wants-devon/",
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/PMVERMC3QRCJ5FKRDR6DFQSZV4.jpg?auth=b09d830b5e22e203892b0ff3e885ea3f9182516437f5d27139613201526454d4&width=1200&height=630&quality=88&smart=true",
+          "publishedAt": "2026-11-06T13:00:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "utah",
+            "byu",
+            "football",
+            "devon dampier"
+          ]
+        },
+        {
+          "id": "2026-11-06-noon-09",
+          "type": "article",
+          "title": "An Interview with the Editors of The Book of Once Mormon Women",
+          "summary": "SLUG Magazine interviews editors Katie Stringham and Sue Johnson about their forthcoming essay collection by women who have left the LDS Church, due Nov. 30, 2026, which they say is meant as support for women navigating that transition rather than as an attack on remaining members.",
+          "source": "SLUG Magazine",
+          "url": "https://www.slugmag.com/arts/art/interviews-features/an-interview-with-the-editors-of-the-book-of-once-mormon-women/",
+          "thumbnailUrl": "https://www.slugmag.com/wp/wp-content/uploads/2026/11/Book-of-Once-Mormon-Women.webp",
+          "publishedAt": "2026-11-06T15:00:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "exmormon",
+            "women",
+            "books",
+            "blog"
+          ]
+        },
+        {
+          "id": "2026-11-06-noon-10",
+          "type": "reddit",
+          "title": "Data center to be built on church owned land.",
+          "summary": "An r/exmormon post shares The Salt Lake Tribune's report that church-affiliated Farmland Reserve plans to lease Texas ranchland for a data center and comments that the project may anger members more than abuse cover-up stories.",
+          "source": "r/exmormon",
+          "url": "https://www.reddit.com/r/exmormon/comments/1xpdjge/data_center_to_be_built_on_church_owned_land/",
+          "subreddit": "r/exmormon",
+          "thumbnailUrl": "https://mormonnewsroundup.github.io/mormon-news-roundup/feed/images/reddit/2026-11-06-noon-10.jpg",
+          "publishedAt": "2026-11-06T14:01:58.000Z",
+          "paywalled": false,
+          "tags": [
+            "reddit",
+            "data center",
+            "farmland reserve"
+          ]
+        },
+        {
+          "id": "2026-11-06-noon-11",
+          "type": "reddit",
+          "title": "Day 19 of 32 - Torn Book Club: Agency, Obedience, and Fealty",
+          "summary": "An r/mormon book-club post discusses a chapter from Torn that contrasts agency with fealty, using a mission story and graphics comparing cultural expectations with personal beliefs about decisions and truth.",
+          "source": "r/mormon",
+          "url": "https://www.reddit.com/r/mormon/comments/1xp6c5d/day_19_of_32_torn_book_club_agency_obedience_and/",
+          "subreddit": "r/mormon",
+          "thumbnailUrl": "https://mormonnewsroundup.github.io/mormon-news-roundup/feed/images/reddit/2026-11-06-noon-11.jpg",
+          "publishedAt": "2026-11-06T06:58:12.000Z",
+          "paywalled": false,
+          "tags": [
+            "reddit",
+            "book club",
+            "agency"
+          ]
+        }
+      ]
     }
   ]
 }
