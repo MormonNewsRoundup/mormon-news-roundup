@@ -5,7 +5,78 @@
     {
       "name": "midnight",
       "publishedAt": "2026-11-06T05:00:00.000Z",
-      "items": []
+      "items": [
+        {
+          "id": "2026-11-06-midnight-02",
+          "type": "video",
+          "title": "The Mormon Church Says Beware of AI… Unless It Pays",
+          "summary": "In a special edition of The Mormon Newscast on the Mormonish Podcast channel, the hosts examine Cottle County, Texas, records they say identify church-affiliated Farmland Reserve as the owner of land tied to a proposed $1.1 billion data center, and contrast the project with apostles' warnings about artificial intelligence.",
+          "source": "The Mormon Newscast",
+          "url": "https://www.youtube.com/watch?v=wStrB0aQA7Q",
+          "thumbnailUrl": "https://i.ytimg.com/vi/wStrB0aQA7Q/hqdefault.jpg",
+          "publishedAt": "2026-11-07T03:17:26.000Z",
+          "paywalled": false,
+          "tags": [
+            "data center",
+            "farmland reserve",
+            "texas",
+            "ai",
+            "church finances"
+          ]
+        },
+        {
+          "id": "2026-11-06-midnight-03",
+          "type": "article",
+          "title": "Should a Child Ever Feel Pressured to Discuss \"Sexual Sin\" With a Bishop?",
+          "summary": "In a Substack commentary, John Dehlin criticizes advice a Latter-day Saint influencer described as a bishop's wife gave parents whose children do not want to talk to their bishop, arguing that children should not be pressured to discuss \"sexual sin\" with an adult man behind a closed door.",
+          "source": "John Dehlin (Substack)",
+          "url": "https://johndehlin.substack.com/p/should-a-child-ever-feel-pressured",
+          "thumbnailUrl": "https://substackcdn.com/image/fetch/$s_!hR_L!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa23a011d-a109-4fd1-973b-a52855373411_1080x720.jpeg",
+          "publishedAt": "2026-11-07T02:58:20.000Z",
+          "paywalled": false,
+          "tags": [
+            "bishop interviews",
+            "youth",
+            "worthiness interviews",
+            "commentary"
+          ]
+        },
+        {
+          "id": "2026-11-06-midnight-01",
+          "type": "video",
+          "title": "Wild Bill Hickman, the Danites & Brigham Young's Blood Atonement | Mormon News Roundup",
+          "summary": "A Mormon News Roundup episode examines Wild Bill Hickman's alleged murder confessions, the Danites, the doctrine of blood atonement, and Brigham Young's 1872 murder indictment, which was later thrown out after a U.S. Supreme Court ruling on Utah Territory grand-jury procedures.",
+          "source": "Mormon News Roundup",
+          "url": "https://www.youtube.com/watch?v=ggGSrgZU28I",
+          "thumbnailUrl": "https://i.ytimg.com/vi/ggGSrgZU28I/hqdefault.jpg",
+          "publishedAt": "2026-11-07T02:30:08.000Z",
+          "paywalled": false,
+          "tags": [
+            "own-channel",
+            "brigham young",
+            "blood atonement",
+            "danites",
+            "history"
+          ]
+        },
+        {
+          "id": "2026-11-06-midnight-04",
+          "type": "article",
+          "title": "Apostle's message inspires Latter-day Saints to shed online anonymity",
+          "summary": "The Deseret News reports that some Latter-day Saints are putting their real names on previously anonymous social media accounts after Elder Quentin L. Cook told a worldwide young adult devotional that wanting to hide behind online anonymity is \"a serious sign of danger.\"",
+          "source": "Deseret News",
+          "url": "https://www.deseret.com/faith/2026/11/06/latter-day-saint-apostle-asks-people-to-shed-online-anonymity/",
+          "thumbnailUrl": "https://www.deseret.com/resizer/v2/7HMXBZ67XJAQ3E3DUAOODAHJCY.png?focal=0%2C0&auth=47085a91e7df63830f6fe10ccf14e72d80685c0da228a0d395b11e53bb05b29e&width=630&height=331",
+          "publishedAt": "2026-11-06T22:20:52.000Z",
+          "paywalled": false,
+          "tags": [
+            "quentin l. cook",
+            "social media",
+            "anonymity",
+            "church source"
+          ]
+        }
+      ]
     },
     {
       "name": "noon",
@@ -30,23 +101,6 @@
           ]
         },
         {
-          "id": "2026-11-06-noon-02",
-          "type": "video",
-          "title": "The Graves of Mormon Prophets: What They DIDN'T Want You To See",
-          "summary": "A Mormon News Roundup Short visits Salt Lake City Cemetery at night to locate the graves of several Latter-day Saint prophets and comment on what the markers do and do not highlight.",
-          "source": "Mormon News Roundup",
-          "url": "https://www.youtube.com/watch?v=aAy8RE8pu28",
-          "thumbnailUrl": "https://i.ytimg.com/vi/aAy8RE8pu28/hqdefault.jpg",
-          "publishedAt": "2026-11-06T17:00:33.000Z",
-          "paywalled": false,
-          "tags": [
-            "own-channel",
-            "short",
-            "prophets",
-            "cemetery"
-          ]
-        },
-        {
           "id": "2026-11-06-noon-03",
           "type": "article",
           "title": "Construction begins on Ohio's third Latter-day Saints temple",
@@ -67,7 +121,7 @@
           "id": "2026-11-06-noon-04",
           "type": "video",
           "title": "FAIR Friday: Thomas Alexander",
-          "summary": "Generally Unquotable examines a FAIR presentation by historian Thomas G. Alexander on the 1844\u20131847 succession crisis after Joseph Smith's death.",
+          "summary": "Generally Unquotable examines a FAIR presentation by historian Thomas G. Alexander on the 1844–1847 succession crisis after Joseph Smith's death.",
           "source": "Generally Unquotable",
           "url": "https://www.youtube.com/watch?v=JbiFRTuKcK4",
           "thumbnailUrl": "https://i.ytimg.com/vi/JbiFRTuKcK4/hqdefault.jpg",
@@ -118,7 +172,7 @@
           "id": "2026-11-06-noon-07",
           "type": "article",
           "title": "How to watch no. 7 BYU Football at no. 3 Utah",
-          "summary": "Yahoo Sports / SB Nation outlines Saturday's Holy War broadcast details\u201410 a.m. MT on ABC from Rice-Eccles Stadium\u2014as No. 7 BYU (7-1) visits undefeated No. 3 Utah (8-0) with Big 12 and College Football Playoff stakes.",
+          "summary": "Yahoo Sports / SB Nation outlines Saturday's Holy War broadcast details—10 a.m. MT on ABC from Rice-Eccles Stadium—as No. 7 BYU (7-1) visits undefeated No. 3 Utah (8-0) with Big 12 and College Football Playoff stakes.",
           "source": "Yahoo Sports",
           "url": "https://sports.yahoo.com/articles/watch-no-7-byu-football-064300475.html",
           "thumbnailUrl": "https://media.zenfs.com/en/sb_nation_articles_115/745a8c45e6ae47935034906fb2f1ef0b.jpg",
