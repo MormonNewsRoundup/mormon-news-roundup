@@ -252,6 +252,58 @@
             "book club",
             "agency"
           ]
+        },
+        {
+          "id": "2026-11-06-noon-12",
+          "type": "article",
+          "title": "Latter-day Saint UCF player Grayson Brousseau responds to derogatory chants directed at BYU",
+          "summary": "The Deseret News reports that UCF tight end Grayson Brousseau, a Latter-day Saint from Lehi, praised UCF's removal of fans who directed derogatory chants at BYU and the church during the Oct. 24 game that later drew a $100,000 Big 12 fine.",
+          "source": "Deseret News",
+          "url": "https://www.deseret.com/sports/2026/11/06/grayson-brousseau-responds-to-discriminatory-byu-and-the-church-of-jesus-christ-chants/",
+          "thumbnailUrl": "https://www.deseret.com/resizer/v2/6VX2TQIR3NHZXIA44EG2NTUZ4A.jpg?focal=0%2C0&auth=58e3f05951c0e8e7ced12e1650353651abb01e44fa1e041aeb046aafad01c9df&width=630&height=331",
+          "publishedAt": "2026-11-07T00:02:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "byu",
+            "ucf",
+            "chants",
+            "big 12",
+            "church source"
+          ]
+        },
+        {
+          "id": "2026-11-06-noon-14",
+          "type": "article",
+          "title": "Excitement builds throughout SLC ahead of Utah-BYU rivalry battle",
+          "summary": "Fox 13 reports that fans flying in from California and Chicago and downtown Salt Lake businesses are gearing up for Saturday's Top-10 Holy War at Rice-Eccles Stadium, with some bars opening when the 10 a.m. kickoff begins.",
+          "source": "Fox 13",
+          "url": "https://www.fox13now.com/news/local-news/salt-lake-city/excitement-builds-throughout-slc-ahead-of-utah-byu-rivalry-battle",
+          "thumbnailUrl": "https://ewscripps.brightspotcdn.com/dims4/default/3f6c302/2147483647/strip/true/crop/1280x672+0+24/resize/1200x630!/quality/90/?url=https%3A%2F%2Fcf.cdn.uplynk.com%2Fausw2%2Fslices%2Fb14%2Fef205c0e5ea14d77944cbd6904335118%2Fb145ac54cf3248aaa432556a81abca9e%2Fposter_0e62916568c348c0976596605cd02b1d.jpeg",
+          "publishedAt": "2026-11-07T00:29:01.000Z",
+          "paywalled": false,
+          "tags": [
+            "byu",
+            "utah",
+            "holy war",
+            "football"
+          ]
+        },
+        {
+          "id": "2026-11-06-noon-15",
+          "type": "article",
+          "title": "BYU women's soccer claims first regular-season Big 12 title in Rockwood's final home game",
+          "summary": "The Daily Universe reports that No. 13 BYU women's soccer beat Arizona State 1-0 on Senior Night behind Bella Woods' free kick, clinching the program's first Big 12 regular-season title in coach Jennifer Rockwood's final home game.",
+          "source": "The Daily Universe",
+          "url": "https://universe.byu.edu/sports/byu-womens-soccer-claims-first-regular-season-big-12-title-in-rockwoods-final-home-game",
+          "thumbnailUrl": "https://brightspotcdn.byu.edu/dims4/default/231d2a3/2147483647/strip/true/crop/1365x1365+342+0/resize/1200x1200!/quality/90/?url=https%3A%2F%2Fbrigham-young-brightspot-us-east-2.s3.us-east-2.amazonaws.com%2Fb0%2F58%2Fd6ecf3704da5927e2e9e189d7e4f%2Fdsc09564.jpg",
+          "publishedAt": "2026-11-06T16:48:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "byu",
+            "soccer",
+            "big 12",
+            "jennifer rockwood"
+          ]
         }
       ]
     }
