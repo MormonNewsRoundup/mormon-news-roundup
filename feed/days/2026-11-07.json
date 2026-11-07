@@ -24,6 +24,147 @@
           ]
         }
       ]
+    },
+    {
+      "name": "noon",
+      "publishedAt": "2026-11-07T17:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-11-07-noon-01",
+          "type": "article",
+          "title": "Were LDS voters swept up in the blue wave?",
+          "summary": "The Salt Lake Tribune reports that heavily Latter-day Saint congressional districts across several states swung left in the 2026 midterms—some by 20 to 30 points—and that Utah County races near BYU look unusually competitive, with researchers saying the picture remains incomplete until national surveys are finished.",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/religion/2026/11/07/2026-midterm-election-lds-voters/",
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/CFPW5CCWQBC4PJ3GZIHW3DISEA.jpg?auth=00ca92135edc328749173412cfb26359c62aee881fc507f283cc61fc6ca6c534&width=1200&height=630&quality=88&smart=true",
+          "publishedAt": "2026-11-07T13:00:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "politics",
+            "midterms",
+            "utah",
+            "voting"
+          ]
+        },
+        {
+          "id": "2026-11-07-noon-02",
+          "type": "article",
+          "title": "LJ Martin will play for BYU against Utah",
+          "summary": "The Deseret News reports that BYU running back LJ Martin will return for Saturday's Holy War at Rice-Eccles Stadium after missing four games with injury, citing ESPN's Pete Thamel, with kickoff set for 10 a.m. Mountain Time.",
+          "source": "Deseret News",
+          "url": "https://www.deseret.com/sports/2026/11/07/lj-martin-will-play-byu-at-utah-2026/",
+          "thumbnailUrl": "https://www.deseret.com/resizer/v2/IDIVAEZV3RG7BJA7PCUKNPGPFE.JPG?focal=0%2C0&auth=6a19c427175219b4ee1107ca4f7b3700f46a9073a9ae6a7fb632ff9cd1a1b9b7&width=630&height=331",
+          "publishedAt": "2026-11-07T15:59:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "byu",
+            "utah",
+            "holy war",
+            "football",
+            "church source"
+          ]
+        },
+        {
+          "id": "2026-11-07-noon-03",
+          "type": "article",
+          "title": "BYU vs. Utah live updates: Cougar RB LJ Martin expected to start, per report",
+          "summary": "The Salt Lake Tribune provides live updates from Rice-Eccles Stadium as No. 7 BYU visits No. 3 Utah in a Top-10 Holy War, reporting that BYU running back LJ Martin is expected to start after missing recent games.",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/sports/byu-cougars/2026/11/07/live-updates-byu-vs-utah/",
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/2BGOTOM3FJAXLORQ6L6HZLNL4Q.JPG?auth=cfc4943bbc6cf2872072b9a07c9e6041cfc6dfd23ca216cc045c31899a03c770&width=1200&height=630&quality=88&focal=3372,1158",
+          "publishedAt": "2026-11-07T16:53:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "byu",
+            "utah",
+            "holy war",
+            "football"
+          ]
+        },
+        {
+          "id": "2026-11-07-noon-04",
+          "type": "article",
+          "title": "'We've got to do a better job': Utah Republican lawmakers choose new leadership and vow to focus on families",
+          "summary": "The Salt Lake Tribune reports that Sen. Evan Vickers was chosen Senate president-elect after losses that included former President Stuart Adams—whose Box Elder County data-center vote helped sink his primary bid—and that House and Senate Republicans pledged to rebuild trust and work more with Democrats.",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/news/politics/2026/11/07/utah-republican-lawmakers-choose/",
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/3PY2W6YVWRCNDJ3EPMICNPU4G4.jpg?auth=e42bd9ec95dfa933e2382ce4517671e368d3e50297a271c896ce333452545567&width=1200&height=630&quality=88&focal=1477,1019",
+          "publishedAt": "2026-11-07T14:06:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "utah politics",
+            "midterms",
+            "data center",
+            "legislature"
+          ]
+        },
+        {
+          "id": "2026-11-07-noon-05",
+          "type": "article",
+          "title": "Why is it called the Holy War? Explaining origin of BYU vs. Utah football rivalry",
+          "summary": "Sporting News explains the \"Holy War\" nickname for the BYU–Utah football rivalry, noting BYU's church ownership and heavily Latter-day Saint student body versus Utah's public, secular campus, and tracing the label's radio-era rise in the 1990s.",
+          "source": "Sporting News",
+          "url": "https://www.sportingnews.com/us/ncaa-football/news/why-called-holy-war-explaining-origin-byu-vs-utah-football-rivalry/490fce47209bbecce4814cec",
+          "thumbnailUrl": "https://library.sportingnews.com/styles/crop_style_16_9_1280_webp/s3/2024-08/GettyImages-1235201008.jpg.webp?itok=J8zow0DG",
+          "publishedAt": "2026-11-07T06:50:01.000Z",
+          "paywalled": false,
+          "tags": [
+            "byu",
+            "utah",
+            "holy war",
+            "football"
+          ]
+        },
+        {
+          "id": "2026-11-07-noon-06",
+          "type": "article",
+          "title": "New ASL Sunday School presidency serves deaf and hard-of-hearing members",
+          "summary": "Church News reports that The Church of Jesus Christ of Latter-day Saints has organized an American Sign Language Sunday School presidency to expand online ASL religion classes for deaf and hard-of-hearing members, many of whom live far from ASL wards.",
+          "source": "Church News",
+          "url": "https://www.thechurchnews.com/members/2026/11/07/new-asl-sunday-school-presidency-adult-online-religion-classes/",
+          "thumbnailUrl": "https://www.thechurchnews.com/resizer/v2/MGQNFGI4ZZDSXMJF2JLRYQ4RV4.jpg?focal=692%2C246&auth=860b7e51d08f898ba054d126fc5d6f34849308188a2912706e8f7e6d9175a43d&width=630&height=331",
+          "publishedAt": "2026-11-07T17:08:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "asl",
+            "disability",
+            "sunday school",
+            "church source"
+          ]
+        },
+        {
+          "id": "2026-11-07-noon-07",
+          "type": "article",
+          "title": "Jon Ryan Jensen: Unprecedented opportunities to worship and serve",
+          "summary": "Church News editor Jon Ryan Jensen writes that the church has opened 18 temples so far in 2026—with three more expected by year's end—and argues that more temples create a responsibility to worship and serve more frequently, citing the recent Wichita Kansas Temple dedication.",
+          "source": "Church News",
+          "url": "https://www.thechurchnews.com/living-faith/2026/11/07/jon-ryan-jensen-unprecedented-opportunities-to-worship-serve-temple/",
+          "thumbnailUrl": "https://www.thechurchnews.com/resizer/v2/TH2HDUSSGVFQ5G7FB357KTRCOQ.JPG?focal=1207%2C1258&auth=79f4fdbb895a523fe9dd0066031dde9a50b7834ecc9eebaceb203111043903cb&width=630&height=331",
+          "publishedAt": "2026-11-07T14:00:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "temples",
+            "wichita",
+            "church source"
+          ]
+        },
+        {
+          "id": "2026-11-07-noon-08",
+          "type": "podcast",
+          "title": "Race to Innovation – Roy Zwahlen – 1085",
+          "summary": "The Cultural Hall interviews Roy Zwahlen about innovation inside The Church of Jesus Christ of Latter-day Saints, arguing that grassroots creativity—such as early-morning seminary—often matters more than top-down direction, and discussing BYU Pathway and Gospel Foundations classes as modern examples.",
+          "source": "The Cultural Hall",
+          "url": "https://podcasts.apple.com/us/podcast/race-to-innovation-roy-zwahlen-1085/id459622595?i=1000800413907",
+          "thumbnailUrl": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/6d/5d/f1/6d5df1c0-9bcd-f8d8-1366-a025a3765bbb/mza_10827362808649391640.jpg/600x600bb.jpg",
+          "publishedAt": "2026-11-07T13:00:55.000Z",
+          "paywalled": false,
+          "tags": [
+            "podcast",
+            "innovation",
+            "byu pathway"
+          ]
+        }
+      ]
     }
   ]
 }
