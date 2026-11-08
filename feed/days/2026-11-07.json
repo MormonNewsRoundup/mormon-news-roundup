@@ -9,18 +9,75 @@
         {
           "id": "2026-11-07-midnight-01",
           "type": "video",
-          "title": "The Mantle of the Prophet: Testing Mormon Revelatory Claims",
-          "summary": "A Mormon News Roundup Short examines the church's claims about prophets, seers and revelators, pointing to the abandoned Adam-God teaching and past positions on polygamy and race as challenges to claims of unfailing divine guidance.",
+          "title": "Ex-Mormon Legend Mindy’s Temple Shocking Temple Experience Explained",
+          "summary": "Mormon News Roundup highlights ex-Mormon creator Mindy Temple’s 16-part series about her firsthand experiences inside the temple, covering temple rituals, garments, baptisms for the dead, and her path to leaving the church.",
           "source": "Mormon News Roundup",
-          "url": "https://www.youtube.com/watch?v=y2OhTaWCe1M",
-          "thumbnailUrl": "https://i.ytimg.com/vi/y2OhTaWCe1M/hqdefault.jpg",
-          "publishedAt": "2026-11-07T05:00:19.000Z",
+          "url": "https://www.youtube.com/watch?v=_KC-P4h7gt8",
+          "thumbnailUrl": "https://i.ytimg.com/vi/_KC-P4h7gt8/maxresdefault.jpg",
+          "publishedAt": "2026-11-08T02:30:08.000Z",
           "paywalled": false,
           "tags": [
-            "own-channel",
-            "short",
-            "prophets",
-            "revelation"
+            "own-channel"
+          ]
+        },
+        {
+          "id": "2026-11-07-midnight-02",
+          "type": "article",
+          "title": "Utah snaps three-game losing streak to BYU with 28-20 win over Cougars",
+          "summary": "Fox 13, carrying the Associated Press recap, reports that No. 3 Utah beat No. 7 BYU 28-20 in the Holy War as Devon Dampier accounted for four touchdowns and Utah intercepted Bear Bachmeier four times. The loss drops BYU to 7-2.",
+          "source": "Fox 13",
+          "url": "https://www.fox13now.com/sports/utah-utes/utah-snaps-three-game-losing-streak-to-byu-with-28-20-win-over-cougars",
+          "thumbnailUrl": "https://ewscripps.brightspotcdn.com/dims4/default/b9025a9/2147483647/strip/true/crop/5178x2718+0+144/resize/1200x630!/quality/90/?url=http%3A%2F%2Fewscripps-brightspot.s3.amazonaws.com%2F2f%2Fc1%2Fd512894a4c87b42a3a0f50b53c23%2Fap26311740109271.jpg",
+          "publishedAt": "2026-11-07T21:02:49.000Z",
+          "paywalled": false,
+          "tags": [
+            "BYU",
+            "sports"
+          ]
+        },
+        {
+          "id": "2026-11-07-midnight-03",
+          "type": "podcast",
+          "title": "The 1974 Texas Mormon Missionary Murders: Robert Kleasen and the Venison Dinner",
+          "summary": "Postmormon Postmortem hosts Hannah and Jess examine the 1974 disappearance of missionaries Gary Darley and Mark Fischer near Austin, Texas, after they visited ward member Robert Kleasen, along with Kleasen’s past and the murder investigation.",
+          "source": "Postmormon Postmortem",
+          "url": "https://podcasts.apple.com/us/podcast/the-1974-texas-mormon-missionary-murders-robert/id1871046580?i=1000800432462",
+          "thumbnailUrl": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/f6/1d/4d/f61d4dda-15b9-487b-f0f2-5b3f70f48436/mza_16247521595547258311.jpg/600x600bb.jpg",
+          "publishedAt": "2026-11-07T16:36:06.000Z",
+          "paywalled": false,
+          "tags": [
+            "history",
+            "missionaries"
+          ]
+        },
+        {
+          "id": "2026-11-07-midnight-04",
+          "type": "reddit",
+          "title": "My TBM mom asked me to help her say no to a church calling. She hasn't asked me for advice about anything church-related since I left.",
+          "summary": "An r/exmormon post describes a user whose believing 66-year-old mother, after decades of nonstop church service, asked for help writing a text to turn down a new calling, prompting discussion of the pressure members feel to accept callings.",
+          "source": "r/exmormon",
+          "subreddit": "r/exmormon",
+          "url": "https://www.reddit.com/r/exmormon/comments/1xqawic/my_tbm_mom_asked_me_to_help_her_say_no_to_a/",
+          "thumbnailUrl": "https://mormonnewsroundup.github.io/mormon-news-roundup/feed/images/reddit/2026-11-07-midnight-04.jpg",
+          "publishedAt": "2026-11-07T16:48:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "callings"
+          ]
+        },
+        {
+          "id": "2026-11-07-midnight-05",
+          "type": "reddit",
+          "title": "Considered Normal in Church, Immediately Concerning Outside of Church",
+          "summary": "An r/mormon post asks users to list church practices the poster sees as normal inside the church but concerning to outsiders, citing bishops asking sexual questions of children and youth as an example.",
+          "source": "r/mormon",
+          "subreddit": "r/mormon",
+          "url": "https://www.reddit.com/r/mormon/comments/1xqc2aj/considered_normal_in_church_immediately/",
+          "thumbnailUrl": "https://mormonnewsroundup.github.io/mormon-news-roundup/feed/images/reddit/2026-11-07-midnight-05.jpg",
+          "publishedAt": "2026-11-07T17:37:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "bishop interviews"
           ]
         }
       ]
