@@ -22,6 +22,99 @@
           ]
         }
       ]
+    },
+    {
+      "name": "noon",
+      "publishedAt": "2026-11-08T17:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-11-08-noon-01",
+          "type": "article",
+          "title": "Undefeated Utah beats BYU 28-20 in Holy War classic",
+          "summary": "Gephardt Daily reports that No. 3 Utah rallied from a 20-14 halftime deficit to beat No. 9 BYU 28-20, as Devon Dampier accounted for four touchdowns and Utah intercepted Bear Bachmeier four times, including in the closing seconds. The article says the loss leaves BYU two games behind Utah in the Big 12 and needing help to reach the conference title game, and that Utah coach Morgan Scalley said the game reflected the more respectful rivalry atmosphere the coaches wanted.",
+          "source": "Gephardt Daily",
+          "url": "https://gephardtdaily.com/local/undefeated-utah-beats-byu-28-20-in-holy-war-classic/",
+          "thumbnailUrl": "https://gephardtdaily.com/wp-content/uploads/2026/11/Screenshot-2026-11-06-at-75910-PM-5.jpeg",
+          "publishedAt": "2026-11-08T16:00:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "byu",
+            "utah",
+            "holy war",
+            "football"
+          ]
+        },
+        {
+          "id": "2026-11-08-noon-02",
+          "type": "podcast",
+          "title": "The Mormon Church Lied About Polygamy. Fanny Stenhouse Wrote It All Down.",
+          "summary": "Postmormon Postmortem examines Fanny Stenhouse’s 1874 memoir Tell It All, tracing her 1849 conversion in England, emigration to Utah, and account of what the episode says the church concealed from European converts. Her account, as the hosts recount it, includes John Taylor’s public denials of polygamy while he had multiple wives, pressure to gather to Zion, and the 1856 Willie handcart journey.",
+          "source": "Postmormon Postmortem",
+          "url": "https://podcasts.apple.com/us/podcast/the-mormon-church-lied-about-polygamy-fanny-stenhouse/id1871046580?i=1000800567528",
+          "thumbnailUrl": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/46/b7/e4/46b7e441-c745-4fe8-ae58-8a355b277183/mza_10977613328864653307.jpg/600x600bb.jpg",
+          "publishedAt": "2026-11-08T14:00:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "podcast",
+            "polygamy",
+            "history",
+            "fanny stenhouse"
+          ]
+        },
+        {
+          "id": "2026-11-08-noon-03",
+          "type": "article",
+          "title": "BYU researchers develop a promising tool against cancer tumors",
+          "summary": "The Salt Lake Tribune reports that BYU researchers have developed a preclinical immunotherapy called MOTO-CAR that genetically engineers macrophages to recognize and attack solid tumors, with lead researcher Kim O’Neill citing a 90% reduction in aggressive lung cancer cells within 24 hours in one lab study and tumor-size reductions of up to 46% in mice. Citing a university news release, the Tribune says the results have not yet been formally published to protect the patent process and that more work and funding are needed before human trials; O’Neill told the Tribune that if the FDA approves, the treatment could become an option in fewer than five years.",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/news/2026/11/08/byu-researchers-develop-promising/",
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/ADY5A7V6IRAP3LJDGAUKOZS4S4.jpg?auth=4b932a2c3a11d3372bcccd07cbf6a62e6671365d242c2175eeea388267e95f25&width=1200&height=630&quality=88&smart=true",
+          "publishedAt": "2026-11-08T13:00:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "byu",
+            "science",
+            "cancer",
+            "research"
+          ]
+        },
+        {
+          "id": "2026-11-08-noon-04",
+          "type": "article",
+          "title": "When it mattered most, Utah rose and BYU crumbled",
+          "summary": "In a Deseret News opinion column, Dick Harmon writes that No. 3 Utah beat No. 9 BYU 28-20 after trailing 20-14, intercepting Bear Bachmeier four times—including when BYU was in scoring position—and shutting the Cougars out in the second half. Harmon says the win strengthens Utah’s College Football Playoff and Big 12 position while leaving BYU hoping for help after a second loss.",
+          "source": "Deseret News",
+          "url": "https://www.deseret.com/sports/2026/11/08/bear-bachmeier-interceptions-contribute-to-cougars-loss/",
+          "thumbnailUrl": "https://www.deseret.com/resizer/v2/SVMIO5LHHBHV5MSFBNSNKBT4ZM.JPG?focal=1456%2C860&auth=034ddc7432f9a9c0171b15de83d77b7094345b391149e51d7d085e1cb0a856b3&width=630&height=331",
+          "publishedAt": "2026-11-08T11:00:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "byu",
+            "utah",
+            "holy war",
+            "football",
+            "church source"
+          ]
+        },
+        {
+          "id": "2026-11-08-noon-05",
+          "type": "article",
+          "title": "A new poll shows Utah mirrors the nation on attitudes toward deportations",
+          "summary": "The Deseret News reports that a Deseret News/Hinckley Institute poll found Utahns nearly match the national split on deporting immigrants living in the country illegally who have not otherwise committed a crime, while Latter-day Saint Utahns were more supportive of strict deportation policies than the Utah and national averages—by about 15 percentage points on that question, with a plus or minus 4.6-point margin of error for the Latter-day Saint sample. The article quotes political scientist David Campbell and Mormon Women for Ethical Government’s Emma Petty Addams on how party identity and a justice-versus-compassion framing shape those views.",
+          "source": "Deseret News",
+          "url": "https://www.deseret.com/utah/2026/11/08/faith-and-gender-divides-immigration-issues/",
+          "thumbnailUrl": "https://www.deseret.com/resizer/v2/ZSFWDHYE3RGGZBOCTPQGY6AU5I.jpg?focal=0%2C0&auth=7cf80c7b38acb2b4314ab3abf7923a4dffa0e2ae6bd8239760b78eb566e6f57a&width=630&height=331",
+          "publishedAt": "2026-11-08T11:00:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "politics",
+            "immigration",
+            "polling",
+            "utah",
+            "church source"
+          ]
+        }
+      ]
     }
   ]
 }
