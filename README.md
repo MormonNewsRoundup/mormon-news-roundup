@@ -84,11 +84,9 @@ What is possible:
 
 Three tabs at the bottom:
 
-- **Latest** — up to 15 stories across every day in the feed, newest first. The header says Latest Headlines. There is no age cutoff. Exactly one video from the Mormon News Roundup YouTube channel is included, and it is the newest one. At most one r/exmormon post, one r/mormon post, and one Generally Unquotable video are included, each the newest. Older items from those sources are left out of these 15 and stay in Search. When a newer story arrives, the oldest of those 15 drops off the bottom and stays in Search. If the feed has fewer than 15 stories, they all stay on Latest. A repeated story is shown once. There is no edition label and no clock time. Each card shows the source, the type, and the full publish date, such as October 23, 2026. That date is the Eastern calendar day of the story, with no clock time and no time zone. Pull down to refresh. Tap a card to open its link. **Share** opens the phone’s share sheet with the link and the words “via Mormon News Roundup”. A small lock means the original link may be paywalled. v1 has no ad boxes between cards. At the bottom of the list, in small gray type: “Not affiliated with or endorsed by The Church of Jesus Christ of Latter-day Saints.”
-- **Search** — continues after Latest. With no text and the default filters, it shows stories 16 through 65, newest first, using the same order as Latest so those 15 are not repeated. If the archive has 15 or fewer stories, a small gray note says “Older stories will appear here.” Type a word, or change the type or time filter, and Search looks through the whole archive, including the stories on Latest. Type chips: All, Articles, Videos, Podcasts, Reddit. Time chips: Any time, Past week, Past month, Past year, and Custom range (a from date and a to date). The two sets combine. Try `lawsuit` or `podcast`. The same affiliation line is at the bottom.
-- **About** — what the app is, YouTube, the website, **Read on the web**, **Privacy Policy**, **App Support**, and a quiet Patreon link. The same affiliation line is at the bottom, not in a box in the middle. Remove ads and Restore purchase stay hidden while `IAP_ENABLED` is false.
-
-The v1 App Store app does not show ad boxes. `ADS_ENABLED` in `constants/config.ts` is false, so Latest does not insert ad slots.
+- **Latest** — up to 15 stories across every day in the feed, newest first. The header says Latest Headlines. There is no age cutoff. Exactly one video from the Mormon News Roundup YouTube channel is included, and it is the newest one. At most one r/exmormon post, one r/mormon post, and one Generally Unquotable video are included, each the newest. Older items from those sources are left out of these 15 and stay in Search. When `feed/index.json` sets `pinned`, that story stays first, shows a Pinned badge, and is exempt from those caps. When a newer story arrives, the oldest of those 15 drops off the bottom and stays in Search. If the feed has fewer than 15 stories, they all stay on Latest. A repeated story is shown once. There is no edition label and no clock time. Each card shows the source, the type, and the full publish date, such as October 23, 2026. That date is the Eastern calendar day of the story, with no clock time and no time zone. Pull down to refresh. Tap a card to open its link. **Share** opens the phone’s share sheet with the link and the words “via Mormon News Roundup”. A small lock means the original link may be paywalled. A labeled ad card is inserted after every fifth story. A small banner sits at the bottom of the screen. Buying or restoring Remove Ads hides both. At the bottom of the list, in small gray type: “Not affiliated with or endorsed by The Church of Jesus Christ of Latter-day Saints.”
+- **Search** — continues after Latest. With no text and the default filters, it shows stories 16 through 65, newest first, using the same order as Latest so those 15 are not repeated. If the archive has 15 or fewer stories, a small gray note says “Older stories will appear here.” Type a word, or change the type or time filter, and Search looks through the whole archive, including the stories on Latest. Type chips: All, Articles, Videos, Podcasts, Reddit. Time chips: Any time, Past week, Past month, Past year, and Custom range (a from date and a to date). The two sets combine. Try `lawsuit` or `podcast`. The same affiliation line is at the bottom. The same small bottom banner is here until ads are removed.
+- **About** — what the app is, YouTube, the website, **Read on the web**, **Privacy Policy**, **App Support**, and a quiet Patreon link. The same affiliation line is at the bottom, not in a box in the middle. **Remove ads** and **Restore purchase** are shown. The same small bottom banner is here until ads are removed.
 
 ## What is live now
 
@@ -149,27 +147,29 @@ npm run check-feed
 
 ## Ads and the $0.99 purchase
 
-v1 ships with both **off**. `ADS_ENABLED` and `IAP_ENABLED` in `constants/config.ts` are `false`. Latest has no ad slots, About has no Remove ads or Restore purchase rows, and nothing shows a “Loading test ad…” line. The App Store privacy answers for this version are **Data Not Collected**. Do not turn either switch on without the owner’s approval.
+Version 1.0.1 ships with both **on**. `ADS_ENABLED` and `IAP_ENABLED` in `constants/config.ts` are `true`. The owner approved this for the first update after the 1.0 App Store release.
 
-`react-native-google-mobile-ads`, `expo-iap`, and `expo-dev-client` are not installed. `app.json` has no AdMob plugin, no StoreKit plugin, and no tracking-permission text. The production EAS profile builds a normal release app.
+What the app shows:
 
-### Turning ads and the remove-ads purchase back on
+- A native ad card in Latest after every fifth story, labeled **Ad**, using the same card shape as a story. There is no extra ad after the first story.
+- A small 320×50 banner at the bottom of Latest, Search, and About.
+- No full-screen ads.
 
-1. Get the owner’s approval.
-2. Set `ADS_ENABLED` and `IAP_ENABLED` to `true` in `constants/config.ts`.
-3. Install the packages again: `npx expo install react-native-google-mobile-ads expo-iap`.
-4. Put the AdMob and `expo-iap` config plugins back in `app.json`, including `NSUserTrackingUsageDescription` only if ads will use the advertising identifier. The old plugin block is in git history.
-5. Restore `components/NativeAdBanner.tsx` and the StoreKit flow in `lib/purchases.ts` from git history (the commit before v1 removed them). `AdBanner` already skips its work while `ADS_ENABLED` is false.
-6. Create the AdMob app and banner unit, and the non-consumable App Store product `remove_ads` at $0.99. Replace Google’s test ids before anyone sees real ads.
-7. Update the App Store privacy answers. Ads mean the listing is no longer “Data Not Collected”.
+Buying or restoring **Remove ads** hides the cards and the banner. The product id is exactly `remove_ads`, a one-time non-consumable at $0.99. There is no login and no receipt server. StoreKit loads only outside Expo Go.
 
-The product id, when you create it, is exactly `remove_ads`. There is no login. v1 does not send receipts to a server.
+`react-native-google-mobile-ads` and `expo-iap` are installed. `expo-dev-client` is not. The production EAS profile builds a normal release app. Development (`__DEV__`) requests Google’s test ad units. A release build, including TestFlight, requests the live Feed Native and Bottom Banner units. The AdMob app id in the Expo config plugin is `ca-app-pub-9312708404620157~6988724299`, so `GADApplicationIdentifier` is not a Google sample id. The same id is also set as the Android app id because this release is iPhone-only and no separate Android AdMob app was provided.
+
+The app asks for App Tracking Transparency before starting the ads SDK. Until that permission is allowed, requests are non-personalized. `NSUserTrackingUsageDescription` explains that the identifier is used to show more relevant ads that support the show, and that ads can be removed with a one-time purchase. The ads config plugin writes AdMob’s SKAdNetwork identifier list into Info.plist. It is the full published list, not a single id.
+
+Expo Go and the website show labeled stand-ins. They do not load the native ad SDK.
+
+Before the next App Review submission, update the App Store privacy answers. This version is no longer “Data Not Collected”. Expect advertising data, identifiers (Device ID), and tracking, because the app requests tracking permission. Do that in App Store Connect. The product `remove_ads` still needs a review screenshot there before it can leave Missing Metadata.
 
 ## Path to the App Store
 
 You still do not need a Mac. EAS Build compiles the iOS app on Expo’s servers. You **do** need a paid Apple Developer account for this part. Previewing in Expo Go stays free.
 
-Do these in order when you are ready. None of them are done yet.
+Version 1.0 is already on the App Store. For 1.0.1, update the privacy label, add the Remove Ads review screenshot, then build and send the binary to TestFlight. Do not submit 1.0.1 to App Review until that store setup is done. The original setup steps are below.
 
 1. **Apple Developer Program** — $99 per year at [https://developer.apple.com](https://developer.apple.com). Enroll as an individual or an organization. Approval can take a day or two.
 2. **Expo account** — free at [https://expo.dev](https://expo.dev). In the project folder:
@@ -184,9 +184,9 @@ Do these in order when you are ready. None of them are done yet.
 3. **App Store Connect** — [https://appstoreconnect.apple.com](https://appstoreconnect.apple.com). Create an app named **Mormon News Roundup**. The bundle id is `com.mormonnewsroundup.app` (set in `app.json`). Change that id before the first upload if you want a different one. After the first upload it is painful to change.
 4. **Age rating 17+.** The questionnaire should reflect lawsuits and sexual abuse coverage. Say that plainly in the listing.
 5. **Privacy policy and support URLs.** Apple requires both in the App Store Connect listing. They are live: `https://mormonnewsroundup.org/privacy` and `https://mormonnewsroundup.org/app-support`. The same addresses are in `app.json` under `expo.extra` and on the About screen.
-6. **Privacy answers.** v1 is **Data Not Collected**. The app has no accounts, no advertising identifier, and no tracking prompt. When ads are approved later, update these answers before shipping that build.
-7. **AdMob and the $0.99 purchase** come later, and only with the owner’s approval. The steps are under **Turning ads and the remove-ads purchase back on** above. Do not add them to this first binary.
-8. **iPhone only.** `ios.supportsTablet` is false so Apple does not ask for iPad screenshots. `ios.buildNumber` starts at `"1"`. `eas.json` uses `appVersionSource: "remote"` and production `autoIncrement`.
+6. **Privacy answers.** 1.0 was **Data Not Collected**. 1.0.1 uses ads and App Tracking Transparency, so update the privacy label before submitting this build: advertising data, identifiers (Device ID), and tracking. The privacy policy URL stays `https://mormonnewsroundup.org/privacy`.
+7. **AdMob and the $0.99 purchase** are in this build. See **Ads and the $0.99 purchase** above. The non-consumable `remove_ads` already exists in App Store Connect. Upload a review screenshot for it before App Review, or the product stays in Missing Metadata.
+8. **iPhone only.** `ios.supportsTablet` is false so Apple does not ask for iPad screenshots. Local `ios.buildNumber` is `"5"` for version 1.0.1, the build after the live build 4. `eas.json` uses `appVersionSource: "remote"` and production `autoIncrement`, so EAS may set the uploaded build number itself.
 9. **Build in the cloud** (no Mac):
 
    ```bash
@@ -201,18 +201,17 @@ Do these in order when you are ready. None of them are done yet.
     npx eas-cli@latest submit --platform ios --profile production
     ```
 
-11. **TestFlight.** Install Apple’s TestFlight app. Add yourself as a tester. Try search, a card, and share. This build has no ad and no purchase.
+11. **TestFlight.** Install Apple’s TestFlight app. Add yourself as a tester. Try search, a card, share, a feed ad, the bottom banner, and Remove ads. Do not submit this build to App Review from here.
 12. **Submit for review** from App Store Connect once the listing, screenshots, privacy policy, support URL, age rating, and ads/purchase setup are in place.
 
 `eas.json` is already set for those three build types. You do not need to create an `ios` folder. EAS creates the native project on their servers from `app.json`.
 
 ## Still to do
 
-- `FEED_BASE_URL` in `constants/config.ts` is the GitHub Pages feed. A new day is a JSON commit to `main`, not a change to that file. The live edition is the real October 23 set.
-- Ads and the $0.99 purchase are off for v1. See **Turning ads and the remove-ads purchase back on**. Do not add the AdMob or StoreKit packages until the owner says so.
-- Privacy policy: `https://mormonnewsroundup.org/privacy`. Support: `https://mormonnewsroundup.org/app-support`. Paste both into the App Store Connect listing.
-- The Expo project is not linked yet. `npx eas-cli@latest init` does that.
-- There is no StoreKit purchase in v1, and no receipt server.
+- `FEED_BASE_URL` in `constants/config.ts` is the GitHub Pages feed. A new day is a JSON commit to `main`, not a change to that file.
+- Ads and the $0.99 Remove Ads purchase are on for 1.0.1. See **Ads and the $0.99 purchase**. There is still no receipt server.
+- Privacy policy: `https://mormonnewsroundup.org/privacy`. Support: `https://mormonnewsroundup.org/app-support`. The App Store privacy label must be updated before the next review.
+- The Expo project id is already in `app.json`.
 - The YouTube link is the one published on mormonnewsroundup.org: `https://www.youtube.com/@MormonNewsRoundup`. Patreon is `https://www.patreon.com/MormonNewsRoundup`.
 
 ## For a helper
@@ -237,7 +236,9 @@ Useful files:
 | `constants/config.ts` | Feed URL, product id, public links |
 | `lib/feed.ts` | Download and cache |
 | `lib/purchases.ts` | StoreKit, loaded only outside Expo Go |
-| `components/AdBanner.tsx` | Ad box, or the real banner outside Expo Go |
+| `components/AdBanner.tsx` | In-feed native ad card, or a labeled stand-in in Expo Go |
+| `components/BottomAdSlot.tsx` | Small bottom banner, hidden after Remove Ads |
+| `lib/mobileAds.ts` | One-time ads SDK start, test units in dev, live units in release |
 | `feed/` | The live feed. Pushing changes here to `main` publishes them |
 | `fallback/` | Offline sample inside the app. Not published to the website |
 | `dist/` | Built by GitHub Actions. Not stored in the repo. Locally: `npm run export:web` |

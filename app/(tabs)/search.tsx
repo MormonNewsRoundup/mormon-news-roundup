@@ -11,6 +11,7 @@ import {
   View,
 } from 'react-native';
 
+import { BottomAdSlot } from '@/components/BottomAdSlot';
 import { BrandHeader } from '@/components/BrandHeader';
 import { DateField } from '@/components/DateField';
 import { Icon } from '@/components/Icon';
@@ -186,6 +187,7 @@ export default function SearchScreen() {
         </View>
       ) : (
         <FlatList
+          style={styles.fill}
           data={results}
           keyExtractor={(item) => item.id}
           keyboardShouldPersistTaps="handled"
@@ -224,6 +226,7 @@ export default function SearchScreen() {
           renderItem={({ item }) => <NewsCard item={item} />}
         />
       )}
+      <BottomAdSlot />
     </View>
   );
 }

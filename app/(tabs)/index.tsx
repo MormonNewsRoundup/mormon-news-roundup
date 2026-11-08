@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 
 import { AdBanner } from '@/components/AdBanner';
+import { BottomAdSlot } from '@/components/BottomAdSlot';
 import { useAppState } from '@/components/AppState';
 import { BrandHeader } from '@/components/BrandHeader';
 import { NewsCard } from '@/components/NewsCard';
@@ -26,19 +27,19 @@ type Row =
   | { key: string; kind: 'card'; story: DatedStory }
   | { key: string; kind: 'ad' };
 
+/** One native ad card after every fifth story, never after the first card alone. */
+const FEED_AD_EVERY = 5;
+
 function buildRows(stories: DatedStory[], sample: boolean, adsRemoved: boolean): Row[] {
   const rows: Row[] = [];
   if (sample) rows.push({ key: 'banner', kind: 'banner' });
   stories.forEach((story, index) => {
     const cards = index + 1;
     rows.push({ key: story.item.id, kind: 'card', story });
-    if (ADS_ENABLED && !adsRemoved && (cards === 1 || cards % 4 === 0)) {
+    if (ADS_ENABLED && !adsRemoved && cards % FEED_AD_EVERY === 0) {
       rows.push({ key: `ad-${story.item.id}`, kind: 'ad' });
     }
   });
-  if (ADS_ENABLED && !adsRemoved && stories.length > 0 && stories.length % 4 !== 0) {
-    rows.push({ key: 'ad-end', kind: 'ad' });
-  }
   return rows;
 }
 
@@ -164,6 +165,7 @@ export default function LatestScreen() {
         </View>
       ) : (
         <FlatList
+          style={styles.listFill}
           data={rows}
           keyExtractor={(row) => row.key}
           refreshControl={
@@ -204,6 +206,7 @@ export default function LatestScreen() {
           }}
         />
       )}
+      <BottomAdSlot />
     </View>
   );
 }
@@ -211,6 +214,7 @@ export default function LatestScreen() {
 const styles = StyleSheet.create({
   screen: { flex: 1 },
   fill: { flex: 1 },
+  listFill: { flex: 1 },
   list: { paddingTop: 16, paddingBottom: 8, flexGrow: 1 },
   centered: {
     flex: 1,

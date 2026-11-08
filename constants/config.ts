@@ -44,21 +44,21 @@ export const PRIVACY_POLICY_URL = 'https://mormonnewsroundup.org/privacy';
 export const APP_SUPPORT_URL = 'https://mormonnewsroundup.org/app-support';
 
 /**
- * Non-consumable App Store / Play product. Create this exact id in
- * App Store Connect for $0.99 before a production build can sell it.
+ * Non-consumable App Store product. This id already exists in App Store
+ * Connect as a $0.99 Remove Ads purchase. There is no login and no receipt server.
  */
 export const REMOVE_ADS_PRODUCT_ID = 'remove_ads';
 
 export const REMOVE_ADS_PRICE_LABEL = '$0.99';
 
 /**
- * v1 App Store build: no ads and no in-app purchase. The listing says
- * "Data Not Collected". Both stay false until the owner approves them.
- * Turning either one on also means reinstalling the native packages.
- * See README, "Turning ads and the remove-ads purchase back on".
+ * 1.0.1 ships ads and the one-time Remove Ads purchase. The owner approved both.
+ * AdMob app id, tracking text, and SKAdNetwork ids are in the
+ * react-native-google-mobile-ads plugin in app.json. Development builds
+ * request Google's test ad units; release builds use the live units.
  */
-export const ADS_ENABLED = false;
-export const IAP_ENABLED = false;
+export const ADS_ENABLED = true;
+export const IAP_ENABLED = true;
 
 export const APP_PITCH = 'Your Daily Mormon News: Unfiltered';
 
@@ -68,17 +68,6 @@ export const ABOUT_INTRO =
 
 export const DISCLAIMER =
   'Not affiliated with or endorsed by The Church of Jesus Christ of Latter-day Saints.';
-
-/**
- * Google's public sample AdMob app ids (the ones with ~).
- * Replace both before you ship real ads. An ad unit id uses / and is not
- * the same thing. Banner unit ids live in components/NativeAdBanner.tsx
- * via the library's TestIds.BANNER until you swap in your own.
- */
-export const ADMOB_TEST_APP_IDS = {
-  ios: 'ca-app-pub-3940256099942544~1458002511',
-  android: 'ca-app-pub-3940256099942544~3347511713',
-} as const;
 
 export function feedBaseUrl(): string {
   return FEED_BASE_URL.trim().replace(/\/+$/, '');
