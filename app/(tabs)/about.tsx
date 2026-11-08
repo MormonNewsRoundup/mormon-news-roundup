@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Switch, Text, View } from 'react-native';
 
 import { useAppState } from '@/components/AppState';
+import { BottomAdSlot } from '@/components/BottomAdSlot';
 import { BrandHeader } from '@/components/BrandHeader';
 import { Icon } from '@/components/Icon';
 import { ScreenDisclaimer } from '@/components/ScreenDisclaimer';
@@ -31,9 +32,9 @@ function previewPurchaseMessage(): string {
 
 export default function AboutScreen() {
   const theme = useTheme();
-  const { adsRemoved, setAdsRemoved, replayWelcome } = useAppState();
+  const { adsRemoved, setAdsRemoved } = useAppState();
   const [busy, setBusy] = useState<'buy' | 'restore' | null>(null);
-  const version = Constants.expoConfig?.version ?? '1.0.0';
+  const version = Constants.expoConfig?.version ?? '1.0.1';
 
   async function onRemoveAds() {
     if (adsRemoved && !showPreviewTools()) return;
@@ -50,6 +51,10 @@ export default function AboutScreen() {
       return;
     }
     if (outcome.status === 'cancelled' || outcome.status === 'unavailable') return;
+    if (outcome.status === 'not-found') {
+      tell('Remove ads isn’t available', 'The App Store doesn’t have this purchase for the current build yet.');
+      return;
+    }
     if (outcome.status === 'error') tell('Purchase didn’t finish', outcome.message);
   }
 
@@ -129,7 +134,7 @@ export default function AboutScreen() {
             <Text style={[styles.paragraph, { color: theme.muted }]}>
               {canUseIap()
                 ? `Remove ads is a one-time purchase of ${REMOVE_ADS_PRICE_LABEL}. Restore puts it back on this Apple ID if you already bought it.`
-                : 'This preview shows a labeled ad box. A real Google test banner, and the one-time purchase, turn on in an EAS build. Deleting the app clears the purchase on this phone until you restore it.'}
+                : 'This preview shows labeled ad stand-ins. The App Store build loads Google ads, and the one-time purchase runs there too. Deleting the app clears the purchase on this phone until you restore it.'}
             </Text>
             <ActionRow
               label={adsRemoved ? 'Ads removed' : 'Remove ads'}
@@ -174,15 +179,13 @@ export default function AboutScreen() {
                 </Text>
               </>
             ) : null}
-            <Pressable accessibilityRole="button" onPress={() => void replayWelcome()}>
-              <Text style={[styles.patreon, { color: theme.link }]}>Show the welcome screen again</Text>
-            </Pressable>
           </View>
         ) : null}
 
         <Text style={[styles.version, { color: theme.muted }]}>Version {version}</Text>
         <ScreenDisclaimer />
       </ScrollView>
+      <BottomAdSlot />
     </View>
   );
 }

@@ -65,6 +65,21 @@ for (let i = 0; i < (index.days ?? []).length; i += 1) {
   }
 }
 
+if ('pinned' in index && index.pinned != null) {
+  if (!isObject(index.pinned)) {
+    fail('index.pinned must be an object or null');
+  } else {
+    if (typeof index.pinned.id !== 'string' || index.pinned.id.trim() === '') {
+      fail('index.pinned.id must be a non-empty string');
+    }
+    if (typeof index.pinned.date !== 'string' || !datePattern.test(index.pinned.date)) {
+      fail('index.pinned.date must be YYYY-MM-DD');
+    } else if (!seenDates.has(index.pinned.date)) {
+      fail(`index.pinned.date ${index.pinned.date} is not listed in index.days`);
+    }
+  }
+}
+
 const dayFiles = (await readdir(path.join(feedDir, 'days'))).filter((name) => name.endsWith('.json'));
 for (const file of dayFiles) {
   const date = file.replace(/\.json$/, '');
@@ -225,6 +240,29 @@ for (const date of index.days ?? []) {
       }
       titles.push(entry.title ?? '');
     }
+  }
+}
+
+if (isObject(index.pinned) && typeof index.pinned.id === 'string' && index.pinned.id.trim() !== '') {
+  const pinId = index.pinned.id;
+  const pinDate = typeof index.pinned.date === 'string' ? index.pinned.date : '';
+  if (pinDate && seenDates.has(pinDate)) {
+    let foundOnDay = false;
+    try {
+      const day = JSON.parse(await readFile(path.join(feedDir, 'days', `${pinDate}.json`), 'utf8'));
+      for (const edition of day.editions ?? []) {
+        for (const entry of edition.items ?? []) {
+          if (entry?.id === pinId) foundOnDay = true;
+        }
+      }
+    } catch {
+      // missing day already reported
+    }
+    if (!foundOnDay) {
+      fail(`index.pinned.id ${pinId} was not found in feed/days/${pinDate}.json`);
+    }
+  } else if (!ids.has(pinId)) {
+    fail(`index.pinned.id ${pinId} does not exist in the feed`);
   }
 }
 

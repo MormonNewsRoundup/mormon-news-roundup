@@ -11,6 +11,7 @@ import {
   View,
 } from 'react-native';
 
+import { BottomAdSlot } from '@/components/BottomAdSlot';
 import { BrandHeader } from '@/components/BrandHeader';
 import { DateField } from '@/components/DateField';
 import { Icon } from '@/components/Icon';
@@ -42,8 +43,8 @@ export default function SearchScreen() {
     // getIndex and getDay ask the network first, then the saved copy.
     const index = await getIndex(force);
     const days = await mapPool(index.days, 4, (date) => getDay(date, force));
-    // orderedStories starts with the Latest 15, then the rest, including older own-channel videos.
-    setArchive(orderedStories(days).map((entry) => entry.item));
+    // orderedStories starts with the Latest 15 (pinned first when set), then the rest.
+    setArchive(orderedStories(days, index.pinned ?? null).map((entry) => entry.item));
   }, []);
 
   useEffect(() => {
@@ -186,6 +187,7 @@ export default function SearchScreen() {
         </View>
       ) : (
         <FlatList
+          style={styles.fill}
           data={results}
           keyExtractor={(item) => item.id}
           keyboardShouldPersistTaps="handled"
@@ -224,6 +226,7 @@ export default function SearchScreen() {
           renderItem={({ item }) => <NewsCard item={item} />}
         />
       )}
+      <BottomAdSlot />
     </View>
   );
 }

@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 
 import { AdBanner } from '@/components/AdBanner';
+import { BottomAdSlot } from '@/components/BottomAdSlot';
 import { useAppState } from '@/components/AppState';
 import { BrandHeader } from '@/components/BrandHeader';
 import { NewsCard } from '@/components/NewsCard';
@@ -26,37 +27,49 @@ type Row =
   | { key: string; kind: 'card'; story: DatedStory }
   | { key: string; kind: 'ad' };
 
+/** One native ad card after every fifth story, never after the first card alone. */
+const FEED_AD_EVERY = 5;
+
 function buildRows(stories: DatedStory[], sample: boolean, adsRemoved: boolean): Row[] {
   const rows: Row[] = [];
   if (sample) rows.push({ key: 'banner', kind: 'banner' });
   stories.forEach((story, index) => {
     const cards = index + 1;
     rows.push({ key: story.item.id, kind: 'card', story });
-    if (ADS_ENABLED && !adsRemoved && (cards === 1 || cards % 4 === 0)) {
+    if (ADS_ENABLED && !adsRemoved && cards % FEED_AD_EVERY === 0) {
       rows.push({ key: `ad-${story.item.id}`, kind: 'ad' });
     }
   });
-  if (ADS_ENABLED && !adsRemoved && stories.length > 0 && stories.length % 4 !== 0) {
-    rows.push({ key: 'ad-end', kind: 'ad' });
-  }
   return rows;
 }
 
 async function loadRecent(force: boolean): Promise<{ index: FeedIndex; stories: DatedStory[]; more: boolean }> {
   const index = await getIndex(force);
   const dates = datesNewestFirst(index.days);
+  const pinned = index.pinned ?? null;
   const loaded: DayFile[] = [];
+  const loadedDates = new Set<string>();
+
+  // Load the pin's day up front so an older pin still appears when Latest stops early.
+  if (pinned?.date && dates.includes(pinned.date)) {
+    loaded.push(await getDay(pinned.date, force));
+    loadedDates.add(pinned.date);
+  }
+
   let stories: DatedStory[] = [];
   for (const date of dates) {
-    loaded.push(await getDay(date, force));
-    stories = recentStories(loaded);
+    if (!loadedDates.has(date)) {
+      loaded.push(await getDay(date, force));
+      loadedDates.add(date);
+    }
+    stories = recentStories(loaded, TODAY_STORY_LIMIT, pinned);
     const seenOwn = loaded.some((day) =>
       day.editions.some((edition) => edition.items.some((item) => isOwnChannelItem(item))),
     );
     // Keep reading until the newest own-channel video is in hand, then stop at 15.
     if (stories.length >= TODAY_STORY_LIMIT && seenOwn) break;
   }
-  const more = loaded.length < dates.length || orderedStories(loaded).length > stories.length;
+  const more = loaded.length < dates.length || orderedStories(loaded, pinned).length > stories.length;
   return { index, stories, more };
 }
 
@@ -152,6 +165,7 @@ export default function LatestScreen() {
         </View>
       ) : (
         <FlatList
+          style={styles.listFill}
           data={rows}
           keyExtractor={(row) => row.key}
           refreshControl={
@@ -188,10 +202,11 @@ export default function LatestScreen() {
               );
             }
             if (item.kind === 'ad') return <AdBanner />;
-            return <NewsCard item={item.story.item} />;
+            return <NewsCard item={item.story.item} pinned={Boolean(item.story.pinned)} />;
           }}
         />
       )}
+      <BottomAdSlot />
     </View>
   );
 }
@@ -199,6 +214,7 @@ export default function LatestScreen() {
 const styles = StyleSheet.create({
   screen: { flex: 1 },
   fill: { flex: 1 },
+  listFill: { flex: 1 },
   list: { paddingTop: 16, paddingBottom: 8, flexGrow: 1 },
   centered: {
     flex: 1,

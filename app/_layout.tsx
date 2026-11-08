@@ -8,7 +8,6 @@ import 'react-native-reanimated';
 import { AppStateProvider, useAppState } from '@/components/AppState';
 import { useColorScheme } from '@/components/useColorScheme';
 import { useTheme } from '@/components/useTheme';
-import { WelcomeScreen } from '@/components/WelcomeScreen';
 
 export { ErrorBoundary } from 'expo-router';
 
@@ -23,7 +22,7 @@ export default function RootLayout() {
 }
 
 function RootGate() {
-  const { ready, hasSeenWelcome, markWelcomeSeen } = useAppState();
+  const { ready } = useAppState();
   const theme = useTheme();
   const colorScheme = useColorScheme();
 
@@ -39,26 +38,22 @@ function RootGate() {
     <View style={{ flex: 1, backgroundColor: theme.frame, alignItems: 'center' }}>
       <View style={{ flex: 1, width: '100%', maxWidth: 480, backgroundColor: theme.background }}>
         <StatusBar style="light" />
-        {hasSeenWelcome ? (
-          <ThemeProvider
-            value={{
-              ...navigationTheme,
-              colors: {
-                ...navigationTheme.colors,
-                background: theme.background,
-                card: theme.tabBar,
-                text: theme.text,
-                border: theme.border,
-                primary: theme.tabActive,
-              },
-            }}>
-            <Stack>
-              <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-            </Stack>
-          </ThemeProvider>
-        ) : (
-          <WelcomeScreen onContinue={() => void markWelcomeSeen()} />
-        )}
+        <ThemeProvider
+          value={{
+            ...navigationTheme,
+            colors: {
+              ...navigationTheme.colors,
+              background: theme.background,
+              card: theme.tabBar,
+              text: theme.text,
+              border: theme.border,
+              primary: theme.tabActive,
+            },
+          }}>
+          <Stack>
+            <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          </Stack>
+        </ThemeProvider>
       </View>
     </View>
   );

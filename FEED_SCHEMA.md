@@ -34,7 +34,8 @@ Pull to refresh on Latest or Search. The app does not need a restart, and it doe
 {
   "generatedAt": "2026-10-25T16:00:00.000Z",
   "sample": false,
-  "days": ["2026-10-25", "2026-10-24", "2026-10-23"]
+  "days": ["2026-10-25", "2026-10-24", "2026-10-23"],
+  "pinned": { "id": "2026-10-25-noon-01", "date": "2026-10-25" }
 }
 ```
 
@@ -43,6 +44,7 @@ Pull to refresh on Latest or Search. The app does not need a restart, and it doe
 | `generatedAt` | yes | ISO-8601 date-time. When this index was written. |
 | `days` | yes | `YYYY-MM-DD` strings, **newest first**. Each one needs a matching file in `days/`. |
 | `sample` | no | `true` only for the bundled placeholder feed. The app shows a “Sample data” banner. Every title and summary must contain the word “Sample”. |
+| `pinned` | no | Optional top story. An object `{ "id": "<item id>", "date": "YYYY-MM-DD" }`, or `null` / omitted for no pin. `date` must be a day listed in `days`, and `id` must exist in that day’s file. When set, Latest shows that card first with a small “Pinned” badge, excludes its duplicate, and still fills up to 15 stories. The pin is exempt from the own-channel video slot and the subreddit / Generally Unquotable caps. Old app builds ignore this field; feeds without it keep working. Do not set a pin until the app update that understands it is live. |
 
 Dates are calendar dates in `America/New_York`. `2026-10-25` means October 25 in Eastern Time, not UTC.
 
@@ -188,7 +190,23 @@ You do not upload a separate host, and you do not edit `constants/config.ts` for
 
 Aim for 8–12 items on a full day. The midnight edition is the main one. Noon is a short update. A shorter day is still valid.
 
-The live `feed/` folder is the real edition. `feed/index.json` has `"sample": false` and lists `2026-10-25`, `2026-10-24`, `2026-10-23`, and `2026-10-20`. Latest Headlines shows up to 15 stories by `publishedAt`, across every date, with no age cutoff, and exactly one Mormon News Roundup YouTube video (the newest). It also keeps at most one r/exmormon post, one r/mormon post, and one Generally Unquotable video, each the newest. Older items from those sources stay in Search. The app loads day files from the newest date forward until that list is full and includes that video, when the feed has one. Search opens every date in `days`. Set `"sample": false` on the index to keep the Sample data banner off. Real `thumbnailUrl` values are `https` image addresses.
+The live `feed/` folder is the real edition. `feed/index.json` has `"sample": false` and lists `2026-10-25`, `2026-10-24`, `2026-10-23`, and `2026-10-20`. Latest Headlines shows up to 15 stories by `publishedAt`, across every date, with no age cutoff, and exactly one Mormon News Roundup YouTube video (the newest). It also keeps at most one r/exmormon post, one r/mormon post, and one Generally Unquotable video, each the newest. Older items from those sources stay in Search. When `pinned` is set on the index, that story is shown first (with a “Pinned” badge) and is exempt from those caps; the rest of the list still follows them. The app loads day files from the newest date forward until that list is full and includes that video, when the feed has one, and always loads the pin’s day when a pin is set. Search opens every date in `days`. Set `"sample": false` on the index to keep the Sample data banner off. Real `thumbnailUrl` values are `https` image addresses.
+
+### Pin a top story
+
+To pin one story so it always appears first on Latest:
+
+1. Find the item’s `id` and the Eastern calendar `date` of its day file (for example `2026-10-28-noon-10` in `feed/days/2026-10-28.json`).
+2. Edit `feed/index.json` and add (or update):
+
+```json
+"pinned": { "id": "2026-10-28-noon-10", "date": "2026-10-28" }
+```
+
+3. Set `generatedAt` to the time you are publishing. Commit and push `feed/index.json` only if you are changing the pin (no need to rewrite the day file).
+4. To clear the pin, set `"pinned": null` or remove the field, then push.
+
+`npm run check-feed` confirms the pin’s `date` is in `days` and the `id` exists in that day’s file. Leave the pin unset until clients that understand it are shipping; missing or null is fine for every build.
 
 `fallback/` is the offline sample bundled into the app. GitHub Pages does not publish it. `sample:` thumbnail tokens belong there only.
 
@@ -204,7 +222,7 @@ From the project folder, someone technical can run:
 npm run check-feed
 ```
 
-That checks ids, types, dates, edition names, newest-first order, and that each `publishedAt` falls on the file’s Eastern Time date. A real item’s `thumbnailUrl` must be `https`, except a `reddit` item may omit it. A thumbnail on this site’s `feed/images/` path must match a file already in the repo. A `reddit` url must be a reddit.com post permalink. While `index.json` has `"sample": true`, every title and summary must contain “Sample”.
+That checks ids, types, dates, edition names, newest-first order, and that each `publishedAt` falls on the file’s Eastern Time date. A real item’s `thumbnailUrl` must be `https`, except a `reddit` item may omit it. A thumbnail on this site’s `feed/images/` path must match a file already in the repo. A `reddit` url must be a reddit.com post permalink. While `index.json` has `"sample": true`, every title and summary must contain “Sample”. If `pinned` is present and not null, its `date` must be in `days` and its `id` must exist in that day’s file.
 
 A short day, a missing podcast, or fewer than two titles that mention lawsuit is a warning, not a failure. The command still exits successfully so that edition can be pushed. A `tiktok` type fails the check.
 

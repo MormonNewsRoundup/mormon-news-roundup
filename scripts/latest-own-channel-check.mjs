@@ -203,3 +203,49 @@ test('a feed with no own-channel video stays the plain newest 15', () => {
   assert.equal(latest[0].item.id, 'other-15');
   assert.equal(latest.length, 15);
 });
+
+test('a pinned item lands first and is not duplicated', async () => {
+  const days = await currentFeedDays();
+  const pin = { id: '2026-10-28-noon-10', date: '2026-10-28' };
+  const latest = latestStories(days, TODAY_STORY_LIMIT, pin);
+  assert.equal(latest[0].item.id, pin.id);
+  assert.equal(latest[0].pinned, true);
+  assert.match(latest[0].item.title, /Big 12 fines UCF/i);
+  assert.equal(latest.filter((entry) => entry.item.id === pin.id).length, 1);
+  assert.equal(latest.length, TODAY_STORY_LIMIT);
+  const own = latest.filter((entry) => isOwnChannelItem(entry.item));
+  assert.equal(own.length, 1);
+});
+
+test('a missing pin is ignored and Latest stays newest-first', () => {
+  const days = [
+    day('2026-10-28', [
+      story('a', '2026-10-28T16:00:00.000Z', 'KSL', 'article').item,
+      story('b', '2026-10-28T15:00:00.000Z', 'KSL', 'article').item,
+    ]),
+  ];
+  const latest = latestStories(days, 2, { id: 'does-not-exist', date: '2026-10-28' });
+  assert.deepEqual(latest.map((entry) => entry.item.id), ['a', 'b']);
+  assert.equal(latest.some((entry) => entry.pinned), false);
+});
+
+test('a pinned capped subreddit post is exempt and the newest of that subreddit still shows', () => {
+  const reddit = (id, publishedAt, name) =>
+    story(id, publishedAt, `r/${name}`, 'reddit', {
+      subreddit: `r/${name}`,
+      url: `https://www.reddit.com/r/${name}/comments/${id}/post/`,
+    }).item;
+  const days = [
+    day('2026-10-28', [
+      reddit('ex-new', '2026-10-28T15:00:00.000Z', 'exmormon'),
+      story('filler', '2026-10-28T14:00:00.000Z', 'KSL', 'article').item,
+      reddit('ex-old', '2026-10-28T13:00:00.000Z', 'exmormon'),
+    ]),
+  ];
+  const latest = latestStories(days, 3, { id: 'ex-old', date: '2026-10-28' });
+  assert.deepEqual(
+    latest.map((entry) => entry.item.id),
+    ['ex-old', 'ex-new', 'filler'],
+  );
+  assert.equal(latest[0].pinned, true);
+});
