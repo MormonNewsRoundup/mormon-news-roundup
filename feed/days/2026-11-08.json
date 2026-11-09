@@ -9,16 +9,46 @@
         {
           "id": "2026-11-08-midnight-01",
           "type": "video",
-          "title": "When Jimmy Swaggart Crashed Out at LDS General Conference",
-          "summary": "Mormon News Roundup explores a fictional alternate-history scenario in which televangelist Jimmy Swaggart takes over the pulpit at an LDS general conference in the 1980s.",
+          "title": "The Mormonism They Don’t Want You to Know: Polygamy, Blood Atonement & Apostasy",
+          "summary": "Mormon News Roundup's episode on polygamy, blood atonement and apostasy begins by asking how mainstream 19th-century Mormonism, with openly practiced plural marriage and radically different teachings on race, is understood.",
           "source": "Mormon News Roundup",
-          "url": "https://www.youtube.com/watch?v=Fu98pMeVGj8",
-          "thumbnailUrl": "https://i.ytimg.com/vi/Fu98pMeVGj8/maxresdefault.jpg",
-          "publishedAt": "2026-11-08T05:00:23.000Z",
+          "url": "https://www.youtube.com/watch?v=Znq7QAnJ7hg",
+          "thumbnailUrl": "https://i.ytimg.com/vi/Znq7QAnJ7hg/hqdefault.jpg",
+          "publishedAt": "2026-11-09T02:30:08.000Z",
           "paywalled": false,
           "tags": [
-            "own-channel",
-            "short"
+            "own-channel"
+          ]
+        },
+        {
+          "id": "2026-11-08-midnight-02",
+          "type": "video",
+          "title": "Mormon Bishops “Stand In As Jesus”? Becky Squire, Quentin Cook, Holy War BYU v Utah | Ep. 2225",
+          "summary": "Mormon Stories' Mormon News episode, per its description, has John Dehlin and Meggan Hayes examining an LDS influencer's video on bishop interviews with minors, Utah politics after the midterms, and Quentin Cook's warnings about anonymity.",
+          "source": "Mormon Stories Podcast",
+          "url": "https://www.youtube.com/watch?v=wp5WZsBl6hk",
+          "thumbnailUrl": "https://i.ytimg.com/vi/wp5WZsBl6hk/maxresdefault.jpg",
+          "publishedAt": "2026-11-08T19:46:55.000Z",
+          "paywalled": false,
+          "tags": [
+            "mormon-news",
+            "bishop-interviews"
+          ]
+        },
+        {
+          "id": "2026-11-08-midnight-03",
+          "type": "article",
+          "title": "Not Really About The New Youth Program",
+          "summary": "In a post on By Common Consent, a Mormon blog, the author argues that the church's announced January 2027 youth program refinements show women in the church lacking the same opportunities for engagement as men, citing differences in the emblems and covenant posters for young men and young women.",
+          "source": "By Common Consent",
+          "url": "https://bycommonconsent.com/2026/11/08/not-really-about-the-new-youth-program/",
+          "thumbnailUrl": "https://i0.wp.com/bycommonconsent.com/wp-content/uploads/2026/11/on-ne-fait-pas.jpg",
+          "publishedAt": "2026-11-08T16:49:34.000Z",
+          "paywalled": false,
+          "tags": [
+            "blog",
+            "youth",
+            "gender"
           ]
         }
       ]
