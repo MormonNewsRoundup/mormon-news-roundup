@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-09",
+  "sample": false,
+  "editions": [
+    {
+      "name": "noon",
+      "publishedAt": "2026-11-09T17:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-11-09-noon-01",
+          "type": "podcast",
+          "title": "The Wade Christofferson Scandal: What Did Mormon Leaders Know?",
+          "summary": "Mormon Discussions' episode, per its description, has host Bill Reel interviewing Chicago Sun-Times investigative reporter Robert Herguth about his reporting on Wade Christofferson, the brother of apostle D. Todd Christofferson, and how church leaders handled allegations against him. The description says it distinguishes documented findings, survivor accounts and unanswered questions.",
+          "source": "Mormon Discussions",
+          "url": "https://mormondiscussionpodcast.org/2026/11/the-wade-christofferson-scandal-what-did-mormon-leaders-know/",
+          "thumbnailUrl": "https://mormondiscussionpodcast.org/wp-content/uploads/sites/2/2026/11/33fb0639-0d25-4d84-a765-fc46ad59b1d0.png",
+          "publishedAt": "2026-11-09T13:36:54.000Z",
+          "paywalled": false,
+          "tags": [
+            "abuse",
+            "podcast"
+          ]
+        },
+        {
+          "id": "2026-11-09-noon-02",
+          "type": "article",
+          "title": "Jana Riess: New documentary shows how dirty sodas are quirky and unmistakably LDS",
+          "summary": "In a Religion News Service column published by The Salt Lake Tribune, Jana Riess writes that the new documentary \"Saints + Sodas\" ties Utah's dirty-soda culture to the church's Word of Wisdom and to members' shifting attitudes toward caffeinated soda. The film's director, Madison Pope, is quoted in the column.",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/religion/2026/11/09/jana-riess-why-dirty-sodas-are/",
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/BDQL4EFOIFHV7D547R45DXRIOM.jpg?auth=f3b928e6c2d20a81fe2b197eac5de71a59aa655be4f447238308bf9e0581c2ee&width=1200&height=630&quality=88&smart=true",
+          "publishedAt": "2026-11-09T13:00:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "culture",
+            "word-of-wisdom"
+          ]
+        }
+      ]
+    }
+  ]
+}
