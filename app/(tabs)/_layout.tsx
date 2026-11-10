@@ -21,9 +21,10 @@ export default function TabLayout() {
           borderTopColor: theme.border,
         },
         tabBarLabelStyle: {
-          fontSize: 11,
+          fontSize: 10,
           fontWeight: '700',
         },
+        tabBarAllowFontScaling: false,
       }}>
       <Tabs.Screen
         name="index"
@@ -36,12 +37,30 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
+        name="saved"
+        options={{
+          title: 'Saved',
+          tabBarIcon: ({ color }) => (
+            <Icon ios="bookmark.fill" android="bookmark" color={tabColor(color, theme.tabIcon)} />
+          ),
+        }}
+      />
+      <Tabs.Screen
         name="search"
         options={{
           title: 'Search',
           tabBarHideOnKeyboard: true,
           tabBarIcon: ({ color }) => (
             <Icon ios="magnifyingglass" android="search" color={tabColor(color, theme.tabIcon)} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="settings"
+        options={{
+          title: 'Settings',
+          tabBarIcon: ({ color }) => (
+            <Icon ios="gearshape.fill" android="settings" color={tabColor(color, theme.tabIcon)} />
           ),
         }}
       />

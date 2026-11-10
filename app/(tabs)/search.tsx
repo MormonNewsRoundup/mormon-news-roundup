@@ -19,7 +19,7 @@ import { NewsCard } from '@/components/NewsCard';
 import { ScreenDisclaimer } from '@/components/ScreenDisclaimer';
 import { useTheme } from '@/components/useTheme';
 import { getDay, getIndex, mapPool, subscribeFeedRefresh } from '@/lib/feed';
-import { localDateInputValue, rangeForTimeframe, searchItems, TIMEFRAMES, type Timeframe } from '@/lib/search';
+import { localDateInputValue, rangeForTimeframe, searchItems, sourceNames, TIMEFRAMES, type Timeframe } from '@/lib/search';
 import { orderedStories, SEARCH_AFTER_TODAY_LIMIT, TODAY_STORY_LIMIT } from '@/lib/today';
 import { CONTENT_TYPES, filterLabel, type FeedItem, type TypeFilter } from '@/lib/types';
 import { serifFamily } from '@/constants/theme';
@@ -31,6 +31,7 @@ export default function SearchScreen() {
   const [archive, setArchive] = useState<FeedItem[]>([]);
   const [query, setQuery] = useState('');
   const [filter, setFilter] = useState<TypeFilter>('all');
+  const [source, setSource] = useState<string | null>(null);
   const [timeframe, setTimeframe] = useState<Timeframe>('any');
   const [fromDate, setFromDate] = useState('');
   const [toDate, setToDate] = useState('');
@@ -83,14 +84,15 @@ export default function SearchScreen() {
     }
   }, [load]);
 
-  const browsing = query.trim().length > 0 || filter !== 'all' || timeframe !== 'any';
+  const browsing = query.trim().length > 0 || filter !== 'all' || timeframe !== 'any' || source != null;
   const results = useMemo(
     () =>
       browsing
-        ? searchItems(archive, query, filter, rangeForTimeframe(timeframe, Date.now(), fromDate, toDate))
+        ? searchItems(archive, query, filter, rangeForTimeframe(timeframe, Date.now(), fromDate, toDate), source)
         : archive.slice(TODAY_STORY_LIMIT, TODAY_STORY_LIMIT + SEARCH_AFTER_TODAY_LIMIT),
-    [archive, browsing, filter, fromDate, query, timeframe, toDate],
+    [archive, browsing, filter, fromDate, query, source, timeframe, toDate],
   );
+  const sources = useMemo(() => sourceNames(archive), [archive]);
   const showOlderNote = !loading && !error && !browsing && archive.length <= TODAY_STORY_LIMIT;
 
   function chooseTimeframe(next: Timeframe) {
@@ -128,10 +130,8 @@ export default function SearchScreen() {
             </Pressable>
           ) : null}
         </View>
-        <ScrollView
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={styles.chips}>
+        <Text style={[styles.filterLabel, { color: theme.muted }]}>Type</Text>
+        <View style={styles.timeChips}>
           {FILTERS.map((option) => {
             const selected = option === filter;
             return (
@@ -140,19 +140,40 @@ export default function SearchScreen() {
                 accessibilityRole="button"
                 accessibilityState={{ selected }}
                 onPress={() => setFilter(option)}
-                style={[
-                  styles.chip,
-                  {
-                    backgroundColor: selected ? theme.chipActive : theme.chip,
-                  },
-                ]}>
+                style={[styles.chip, { backgroundColor: selected ? theme.chipActive : theme.chip }]}>
                 <Text style={{ color: selected ? theme.chipActiveText : theme.chipText, fontWeight: '700' }}>
                   {filterLabel(option)}
                 </Text>
               </Pressable>
             );
           })}
+        </View>
+        <Text style={[styles.filterLabel, { color: theme.muted }]}>Source</Text>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.chips}>
+          <Pressable
+            accessibilityRole="button"
+            accessibilityState={{ selected: source == null }}
+            onPress={() => setSource(null)}
+            style={[styles.chip, { backgroundColor: source == null ? theme.chipActive : theme.chip }]}>
+            <Text style={{ color: source == null ? theme.chipActiveText : theme.chipText, fontWeight: '700' }}>
+              All shows
+            </Text>
+          </Pressable>
+          {sources.map((name) => {
+            const selected = name === source;
+            return (
+              <Pressable
+                key={name}
+                accessibilityRole="button"
+                accessibilityState={{ selected }}
+                onPress={() => setSource(selected ? null : name)}
+                style={[styles.chip, { backgroundColor: selected ? theme.chipActive : theme.chip }]}>
+                <Text style={{ color: selected ? theme.chipActiveText : theme.chipText, fontWeight: '700' }}>{name}</Text>
+              </Pressable>
+            );
+          })}
         </ScrollView>
+        <Text style={[styles.filterLabel, { color: theme.muted }]}>Date</Text>
         <View style={styles.timeChips}>
           {TIMEFRAMES.map((option) => {
             const selected = option.id === timeframe;
@@ -205,6 +226,7 @@ export default function SearchScreen() {
             browsing && !error ? (
               <Text style={[styles.count, { color: theme.muted }]}>
                 {results.length === 1 ? '1 item' : `${results.length} items`}
+                {source ? ` from ${source}` : ''}
                 {query.trim() ? ` for “${query.trim()}”` : ''}
               </Text>
             ) : undefined
@@ -218,7 +240,7 @@ export default function SearchScreen() {
                 <Text style={[styles.body, { color: theme.muted }]}>
                   {error
                     ? error
-                    : 'Nothing matches that type, time range, and search. Try Any time, or a different word.'}
+                    : 'Nothing matches that source, type, time range, and search. Try All shows, Any time, or a different word.'}
                 </Text>
               </View>
             )
@@ -255,6 +277,14 @@ const styles = StyleSheet.create({
   input: { flex: 1, fontSize: 16, paddingVertical: 10 },
   clear: { fontWeight: '700', fontSize: 14 },
   chips: { paddingHorizontal: 16, gap: 8, paddingBottom: 4 },
+  filterLabel: {
+    marginHorizontal: 20,
+    marginTop: 2,
+    fontSize: 12,
+    fontWeight: '800',
+    letterSpacing: 1.1,
+    textTransform: 'uppercase',
+  },
   timeChips: {
     flexDirection: 'row',
     flexWrap: 'wrap',

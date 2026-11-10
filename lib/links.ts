@@ -42,31 +42,26 @@ export async function shareItem(item: FeedItem): Promise<void> {
   }
 }
 
-/** Articles open in the in-app browser. Video, podcast, and Reddit links open in their own apps. */
-export async function openItem(item: FeedItem): Promise<void> {
+/** SFSafariViewController on iPhone, so the original page stays inside the app. */
+export async function openInAppBrowser(url: string): Promise<void> {
   try {
-    if (item.type === 'article') {
-      await WebBrowser.openBrowserAsync(item.url);
-      return;
-    }
-    await Linking.openURL(item.url);
+    await WebBrowser.openBrowserAsync(url, {
+      presentationStyle: WebBrowser.WebBrowserPresentationStyle.FULL_SCREEN,
+      controlsColor: '#1D1838',
+    });
   } catch {
     try {
-      await Linking.openURL(item.url);
-    } catch {
-      tell('Could not open this link', item.url);
-    }
-  }
-}
-
-export async function openExternal(url: string): Promise<void> {
-  try {
-    await Linking.openURL(url);
-  } catch {
-    try {
-      await WebBrowser.openBrowserAsync(url);
+      await Linking.openURL(url);
     } catch {
       tell('Could not open this link', url);
     }
   }
+}
+
+export async function openItem(item: FeedItem): Promise<void> {
+  await openInAppBrowser(item.url);
+}
+
+export async function openExternal(url: string): Promise<void> {
+  await openInAppBrowser(url);
 }

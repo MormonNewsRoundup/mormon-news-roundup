@@ -193,6 +193,9 @@ for (const date of index.days ?? []) {
       if ('subreddit' in entry && (typeof entry.subreddit !== 'string' || entry.subreddit.trim() === '')) {
         fail(`${label} subreddit must be a non-empty string when present`);
       }
+      if ('audioUrl' in entry && (typeof entry.audioUrl !== 'string' || !entry.audioUrl.startsWith('https://'))) {
+        fail(`${label} audioUrl must be an https URL when present`);
+      }
       if (!Array.isArray(entry.tags) || entry.tags.some((tag) => typeof tag !== 'string')) {
         fail(`${label} tags must be an array of strings`);
       }

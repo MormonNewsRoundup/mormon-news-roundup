@@ -51,8 +51,13 @@ export const REMOVE_ADS_PRODUCT_ID = 'remove_ads';
 
 export const REMOVE_ADS_PRICE_LABEL = '$0.99';
 
+/** Visible label for the non-consumable. Kept even when the store price query fails. */
+export const REMOVE_ADS_BUTTON_LABEL = `Remove Ads - ${REMOVE_ADS_PRICE_LABEL}`;
+
+export const RESTORE_PURCHASES_LABEL = 'Restore Purchases';
+
 /**
- * 1.0.1 ships ads and the one-time Remove Ads purchase. The owner approved both.
+ * 1.0.2 keeps ads and the one-time Remove Ads purchase. The owner approved both.
  * AdMob app id, tracking text, and SKAdNetwork ids are in the
  * react-native-google-mobile-ads plugin in app.json. Development builds
  * request Google's test ad units; release builds use the live units.

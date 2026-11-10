@@ -1,18 +1,24 @@
 import { useState } from 'react';
 import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
 
+import { useAppState } from '@/components/AppState';
 import { Icon } from '@/components/Icon';
 import { thumbnailSource } from '@/components/thumbnails';
 import { useTheme } from '@/components/useTheme';
 import { badgeColors, serifFamily } from '@/constants/theme';
 import { formatPublishedDate } from '@/lib/format';
-import { openItem, shareItem } from '@/lib/links';
+import { shareItem } from '@/lib/links';
+import { openStory } from '@/lib/stories';
+import { textMultiplier } from '@/lib/textSize';
 import { typeLabel, type FeedItem } from '@/lib/types';
 
 const REDDIT_ORANGE = '#FF4500';
 
 export function NewsCard({ item, pinned = false }: { item: FeedItem; pinned?: boolean }) {
   const theme = useTheme();
+  const { isSaved, toggleSaved, textSize } = useAppState();
+  const scale = textMultiplier(textSize);
+  const saved = isSaved(item.id);
   const thumbUrl = item.thumbnailUrl?.trim() ?? '';
   const source = thumbnailSource(thumbUrl);
   const [imageFailed, setImageFailed] = useState(!source);
@@ -35,7 +41,7 @@ export function NewsCard({ item, pinned = false }: { item: FeedItem; pinned?: bo
       <Pressable
         accessibilityRole="button"
         accessibilityLabel={`${pinned ? 'Pinned. ' : ''}${meta}. ${item.title}`}
-        onPress={() => void openItem(item)}
+        onPress={() => openStory(item)}
         style={({ pressed }) => pressed && styles.pressed}>
         <View
           style={[
@@ -87,11 +93,31 @@ export function NewsCard({ item, pinned = false }: { item: FeedItem; pinned?: bo
               </View>
             ) : null}
           </View>
-          <Text style={[styles.title, { color: theme.text }]}>{item.title}</Text>
-          <Text style={[styles.summary, { color: theme.muted }]}>{item.summary}</Text>
+          <Text style={[styles.title, { color: theme.text, fontSize: 20 * scale, lineHeight: 26 * scale }]}>
+            {item.title}
+          </Text>
+          <Text style={[styles.summary, { color: theme.muted, fontSize: 15 * scale, lineHeight: 21 * scale }]}>
+            {item.summary}
+          </Text>
         </View>
       </Pressable>
       <View style={[styles.footer, { borderTopColor: theme.border }]}>
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel={saved ? `Remove ${item.title} from Saved` : `Save ${item.title}`}
+          hitSlop={8}
+          onPress={() => void toggleSaved(item)}
+          style={({ pressed }) => [styles.share, pressed && styles.pressed]}>
+          <Icon
+            ios={saved ? 'bookmark.fill' : 'bookmark'}
+            android="bookmark"
+            color={saved ? theme.tabActive : theme.link}
+            size={18}
+          />
+          <Text style={[styles.shareText, { color: saved ? theme.tabActive : theme.link }]}>
+            {saved ? 'Saved' : 'Save'}
+          </Text>
+        </Pressable>
         <Pressable
           accessibilityRole="button"
           accessibilityLabel={`Share ${item.title}`}
@@ -210,6 +236,8 @@ const styles = StyleSheet.create({
     borderTopWidth: StyleSheet.hairlineWidth,
     paddingHorizontal: 8,
     paddingVertical: 4,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
   share: {
     minHeight: 44,

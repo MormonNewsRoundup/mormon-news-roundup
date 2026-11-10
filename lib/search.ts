@@ -50,19 +50,33 @@ export function localDateInputValue(ms: number): string {
   return `${date.getFullYear()}-${month}-${day}`;
 }
 
+/** Publication and show names that appear on cards, A to Z. */
+export function sourceNames(items: FeedItem[]): string[] {
+  const names = new Set<string>();
+  for (const item of items) {
+    const name = item.source.trim();
+    if (name) names.add(name);
+  }
+  return [...names].sort((a, b) => a.localeCompare(b));
+}
+
 /**
- * On-device search. Matches title, summary, and source, then the type and
- * time range. Newest first. An empty query keeps every item that passes.
+ * On-device search. Matches title, summary, source, show, and tags, then the
+ * type, source, and time range. Newest first. An empty query keeps every item
+ * that passes. A null source means every source.
  */
 export function searchItems(
   items: FeedItem[],
   query: string,
   filter: TypeFilter,
   range: TimeRange = { start: null, end: null },
+  source: string | null = null,
 ): FeedItem[] {
   const needle = query.trim().toLowerCase();
+  const sourceName = source?.trim() || null;
   return items
     .filter((item) => (filter === 'all' ? true : item.type === filter))
+    .filter((item) => (sourceName ? item.source === sourceName : true))
     .filter((item) => {
       const published = Date.parse(item.publishedAt);
       if (!Number.isFinite(published)) return false;
@@ -72,11 +86,10 @@ export function searchItems(
     })
     .filter((item) => {
       if (!needle) return true;
-      return (
-        item.title.toLowerCase().includes(needle) ||
-        item.summary.toLowerCase().includes(needle) ||
-        item.source.toLowerCase().includes(needle)
-      );
+      const haystack = [item.title, item.summary, item.source, item.channel ?? '', item.tags.join(' ')]
+        .join('\n')
+        .toLowerCase();
+      return haystack.includes(needle);
     })
     .sort((a, b) => {
       const byTime = b.publishedAt.localeCompare(a.publishedAt);
