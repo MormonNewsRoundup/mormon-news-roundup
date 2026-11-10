@@ -1,0 +1,176 @@
+{
+  "date": "2026-11-10",
+  "sample": false,
+  "editions": [
+    {
+      "name": "midnight",
+      "publishedAt": "2026-11-10T05:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-11-10-midnight-01",
+          "type": "video",
+          "title": "Mormons and the Watergate Scandal",
+          "summary": "Mormon News Roundup's new Short looks at how the public relations firm Robert R. Mullen & Company, which handled international PR for the Church, also served as a CIA front and employed Watergate figure Howard Hunt. It also covers the role of Robert Bennett and claims about BYU student spies.",
+          "source": "Mormon News Roundup",
+          "url": "https://www.youtube.com/watch?v=6c_F1HKB1wE",
+          "thumbnailUrl": "https://i.ytimg.com/vi/6c_F1HKB1wE/maxresdefault.jpg",
+          "publishedAt": "2026-11-10T05:00:19.000Z",
+          "paywalled": false,
+          "tags": [
+            "own-channel",
+            "short"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "noon",
+      "publishedAt": "2026-11-10T17:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-11-10-noon-02",
+          "type": "article",
+          "title": "Wilford Woodruff Papers project finds permanent home with the Church",
+          "summary": "Church News reports that the Wilford Woodruff Papers Foundation is gifting its completed collection of 14,511 documents to the Church History Department for long-term access through the Church Historian’s Press website. A conference marking the gift is set for Nov. 13 in Salt Lake City.",
+          "source": "Church News",
+          "url": "https://www.thechurchnews.com/history-archive/2026/11/10/wilford-woodruff-papers-project-finds-permanent-home-with-church-history-department/",
+          "thumbnailUrl": "https://www.thechurchnews.com/resizer/v2/IOY35HU6NJBBNBIT7B7FIKLMGQ.png?focal=1055%2C296&auth=db747ba4f5379b903890e712762e99854e131a622cbdc07db0e44daa4db9af37&width=630&height=331",
+          "publishedAt": "2026-11-10T16:48:45.000Z",
+          "paywalled": false,
+          "tags": [
+            "church-history",
+            "wilford-woodruff"
+          ]
+        },
+        {
+          "id": "2026-11-10-noon-01",
+          "type": "reddit",
+          "title": "I met with an LDS mission president in Istanbul. He called my complaint a “threat,” mentioned banning me from church, and now the missionaries won’t respond. Is this normal?",
+          "summary": "An r/mormon post from a non-member German student in Istanbul says a mission president met with him for about 80 minutes, repeatedly described his formal letter about a church gathering as a threat, mentioned a possible ban from church premises, and said the missionaries would stop contacting him. These are the poster's own claims; the Church has not commented in the thread.",
+          "source": "r/mormon",
+          "url": "https://www.reddit.com/r/mormon/comments/1xsqqbx/i_met_with_an_lds_mission_president_in_istanbul/",
+          "thumbnailUrl": "https://mormonnewsroundup.github.io/mormon-news-roundup/feed/images/reddit/2026-11-10-noon-01.jpg",
+          "subreddit": "r/mormon",
+          "publishedAt": "2026-11-10T16:04:17.000Z",
+          "paywalled": false,
+          "tags": [
+            "reddit",
+            "missionaries",
+            "turkey"
+          ]
+        },
+        {
+          "id": "2026-11-10-noon-03",
+          "type": "article",
+          "title": "Elder Soares Attends Argentine Interfaith Gathering with Pope Leo XIV",
+          "summary": "The Church Newsroom says Elder Ulisses Soares of the Quorum of the Twelve joined faith leaders in Buenos Aires to hear Pope Leo XIV speak on dialogue, human dignity and peace. Soares is on a 10-day ministry trip through South America.",
+          "source": "Church Newsroom",
+          "url": "https://newsroom.churchofjesuschrist.org/article/elder-soares-pope-leo-argentina",
+          "thumbnailUrl": "https://newsroom.churchofjesuschrist.org/media/640x480/0G9A5645.jpg",
+          "publishedAt": "2026-11-10T14:00:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "interfaith",
+            "argentina",
+            "pope-leo"
+          ]
+        },
+        {
+          "id": "2026-11-10-noon-04",
+          "type": "article",
+          "title": "Crumbling Provo apartment complex will be turned into new BYU housing",
+          "summary": "The Salt Lake Tribune reports the Provo City Council unanimously approved redeveloping the blighted Park Plaza property near BYU into a six-story, 146-unit student complex with up to 523 beds and a car-stacking parking system.",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/news/2026/11/10/more-student-housing-coming-near/",
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/VTVEPQP72BFSNNOVQDOSZHY3N4.jpg?auth=eecf4b7e6b5d4034052d155da5f8a8be114b5befd17fe9a033fee0fc3db8c4c5&width=1200&height=630&quality=88&smart=true",
+          "publishedAt": "2026-11-10T13:00:01.000Z",
+          "paywalled": false,
+          "tags": [
+            "byu",
+            "provo",
+            "housing"
+          ]
+        },
+        {
+          "id": "2026-11-10-noon-05",
+          "type": "article",
+          "title": "Utah Republicans thought they were insulated from the blue wave. They were wrong",
+          "summary": "Deseret News reports Utah Republicans lost 16 state House seats and their two-thirds supermajority, with an analysis showing a 30-point swing toward Democrats since 2022. Gov. Spencer Cox said no one anticipated how far the wave would reach in Utah.",
+          "source": "Deseret News",
+          "url": "https://www.deseret.com/politics/2026/11/10/utah-blue-wave-lost-republican-supermajority-in-legislature-governor-spencer-cox-responds/",
+          "thumbnailUrl": "https://www.deseret.com/resizer/v2/MNGLL36QUNABBLIPVGASLQAXTM.jpg?focal=1600%2C972&auth=6a4bb27d0013607aaefd6214cc1dd20f98458a724f9c6f5ad8bbe2e2b58baa33&width=630&height=331",
+          "publishedAt": "2026-11-10T11:00:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "utah",
+            "politics",
+            "midterms"
+          ]
+        },
+        {
+          "id": "2026-11-10-noon-06",
+          "type": "reddit",
+          "title": "No Saturday night session, no conference temple announcements, way fewer surprises. Is Oaks…",
+          "summary": "An r/exmormon post compares President Oaks’s first year with Nelson’s, pointing to the cut Saturday evening session, temple announcements moved to local devotionals and a slower temple pace. The poster argues the style is calmer and more institutional, and asks which Nelson-era change will fade next.",
+          "source": "r/exmormon",
+          "url": "https://www.reddit.com/r/exmormon/comments/1xsjfw8/no_saturday_night_session_no_conference_temple/",
+          "thumbnailUrl": "https://mormonnewsroundup.github.io/mormon-news-roundup/feed/images/reddit/2026-11-10-noon-06.jpg",
+          "subreddit": "r/exmormon",
+          "publishedAt": "2026-11-10T10:23:52.000Z",
+          "paywalled": false,
+          "tags": [
+            "reddit",
+            "oaks",
+            "general-conference"
+          ]
+        },
+        {
+          "id": "2026-11-10-noon-07",
+          "type": "article",
+          "title": "Female Veiling in Mormonism",
+          "summary": "Times & Seasons examines funeral and temple veiling for women in Latter-day Saint practice, comparing it with Catholic mantilla traditions, Eastern Orthodox head coverings and the old custom of women veiling before the pope.",
+          "source": "Times & Seasons",
+          "url": "https://timesandseasons.org/index.php/2026/11/female-veiling-in-mormonism/",
+          "thumbnailUrl": "https://timesandseasons.org/wp-content/uploads/2024/12/Times-and-Seasons-Banner-2.1-800x450.jpg",
+          "publishedAt": "2026-11-10T09:12:20.000Z",
+          "paywalled": false,
+          "tags": [
+            "blog",
+            "temple",
+            "women"
+          ]
+        },
+        {
+          "id": "2026-11-10-noon-09",
+          "type": "podcast",
+          "title": "Nov 10- Daniel 1:8-15",
+          "summary": "Today’s Come Follow Me - Daily Dose episode reflects on Daniel 1:8-15, asking what we purpose in our hearts and how God blesses his children.",
+          "source": "Come Follow Me - Daily Dose",
+          "url": "https://podcasts.apple.com/us/podcast/nov-10-daniel-1-8-15/id1498396876?i=1000800936778",
+          "thumbnailUrl": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts114/v4/aa/05/78/aa057802-9405-bfda-e9cd-15d2fbc30741/mza_12786431535503845214.jpg/600x600bb.jpg",
+          "publishedAt": "2026-11-10T05:37:01.000Z",
+          "paywalled": false,
+          "tags": [
+            "podcast",
+            "come-follow-me"
+          ]
+        },
+        {
+          "id": "2026-11-10-noon-08",
+          "type": "podcast",
+          "title": "God Gave them Knowledge",
+          "summary": "An episode of the Come, Follow Me—For Home and Church: Old Testament 2026 podcast on Daniel 1-2, where Daniel shows obedience by declining the king’s wine and meat.",
+          "source": "Come, Follow Me—For Home and Church",
+          "url": "https://podcasts.apple.com/us/podcast/god-gave-them-knowledge/id1864006336?i=1000800934657",
+          "thumbnailUrl": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/ec/7a/32/ec7a3247-d3ce-c92c-354b-c47fffe32523/mza_8452889220234653585.jpg/600x600bb.jpg",
+          "publishedAt": "2026-11-10T05:17:46.000Z",
+          "paywalled": false,
+          "tags": [
+            "podcast",
+            "come-follow-me"
+          ]
+        }
+      ]
+    }
+  ]
+}
