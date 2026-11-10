@@ -18,6 +18,7 @@ import { ScreenDisclaimer } from '@/components/ScreenDisclaimer';
 import { useTheme } from '@/components/useTheme';
 import { ADS_ENABLED, APP_PITCH, isBundledFeed } from '@/constants/config';
 import { serifFamily } from '@/constants/theme';
+import { maybeNotifyNewEdition } from '@/lib/alerts';
 import { getDay, getIndex, subscribeFeedRefresh } from '@/lib/feed';
 import { datesNewestFirst, isOwnChannelItem, orderedStories, recentStories, TODAY_STORY_LIMIT, type DatedStory } from '@/lib/today';
 import type { DayFile, FeedIndex } from '@/lib/types';
@@ -88,6 +89,7 @@ export default function LatestScreen() {
     setIndex(next.index);
     setStories(next.stories);
     setMore(next.more);
+    void maybeNotifyNewEdition(next.index);
   }, []);
 
   useEffect(() => {

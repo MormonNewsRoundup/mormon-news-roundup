@@ -2,7 +2,7 @@
   "expo": {
     "name": "Mormon News Roundup",
     "slug": "mormon-news-roundup",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Your Daily Mormon News: Unfiltered",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -123,6 +123,21 @@
         "expo-tracking-transparency",
         {
           "userTrackingPermission": "This identifier is used to show ads that are more relevant to you. Ads support Mormon News Roundup. You can remove them with a one-time purchase."
+        }
+      ],
+      [
+        "expo-audio",
+        {
+          "microphonePermission": false,
+          "recordAudioAndroid": false,
+          "enableBackgroundPlayback": true
+        }
+      ],
+      "expo-background-task",
+      [
+        "expo-notifications",
+        {
+          "enableRemoteNotifications": false
         }
       ]
     ],

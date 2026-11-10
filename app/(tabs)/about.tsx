@@ -1,11 +1,11 @@
 import Constants from 'expo-constants';
-import { useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Switch, Text, View } from 'react-native';
 
 import { useAppState } from '@/components/AppState';
 import { BottomAdSlot } from '@/components/BottomAdSlot';
 import { BrandHeader } from '@/components/BrandHeader';
 import { Icon } from '@/components/Icon';
+import { PurchasePanel } from '@/components/PurchasePanel';
 import { ScreenDisclaimer } from '@/components/ScreenDisclaimer';
 import { useTheme } from '@/components/useTheme';
 import {
@@ -14,77 +14,28 @@ import {
   APP_PITCH,
   APP_SUPPORT_URL,
   BREAKING_NEWS_URL,
-  IAP_ENABLED,
   PATREON_URL,
   PRIVACY_POLICY_URL,
-  REMOVE_ADS_PRICE_LABEL,
   WEBSITE_URL,
   YOUTUBE_CHANNEL_URL,
 } from '@/constants/config';
 import { openExternal } from '@/lib/links';
-import { tell } from '@/lib/notice';
-import { purchaseRemoveAds, restoreRemoveAds } from '@/lib/purchases';
-import { canUseIap, previewRuntimeLabel, showPreviewTools } from '@/lib/runtime';
-
-function previewPurchaseMessage(): string {
-  return 'The $0.99 purchase and restore run in an EAS development build or the App Store app. In this preview, use the switch below to hide the ad boxes.';
-}
+import { previewRuntimeLabel, showPreviewTools } from '@/lib/runtime';
 
 export default function AboutScreen() {
   const theme = useTheme();
   const { adsRemoved, setAdsRemoved } = useAppState();
-  const [busy, setBusy] = useState<'buy' | 'restore' | null>(null);
-  const version = Constants.expoConfig?.version ?? '1.0.1';
-
-  async function onRemoveAds() {
-    if (adsRemoved && !showPreviewTools()) return;
-    if (!canUseIap()) {
-      tell('Purchases need the store build', previewPurchaseMessage());
-      return;
-    }
-    setBusy('buy');
-    const outcome = await purchaseRemoveAds();
-    setBusy(null);
-    if (outcome.status === 'purchased') {
-      await setAdsRemoved(true);
-      tell('Ads removed', 'Thank you. The banner spots are hidden on this phone.');
-      return;
-    }
-    if (outcome.status === 'cancelled' || outcome.status === 'unavailable') return;
-    if (outcome.status === 'not-found') {
-      tell('Remove ads isn’t available', 'The App Store doesn’t have this purchase for the current build yet.');
-      return;
-    }
-    if (outcome.status === 'error') tell('Purchase didn’t finish', outcome.message);
-  }
-
-  async function onRestore() {
-    if (!canUseIap()) {
-      tell('Restore needs the store build', previewPurchaseMessage());
-      return;
-    }
-    setBusy('restore');
-    const outcome = await restoreRemoveAds();
-    setBusy(null);
-    if (outcome.status === 'restored') {
-      await setAdsRemoved(true);
-      tell('Purchase restored', 'Ads stay off on this Apple ID.');
-      return;
-    }
-    if (outcome.status === 'not-found') {
-      tell('Nothing to restore', 'This Apple ID has not bought Remove ads.');
-      return;
-    }
-    if (outcome.status === 'error') tell('Restore didn’t finish', outcome.message);
-  }
+  const version = Constants.expoConfig?.version ?? '1.0.2';
 
   return (
     <View style={[styles.screen, { backgroundColor: theme.background }]}>
       <BrandHeader title="About" subtitle={APP_PITCH} />
       <ScrollView style={styles.scroll} contentContainerStyle={styles.content}>
+        <PurchasePanel />
         <Text style={[styles.paragraph, { color: theme.text }]}>{ABOUT_INTRO}</Text>
         <Text style={[styles.paragraph, { color: theme.text }]}>
-          Tap a card to open the original article, video, podcast, or Reddit post.
+          Tap a story to read it here. Videos play in the app, podcasts use the audio player when an
+          episode file is available, and the original page opens in the in-app browser.
         </Text>
         <Text style={[styles.paragraph, { color: theme.muted }]}>
           Stories can include lawsuits and sexual abuse cases. The App Store listing is meant for
@@ -127,34 +78,6 @@ export default function AboutScreen() {
             Support Mormon News Roundup on Patreon
           </Text>
         </Pressable>
-
-        {IAP_ENABLED ? (
-          <>
-            <Text style={[styles.section, { color: theme.muted }]}>Ads</Text>
-            <Text style={[styles.paragraph, { color: theme.muted }]}>
-              {canUseIap()
-                ? `Remove ads is a one-time purchase of ${REMOVE_ADS_PRICE_LABEL}. Restore puts it back on this Apple ID if you already bought it.`
-                : 'This preview shows labeled ad stand-ins. The App Store build loads Google ads, and the one-time purchase runs there too. Deleting the app clears the purchase on this phone until you restore it.'}
-            </Text>
-            <ActionRow
-              label={adsRemoved ? 'Ads removed' : 'Remove ads'}
-              detail={
-                adsRemoved
-                  ? 'Banner spots stay hidden on this phone.'
-                  : `${REMOVE_ADS_PRICE_LABEL}, one time`
-              }
-              busy={busy === 'buy'}
-              disabled={adsRemoved}
-              onPress={() => void onRemoveAds()}
-            />
-            <ActionRow
-              label="Restore purchase"
-              detail="Already bought it on this Apple ID?"
-              busy={busy === 'restore'}
-              onPress={() => void onRestore()}
-            />
-          </>
-        ) : null}
 
         {showPreviewTools() ? (
           <View style={[styles.preview, { borderColor: theme.border, backgroundColor: theme.card }]}>
@@ -206,38 +129,6 @@ function LinkRow({ label, detail, onPress }: { label: string; detail: string; on
         <Text style={[styles.rowDetail, { color: theme.muted }]}>{detail}</Text>
       </View>
       <Icon ios="chevron.right" android="chevron_right" color={theme.muted} size={18} />
-    </Pressable>
-  );
-}
-
-function ActionRow({
-  label,
-  detail,
-  onPress,
-  busy,
-  disabled = false,
-}: {
-  label: string;
-  detail: string;
-  onPress: () => void;
-  busy: boolean;
-  disabled?: boolean;
-}) {
-  const theme = useTheme();
-  return (
-    <Pressable
-      accessibilityRole="button"
-      disabled={busy || disabled}
-      onPress={onPress}
-      style={({ pressed }) => [
-        styles.row,
-        { backgroundColor: theme.card, borderColor: theme.border },
-        pressed && styles.pressed,
-      ]}>
-      <View style={styles.rowText}>
-        <Text style={[styles.rowLabel, { color: theme.text }]}>{busy ? 'Working…' : label}</Text>
-        <Text style={[styles.rowDetail, { color: theme.muted }]}>{detail}</Text>
-      </View>
     </Pressable>
   );
 }

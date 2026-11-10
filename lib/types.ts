@@ -25,6 +25,11 @@ export type FeedItem = {
   channel?: string;
   /** Optional internal metadata. The card does not show this. */
   satire?: boolean;
+  /**
+   * Optional https audio file for a podcast. When it is set, the player uses
+   * it directly. Omit it and the app tries the episode URL, then the show RSS.
+   */
+  audioUrl?: string;
 };
 
 export type Edition = {

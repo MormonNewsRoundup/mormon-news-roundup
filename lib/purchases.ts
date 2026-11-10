@@ -1,4 +1,4 @@
-import { IAP_ENABLED, REMOVE_ADS_PRODUCT_ID } from '@/constants/config';
+import { IAP_ENABLED, REMOVE_ADS_PRICE_LABEL, REMOVE_ADS_PRODUCT_ID } from '@/constants/config';
 import { canUseIap } from '@/lib/runtime';
 
 export type PurchaseOutcome =
@@ -56,6 +56,39 @@ function messageOf(error: unknown): string {
   return 'Something went wrong talking to the store.';
 }
 
+export type ProductLookup =
+  | { status: 'ready'; price: string }
+  | { status: 'missing' }
+  | { status: 'unavailable' }
+  | { status: 'error'; message: string };
+
+function priceLabel(product: StoreRecord): string {
+  const record = product as StoreRecord & {
+    displayPrice?: string;
+    localizedPrice?: string;
+    price?: unknown;
+  };
+  if (typeof record.displayPrice === 'string' && record.displayPrice.trim()) return record.displayPrice.trim();
+  if (typeof record.localizedPrice === 'string' && record.localizedPrice.trim()) return record.localizedPrice.trim();
+  if (typeof record.price === 'string' && record.price.trim()) return record.price.trim();
+  return '';
+}
+
+/** Asks the store what Remove Ads costs. Never decides whether the button is shown. */
+export async function lookupRemoveAds(): Promise<ProductLookup> {
+  if (!IAP_ENABLED || !canUseIap()) return { status: 'unavailable' };
+  try {
+    const iap = loadIap();
+    await iap.initConnection();
+    const products = await iap.fetchProducts({ skus: [REMOVE_ADS_PRODUCT_ID], type: 'in-app' });
+    const match = (products ?? []).find((product) => recordId(product) === REMOVE_ADS_PRODUCT_ID);
+    if (!match) return { status: 'missing' };
+    return { status: 'ready', price: priceLabel(match) || REMOVE_ADS_PRICE_LABEL };
+  } catch (error) {
+    return { status: 'error', message: messageOf(error) };
+  }
+}
+
 export async function purchaseRemoveAds(): Promise<PurchaseOutcome> {
   if (!IAP_ENABLED || !canUseIap()) return { status: 'unavailable' };
 
@@ -63,11 +96,16 @@ export async function purchaseRemoveAds(): Promise<PurchaseOutcome> {
   try {
     iap = loadIap();
     await iap.initConnection();
-    const products = await iap.fetchProducts({ skus: [REMOVE_ADS_PRODUCT_ID], type: 'in-app' });
-    const listed = (products ?? []).some((product) => recordId(product) === REMOVE_ADS_PRODUCT_ID);
-    if (!listed) return { status: 'not-found' };
   } catch (error) {
     return { status: 'error', message: messageOf(error) };
+  }
+
+  // A sandbox product query can come back empty while the purchase sheet still
+  // works. App Review finds the product by opening that sheet, so don't stop here.
+  try {
+    await iap.fetchProducts({ skus: [REMOVE_ADS_PRODUCT_ID], type: 'in-app' });
+  } catch {
+    // The sheet can still open.
   }
 
   return new Promise((resolve) => {

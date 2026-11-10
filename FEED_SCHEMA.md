@@ -105,15 +105,17 @@ There is no third edition. A later fix would be a new `name` plus an app update.
 | `tags` | yes | string[] | For the curator. v1 search does **not** look at tags. Use `[]` if you have none. |
 | `subreddit` | no | string | Optional, for `reddit` items. Example: `r/exmormon`. Omit it when you have nothing to store. The card does not print this field by itself; put the name readers should see in `source`. |
 | `satire` | no | boolean | Optional internal metadata. Omit it, or set `false`, for an ordinary item. `true` marks an occasional humor piece, such as The Babylon Bee. The app does not display this field. The card still shows the source, the type label (Article, Video, Podcast, or Reddit), and the publish date, with the same badge style as any other item of that type. Search filters on `type`. |
+| `audioUrl` | no | string | Optional `https` audio file for a podcast. When it is set, the in-app player uses it and does not look up the show. Omit it for a normal item. The app can still play an Apple Podcasts, Buzzsprout, or RSS episode without this field. |
 
 What a tap does:
 
-- `article` — in-app browser (Safari view on iPhone)
-- `video` — the `url`, so YouTube can open
-- `podcast` — the `url`, so Apple Podcasts or the show page can open
-- `reddit` — the permalink, so Reddit can open
+- Every card opens a story screen in the app. Save and Share are on that screen.
+- `video` on YouTube plays in an embedded player. It does not leave for Safari.
+- `podcast` plays in the audio player when the feed has `audioUrl`, the link is an audio file, or the app can resolve an Apple Podcasts, Buzzsprout, or RSS enclosure. Otherwise the episode page opens in the in-app browser.
+- `article` shows the summary, and the original page’s text when it can be read. **Read original** uses the in-app browser (Safari view on iPhone).
+- `reddit` shows the summary, then the thread in the in-app browser.
 
-A Reddit card’s line under the picture is `source · Reddit · October 26, 2026`. With no picture, the card shows an orange tile with `r/` instead of a broken image. Search has a Reddit chip.
+A Reddit card’s line under the picture is `source · Reddit · October 26, 2026`. With no picture, the card shows an orange tile with `r/` instead of a broken image. Search filters by type, source, and date.
 
 Share sends the title, the `url`, and the line `via Mormon News Roundup`.
 
