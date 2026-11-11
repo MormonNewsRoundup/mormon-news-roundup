@@ -169,6 +169,21 @@
             "podcast",
             "come-follow-me"
           ]
+        },
+        {
+          "id": "2026-11-10-noon-10",
+          "type": "podcast",
+          "title": "Left Mormonism and Wondering What Now? You Need the MoNomo App",
+          "summary": "On Mormonish, the hosts talk with guest Corrick Knight about the MoNoMo app, which the episode description says he created to help people who have left the LDS church find community, resources and events.",
+          "source": "Mormonish Podcast",
+          "url": "https://www.mormonishpodcast.org/episode/left-mormonism-and-wondering-what-now-you-need-the-monomo-app",
+          "thumbnailUrl": "https://artwork.captivate.fm/21504da0-ac12-4f44-a47a-51e0b2ef23cb/2B73F39B-F242-460E-A4B2-649740388AED.jpg",
+          "publishedAt": "2026-11-11T01:00:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "podcast",
+            "post-mormon"
+          ]
         }
       ]
     }
