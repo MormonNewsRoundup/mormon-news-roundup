@@ -1,0 +1,74 @@
+{
+  "date": "2026-11-11",
+  "sample": false,
+  "editions": [
+    {
+      "name": "noon",
+      "publishedAt": "2026-11-11T17:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-11-11-noon-01",
+          "type": "video",
+          "title": "What If Leaving Mormonism Was a Broadway Musical? 🎭 | God's Sacred Underwear",
+          "summary": "A short video from the Mormon News Roundup YouTube channel.",
+          "source": "Mormon News Roundup",
+          "url": "https://www.youtube.com/watch?v=QB9JiNvd3_4",
+          "thumbnailUrl": "https://i.ytimg.com/vi/QB9JiNvd3_4/hqdefault.jpg",
+          "publishedAt": "2026-11-11T17:00:15.000Z",
+          "paywalled": false,
+          "tags": [
+            "short",
+            "mormon-news-roundup"
+          ]
+        },
+        {
+          "id": "2026-11-11-noon-02",
+          "type": "article",
+          "title": "The latest encounter between an LDS apostle and a Catholic pope",
+          "summary": "The Salt Lake Tribune reports that Latter-day Saint apostle Ulisses Soares was among the interfaith leaders who gathered Monday in Buenos Aires, Argentina, and heard Pope Leo XIV's call to safeguard human dignity.",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/religion/2026/11/11/lds-apostle-attends-interfaith/",
+          "thumbnailUrl": "https://cloudfront-us-east-1.images.arcpublishing.com/sltrib/6LGXOEFBEFBFTDOXEI3KYDTKXM.JPG",
+          "publishedAt": "2026-11-11T13:00:01.000Z",
+          "paywalled": true,
+          "tags": [
+            "apostle",
+            "pope",
+            "interfaith"
+          ]
+        },
+        {
+          "id": "2026-11-11-noon-03",
+          "type": "podcast",
+          "title": "Black Latter-day Saints still would like an apology, says LDS theologian | Episode 465",
+          "summary": "On this week's Mormon Land, James C. Jones, a second-generation Black Latter-day Saint, discusses the former priesthood/temple ban, his personal encounters with discrimination in the church and his anti-race curriculum, according to The Salt Lake Tribune's episode description.",
+          "source": "Mormon Land",
+          "url": "https://mormonland.podbean.com/e/black-latter-day-saints-still-would-like-an-apology-says-lds-theologian-episode-465/",
+          "thumbnailUrl": "https://d2bwo9zemjwxh5.cloudfront.net/image-logo/19467676/avatars-000467419236-tgkcjb-original_1200x628.jpg",
+          "publishedAt": "2026-11-11T13:00:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "race",
+            "priesthood-ban"
+          ],
+          "audioUrl": "https://mcdn.podbean.com/mf/web/mque2c9gm6ew53w5/Mormon_Land_Nov_11_2026_Mixdown_17mlh9.mp3"
+        },
+        {
+          "id": "2026-11-11-noon-04",
+          "type": "article",
+          "title": "\"Fine Looking Mormons\"",
+          "summary": "A By Common Consent post says the author, while researching an article on Mormon immigration in the early twentieth century, came across a source that prompted the post.",
+          "source": "By Common Consent",
+          "url": "https://bycommonconsent.com/2026/11/11/fine-looking-mormons/",
+          "thumbnailUrl": "https://i0.wp.com/bycommonconsent.com/wp-content/uploads/2026/11/2620059872_58ca0eb065_c.jpg",
+          "publishedAt": "2026-11-11T13:44:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "blog",
+            "history"
+          ]
+        }
+      ]
+    }
+  ]
+}
