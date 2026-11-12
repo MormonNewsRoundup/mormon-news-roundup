@@ -184,6 +184,22 @@
             "podcast",
             "post-mormon"
           ]
+        },
+        {
+          "id": "2026-11-10-noon-11",
+          "type": "podcast",
+          "title": "Wade Christofferson Sentencing Looms",
+          "summary": "Mormon Discussions' Mormon Newscast episode discusses a lawsuit that alleges a Raleigh bishop knew of prior abuse allegations against Jared Harding Wilson, and compares it to the Wade Christofferson case ahead of his sentencing.",
+          "source": "Mormon Discussions",
+          "url": "https://mormondiscussionpodcast.org/2026/11/wade-christofferson-sentencing-looms/",
+          "thumbnailUrl": "https://mormondiscussionpodcast.org/wp-content/uploads/sites/2/2026/11/Mormon-Newscast-Thumbnail-Template.png",
+          "publishedAt": "2026-11-10T15:47:17.000Z",
+          "paywalled": false,
+          "tags": [
+            "podcast",
+            "abuse",
+            "lawsuit"
+          ]
         }
       ]
     }

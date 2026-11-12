@@ -23,6 +23,92 @@
           ]
         }
       ]
+    },
+    {
+      "name": "noon",
+      "publishedAt": "2026-11-12T17:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-11-12-noon-01",
+          "type": "video",
+          "title": "Faith, Fraud, and Fake Cancer: The Coco Berthmann Story",
+          "summary": "Generally Unquotable examines the story of Coco Berthmann, whose account of a miraculous conversion to the church was shared widely in Latter-day Saint circles before people began asking questions about it.",
+          "source": "Generally Unquotable",
+          "url": "https://www.youtube.com/watch?v=0PmFkaQvSuE",
+          "thumbnailUrl": "https://i.ytimg.com/vi/0PmFkaQvSuE/hqdefault.jpg",
+          "publishedAt": "2026-11-12T16:00:03.000Z",
+          "paywalled": false,
+          "tags": [
+            "youtube",
+            "scandal"
+          ]
+        },
+        {
+          "id": "2026-11-12-noon-02",
+          "type": "article",
+          "title": "Latest from Mormon Land: Gender gap again shows up in the church; LDS voters ride the blue wave",
+          "summary": "The Salt Lake Tribune's Mormon Land newsletter reports on a By Common Consent blogger who argues the church's coming youth program changes offer Young Men more meaningful participation than Young Women, and on Latter-day Saint voters shifting toward Democrats in the midterms.",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/religion/2026/11/12/gender-gaps-shows-up-lds-church/",
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/JFLSDPLWFNGEDO46Z2QDOKWF3I.png?auth=6b925da2bd798dbedba631d50efda291eb58a6446ca928ef6c352f6e527d4a61&width=1200&height=630&quality=88&smart=true",
+          "publishedAt": "2026-11-12T13:00:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "newsletter",
+            "gender",
+            "youth-program"
+          ]
+        },
+        {
+          "id": "2026-11-12-noon-03",
+          "type": "article",
+          "title": "Your Tithing Dollars at Work",
+          "summary": "A Wheat & Tares post says that, from a purely fiscal perspective, the author has gotten a good return on his tithing, citing a mission, schooling and graduate funding that the church helped provide.",
+          "source": "Wheat & Tares",
+          "url": "https://wheatandtares.org/2026/11/12/your-tithing-dollars-at-work/",
+          "thumbnailUrl": "https://i0.wp.com/wheatandtares.org/wp-content/uploads/2026/11/tithing-envelope-over-the-data-center.png?fit=1200%2C800&ssl=1",
+          "publishedAt": "2026-11-12T14:00:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "blog",
+            "tithing",
+            "finances"
+          ]
+        },
+        {
+          "id": "2026-11-12-noon-04",
+          "type": "reddit",
+          "title": "My Wife is Going to Hell, but my Pedophile Brother-in-law is Going to the Celestial Kingdom",
+          "summary": "An r/exmormon post claims that under Mormon doctrine the poster's wife, who resigned her membership, is bound for hell while a brother-in-law the poster says abused children and was rebaptized before he died is bound for the celestial kingdom.",
+          "source": "r/exmormon",
+          "url": "https://www.reddit.com/r/exmormon/comments/1xuego0/my_wife_is_going_to_hell_but_my_pedophile/",
+          "subreddit": "r/exmormon",
+          "thumbnailUrl": "https://mormonnewsroundup.github.io/mormon-news-roundup/feed/images/reddit/2026-11-12-noon-04.jpg",
+          "publishedAt": "2026-11-12T14:39:53.000Z",
+          "paywalled": false,
+          "tags": [
+            "reddit",
+            "doctrine",
+            "abuse"
+          ]
+        },
+        {
+          "id": "2026-11-12-noon-05",
+          "type": "article",
+          "title": "Zion will have data centers",
+          "summary": "A Times & Seasons post argues that Jesus would build data centers for AI workloads, saying God has favored cities and that city-building has required large-scale infrastructure.",
+          "source": "Times & Seasons",
+          "url": "https://timesandseasons.org/index.php/2026/11/zion-will-have-data-centers/",
+          "thumbnailUrl": "https://timesandseasons.org/wp-content/uploads/2024/12/Times-and-Seasons-Banner-2.1-800x450.jpg",
+          "publishedAt": "2026-11-12T09:50:13.000Z",
+          "paywalled": false,
+          "tags": [
+            "blog",
+            "data-center",
+            "ai"
+          ]
+        }
+      ]
     }
   ]
 }
