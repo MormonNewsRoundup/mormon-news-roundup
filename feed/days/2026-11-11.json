@@ -9,16 +9,64 @@
         {
           "id": "2026-11-11-noon-01",
           "type": "video",
-          "title": "What If Leaving Mormonism Was a Broadway Musical? 🎭 | God's Sacred Underwear",
-          "summary": "A short video from the Mormon News Roundup YouTube channel.",
+          "title": "One exMormon App to Rule Them All",
+          "summary": "A new Mormon News Roundup video tours the Mormon News Roundup iPhone app, explaining why it was built and how it works.",
           "source": "Mormon News Roundup",
-          "url": "https://www.youtube.com/watch?v=QB9JiNvd3_4",
-          "thumbnailUrl": "https://i.ytimg.com/vi/QB9JiNvd3_4/hqdefault.jpg",
-          "publishedAt": "2026-11-11T17:00:15.000Z",
+          "url": "https://www.youtube.com/watch?v=CBRaXnmMMAI",
+          "thumbnailUrl": "https://i.ytimg.com/vi/CBRaXnmMMAI/hqdefault.jpg",
+          "publishedAt": "2026-11-12T02:30:07.000Z",
           "paywalled": false,
           "tags": [
-            "short",
-            "mormon-news-roundup"
+            "mormon-news-roundup",
+            "own-channel",
+            "app"
+          ]
+        },
+        {
+          "id": "2026-11-11-noon-06",
+          "type": "reddit",
+          "title": "Former LDS chapel in Kauai sold for $4.54M",
+          "summary": "An r/exmormon post says a nonprofit that had been leasing the former Hanalei LDS chapel in Kauai has bought it for $4.54 million, the same price the post says it was sold for in 2024, and criticizes the church for not donating the property toward teacher and lifeguard housing.",
+          "source": "r/exmormon",
+          "url": "https://www.reddit.com/r/exmormon/comments/1xu08ee/former_lds_chapel_in_kauai_sold_for_454m/",
+          "subreddit": "r/exmormon",
+          "publishedAt": "2026-11-12T01:51:47.000Z",
+          "paywalled": false,
+          "tags": [
+            "reddit",
+            "church-property",
+            "hawaii"
+          ]
+        },
+        {
+          "id": "2026-11-11-noon-05",
+          "type": "podcast",
+          "title": "Deconstructing Mormonism & Crossing the Bridge - David Ostler Pt. 2 | Ep. 2228",
+          "summary": "In part two of this Mormon Stories conversation, former bishop, stake president and mission president David Ostler, author of Bridges: Ministering to Those Who Question, describes overseeing the church's historic sites in Palmyra and how his research into why people leave the church changed his own views, according to the episode description.",
+          "source": "Mormon Stories Podcast",
+          "url": "https://podcasts.apple.com/us/podcast/deconstructing-mormonism-crossing-the-bridge-david/id312094772?i=1000801304266",
+          "thumbnailUrl": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/58/49/07/5849079e-bdd2-0858-657e-89ae9a8bc867/mza_237842854876519292.jpg/600x600bb.jpg",
+          "publishedAt": "2026-11-11T22:00:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "podcast",
+            "mormon-stories",
+            "faith-transition"
+          ]
+        },
+        {
+          "id": "2026-11-11-noon-04",
+          "type": "article",
+          "title": "\"Fine Looking Mormons\"",
+          "summary": "A By Common Consent post says the author, while researching an article on Mormon immigration in the early twentieth century, came across a source that prompted the post.",
+          "source": "By Common Consent",
+          "url": "https://bycommonconsent.com/2026/11/11/fine-looking-mormons/",
+          "thumbnailUrl": "https://i0.wp.com/bycommonconsent.com/wp-content/uploads/2026/11/2620059872_58ca0eb065_c.jpg",
+          "publishedAt": "2026-11-11T13:44:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "blog",
+            "history"
           ]
         },
         {
@@ -52,21 +100,6 @@
             "priesthood-ban"
           ],
           "audioUrl": "https://mcdn.podbean.com/mf/web/mque2c9gm6ew53w5/Mormon_Land_Nov_11_2026_Mixdown_17mlh9.mp3"
-        },
-        {
-          "id": "2026-11-11-noon-04",
-          "type": "article",
-          "title": "\"Fine Looking Mormons\"",
-          "summary": "A By Common Consent post says the author, while researching an article on Mormon immigration in the early twentieth century, came across a source that prompted the post.",
-          "source": "By Common Consent",
-          "url": "https://bycommonconsent.com/2026/11/11/fine-looking-mormons/",
-          "thumbnailUrl": "https://i0.wp.com/bycommonconsent.com/wp-content/uploads/2026/11/2620059872_58ca0eb065_c.jpg",
-          "publishedAt": "2026-11-11T13:44:00.000Z",
-          "paywalled": false,
-          "tags": [
-            "blog",
-            "history"
-          ]
         }
       ]
     }
