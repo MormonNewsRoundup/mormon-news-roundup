@@ -154,6 +154,9 @@ await writeFile(path.join(dist, 'sw.js'), serviceWorker);
 // feed/ is the public edition, including feed/images/. fallback/ stays out.
 await cp(path.join(root, 'feed'), path.join(dist, 'feed'), { recursive: true });
 
+// AdMob looks for this file at the site root, next to feed/.
+await copyFile(path.join(root, 'public', 'app-ads.txt'), path.join(dist, 'app-ads.txt'));
+
 async function filesUnder(dir) {
   const entries = await readdir(dir, { withFileTypes: true });
   const files = [];

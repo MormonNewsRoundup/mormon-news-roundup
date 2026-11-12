@@ -112,6 +112,7 @@ Editions go out twice a day, on Eastern Time: midnight, then a noon update. The 
 2. Edit `feed/index.json`:
    - Put that date **first** in the `days` list.
    - Set `generatedAt` to the current time, written like `2026-10-26T04:00:00.000Z`.
+   - Leave `pinned` unchanged. If the new index does not include `pinned`, copy that object from the current `feed/index.json` before you commit. A midnight run does not clear or replace the pin.
 3. Commit both files on the `main` branch and push.
    - On the GitHub website: upload or edit the files, then **Commit changes** directly to `main`.
    - On a computer: commit, then `git push` to `main`.
@@ -119,7 +120,7 @@ Editions go out twice a day, on Eastern Time: midnight, then a noon update. The 
 ### Noon update (the same day)
 
 1. Edit the same file, `feed/days/YYYY-MM-DD.json`. Add a second edition named `noon`. Do not create a second file. The noon `publishedAt` is 12:00 p.m. Eastern.
-2. Edit `feed/index.json` and set `generatedAt` to the current time. Leave `days` as it is. The date is already listed.
+2. Edit `feed/index.json` and set `generatedAt` to the current time. Leave `days` as it is. The date is already listed. Leave `pinned` exactly as it is. If a generated index omits `pinned`, copy it back from the current file before you commit.
 3. Commit and push to `main` again.
 
 Wait until the **Deploy to GitHub Pages** action on the repository is green (usually a few minutes). Then open:
