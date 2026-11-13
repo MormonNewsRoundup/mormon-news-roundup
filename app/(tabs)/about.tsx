@@ -25,7 +25,7 @@ import { previewRuntimeLabel, showPreviewTools } from '@/lib/runtime';
 export default function AboutScreen() {
   const theme = useTheme();
   const { adsRemoved, setAdsRemoved } = useAppState();
-  const version = Constants.expoConfig?.version ?? '1.0.2';
+  const version = Constants.expoConfig?.version ?? '1.0.3';
 
   return (
     <View style={[styles.screen, { backgroundColor: theme.background }]}>

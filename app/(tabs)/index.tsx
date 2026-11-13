@@ -20,7 +20,15 @@ import { ADS_ENABLED, APP_PITCH, isBundledFeed } from '@/constants/config';
 import { serifFamily } from '@/constants/theme';
 import { maybeNotifyNewEdition } from '@/lib/alerts';
 import { getDay, getIndex, subscribeFeedRefresh } from '@/lib/feed';
-import { datesNewestFirst, isOwnChannelItem, orderedStories, recentStories, TODAY_STORY_LIMIT, type DatedStory } from '@/lib/today';
+import {
+  datesNewestFirst,
+  daysForLatest,
+  latestWalkShouldStop,
+  orderedStories,
+  recentStories,
+  TODAY_STORY_LIMIT,
+  type DatedStory,
+} from '@/lib/today';
 import type { DayFile, FeedIndex } from '@/lib/types';
 
 type Row =
@@ -49,28 +57,25 @@ async function loadRecent(force: boolean): Promise<{ index: FeedIndex; stories: 
   const dates = datesNewestFirst(index.days);
   const pinned = index.pinned ?? null;
   const loaded: DayFile[] = [];
-  const loadedDates = new Set<string>();
 
-  // Load the pin's day up front so an older pin still appears when Latest stops early.
+  // Fetch the pin's day so the pinned card can lead before that date is reached.
+  // Only that one item joins the list until the walk gets there. The rest of the
+  // day would otherwise fill the 15 slots and stop the walk early.
+  let pinDay: DayFile | null = null;
   if (pinned?.date && dates.includes(pinned.date)) {
-    loaded.push(await getDay(pinned.date, force));
-    loadedDates.add(pinned.date);
+    pinDay = await getDay(pinned.date, force);
   }
 
   let stories: DatedStory[] = [];
   for (const date of dates) {
-    if (!loadedDates.has(date)) {
-      loaded.push(await getDay(date, force));
-      loadedDates.add(date);
-    }
-    stories = recentStories(loaded, TODAY_STORY_LIMIT, pinned);
-    const seenOwn = loaded.some((day) =>
-      day.editions.some((edition) => edition.items.some((item) => isOwnChannelItem(item))),
-    );
-    // Keep reading until the newest own-channel video is in hand, then stop at 15.
-    if (stories.length >= TODAY_STORY_LIMIT && seenOwn) break;
+    if (pinDay && date === pinDay.date) loaded.push(pinDay);
+    else loaded.push(await getDay(date, force));
+    const window = daysForLatest(loaded, pinDay, pinned);
+    stories = recentStories(window, TODAY_STORY_LIMIT, pinned);
+    if (latestWalkShouldStop(loaded, stories)) break;
   }
-  const more = loaded.length < dates.length || orderedStories(loaded, pinned).length > stories.length;
+  const window = daysForLatest(loaded, pinDay, pinned);
+  const more = loaded.length < dates.length || orderedStories(window, pinned).length > stories.length;
   return { index, stories, more };
 }
 

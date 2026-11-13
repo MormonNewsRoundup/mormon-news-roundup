@@ -140,6 +140,76 @@ export function latestStories(
   return pinnedEntry ? [pinnedEntry, ...picked] : picked;
 }
 
+/** A copy of `day` that keeps only `id`, so the rest of that day cannot fill Latest. */
+function dayWithOnlyItem(day: DayFile, id: string): DayFile | null {
+  const editions = day.editions
+    .map((edition) => ({ ...edition, items: edition.items.filter((item) => item.id === id) }))
+    .filter((edition) => edition.items.length > 0);
+  if (editions.length === 0) return null;
+  return { ...day, editions };
+}
+
+/**
+ * Days that count while Latest walks newest-first.
+ * `loadedNewestFirst` is the prefix already fetched. The pin's other stories
+ * stay out until that calendar day is in the prefix. Before then, only the
+ * pinned item is added, so it can lead the list without filling the other slots.
+ */
+export function daysForLatest(
+  loadedNewestFirst: DayFile[],
+  pinDay: DayFile | null,
+  pinned?: PinnedStory | null,
+): DayFile[] {
+  const id = pinned?.id?.trim();
+  if (!pinDay || !id) return loadedNewestFirst;
+  if (loadedNewestFirst.some((day) => day.date === pinDay.date)) return loadedNewestFirst;
+  const only = dayWithOnlyItem(pinDay, id);
+  return only ? [...loadedNewestFirst, only] : loadedNewestFirst;
+}
+
+/** True once the newest-first prefix contains an own-channel video. */
+export function prefixHasOwnChannel(loadedNewestFirst: DayFile[]): boolean {
+  return loadedNewestFirst.some((day) =>
+    day.editions.some((edition) => edition.items.some((item) => isOwnChannelItem(item))),
+  );
+}
+
+/**
+ * Stop walking once Latest is full and the prefix includes an own-channel video.
+ * A feed with no own-channel video keeps walking so the plain newest stories still fill.
+ */
+export function latestWalkShouldStop(
+  loadedNewestFirst: DayFile[],
+  stories: DatedStory[],
+  limit = TODAY_STORY_LIMIT,
+): boolean {
+  return stories.length >= limit && prefixHasOwnChannel(loadedNewestFirst);
+}
+
+/**
+ * The same walk Latest uses when it fetches day files one date at a time.
+ * The pin's day may be present, but its other items are ignored until the
+ * walk reaches that date.
+ */
+export function latestFromWalk(
+  days: DayFile[],
+  pinned?: PinnedStory | null,
+  limit = TODAY_STORY_LIMIT,
+): DatedStory[] {
+  const byDate = new Map(days.map((day) => [day.date, day]));
+  const pinDay = pinned?.date ? (byDate.get(pinned.date) ?? null) : null;
+  const loaded: DayFile[] = [];
+  let stories: DatedStory[] = [];
+  for (const date of datesNewestFirst([...byDate.keys()])) {
+    const day = byDate.get(date);
+    if (!day) continue;
+    loaded.push(day);
+    stories = latestStories(daysForLatest(loaded, pinDay, pinned), limit, pinned);
+    if (latestWalkShouldStop(loaded, stories, limit)) break;
+  }
+  return stories;
+}
+
 /** Latest's list. Same rule as latestStories. */
 export function recentStories(
   days: DayFile[],

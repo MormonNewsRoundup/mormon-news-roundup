@@ -191,7 +191,7 @@ Version 1.0 is already on the App Store. For 1.0.1, update the privacy label, ad
 5. **Privacy policy and support URLs.** Apple requires both in the App Store Connect listing. They are live: `https://mormonnewsroundup.org/privacy` and `https://mormonnewsroundup.org/app-support`. The same addresses are in `app.json` under `expo.extra` and on the About screen.
 6. **Privacy answers.** 1.0 was **Data Not Collected**. 1.0.1 uses ads and App Tracking Transparency, so update the privacy label before submitting this build: advertising data, identifiers (Device ID), and tracking. The privacy policy URL stays `https://mormonnewsroundup.org/privacy`.
 7. **AdMob and the $0.99 purchase** are in this build. See **Ads and the $0.99 purchase** above. The non-consumable `remove_ads` already exists in App Store Connect. Upload a review screenshot for it before App Review, or the product stays in Missing Metadata.
-8. **iPhone only.** `ios.supportsTablet` is false so Apple does not ask for iPad screenshots. Local `ios.buildNumber` is `"5"` for version 1.0.1, the build after the live build 4. `eas.json` uses `appVersionSource: "remote"` and production `autoIncrement`, so EAS may set the uploaded build number itself.
+8. **iPhone only.** `ios.supportsTablet` is false so Apple does not ask for iPad screenshots. Local `ios.buildNumber` is `"7"` for version 1.0.3, past remote build 6. `eas.json` uses `appVersionSource: "remote"` and production `autoIncrement`, so EAS may set the uploaded build number itself.
 9. **Build in the cloud** (no Mac):
 
    ```bash

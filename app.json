@@ -2,7 +2,7 @@
   "expo": {
     "name": "Mormon News Roundup",
     "slug": "mormon-news-roundup",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Your Daily Mormon News: Unfiltered",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -11,7 +11,7 @@
     "newArchEnabled": true,
     "ios": {
       "bundleIdentifier": "com.mormonnewsroundup.app",
-      "buildNumber": "5",
+      "buildNumber": "7",
       "supportsTablet": false,
       "config": {
         "usesNonExemptEncryption": false
