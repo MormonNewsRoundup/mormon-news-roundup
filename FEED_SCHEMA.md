@@ -44,7 +44,7 @@ Pull to refresh on Latest or Search. The app does not need a restart, and it doe
 | `generatedAt` | yes | ISO-8601 date-time. When this index was written. |
 | `days` | yes | `YYYY-MM-DD` strings, **newest first**. Each one needs a matching file in `days/`. |
 | `sample` | no | `true` only for the bundled placeholder feed. The app shows a “Sample data” banner. Every title and summary must contain the word “Sample”. |
-| `pinned` | no | Optional top story. An object `{ "id": "<item id>", "date": "YYYY-MM-DD" }`, or `null` / omitted for no pin. `date` must be a day listed in `days`, and `id` must exist in that day’s file. When set, Latest shows that card first with a small “Pinned” badge, excludes its duplicate, and still fills up to 15 stories. The pin is exempt from the own-channel video slot and the subreddit / Generally Unquotable caps. Old app builds ignore this field; feeds without it keep working. The live index has a pin. Keep that object when an edition is published. |
+| `pinned` | no | Optional top story. An object `{ "id": "<item id>", "date": "YYYY-MM-DD" }`, or `null` / omitted for no pin. `date` must be a day listed in `days`, and `id` must exist in that day’s file. When set, Latest shows that card first with a small “Pinned” badge, excludes its duplicate, and still fills up to 15 stories. The pin is exempt from the own-channel video slot and the subreddit / Generally Unquotable caps. Old app builds ignore this field; feeds without it keep working. The live index has `"pinned": null`. Midnight and noon runs keep it null unless the owner asks for a pin. |
 
 Dates are calendar dates in `America/New_York`. `2026-10-25` means October 25 in Eastern Time, not UTC.
 
@@ -181,13 +181,13 @@ You do not upload a separate host, and you do not edit `constants/config.ts` for
 ### Midnight edition (a new day)
 
 1. Add `feed/days/YYYY-MM-DD.json` with a `midnight` edition. `publishedAt` is 12:00 a.m. Eastern on that date.
-2. Edit `feed/index.json`: put that date first in `days`, and set `generatedAt` to the time you are publishing. Keep the existing `pinned` object byte for byte. A generated index that omits `pinned` must have the previous value copied back before the commit. A midnight run does not clear or replace the pin.
+2. Edit `feed/index.json`: put that date first in `days`, and set `generatedAt` to the time you are publishing. Leave `pinned` null. A midnight run does not set a pin. Add one only when the owner asks for a specific story.
 3. Commit both files and push to `main`.
 
 ### Noon update (the same day)
 
 1. Edit the same `feed/days/YYYY-MM-DD.json` and add a `noon` edition. Do not add a second file. `publishedAt` is 12:00 p.m. Eastern.
-2. Set `generatedAt` in `feed/index.json` to the current time. The date is already in `days`. Leave `pinned` exactly as it is. If the replacement index omits `pinned`, copy it back from the current file before the commit.
+2. Set `generatedAt` in `feed/index.json` to the current time. The date is already in `days`. Leave `pinned` null unless the owner has asked for a pin.
 3. Commit and push to `main` again.
 
 Aim for 8–12 items on a full day. The midnight edition is the main one. Noon is a short update. A shorter day is still valid.
@@ -208,7 +208,7 @@ To pin one story so it always appears first on Latest:
 3. Set `generatedAt` to the time you are publishing. Commit and push `feed/index.json` only if you are changing the pin (no need to rewrite the day file).
 4. To clear the pin, set `"pinned": null` or remove the field, then push.
 
-`npm run check-feed` confirms the pin’s `date` is in `days` and the `id` exists in that day’s file. The outside curator and both daily runs (midnight and noon) must carry the current `pinned` value forward. Replacing `feed/index.json` without that field removes the pin. Copy it back unless the owner is changing or clearing the pin. Missing or null is valid only after the owner clears it.
+`npm run check-feed` confirms the pin’s `date` is in `days` and the `id` exists in that day’s file. The outside curator and both daily runs (midnight and noon) keep `pinned` null. Do not copy an old pin object back into a new index. Set a pin only when the owner asks for one.
 
 `fallback/` is the offline sample bundled into the app. GitHub Pages does not publish it. `sample:` thumbnail tokens belong there only.
 
