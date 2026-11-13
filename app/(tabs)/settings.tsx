@@ -12,7 +12,7 @@ import { TEXT_SIZES, type TextSize } from '@/lib/textSize';
 export default function SettingsScreen() {
   const theme = useTheme();
   const { alertsEnabled, setAlertsEnabled, textSize, setTextSize } = useAppState();
-  const version = Constants.expoConfig?.version ?? '1.0.2';
+  const version = Constants.expoConfig?.version ?? '1.0.3';
 
   return (
     <View style={[styles.screen, { backgroundColor: theme.background }]}>

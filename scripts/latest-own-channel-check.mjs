@@ -8,6 +8,7 @@ import {
   cappedSubreddit,
   isGenerallyUnquotableItem,
   isOwnChannelItem,
+  latestFromWalk,
   latestStories,
   orderedStories,
   SEARCH_AFTER_TODAY_LIMIT,
@@ -248,4 +249,39 @@ test('a pinned capped subreddit post is exempt and the newest of that subreddit 
     ['ex-old', 'ex-new', 'filler'],
   );
   assert.equal(latest[0].pinned, true);
+});
+
+test('a pin on an old day does not pull that day’s other stories into Latest early', () => {
+  const articles = [];
+  for (let n = 0; n < 20; n += 1) {
+    const hour = String(23 - Math.floor(n / 2)).padStart(2, '0');
+    const minute = n % 2 === 0 ? '30' : '00';
+    articles.push(story(`new-${n}`, `2026-11-12T${hour}:${minute}:00.000Z`, 'KSL', 'article').item);
+  }
+  const old = [];
+  for (let n = 0; n < 12; n += 1) {
+    old.push(story(`old-${n}`, `2026-10-28T${String(n + 8).padStart(2, '0')}:00:00.000Z`, 'KSL', 'article').item);
+  }
+  old.push(story('old-own', '2026-10-28T07:00:00.000Z', 'Mormon News Roundup').item);
+  const days = [
+    day('2026-11-13', [story('short', '2026-11-13T05:00:00.000Z', 'Mormon News Roundup').item]),
+    day('2026-11-12', articles),
+    day('2026-10-28', old),
+  ];
+  const pin = { id: 'old-0', date: '2026-10-28' };
+  const walked = latestFromWalk(days, pin);
+  const full = latestStories(days, TODAY_STORY_LIMIT, pin);
+  assert.deepEqual(
+    walked.map((entry) => entry.item.id),
+    full.map((entry) => entry.item.id),
+  );
+  assert.equal(walked[0].item.id, 'old-0');
+  assert.equal(walked[0].pinned, true);
+  assert.equal(walked.length, TODAY_STORY_LIMIT);
+  assert.equal(walked.filter((entry) => entry.date === '2026-10-28').length, 1);
+  assert.equal(walked.some((entry) => entry.item.id === 'old-1'), false);
+  assert.equal(walked.some((entry) => entry.item.id === 'old-own'), false);
+  const own = walked.filter((entry) => isOwnChannelItem(entry.item));
+  assert.equal(own.length, 1);
+  assert.equal(own[0].item.id, 'short');
 });
