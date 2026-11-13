@@ -9,17 +9,17 @@
         {
           "id": "2026-11-12-midnight-01",
           "type": "video",
-          "title": "DAVID BEDNAR: The Mormon Apostle Who's Actually a Robot 🤖 | Industrial Metal Parody",
-          "summary": "A short video from the Mormon News Roundup YouTube channel.",
+          "title": "The Clayton Diaries EXPOSE a Mormon History Cover-Up",
+          "summary": "A Mormon News Roundup YouTube video about the William Clayton diaries and a claimed church history cover-up.",
           "source": "Mormon News Roundup",
-          "url": "https://www.youtube.com/watch?v=_whdbjpPwYs",
-          "thumbnailUrl": "https://i.ytimg.com/vi/_whdbjpPwYs/hqdefault.jpg",
-          "publishedAt": "2026-11-12T05:00:04.000Z",
+          "url": "https://www.youtube.com/watch?v=_EFo1KYcYwk",
+          "thumbnailUrl": "https://i.ytimg.com/vi/_EFo1KYcYwk/hqdefault.jpg",
+          "publishedAt": "2026-11-13T02:30:07.000Z",
           "paywalled": false,
           "tags": [
-            "short",
             "mormon-news-roundup",
-            "own-channel"
+            "own-channel",
+            "church-history"
           ]
         }
       ]
@@ -106,6 +106,37 @@
             "blog",
             "data-center",
             "ai"
+          ]
+        },
+        {
+          "id": "2026-11-12-noon-06",
+          "type": "article",
+          "title": "Former BYU standout Parker Kingston charged again with rape after earlier case was dismissed",
+          "summary": "The Salt Lake Tribune reports Washington County prosecutors refiled a rape charge against former BYU standout Parker Kingston after a judge dismissed the case without prejudice over the summer. Kingston's attorneys say he maintains his innocence.",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/news/2026/11/12/why-utah-prosecutors-are-bringing/",
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/L46GNCE435CWLC63QIS2GJX7WY.JPG?auth=c5ad7de25b4d830b55bb59b36f471e471d7be7f58b32baaa48e460650f535dfc&width=1200&height=630&quality=88&smart=true",
+          "publishedAt": "2026-11-13T00:26:47.000Z",
+          "paywalled": false,
+          "tags": [
+            "byu",
+            "court",
+            "criminal"
+          ]
+        },
+        {
+          "id": "2026-11-12-noon-07",
+          "type": "article",
+          "title": "Sen. Curtis questions Trump nominee on 'skeptical' comments about Latter-day Saints",
+          "summary": "Deseret News reports Utah Sen. John Curtis is undecided on advancing Cissie Graham Lynch, President Donald Trump's nominee for ambassador-at-large for international religious freedom, citing her past comments expressing skepticism about Latter-day Saints.",
+          "source": "Deseret News",
+          "url": "https://www.deseret.com/politics/2026/11/12/curtis-presses-trump-nominee-on-lds-comments/",
+          "thumbnailUrl": "https://www.deseret.com/resizer/v2/AQYD4Q5PYNCZTF67LOUFZ4AHBA.JPG?focal=0%2C0&auth=d9039fadb90ab47547c4ff1fc9b65231925aed29fd75b569374f2eb388d43967&width=630&height=331",
+          "publishedAt": "2026-11-12T23:00:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "politics",
+            "religious-freedom"
           ]
         }
       ]
