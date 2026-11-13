@@ -23,6 +23,29 @@
           ]
         }
       ]
+    },
+    {
+      "name": "noon",
+      "publishedAt": "2026-11-13T17:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-11-13-noon-01",
+          "type": "article",
+          "title": "Proposed data center on land leased from LDS Church moves forward",
+          "summary": "The Salt Lake Tribune reports that Cottle County, Texas, commissioners unanimously endorsed a special reinvestment zone covering 4,252 acres, much of it held by the church's Farmland Reserve subsidiary, and approved a tax abatement request from developer Aetheris for a proposed 96-megawatt data center. An AgReserve statement cited by the Tribune says Aetheris is independent and \"not affiliated with Farmland Reserve or the church.\"",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/religion/2026/11/13/texas-officials-advance-plan-data/",
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/PWDCLULVIBCJNDSVEXVXTQ4JS4.jpg?auth=4be361f2f2ec03cd12239e9722e156b18be1b384e8940695cc2df02af8f8a6dd&width=1200&height=630&quality=88&smart=true",
+          "publishedAt": "2026-11-13T11:00:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "farmland reserve",
+            "data center",
+            "texas",
+            "real estate"
+          ]
+        }
+      ]
     }
   ]
 }
