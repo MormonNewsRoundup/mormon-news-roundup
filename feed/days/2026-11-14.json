@@ -23,6 +23,104 @@
           ]
         }
       ]
+    },
+    {
+      "name": "noon",
+      "publishedAt": "2026-11-14T17:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-11-14-noon-01",
+          "type": "article",
+          "title": "‘Follow the Light’: President Christofferson speaks at ‘Luz de las Naciones’ celebration",
+          "summary": "Church News reports that President D. Todd Christofferson spoke in Spanish at Friday night’s “Luz de las Naciones” performance in the Conference Center, thanking more than 1,000 volunteers from across the Americas. President Dallin H. Oaks attended, and performances continue Saturday.",
+          "source": "Church News",
+          "url": "https://www.thechurchnews.com/leaders/2026/11/14/president-d-todd-christofferson-speaks-luz-de-las-naciones/",
+          "thumbnailUrl": "https://www.thechurchnews.com/resizer/v2/63BGEYK3G5EA3I4PXWJRY5JZXE.jpg?focal=1102%2C406&auth=dc0eff38e1d80a2f91830d94ea3109d01ff46b519677d9b9af56ad733e5acc70&width=630&height=331",
+          "publishedAt": "2026-11-14T15:08:17.000Z",
+          "paywalled": false,
+          "tags": [
+            "church-news",
+            "luz-de-las-naciones"
+          ]
+        },
+        {
+          "id": "2026-11-14-noon-02",
+          "type": "reddit",
+          "title": "State of West Virginia Supreme Court of Appeals reverses previous court decision to throw out a lawsuit against the Church by a petitioner victimized by Christopher Michael Jensen.",
+          "summary": "A r/exmormon post points to the West Virginia Supreme Court of Appeals’ Nov. 13 memorandum decision in a lawsuit alleging Church leaders enabled abuse by Christopher Michael Jensen. The court upheld that the claims fall under an arbitration agreement but reversed the outright dismissal and sent the merits to arbitration.",
+          "source": "r/exmormon",
+          "url": "https://www.reddit.com/r/exmormon/comments/1xw35im/state_of_west_virginia_supreme_court_of_appeals/",
+          "thumbnailUrl": "https://mormonnewsroundup.github.io/mormon-news-roundup/feed/images/reddit/2026-11-14-noon-02.jpg",
+          "publishedAt": "2026-11-14T14:03:11.000Z",
+          "paywalled": false,
+          "tags": [
+            "reddit",
+            "lawsuit",
+            "court"
+          ]
+        },
+        {
+          "id": "2026-11-14-noon-03",
+          "type": "article",
+          "title": "When Obedience Trumps Truth: Dangerous–and Sometimes Deadly–LDS Groupthink",
+          "summary": "An Exponent II blog post argues that as top Church leaders grow older and more insulated, and as patriarchy tightens its hold on power, groupthink increases.",
+          "source": "Exponent II",
+          "url": "https://exponentii.org/blog/when-obedience-trumps-truth-dangerous-and-sometimes-deadly-lds-groupthink/",
+          "thumbnailUrl": "https://exponentii.org/wp-content/uploads/2026/11/men-shaking-hands-1024x683.jpg",
+          "publishedAt": "2026-11-14T14:00:34.000Z",
+          "paywalled": false,
+          "tags": [
+            "blog",
+            "groupthink"
+          ]
+        },
+        {
+          "id": "2026-11-14-noon-04",
+          "type": "article",
+          "title": "Brother of key LDS apostle asks for leniency ahead of his sentencing for sending sexually explicit letters",
+          "summary": "The Salt Lake Tribune reports that Wade Christofferson, 73, brother of apostle D. Todd Christofferson, is set to be sentenced Tuesday in Ohio after admitting he sexually abused two girls. His attorney is asking a federal judge for a prison term below sentencing guidelines.",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/news/2026/11/14/wade-christofferson-brother-lds/",
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/OKUNTZOFGFCRREFJIXWE6YXMIQ.JPG?auth=df89f2bd51f9d203d2e801a808ea1a1fc1bf3435fee94f8f4f8540b38ad0a11d&width=1200&height=630&quality=88&smart=true",
+          "publishedAt": "2026-11-14T13:00:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "sltrib",
+            "court",
+            "sentencing"
+          ]
+        },
+        {
+          "id": "2026-11-14-noon-05",
+          "type": "article",
+          "title": "A Big 12 podcaster found the most moving moment of his media career inside the MTC",
+          "summary": "Deseret News reports that “Locked on Big 12” host Drake Toll toured the Provo Missionary Training Center last month during BYU’s Notre Dame weekend and called it one of the most moving moments of his media career.",
+          "source": "Deseret News",
+          "url": "https://www.deseret.com/faith/2026/11/14/what-drake-toll-learned-from-his-tour-of-the-provo-missionary-training-center/",
+          "thumbnailUrl": "https://www.deseret.com/resizer/v2/MVSZEOMPPJB4VFUHXAFBM3NMJM.jpeg?focal=0%2C0&auth=2142075eded7d08ec4416f05f4376e262298c35e73135b9fd4bad537dca6bfab&width=630&height=331",
+          "publishedAt": "2026-11-14T11:00:01.000Z",
+          "paywalled": false,
+          "tags": [
+            "deseret-news",
+            "mtc"
+          ]
+        },
+        {
+          "id": "2026-11-14-noon-06",
+          "type": "podcast",
+          "title": "Nov 14- Daniel 3",
+          "summary": "Today’s Come Follow Me - Daily Dose episode on Daniel 3, “Standing for our convictions in love.”",
+          "source": "Come Follow Me - Daily Dose",
+          "url": "https://podcasts.apple.com/us/podcast/nov-14-daniel-3/id1498396876?i=1000801874264",
+          "thumbnailUrl": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts114/v4/aa/05/78/aa057802-9405-bfda-e9cd-15d2fbc30741/mza_12786431535503845214.jpg/600x600bb.jpg",
+          "publishedAt": "2026-11-14T05:34:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "podcast",
+            "come-follow-me"
+          ]
+        }
+      ]
     }
   ]
 }
