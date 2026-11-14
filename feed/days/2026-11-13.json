@@ -9,17 +9,17 @@
         {
           "id": "2026-11-13-midnight-01",
           "type": "video",
-          "title": "Coolio Meets the Mormon Temple 😂 | “Gangsta’s Paradise” Mormon Parody",
-          "summary": "A short video from the Mormon News Roundup YouTube channel.",
+          "title": "The Forensic Audit of Joseph Smith: Seer Stones, Forgeries, and Folk Magic",
+          "summary": "Mormon News Roundup's episode examines the physical evidence surrounding Joseph Smith's claims, including the seer stone and hat, the Toronto copyright revelation, and the rewriting of the 1833 Book of Commandments.",
           "source": "Mormon News Roundup",
-          "url": "https://www.youtube.com/watch?v=IYfDb0z2rC0",
-          "thumbnailUrl": "https://i.ytimg.com/vi/IYfDb0z2rC0/hqdefault.jpg",
-          "publishedAt": "2026-11-13T05:00:20.000Z",
+          "url": "https://www.youtube.com/watch?v=SaegYxXRgpI",
+          "thumbnailUrl": "https://i.ytimg.com/vi/SaegYxXRgpI/hqdefault.jpg",
+          "publishedAt": "2026-11-14T02:30:10.000Z",
           "paywalled": false,
           "tags": [
-            "short",
-            "mormon-news-roundup",
-            "own-channel"
+            "own-channel",
+            "joseph-smith",
+            "history"
           ]
         }
       ]
@@ -43,6 +43,54 @@
             "data center",
             "texas",
             "real estate"
+          ]
+        },
+        {
+          "id": "2026-11-13-noon-02",
+          "type": "article",
+          "title": "Former BYU standout Parker Kingston’s lawyers say prosecutor has a conflict of interest, ask judge to remove him from rape case",
+          "summary": "The Salt Lake Tribune reports that lawyers for former BYU football standout Parker Kingston want the prosecutor removed from his rape case, arguing that a disciplinary complaint the prosecutor filed against lawyers who criticized the investigation on TikTok creates a conflict of interest.",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/news/2026/11/13/why-former-byu-standout-parker/",
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/L46GNCE435CWLC63QIS2GJX7WY.JPG?auth=c5ad7de25b4d830b55bb59b36f471e471d7be7f58b32baaa48e460650f535dfc&width=1200&height=630&quality=88&smart=true",
+          "publishedAt": "2026-11-13T19:41:12.000Z",
+          "paywalled": false,
+          "tags": [
+            "byu",
+            "court",
+            "parker kingston"
+          ]
+        },
+        {
+          "id": "2026-11-13-noon-03",
+          "type": "podcast",
+          "title": "LDS Apostle Under the Microscope!",
+          "summary": "Mormon Discussions says RFM and Bill Reel do a deep dive into the recent worldwide devotional given by Elder Quentin L. Cook of the Quorum of the Twelve Apostles.",
+          "source": "Mormon Discussions",
+          "url": "https://mormondiscussionpodcast.org/2026/11/lds-apostle-under-the-microscope/",
+          "thumbnailUrl": "https://mormondiscussionpodcast.org/wp-content/uploads/sites/2/2026/11/maxresdefault-1.jpg",
+          "publishedAt": "2026-11-13T13:38:43.000Z",
+          "paywalled": false,
+          "tags": [
+            "podcast",
+            "quentin cook",
+            "devotional"
+          ],
+          "audioUrl": "https://media.blubrry.com/mormondiscussions/ins.blubrry.com/mormondiscussions/LDS_Apostle_Under_the_Microscope_.mp3"
+        },
+        {
+          "id": "2026-11-13-noon-04",
+          "type": "article",
+          "title": "19-year-old LDS missionary dies in the Philippines",
+          "summary": "The Salt Lake Tribune reports that a 19-year-old missionary died while serving in his Philippines homeland, and that at least three other missionaries have died in the past three months.",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/religion/2026/11/13/lds-church-reports-fourth/",
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/JGYQJW3FS5A7BDTTIY7IPC5YLM.jpeg?auth=e32ce741073d1d4464163c84f56e815f78235c58e31f6d58526b16a8bcdf2505&width=1200&height=630&quality=88&smart=true",
+          "publishedAt": "2026-11-13T22:15:01.000Z",
+          "paywalled": false,
+          "tags": [
+            "missionaries",
+            "philippines"
           ]
         }
       ]

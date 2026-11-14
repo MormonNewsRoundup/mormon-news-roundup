@@ -138,6 +138,23 @@
             "politics",
             "religious-freedom"
           ]
+        },
+        {
+          "id": "2026-11-12-noon-08",
+          "type": "podcast",
+          "title": "Ep364: Theranos , Elizabeth Holmes and the Mormon Connection",
+          "summary": "Mormonish says it compares how Theranos and the LDS Church protected their reputations and handled people who asked hard questions, including Ensign Peak's shell-company filings and the church's trademark lawsuit against Mormon Stories.",
+          "source": "Mormonish Podcast",
+          "url": "https://www.mormonishpodcast.org/episode/ep364-theranos-elizabeth-holmes-and-the-mormon-connection",
+          "thumbnailUrl": "https://artwork.captivate.fm/7bd30a30-6a88-4e76-8ccd-025ca7d96a72/Audio-Thumb.jpg",
+          "publishedAt": "2026-11-12T18:00:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "podcast",
+            "ensign peak",
+            "theranos"
+          ],
+          "audioUrl": "https://episodes.captivate.fm/episode/a8f30ed3-fbfb-45db-8618-62d65bb0f30b.mp3"
         }
       ]
     }
