@@ -1,0 +1,58 @@
+{
+  "date": "2026-11-15",
+  "sample": false,
+  "editions": [
+    {
+      "name": "noon",
+      "publishedAt": "2026-11-15T17:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-11-15-noon-01",
+          "type": "article",
+          "title": "Wife of child-molesting ex-Mormon figure once based in Chicago area calls him 'caring,' 'a wonderful father'",
+          "summary": "The Chicago Sun-Times reports that Rebecca Christofferson, wife of Wade Christofferson, described him as \"caring\" in a letter to a federal judge ahead of his sentencing in an Ohio child sexual abuse case. The paper notes that his brother, apostle D. Todd Christofferson, has faced criticism over when he said he learned of the allegations.",
+          "source": "Chicago Sun-Times",
+          "url": "https://chicago.suntimes.com/the-watchdogs/2026/11/15/wade-christofferson-child-sexual-abuse-latter-day-saints-mormon-church-crystal-lake-d-todd-christofferson-brother",
+          "thumbnailUrl": "https://cst.brightspotcdn.com/dims4/default/0aad5cf/2147483647/strip/true/crop/1170x668+0+310/resize/1461x834!/quality/90/?url=https%3A%2F%2Fchorus-production-cst-web.s3.us-east-1.amazonaws.com%2Fbrightspot%2F95%2Fc3%2Fb7dadd4640cf8387d6e002d543ca%2Fscreenshot-2026-11-14-at-3-43-50-pm.png",
+          "publishedAt": "2026-11-15T11:30:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "abuse",
+            "court",
+            "Christofferson"
+          ]
+        },
+        {
+          "id": "2026-11-15-noon-02",
+          "type": "article",
+          "title": "LDS Church instructs children on how to stop and report unwanted touching",
+          "summary": "The Salt Lake Tribune reports that the church's Friend magazine published \"body safety\" guidance for children on social media. A Bountiful counselor who treats child sexual abuse survivors tells the paper the information is basic but effective.",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/religion/2026/11/14/lds-church-teaches-kids-about-how/",
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/BIV6MFHJUNGY3LPD2RXP66ZFQI.jpeg?auth=01d1abd4d3c9fbd839e9665320c3f1849d43d4467bfce923bff20b55b5c3e450&width=1200&height=630&quality=88&smart=true",
+          "publishedAt": "2026-11-15T13:00:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "abuse",
+            "child safety"
+          ]
+        },
+        {
+          "id": "2026-11-15-noon-03",
+          "type": "video",
+          "title": "Absolute PROOF of the Mormon Shrivel: LDS Growth & Retention Crisis",
+          "summary": "A Mormon News Roundup Short on LDS growth and retention figures.",
+          "source": "Mormon News Roundup",
+          "url": "https://www.youtube.com/watch?v=7sYIsfcrDk8",
+          "thumbnailUrl": "https://i.ytimg.com/vi/7sYIsfcrDk8/hqdefault.jpg",
+          "publishedAt": "2026-11-15T17:00:07.000Z",
+          "paywalled": false,
+          "tags": [
+            "membership",
+            "short"
+          ]
+        }
+      ]
+    }
+  ]
+}
