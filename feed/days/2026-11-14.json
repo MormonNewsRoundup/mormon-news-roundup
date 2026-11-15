@@ -9,17 +9,48 @@
         {
           "id": "2026-11-14-midnight-01",
           "type": "video",
-          "title": "Thomas S. Monson and the Legend of the 85 Widows",
-          "summary": "A short video from the Mormon News Roundup YouTube channel.",
+          "title": "Baptism for the Dead: Did Early Christians REALLY Practice It? | Mormon Apologetics Examined",
+          "summary": "Mormon News Roundup's episode examines how LDS apologists have used early Christian sources, including writings about Epiphanius, the Marcionites and the Cerinthians, to argue that baptism for the dead began with the apostles.",
           "source": "Mormon News Roundup",
-          "url": "https://www.youtube.com/watch?v=KjFrn9Q47Qg",
-          "thumbnailUrl": "https://i.ytimg.com/vi/KjFrn9Q47Qg/hqdefault.jpg",
-          "publishedAt": "2026-11-14T05:00:14.000Z",
+          "url": "https://www.youtube.com/watch?v=zlzIwUyHFgA",
+          "thumbnailUrl": "https://i.ytimg.com/vi/zlzIwUyHFgA/hqdefault.jpg",
+          "publishedAt": "2026-11-15T02:30:10.000Z",
           "paywalled": false,
           "tags": [
-            "short",
-            "mormon-news-roundup",
-            "own-channel"
+            "own-channel",
+            "baptism-for-the-dead",
+            "apologetics"
+          ]
+        },
+        {
+          "id": "2026-11-14-midnight-02",
+          "type": "article",
+          "title": "Midterm Pt3: How Left Did LDS Move Compared To Other Groups?",
+          "summary": "Mormon Metrics author Alex Bass analyzes NORC's Civic Health & Elections Project data and writes that Latter-day Saints swung 12 points toward Democrats from 2024 to 2026, compared with 7 points for the average American.",
+          "source": "Mormon Metrics",
+          "url": "https://mormonmetrics.com/p/midterm-pt3-how-left-did-lds-move",
+          "thumbnailUrl": "https://images.unsplash.com/photo-1759845565546-d4b85791470b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+          "publishedAt": "2026-11-14T14:01:43.000Z",
+          "paywalled": false,
+          "tags": [
+            "politics",
+            "midterms",
+            "data",
+            "substack"
+          ]
+        },
+        {
+          "id": "2026-11-14-midnight-03",
+          "type": "podcast",
+          "title": "11/14 – Fairview Mayor Chills Out!",
+          "summary": "This Week in Latter-days publishes its weekly recap episode of news and headlines involving the Church of Jesus Christ of Latter-day Saints, running about an hour.",
+          "source": "This Week in Latter-days",
+          "url": "https://www.thisweekinmormons.com/2026/11/11-14-fairview-mayor-chills-out/",
+          "thumbnailUrl": "https://feeds.podcastmirror.com/~images/2337341767863549.jpeg",
+          "publishedAt": "2026-11-14T17:48:15.000Z",
+          "paywalled": false,
+          "tags": [
+            "weekly-recap"
           ]
         }
       ]
