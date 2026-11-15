@@ -92,6 +92,21 @@
             "missionaries",
             "philippines"
           ]
+        },
+        {
+          "id": "2026-11-13-noon-05",
+          "type": "podcast",
+          "title": "LDS Lawyer Blames Bishops, Mormon Marriage Drama & BYU Cancer Breakthrough – Mormon News | Ep. 2229",
+          "summary": "Mormon Stories' news episode with John Dehlin and Julia Sanders discusses a former Kirton McConkie attorney's defense of the church's abuse helpline, along with a Reddit post about registered offenders at a ward and other LDS news items.",
+          "source": "Mormon Stories",
+          "url": "https://www.mormonstories.org/lds-lawyer-blames-bishops-mormon-marriage-drama-byu-cancer-breakthrough/",
+          "thumbnailUrl": "https://www.mormonstories.org/wp-content/uploads/2026/11/11.13.26.jpg",
+          "publishedAt": "2026-11-13T17:40:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "podcast",
+            "abuse"
+          ]
         }
       ]
     }
