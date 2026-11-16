@@ -1,0 +1,73 @@
+{
+  "date": "2026-11-16",
+  "sample": false,
+  "editions": [
+    {
+      "name": "noon",
+      "publishedAt": "2026-11-16T17:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-11-16-noon-01",
+          "type": "article",
+          "title": "Students express concerns at first BYU town hall meeting",
+          "summary": "The BYU Daily Universe reports that BYU's Office of Civic Engagement hosted a town hall where two Provo City Council members took questions from about 105 attendees, mostly students. The first topic was parking at the Park Plaza apartment project.",
+          "source": "BYU Daily Universe",
+          "url": "https://universe.byu.edu/campus/students-express-concerns-at-first-byu-town-hall-meeting",
+          "thumbnailUrl": "https://brightspotcdn.byu.edu/dims4/default/025619f/2147483647/strip/true/crop/1707x1707+426+0/resize/1200x1200!/quality/90/?url=https%3A%2F%2Fbrigham-young-brightspot-us-east-2.s3.us-east-2.amazonaws.com%2F5b%2Fb2%2Fb3a1394546f281fd755a7792d7c5%2Fdsc06593.jpg",
+          "publishedAt": "2026-11-16T17:10:10.000Z",
+          "paywalled": false,
+          "tags": [
+            "BYU",
+            "Provo"
+          ]
+        },
+        {
+          "id": "2026-11-16-noon-02",
+          "type": "video",
+          "title": "Mormon Senior Missions: Working for Free Isn't Enough? Mormon News 11.16.26",
+          "summary": "A Generally Unquotable YouTube video says some senior missionaries are expected to cover thousands of dollars in monthly living expenses while volunteering, and asks how that squares with the church's wealth.",
+          "source": "Generally Unquotable",
+          "url": "https://www.youtube.com/watch?v=Ld2PsdCtwk8",
+          "thumbnailUrl": "https://i.ytimg.com/vi/Ld2PsdCtwk8/hqdefault.jpg",
+          "publishedAt": "2026-11-16T16:00:17.000Z",
+          "paywalled": false,
+          "tags": [
+            "church finances",
+            "missionaries",
+            "generally-unquotable"
+          ]
+        },
+        {
+          "id": "2026-11-16-noon-03",
+          "type": "podcast",
+          "title": "When Your Daughter Leaves the Mormon Church – Kari & Kimberly Bates | Ep. 2231",
+          "summary": "On Mormon Stories, Kari and Kimberly Bates discuss choosing their relationship with their child over the expectations of their faith after their daughter left the Mormon church.",
+          "source": "Mormon Stories",
+          "url": "https://www.mormonstories.org/when-your-daughter-leaves-the-mormon-church/",
+          "thumbnailUrl": "https://www.mormonstories.org/wp-content/uploads/2026/11/Mormonism-sets-mothers-up-to-fail_.png",
+          "publishedAt": "2026-11-16T15:24:42.000Z",
+          "paywalled": false,
+          "tags": [
+            "mormon-stories",
+            "faith transition"
+          ]
+        },
+        {
+          "id": "2026-11-16-noon-04",
+          "type": "video",
+          "title": "Why Mormon Voters Almost Walked Away From Trump",
+          "summary": "Historian Benjamin Park revisits Donald Trump's 2016 \"Mormon problem\" in a YouTube video, asking how one of America's reddest states became a three-way race.",
+          "source": "Benjamin Park, Historian",
+          "url": "https://www.youtube.com/watch?v=B8V8MqUSg1o",
+          "thumbnailUrl": "https://i.ytimg.com/vi/B8V8MqUSg1o/hqdefault.jpg",
+          "publishedAt": "2026-11-16T15:00:29.000Z",
+          "paywalled": false,
+          "tags": [
+            "politics",
+            "history"
+          ]
+        }
+      ]
+    }
+  ]
+}
