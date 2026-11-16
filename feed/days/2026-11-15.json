@@ -29,6 +29,36 @@
       "publishedAt": "2026-11-15T17:00:00.000Z",
       "items": [
         {
+          "id": "2026-11-15-noon-04",
+          "type": "article",
+          "title": "Sister Wives' Janelle Brown Recalls Being 'Excommunicated' From LDS Church While Pregnant",
+          "summary": "Us Weekly reports that Janelle Brown said on the Nov. 15 episode of Sister Wives that she was excommunicated from the LDS Church around the time she was pregnant with or had just had her first child, after marrying Kody Brown.",
+          "source": "Us Weekly",
+          "url": "https://www.usmagazine.com/entertainment/news/sister-wives-janelle-was-excommunicated-from-lds-church/",
+          "thumbnailUrl": "https://www.usmagazine.com/wp-content/uploads/2026/11/Sister-Wives-Janelle-Brown-Recalls-Being-Excommunicated-From-LDS-Church-While-Pregnant-SisterWives_S14_Press_Janelle.jpg?crop=109px%2C150px%2C1100px%2C579px&resize=1200%2C630&quality=86&strip=all",
+          "publishedAt": "2026-11-16T04:01:52.000Z",
+          "paywalled": false,
+          "tags": [
+            "excommunication",
+            "polygamy"
+          ]
+        },
+        {
+          "id": "2026-11-15-noon-03",
+          "type": "video",
+          "title": "BYU Quarterback Faces Online Criticism Over Religious Post",
+          "summary": "A Mormonish Podcast YouTube video features Rebecca Bibliotheca, Bill Reel and Radio Free Mormon discussing a BYU quarterback who received pushback for a social media post.",
+          "source": "Mormonish Podcast",
+          "url": "https://www.youtube.com/watch?v=gU67QVtKS7w",
+          "thumbnailUrl": "https://i.ytimg.com/vi/gU67QVtKS7w/hqdefault.jpg",
+          "publishedAt": "2026-11-15T22:25:13.000Z",
+          "paywalled": false,
+          "tags": [
+            "BYU",
+            "mormonish"
+          ]
+        },
+        {
           "id": "2026-11-15-noon-01",
           "type": "article",
           "title": "Wife of child-molesting ex-Mormon figure once based in Chicago area calls him 'caring,' 'a wonderful father'",
