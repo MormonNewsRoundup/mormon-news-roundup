@@ -3,6 +3,59 @@
   "sample": false,
   "editions": [
     {
+      "name": "midnight",
+      "publishedAt": "2026-11-16T05:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-11-16-midnight-01",
+          "type": "video",
+          "title": "The SECRET Mormon Fireside: How 15 Questions Broke the LDS Church in Sweden",
+          "summary": "A Mormon News Roundup YouTube video about a fireside in Sweden where an Area Authority Seventy, after finding documented problems with early church history, was asked for answers by local members.",
+          "source": "Mormon News Roundup",
+          "url": "https://www.youtube.com/watch?v=aGka1DDtzCQ",
+          "thumbnailUrl": "https://i.ytimg.com/vi/aGka1DDtzCQ/hqdefault.jpg",
+          "publishedAt": "2026-11-17T02:30:09.000Z",
+          "paywalled": false,
+          "tags": [
+            "mormon-news-roundup",
+            "own-channel",
+            "church-history"
+          ]
+        },
+        {
+          "id": "2026-11-16-midnight-02",
+          "type": "article",
+          "title": "LDS Primary teacher charged for recording young children during church meetings for 'self-pleasure'",
+          "summary": "ABC4 reports that Jeremy Jack Hall, 44, of Roy, is charged with more than 40 felonies after police allege he recorded young girls during church activities; according to court documents, he told police he is a Primary teacher. ABC4 says it has asked the church for comment, and notes that charges are allegations only.",
+          "source": "ABC4 Utah",
+          "url": "https://www.abc4.com/news/crimes-against-children/lds-primary-teacher-csam-recorded-minors/",
+          "thumbnailUrl": "https://www.abc4.com/wp-content/uploads/sites/4/2026/02/image-27.png?w=1280",
+          "publishedAt": "2026-11-17T00:46:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "abuse",
+            "court",
+            "Utah"
+          ]
+        },
+        {
+          "id": "2026-11-16-midnight-03",
+          "type": "article",
+          "title": "Utah Gov. Spencer Cox: Faith should transcend party politics",
+          "summary": "Religion News Service reports that Utah Gov. Spencer Cox, a Latter-day Saint, told RNS at an Interfaith America conference that faith \"should not be the provision of one party\" and that politics has become \"too important\" for too many people.",
+          "source": "Religion News Service",
+          "url": "https://religionnews.com/2026/11/16/utah-gov-spencer-cox-faith-should-transcend-party-politics/",
+          "thumbnailUrl": "https://media.religionnews.com/uploads/2026/11/webRNS-Spencer-Cox1.jpg",
+          "publishedAt": "2026-11-16T21:21:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "politics",
+            "Utah"
+          ]
+        }
+      ]
+    },
+    {
       "name": "noon",
       "publishedAt": "2026-11-16T17:00:00.000Z",
       "items": [

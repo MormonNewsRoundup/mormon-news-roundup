@@ -21,6 +21,21 @@
             "own-channel",
             "heavenly-mother"
           ]
+        },
+        {
+          "id": "2026-11-15-midnight-02",
+          "type": "podcast",
+          "title": "Debate Me, Jacob: RFM: 491",
+          "summary": "Radio Free Mormon says Jacob Hansen challenged RFM to a debate on terms other than the Book of Mormon's historicity, and RFM responds that it will accept only if the Book of Mormon's truthfulness is on the line.",
+          "source": "Radio Free Mormon",
+          "url": "https://radiofreemormon.org/2026/11/debate-me-jacob-rfm-491/",
+          "thumbnailUrl": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/a7/15/a1/a715a192-192d-2d45-c117-5b066e953108/mza_16909349119521494534.png/600x600bb.jpg",
+          "publishedAt": "2026-11-15T05:00:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "radio-free-mormon",
+            "Book of Mormon"
+          ]
         }
       ]
     },
