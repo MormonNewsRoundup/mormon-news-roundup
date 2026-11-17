@@ -119,6 +119,36 @@
             "politics",
             "history"
           ]
+        },
+        {
+          "id": "2026-11-16-noon-05",
+          "type": "article",
+          "title": "Elder Cook and Online Anonymity",
+          "summary": "On By Common Consent, Sam Brunson writes about Elder Quentin L. Cook's BYU-Hawaii devotional \"Be a Light,\" saying he largely agrees with Cook's counsel against online anonymity while adding nuance to the warning.",
+          "source": "By Common Consent",
+          "url": "https://bycommonconsent.com/2026/11/16/elder-cook-and-online-anonymity/",
+          "thumbnailUrl": "https://i0.wp.com/bycommonconsent.com/wp-content/uploads/2026/11/14802943393_e18502e2be_c.jpg",
+          "publishedAt": "2026-11-16T21:57:58.000Z",
+          "paywalled": false,
+          "tags": [
+            "blog",
+            "Elder Cook"
+          ]
+        },
+        {
+          "id": "2026-11-16-noon-06",
+          "type": "article",
+          "title": "A state of emergency, LDS Church land, and more on Behind the Headlines",
+          "summary": "Utah Public Radio's Behind the Headlines has Salt Lake Tribune reporters discussing the week's top stories, including the church leasing ranch land in Texas for construction of a data center.",
+          "source": "Utah Public Radio",
+          "url": "https://www.upr.org/show/behind-the-headlines/2026-11-16/southern-utah-gov-cox-lds-church",
+          "thumbnailUrl": "https://npr.brightspotcdn.com/dims4/default/ad2116f/2147483647/strip/true/crop/2048x1075+0+85/resize/1200x630!/quality/90/?url=https%3A%2F%2Fnpr-production-npr.s3.us-east-1.amazonaws.com%2Fbrightspot%2F20%2Fa1%2Fae5325ee47258ec6746067bfa3ae%2Fland.jpg",
+          "publishedAt": "2026-11-16T19:07:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "data center",
+            "Farmland Reserve"
+          ]
         }
       ]
     }

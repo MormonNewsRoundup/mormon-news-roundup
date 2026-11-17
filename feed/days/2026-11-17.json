@@ -23,6 +23,27 @@
           ]
         }
       ]
+    },
+    {
+      "name": "noon",
+      "publishedAt": "2026-11-17T17:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-11-17-noon-01",
+          "type": "article",
+          "title": "BYU medical school celebrates milestone with drone show",
+          "summary": "The BYU Daily Universe reports the BYU School of Medicine marked its preliminary accreditation on Nov. 13 with a celebration that included a drone show. The school will welcome its first class of up to 60 students in July 2027.",
+          "source": "BYU Daily Universe",
+          "url": "https://universe.byu.edu/campus/byu-medical-school-celebrates-milestone-with-drone-show",
+          "thumbnailUrl": "https://brightspotcdn.byu.edu/dims4/default/1cbd272/2147483647/strip/true/crop/3835x3835+960+0/resize/1200x1200!/quality/90/?url=https%3A%2F%2Fbrigham-young-brightspot-us-east-2.s3.us-east-2.amazonaws.com%2F08%2F1b%2F0c6dea014ba0af03559779ab0a91%2Fdsc9739.jpg",
+          "publishedAt": "2026-11-17T17:21:08.000Z",
+          "paywalled": false,
+          "tags": [
+            "BYU",
+            "medical school"
+          ]
+        }
+      ]
     }
   ]
 }
