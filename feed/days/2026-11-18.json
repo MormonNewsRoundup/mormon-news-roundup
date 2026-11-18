@@ -23,6 +23,60 @@
           ]
         }
       ]
+    },
+    {
+      "name": "noon",
+      "publishedAt": "2026-11-18T17:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-11-18-noon-01",
+          "type": "article",
+          "title": "96MW data center planned on rural Texas ranch owned by Mormon Church",
+          "summary": "Data Center Dynamics reports that Aetheris Infrastructure has been granted permission to build a 96MW data center and a 180MW natural gas power plant on 4,252 acres of the Triangle Ranch in Cottle County, Texas, most of it owned by the church through its FarmlandReserve subsidiary. The site reports FarmlandReserve said leasing portions of its properties for commercial uses fits its long-term investment strategy.",
+          "source": "Data Center Dynamics",
+          "url": "https://www.datacenterdynamics.com/en/news/mormon-data-center-texas/",
+          "thumbnailUrl": "https://media.datacenterdynamics.com/media/images/Mormon.2e16d0ba.fill-1200x630.jpg",
+          "publishedAt": "2026-11-18T12:49:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "church-finances",
+            "land",
+            "data-center",
+            "farmland-reserve"
+          ]
+        },
+        {
+          "id": "2026-11-18-noon-02",
+          "type": "video",
+          "title": "Dr. Gregory Prince: The Mormon Faith Crisis and the Church's Crisis of Trust",
+          "summary": "In this Mormon Discussion episode, host Bill Reel interviews historian Gregory Prince about what happens when a church's efforts to protect faith end up damaging trust. The video is a commentary-style interview.",
+          "source": "Mormon Discussion",
+          "url": "https://www.youtube.com/watch?v=jHFg_3Qocvg",
+          "thumbnailUrl": "https://i.ytimg.com/vi/jHFg_3Qocvg/maxresdefault.jpg",
+          "publishedAt": "2026-11-18T15:50:36.000Z",
+          "paywalled": false,
+          "tags": [
+            "interview",
+            "trust"
+          ]
+        },
+        {
+          "id": "2026-11-18-noon-03",
+          "type": "podcast",
+          "title": "'Mormon Land': How this LDS election leader found the courage to stand up to Trump — and win",
+          "summary": "On The Salt Lake Tribune's Mormon Land podcast, Utah Lt. Gov. Deidre Henderson, a Latter-day Saint who refused a Justice Department demand for Utah's complete voter rolls, talks about her faith, political convictions and the midterm elections.",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/religion/2026/11/18/mormon-land-podcast-this-lds/",
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/AFINBO2YYRDE3JOEX43CMSUOLI.jpg?auth=ca5079978716808102d3025a35e5af109d83139cf3f0751e66e3a8aed7946c45&width=1200&height=630&quality=88&smart=true",
+          "publishedAt": "2026-11-18T13:00:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "mormon-land",
+            "politics",
+            "podcast"
+          ]
+        }
+      ]
     }
   ]
 }
