@@ -9,17 +9,64 @@
         {
           "id": "2026-11-17-midnight-01",
           "type": "video",
-          "title": "The Mormon Missionary Journal That CHANGED After the Fact",
-          "summary": "A Mormon News Roundup YouTube Short comparing Wilford Woodruff's missionary departure, as it became part of the pioneer-sacrifice story, with his later published account.",
+          "title": "The Early Years: What They Left Out of Joseph Smith’s Official Story",
+          "summary": "A Mormon News Roundup YouTube episode examining Joseph Smith’s early life in 1820s New York, including folk magic, an 1826 trial, and differing accounts of the First Vision, drawing on historical records.",
           "source": "Mormon News Roundup",
-          "url": "https://www.youtube.com/shorts/Qw3hRFQG89k",
-          "thumbnailUrl": "https://i.ytimg.com/vi/Qw3hRFQG89k/oardefault.jpg",
-          "publishedAt": "2026-11-17T05:00:38.000Z",
+          "url": "https://www.youtube.com/watch?v=UyzN5fZwknE",
+          "thumbnailUrl": "https://i.ytimg.com/vi/UyzN5fZwknE/maxresdefault.jpg",
+          "publishedAt": "2026-11-18T02:30:08.000Z",
           "paywalled": false,
           "tags": [
             "mormon-news-roundup",
             "own-channel",
             "church-history"
+          ]
+        },
+        {
+          "id": "2026-11-17-midnight-02",
+          "type": "article",
+          "title": "Brother of key LDS apostle will spend the rest of his life in prison for sending sexually explicit letters to Utah girl",
+          "summary": "The Salt Lake Tribune reports that Wade Christofferson, brother of apostle D. Todd Christofferson, was sentenced to 45 years in federal prison in Ohio after pleading guilty to coercing and enticing a minor. The Tribune says he admitted in plea documents to sexually abusing two girls in Ohio and Utah.",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/news/2026/11/17/brother-key-lds-apostle-will-spend/",
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/F4U354RM2NHXVA2RBVWRMGO5EY.JPG?auth=ab98d891f63e8bcbce1e50ed3c2a7fe8241efc29a65db83094a4373fcfb92212&width=1200&height=630&quality=88&smart=true",
+          "publishedAt": "2026-11-17T20:21:23.000Z",
+          "paywalled": true,
+          "tags": [
+            "abuse",
+            "courts",
+            "leadership"
+          ]
+        },
+        {
+          "id": "2026-11-17-midnight-03",
+          "type": "article",
+          "title": "Former Chicago-area Mormon leader is sentenced to 45 years in prison in child sex abuse case in Ohio",
+          "summary": "The Chicago Sun-Times reports that Wade Christofferson, a former Crystal Lake-area Latter-day Saint leader, was sentenced to 45 years in prison in a federal case in Ohio. The Sun-Times says he was secretly excommunicated for abuse in the 1990s and quickly restored, according to interviews, and that church leaders allegedly covered up earlier misconduct.",
+          "source": "Chicago Sun-Times",
+          "url": "https://chicago.suntimes.com/the-watchdogs/2026/11/17/wade-christofferson-sentenced-child-sex-case-crystal-lake-mormon-latter-day-saints",
+          "thumbnailUrl": "https://cst.brightspotcdn.com/dims4/default/b5f7560/2147483647/strip/true/crop/1170x668+0+310/resize/1461x834!/quality/90/?url=https%3A%2F%2Fchorus-production-cst-web.s3.us-east-1.amazonaws.com%2Fbrightspot%2F51%2F32%2Fcff638c8400f8a9f6965520e664a%2Fscreenshot-2026-11-14-at-3-43-50-pm.png",
+          "publishedAt": "2026-11-17T20:58:47.000Z",
+          "paywalled": false,
+          "tags": [
+            "abuse",
+            "courts",
+            "cover-up"
+          ]
+        },
+        {
+          "id": "2026-11-17-midnight-04",
+          "type": "article",
+          "title": "On Tattoos",
+          "summary": "A By Common Consent post asks why the LDS Church strongly discourages tattoos but takes no official position on elective cosmetic surgery, arguing the two are broadly similar. The author discusses the church’s For the Strength of Youth guidance.",
+          "source": "By Common Consent",
+          "url": "https://bycommonconsent.com/2026/11/17/on-tattoos/",
+          "thumbnailUrl": "https://i0.wp.com/bycommonconsent.com/wp-content/uploads/2026/11/Tattooing.jpg",
+          "publishedAt": "2026-11-18T01:06:22.000Z",
+          "paywalled": false,
+          "tags": [
+            "blog",
+            "commentary"
           ]
         }
       ]
