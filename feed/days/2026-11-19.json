@@ -23,6 +23,74 @@
           ]
         }
       ]
+    },
+    {
+      "name": "noon",
+      "publishedAt": "2026-11-19T17:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-11-19-noon-01",
+          "type": "article",
+          "title": "LDS museum unveils three new exhibits in buildup to reopening of the Salt Lake Temple",
+          "summary": "The Salt Lake Tribune reports that three new exhibits opened at the Church History Museum ahead of the Salt Lake Temple's reopening, covering the temple's history, 55 conversion stories from 40 countries and temple artwork from around the world.",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/religion/2026/11/19/lds-church-museum-unveils-new-salt/",
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/XPOW75CUURFMRFAWSXTXISGIHY.jpg?auth=e947639d79ff6424ddfb93df85a37eed3a548e5d827f6372b29f65bfef2a8f0c&width=1200&height=630&quality=88&smart=true",
+          "publishedAt": "2026-11-19T13:00:01.000Z",
+          "paywalled": false,
+          "tags": [
+            "salt-lake-temple",
+            "church-history-museum"
+          ]
+        },
+        {
+          "id": "2026-11-19-noon-02",
+          "type": "article",
+          "title": "Latest from Mormon Land: Maybe blue-streaking LDS voters should opt for CTL rings",
+          "summary": "The Salt Lake Tribune's Mormon Land newsletter cites analyst Ryan Burge, who reports that the most heavily Latter-day Saint counties shifted toward Democrats in the midterms. The Tribune says the average Utah race swung 29 points to the left between 2024 and 2026.",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/religion/2026/11/19/ctr-not-necessarily-more-more-lds/",
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/GQCS7ERQ65C6JOUHGBNAIC3DKQ.jpg?auth=9981a0a81ef9030e84243b616e6575741284fa95b745cafd99397b36401d1aed&width=1200&height=630&quality=88&smart=true",
+          "publishedAt": "2026-11-19T13:00:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "politics",
+            "midterms",
+            "mormon-land"
+          ]
+        },
+        {
+          "id": "2026-11-19-noon-03",
+          "type": "article",
+          "title": "Founder of Creative Fiction trains students on how to implement AI into their creative work",
+          "summary": "The BYU Daily Universe reports that Ryan Paulson, founder of Creative Friction, visited BYU's communications department on Nov. 12 to teach students how to use AI in creative fields.",
+          "source": "BYU Daily Universe",
+          "url": "https://universe.byu.edu/campus/founder-of-creative-fiction-trains-students-on-how-to-implement-ai-into-their-creative-work",
+          "thumbnailUrl": "https://brightspotcdn.byu.edu/dims4/default/ad86262/2147483647/strip/true/crop/4377x4377+1039+0/resize/1200x1200!/quality/90/?url=https%3A%2F%2Fbrigham-young-brightspot-us-east-2.s3.us-east-2.amazonaws.com%2Fc5%2Fa3%2F978c8aab44498ba1b8f6447feaf9%2Failabbateman-12.jpg",
+          "publishedAt": "2026-11-19T15:42:59.000Z",
+          "paywalled": false,
+          "tags": [
+            "byu",
+            "campus"
+          ]
+        },
+        {
+          "id": "2026-11-19-noon-04",
+          "type": "article",
+          "title": "Utah's Number 3! And Number 1! (And That's Not Great.)",
+          "summary": "A By Common Consent post by Sam Brunson cites CDC figures showing Utah has the third-highest number of measles cases in 2026 and, he writes, the highest per-capita rate. The author contrasts this with the LDS Church's past vaccination humanitarian efforts.",
+          "source": "By Common Consent",
+          "url": "https://bycommonconsent.com/2026/11/19/utahs-number-3-and-number-1-and-thats-not-great/",
+          "thumbnailUrl": "https://i0.wp.com/bycommonconsent.com/wp-content/uploads/2026/11/3796080398_3429b252dd_c.jpg",
+          "publishedAt": "2026-11-19T14:53:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "blog",
+            "commentary",
+            "measles"
+          ]
+        }
+      ]
     }
   ]
 }
