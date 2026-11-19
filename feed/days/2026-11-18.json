@@ -9,17 +9,65 @@
         {
           "id": "2026-11-18-midnight-01",
           "type": "video",
-          "title": "The LIES Mormon Children Learn in Sunday School",
-          "summary": "A Mormon News Roundup YouTube Short comparing stories in official Church Primary lessons, including the Zion's Camp account, with the historical record.",
+          "title": "Does the LDS Church Lie About Its History? ExMormon LEGEND Wendy Jensen Answers the Question",
+          "summary": "A Mormon News Roundup YouTube video featuring Wendy Jensen on whether the LDS Church lies about its own history or makes the difficult parts of that history hard for ordinary members to find.",
           "source": "Mormon News Roundup",
-          "url": "https://www.youtube.com/shorts/73PJUb4xRaY",
-          "thumbnailUrl": "https://i.ytimg.com/vi/73PJUb4xRaY/maxresdefault.jpg",
-          "publishedAt": "2026-11-18T05:00:26.000Z",
+          "url": "https://www.youtube.com/watch?v=lp_Si0DnqyA",
+          "thumbnailUrl": "https://i.ytimg.com/vi/lp_Si0DnqyA/maxresdefault.jpg",
+          "publishedAt": "2026-11-19T02:30:08.000Z",
           "paywalled": false,
           "tags": [
             "mormon-news-roundup",
             "own-channel",
             "church-history"
+          ]
+        },
+        {
+          "id": "2026-11-18-midnight-02",
+          "type": "article",
+          "title": "‘Secret Lives of Mormon Wives’ star Dakota Mortensen files defamation lawsuit against Hulu",
+          "summary": "The Salt Lake Tribune reports that Dakota Mortensen, a star of Hulu's ‘Secret Lives of Mormon Wives,’ filed a defamation lawsuit against Hulu. He alleges the show spread \"statements of fact that were fabricated.\"",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/artsliving/2026/11/18/slomw-star-dakota-mortensen-sues/",
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/TOSUNQIEVJAJFF7TQF25QK5IKE.jpg?auth=531a7188e52e0516967010ba91aa3a19b9105cc1bc3fe66932f33b2ef62d4b8d&width=1200&height=630&quality=88&smart=true",
+          "publishedAt": "2026-11-18T13:00:01.000Z",
+          "paywalled": false,
+          "tags": [
+            "lawsuit",
+            "influencers",
+            "hulu"
+          ]
+        },
+        {
+          "id": "2026-11-18-midnight-03",
+          "type": "podcast",
+          "title": "Ep366: Inside Wade Christofferson's Sentencing: Courtroom Observer Weighs In",
+          "summary": "On Mormonish, a courtroom observer who attended Wade Christofferson's sentencing shares what they saw and heard as the prosecutor, family members and victim advocates spoke. The episode notes he was sentenced to 45 years in federal prison.",
+          "source": "Mormonish Podcast",
+          "url": "https://www.mormonishpodcast.org/episode/ep366-inside-wade-christoffersons-sentencing-courtroom-observer-weighs-in",
+          "thumbnailUrl": "https://artwork.captivate.fm/4f1c705b-1624-4a2c-8493-64b42dc79f4f/Wade-Audio.jpg",
+          "audioUrl": "https://episodes.captivate.fm/episode/40ce8dc8-7757-4cc2-ae93-882906e81583.mp3",
+          "publishedAt": "2026-11-18T16:00:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "abuse",
+            "court",
+            "podcast"
+          ]
+        },
+        {
+          "id": "2026-11-18-midnight-04",
+          "type": "article",
+          "title": "What is doctrine?",
+          "summary": "A Wheat & Tares blog post says its author has seen \"three different working definitions\" of doctrine used in practice.",
+          "source": "Wheat & Tares",
+          "url": "https://wheatandtares.org/2026/11/18/what-is-doctrine-2/",
+          "thumbnailUrl": "https://wheatandtares.org/wp-content/uploads/2020/12/black-sheep-2.jpg",
+          "publishedAt": "2026-11-18T17:07:42.000Z",
+          "paywalled": false,
+          "tags": [
+            "blog",
+            "doctrine"
           ]
         }
       ]
