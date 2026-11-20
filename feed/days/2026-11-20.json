@@ -1,0 +1,28 @@
+{
+  "date": "2026-11-20",
+  "sample": false,
+  "editions": [
+    {
+      "name": "midnight",
+      "publishedAt": "2026-11-20T05:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-11-20-midnight-01",
+          "type": "video",
+          "title": "Joseph Smith’s FAKE Malaria Miracle",
+          "summary": "A Mormon News Roundup YouTube Short on the Mormon lesson story of Joseph Smith visiting a desperately ill Elijah Fordham, who makes a remarkable recovery from malaria.",
+          "source": "Mormon News Roundup",
+          "url": "https://www.youtube.com/shorts/AHb4fWqlNRg",
+          "thumbnailUrl": "https://i.ytimg.com/vi/AHb4fWqlNRg/maxresdefault.jpg",
+          "publishedAt": "2026-11-20T05:00:28.000Z",
+          "paywalled": false,
+          "tags": [
+            "mormon-news-roundup",
+            "own-channel",
+            "joseph-smith"
+          ]
+        }
+      ]
+    }
+  ]
+}
