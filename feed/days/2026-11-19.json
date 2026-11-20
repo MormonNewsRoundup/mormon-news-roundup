@@ -9,18 +9,52 @@
         {
           "id": "2026-11-19-midnight-01",
           "type": "video",
-          "title": "How the Mormon god Killed a Horse",
-          "summary": "A Mormon News Roundup YouTube Short on how a Mormon Primary lesson about Zion's Camp turns historical events into a simple story of obedience and divine punishment.",
+          "title": "WORLD EXCLUSIVE: The Banned \"God Makers\" Director's Cut (1982) Forgotten ANTI-MORMON Cartoon",
+          "summary": "A Mormon News Roundup YouTube video on the 1982 Jeremiah Films anti-Mormon film The God Makers and a director's cut the channel describes as one of the strangest artifacts in Mormon movie history.",
           "source": "Mormon News Roundup",
-          "url": "https://www.youtube.com/shorts/edJ_syCTsGc",
-          "thumbnailUrl": "https://i.ytimg.com/vi/edJ_syCTsGc/maxresdefault.jpg",
-          "publishedAt": "2026-11-19T05:00:29.000Z",
+          "url": "https://www.youtube.com/watch?v=dw8O5MnfezY",
+          "thumbnailUrl": "https://i.ytimg.com/vi/dw8O5MnfezY/hqdefault.jpg",
+          "publishedAt": "2026-11-20T02:30:10.000Z",
           "paywalled": false,
           "tags": [
             "mormon-news-roundup",
             "own-channel",
-            "church-history"
+            "god-makers"
           ]
+        },
+        {
+          "id": "2026-11-19-midnight-02",
+          "type": "article",
+          "title": "Arizona abuse victims appeal Mormon church ruling to US Supreme Court",
+          "summary": "KVOA reports that attorneys for three child abuse victims have asked the U.S. Supreme Court to overturn an Arizona ruling that shields the LDS Church from civil liability over bishops' failure to report abuse. The petition argues the Arizona Supreme Court misapplied the First Amendment.",
+          "source": "KVOA",
+          "url": "https://www.kvoa.com/news/arizona/arizona-abuse-victims-appeal-mormon-church-ruling-to-us-supreme-court/article_563e2a59-cf9f-4c50-9d03-7841dc98b0b9.html",
+          "thumbnailUrl": "https://bloximages.newyork1.vip.townnews.com/kvoa.com/content/tncms/assets/v3/editorial/b/05/b05aaa59-8529-5eac-8da3-0e2c9fb11bd0/613aaf5defc83.image.png?crop=1024%2C538%2C0%2C19",
+          "publishedAt": "2026-11-19T23:48:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "abuse",
+            "lawsuit",
+            "supreme-court",
+            "arizona"
+          ]
+        },
+        {
+          "id": "2026-11-19-midnight-03",
+          "type": "podcast",
+          "title": "Book of Mormon Anachronisms: Is the List Really Shrinking?",
+          "summary": "Radio Free Mormon's Mormonism Live podcast with Bill Reel examines Matthew Roper's tally of 226 alleged Book of Mormon anachronisms and the claim that archaeology keeps proving Joseph Smith right.",
+          "source": "Radio Free Mormon",
+          "url": "https://radiofreemormon.org/2026/11/book-of-mormon-anachronisms-is-the-list-really-shrinking/",
+          "thumbnailUrl": "https://radiofreemormon.org/wp-content/uploads/2026/11/6f2758ad-51b1-4b5a-b19c-d5d0c02ab453-930x620.png",
+          "publishedAt": "2026-11-19T16:24:05.000Z",
+          "paywalled": false,
+          "tags": [
+            "book-of-mormon",
+            "apologetics",
+            "podcast"
+          ],
+          "audioUrl": "https://media.blubrry.com/mormondiscussions/ins.blubrry.com/mormondiscussions/Book_of_Mormon_Anachronisms_Is_the_List_Really_Shrinking_.mp3"
         }
       ]
     },
