@@ -23,6 +23,60 @@
           ]
         }
       ]
+    },
+    {
+      "name": "noon",
+      "publishedAt": "2026-11-20T17:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-11-20-noon-01",
+          "type": "podcast",
+          "title": "Mormon Bishop Resigns Amid Scandal, LDS Predator Watch & MAGA vs Mormon Media – Mormon News | Ep. 2233",
+          "summary": "Mormon Stories' weekly Mormon News Podcast with John Dehlin and Meggan Hayes covers an Idaho Fish and Game commissioner and LDS bishop who resigned after agreeing to plead guilty to hunting violations, a Utah Primary teacher facing criminal charges, and criticism of LDS-owned media by Utah Republicans.",
+          "source": "Mormon Stories",
+          "url": "https://www.mormonstories.org/mormon-bishop-resigns-amid-scandal-lds-predator-watch-maga-vs-mormon-media/",
+          "thumbnailUrl": "https://www.mormonstories.org/wp-content/uploads/2026/11/11.20.26.jpg",
+          "publishedAt": "2026-11-20T16:09:55.000Z",
+          "paywalled": false,
+          "tags": [
+            "podcast",
+            "news roundup",
+            "abuse",
+            "politics"
+          ]
+        },
+        {
+          "id": "2026-11-20-noon-02",
+          "type": "article",
+          "title": "Utah’s housing crunch has churches asking, ‘What would Jesus do?’ to help",
+          "summary": "KUER reports that a Lutheran congregation is planning affordable housing on its land, and that the Latter-day Saint church donated 2.5 acres and a historic recreation center for a 66-unit Salt Lake City development, with church general authority seventy John A. McCune saying more such projects are likely.",
+          "source": "KUER",
+          "url": "https://www.kuer.org/business-economy/2026-11-20/yigby-yes-in-gods-backyard-salt-lake-city-housing-lutheran-lds-churches",
+          "thumbnailUrl": "https://npr.brightspotcdn.com/dims4/default/1f161e5/2147483647/strip/true/crop/5400x2835+0+765/resize/1200x630!/quality/90/?url=https%3A%2F%2Fnpr-production-npr.s3.us-east-1.amazonaws.com%2Fbrightspot%2F99%2Ff4%2Fe3c5ca364a3f9b7d491392fc7776%2F20261119-ch-dsc08276.jpg",
+          "publishedAt": "2026-11-20T09:00:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "real estate",
+            "church land",
+            "housing"
+          ]
+        },
+        {
+          "id": "2026-11-20-noon-03",
+          "type": "article",
+          "title": "Wrestling with Richard",
+          "summary": "In an Exponent II blog post, M. Alva Nilsson writes that the more fruitful discussion about Richard Wagner and Joseph Smith lies in what people do with what they created, whether or not they like them.",
+          "source": "Exponent II",
+          "url": "https://exponentii.org/blog/wrestling-with-richard/",
+          "thumbnailUrl": "https://exponentii.org/wp-content/uploads/2026/11/IMG_0537.png",
+          "publishedAt": "2026-11-20T11:02:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "blog",
+            "Joseph Smith"
+          ]
+        }
+      ]
     }
   ]
 }
