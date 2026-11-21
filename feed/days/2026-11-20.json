@@ -134,6 +134,22 @@
             "blog",
             "Joseph Smith"
           ]
+        },
+        {
+          "id": "2026-11-20-noon-04",
+          "type": "podcast",
+          "title": "How Helen Mar Kimball Joined Wives of Joseph Smith",
+          "summary": "On the Gospel Tangents podcast, Michelle Stone traces how Helen Mar Kimball joined the wives of Joseph Smith and why, she says, one document carries so much weight.",
+          "source": "Gospel Tangents",
+          "url": "https://gospeltangents.com/2026/11/helen-joined-wives-of-joseph-smith/",
+          "thumbnailUrl": "https://gospeltangents.com/wp-content/uploads/2026/11/p5-C-Only-One-Document.png",
+          "publishedAt": "2026-11-20T12:40:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "podcast",
+            "polygamy",
+            "joseph-smith"
+          ]
         }
       ]
     }
