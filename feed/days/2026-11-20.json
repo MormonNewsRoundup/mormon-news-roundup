@@ -9,17 +9,76 @@
         {
           "id": "2026-11-20-midnight-01",
           "type": "video",
-          "title": "Joseph Smith’s FAKE Malaria Miracle",
-          "summary": "A Mormon News Roundup YouTube Short on the Mormon lesson story of Joseph Smith visiting a desperately ill Elijah Fordham, who makes a remarkable recovery from malaria.",
+          "title": "Gaslighting for God: The Secret Corporate Edits of the LDS Church",
+          "summary": "A Mormon News Roundup YouTube video on how the LDS Church touts \"continuous revelation\" while making sudden edits to what it presents as eternal decrees.",
           "source": "Mormon News Roundup",
-          "url": "https://www.youtube.com/shorts/AHb4fWqlNRg",
-          "thumbnailUrl": "https://i.ytimg.com/vi/AHb4fWqlNRg/maxresdefault.jpg",
-          "publishedAt": "2026-11-20T05:00:28.000Z",
+          "url": "https://www.youtube.com/watch?v=aQeusYlW4bE",
+          "thumbnailUrl": "https://i.ytimg.com/vi/aQeusYlW4bE/hqdefault.jpg",
+          "publishedAt": "2026-11-21T02:30:09.000Z",
           "paywalled": false,
           "tags": [
             "mormon-news-roundup",
-            "own-channel",
-            "joseph-smith"
+            "own-channel"
+          ]
+        },
+        {
+          "id": "2026-11-20-midnight-02",
+          "type": "article",
+          "title": "BYUI student arrested on child exploitation charges",
+          "summary": "The BYU-Idaho Scroll reports that Rexburg police arrested BYU-Idaho student Evan Cobb on Nov. 19 and charged him with two counts of distribution of sexually exploitative material; his bond was set at $100,000 and his next court hearing is Nov. 25.",
+          "source": "BYU-Idaho Scroll",
+          "url": "https://byuiscroll.org/byui-student-arrested-on-child-exploitation-charges/",
+          "thumbnailUrl": "https://byuiscroll.org/wp-content/uploads/2026/05/RPD-scaled.jpg",
+          "publishedAt": "2026-11-21T04:03:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "byu-idaho",
+            "crime"
+          ]
+        },
+        {
+          "id": "2026-11-20-midnight-03",
+          "type": "article",
+          "title": "LDS Bible Scholar Who Exposed Wesley Huff’s Plagiarism Demands Direct Apology Following Huff’s Confession",
+          "summary": "ChurchLeaders reports that Latter-day Saint biblical scholar Dan McClellan, who raised plagiarism allegations against apologist Wesley Huff, says Huff still owes him and Huff’s dissertation supervisor direct apologies despite Huff’s public admission of plagiarism.",
+          "source": "ChurchLeaders",
+          "url": "https://churchleaders.com/news/2225877-dan-mcclellan-wesley-huff-plagiarism-direct-apology.html",
+          "thumbnailUrl": "https://cdn.churchleaders.com/wp-content/uploads/2026/11/dan-wes-apology.jpg",
+          "publishedAt": "2026-11-20T20:13:01.000Z",
+          "paywalled": false,
+          "tags": [
+            "dan-mcclellan",
+            "plagiarism"
+          ]
+        },
+        {
+          "id": "2026-11-20-midnight-04",
+          "type": "podcast",
+          "title": "11/20 – Why Does Ben McAdams Ignore Us?",
+          "summary": "The Nov. 20 episode of the This Week in Latter-days podcast, titled \"Why Does Ben McAdams Ignore Us?\" (about 1 hour 22 minutes).",
+          "source": "This Week in Latter-days",
+          "url": "https://www.thisweekinmormons.com/2026/11/11-20-why-does-ben-mcadams-ignore-us/",
+          "thumbnailUrl": "https://www.thisweekinmormons.com/wp-content/uploads/2026/11/This-Week-in-Later-Days-1024x576.png",
+          "publishedAt": "2026-11-20T21:08:37.000Z",
+          "paywalled": false,
+          "tags": [
+            "podcast",
+            "utah-politics"
+          ]
+        },
+        {
+          "id": "2026-11-20-midnight-05",
+          "type": "article",
+          "title": "Missed the first three ticket releases? More Salt Lake Temple open house tickets coming soon",
+          "summary": "The Deseret News reports the church will release a fourth batch of Salt Lake Temple open house tour tickets on Tuesday, Nov. 24, at 11 a.m. MST, after the first million tickets were claimed in less than 24 hours.",
+          "source": "Deseret News",
+          "url": "https://www.deseret.com/faith/2026/11/20/church-of-jesus-christ-announces-next-ticket-release-for-salt-lake-temple-open-house/",
+          "thumbnailUrl": "https://www.deseret.com/resizer/v2/Y36HPIWPAZGDJBGLUPPD62SVJQ.JPG?focal=1898%2C1130&auth=5abfa715d1e2e5c05b21c1adb9830955c7b0f7acf55ecb0cf845b682071aa5e9&width=630&height=331",
+          "publishedAt": "2026-11-20T23:02:05.000Z",
+          "paywalled": false,
+          "tags": [
+            "temple",
+            "church-source"
           ]
         }
       ]
