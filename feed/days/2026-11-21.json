@@ -22,6 +22,28 @@
           ]
         }
       ]
+    },
+    {
+      "name": "noon",
+      "publishedAt": "2026-11-21T17:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-11-21-noon-01",
+          "type": "article",
+          "title": "LDS leaders have warned against treating A.I. like God. Are members listening?",
+          "summary": "The Salt Lake Tribune reports that a survey of nearly 1,800 U.S. Latter-day Saints by researchers at BYU-Idaho and the University of Southern California suggests many members see no problem using A.I. in their spiritual lives, despite warnings from apostles including Gerrit W. Gong and David A. Bednar. The study identifies a group it calls \"Silicon Saints\" that it says is growing.",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/religion/2026/11/21/heres-how-latter-day-saints-feel/",
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/XZP5OSBYKVFNTBQ6J3UXZCB47A.jpeg?auth=2f40a05353e0a51f0af617494fff67cfdf481f5ee2071a2021a31bbd1773b08a&width=1200&height=630&quality=88&smart=true",
+          "publishedAt": "2026-11-21T13:00:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "ai",
+            "survey",
+            "byu-idaho"
+          ]
+        }
+      ]
     }
   ]
 }
