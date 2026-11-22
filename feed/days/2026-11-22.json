@@ -1,0 +1,27 @@
+{
+  "date": "2026-11-22",
+  "sample": false,
+  "editions": [
+    {
+      "name": "midnight",
+      "publishedAt": "2026-11-22T05:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-11-22-midnight-01",
+          "type": "video",
+          "title": "The Mormon Truth Test Is Broken: 4 Flaws in the “Burning in the Bosom”",
+          "summary": "A Mormon News Roundup YouTube Short argues that the emotional feeling members are told confirms Mormonism cannot distinguish truth from sincere belief, and outlines four flaws in the \"burning in the bosom\" test.",
+          "source": "Mormon News Roundup",
+          "url": "https://www.youtube.com/shorts/ef-8jvg1AJw",
+          "thumbnailUrl": "https://i.ytimg.com/vi/ef-8jvg1AJw/maxresdefault.jpg",
+          "publishedAt": "2026-11-22T05:00:05.000Z",
+          "paywalled": false,
+          "tags": [
+            "mormon-news-roundup",
+            "own-channel"
+          ]
+        }
+      ]
+    }
+  ]
+}
