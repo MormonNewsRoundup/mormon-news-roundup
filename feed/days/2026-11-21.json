@@ -9,16 +9,64 @@
         {
           "id": "2026-11-21-midnight-01",
           "type": "video",
-          "title": "Mormon Prophet Thomas Monson: Welcome to the Asylum | LDS Horror Song",
-          "summary": "A Mormon News Roundup YouTube Short featuring an LDS horror song about Thomas Monson titled \"Welcome to the Asylum.\"",
+          "title": "The LDS Church Tried to Take the Word “Mormon” Away From Me | Full History of Its Trademark Battles",
+          "summary": "A Mormon News Roundup YouTube video says the LDS Church's lawyers sent a cease-and-desist letter in May 2025 demanding it stop using the name Mormon News Roundup, and traces the church's history of trademark disputes over the word \"Mormon.\"",
           "source": "Mormon News Roundup",
-          "url": "https://www.youtube.com/shorts/qApRtY3hN-A",
-          "thumbnailUrl": "https://i.ytimg.com/vi/qApRtY3hN-A/maxresdefault.jpg",
-          "publishedAt": "2026-11-21T05:00:31.000Z",
+          "url": "https://www.youtube.com/watch?v=4KJ8reYzS-U",
+          "thumbnailUrl": "https://i.ytimg.com/vi/4KJ8reYzS-U/maxresdefault.jpg",
+          "publishedAt": "2026-11-22T02:30:10.000Z",
           "paywalled": false,
           "tags": [
             "mormon-news-roundup",
             "own-channel"
+          ]
+        },
+        {
+          "id": "2026-11-21-midnight-02",
+          "type": "video",
+          "title": "3 Arizona children ask US Supreme Court to look at church's protections under religious confession",
+          "summary": "12 News reports that three children who were sexually abused by their father are asking the U.S. Supreme Court to overturn a ruling that shields church leaders from reporting abuse.",
+          "source": "12 News",
+          "url": "https://www.youtube.com/watch?v=SqWt2ldOJrw",
+          "thumbnailUrl": "https://i.ytimg.com/vi/SqWt2ldOJrw/hqdefault.jpg",
+          "publishedAt": "2026-11-21T05:26:27.000Z",
+          "paywalled": false,
+          "tags": [
+            "abuse",
+            "lawsuit",
+            "arizona",
+            "video"
+          ]
+        },
+        {
+          "id": "2026-11-21-midnight-03",
+          "type": "video",
+          "title": "\"Dear Bishop\": The Mormon Ponzi Scheme Behind VesCor and Val Southwick",
+          "summary": "A Postmormon Postmortem video recounts the VesCor investment scheme, describing a Mormon bishop and businessman, Val Southwick, and a Ponzi scheme of about $180 million that it says drew in members.",
+          "source": "Postmormon Postmortem",
+          "url": "https://www.youtube.com/watch?v=BL93HIppYaQ",
+          "thumbnailUrl": "https://i.ytimg.com/vi/BL93HIppYaQ/maxresdefault.jpg",
+          "publishedAt": "2026-11-21T20:36:08.000Z",
+          "paywalled": false,
+          "tags": [
+            "finances",
+            "fraud",
+            "video"
+          ]
+        },
+        {
+          "id": "2026-11-21-midnight-04",
+          "type": "article",
+          "title": "Ground broken for La Paz Bolivia Temple, a place to find ‘peace’",
+          "summary": "Church News reports that ground was broken Nov. 21 for the La Paz Bolivia Temple, with Elder Juan Pablo Villar presiding, on a site where the church says construction is expected to take about three years.",
+          "source": "Church News",
+          "url": "https://www.thechurchnews.com/temples/2026/11/21/ground-broken-la-paz-bolivia-temple-place-to-find-peace/",
+          "thumbnailUrl": "https://www.thechurchnews.com/resizer/v2/RTMYASOHQ5CUFI3CB3DBWKAZKI.jpg?focal=1030%2C628&auth=c87001a40564cd9a4ad16f58c25fb2d1ffe848705af1e6b45441880102ccb56f&width=630&height=331",
+          "publishedAt": "2026-11-21T22:19:25.000Z",
+          "paywalled": false,
+          "tags": [
+            "temples",
+            "church-source"
           ]
         }
       ]

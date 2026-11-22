@@ -55,6 +55,23 @@
             "podcast"
           ],
           "audioUrl": "https://media.blubrry.com/mormondiscussions/ins.blubrry.com/mormondiscussions/Book_of_Mormon_Anachronisms_Is_the_List_Really_Shrinking_.mp3"
+        },
+        {
+          "id": "2026-11-19-midnight-04",
+          "type": "podcast",
+          "title": "Ep367: The Early Life of Sidney Rigdon: Restoring Lost Knowledge",
+          "summary": "Mormonish Podcast host Patrick examines a naturalistic explanation for ancient flood stories and argues that Sidney Rigdon played a larger role in founding Mormonism than the church's account gives him credit for.",
+          "source": "Mormonish Podcast",
+          "url": "https://www.mormonishpodcast.org/episode/sydney-episode-11-video",
+          "thumbnailUrl": "https://assets.captivate.fm/d055cec9-3980-474b-aaca-f4cb9dba2555/asset/84477460-b465-47b1-90fd-fa335761e818/2b5262e6-ca6a-488f-a968-0dc883ec4964.jpg",
+          "publishedAt": "2026-11-19T21:00:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "podcast",
+            "history",
+            "book-of-mormon"
+          ],
+          "audioUrl": "https://episodes.captivate.fm/episode/55f8a585-fe9a-4206-a0fb-4d10d4197492.mp3"
         }
       ]
     },
