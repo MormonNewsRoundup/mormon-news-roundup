@@ -22,6 +22,28 @@
           ]
         }
       ]
+    },
+    {
+      "name": "noon",
+      "publishedAt": "2026-11-22T17:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-11-22-noon-01",
+          "type": "article",
+          "title": "More tickets to tour the renovated Salt Lake Temple will be available Tuesday. See when.",
+          "summary": "The Salt Lake Tribune reports that The Church of Jesus Christ of Latter-day Saints has announced additional free tour tickets for the renovated Salt Lake Temple will be released Tuesday at 11 a.m. Mountain time. The article says the first 1 million tickets were claimed in less than 24 hours in September and that public tours will run from April 5 through Oct. 1, 2027.",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/religion/2026/11/22/more-tickets-coming-salt-lake-lds/",
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/2TJFMLN2KNA6ZDOSY6FPQMOI4Y.jpg?auth=7eda583ed1be2bece9ba6cda866dfd28c1b5c2e9075b8fa231ab80e1ee575cee&width=1200&height=630&quality=88&smart=true",
+          "publishedAt": "2026-11-22T13:00:01.000Z",
+          "paywalled": true,
+          "tags": [
+            "temples",
+            "salt-lake-temple",
+            "church-business"
+          ]
+        }
+      ]
     }
   ]
 }
