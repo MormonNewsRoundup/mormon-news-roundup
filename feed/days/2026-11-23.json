@@ -22,6 +22,91 @@
           ]
         }
       ]
+    },
+    {
+      "name": "noon",
+      "publishedAt": "2026-11-23T17:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-11-23-noon-01",
+          "type": "article",
+          "title": "Utah’s Deidre Henderson has come a long way since losing her first election and hiding in the bathroom",
+          "summary": "The Salt Lake Tribune publishes excerpts from its “Mormon Land” podcast with Utah Lt. Gov. Deidre Henderson, a Latter-day Saint who refused a Justice Department demand for the state’s unredacted voter rolls. She says her faith helped her act on conviction regardless of the consequences.",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/religion/2026/11/23/utah-lt-gov-deidre-henderson-went/",
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/MBF6LSG7WFH3JC266U6CP4XPSI.jpg?auth=6721ed2d53c99c390e36c8c62cc2f94e394599a367d0351157be1acfcfe82af4&width=1200&height=630&quality=88&smart=true",
+          "publishedAt": "2026-11-23T13:00:00.000Z",
+          "paywalled": true,
+          "tags": [
+            "politics",
+            "utah",
+            "election"
+          ]
+        },
+        {
+          "id": "2026-11-23-noon-02",
+          "type": "article",
+          "title": "Salt Lake Temple will be dedicated for the third time at the end of 2027",
+          "summary": "Deseret News reports that the First Presidency announced the renovated Salt Lake Temple will be rededicated on Sunday, Dec. 5, 2027, following the public open house that runs April 5 through Oct. 1, 2027.",
+          "source": "Deseret News",
+          "url": "https://www.deseret.com/faith/2026/11/23/salt-lake-temple-rededication-scheduled-december-2027/",
+          "thumbnailUrl": "https://www.deseret.com/resizer/v2/3DA7UMYKMFBSXOIDJAGUXMV4RM.JPG?focal=0%2C0&auth=0162724a85286db1a421115641c350cd02f78e2ce24f9eaa40f2578f3aadd3b2&width=630&height=331",
+          "publishedAt": "2026-11-23T17:06:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "temple",
+            "salt-lake-temple"
+          ]
+        },
+        {
+          "id": "2026-11-23-noon-03",
+          "type": "article",
+          "title": "Did Latter-day Saints in Utah shift left? What the latest polls tell us",
+          "summary": "Deseret News reports that polling indicates most Utah Latter-day Saints still identify as Republicans, though Republican identification fell from 83% to 75%, which the article largely attributes to lower turnout rather than a change in party identity.",
+          "source": "Deseret News",
+          "url": "https://www.deseret.com/politics/2026/11/23/latter-day-saint-republicans-crossed-over-to-vote-democratic-in-utah-but-are-not-leaving-the-gop/",
+          "thumbnailUrl": "https://www.deseret.com/resizer/v2/VU7XL6EKARDAFIC5ENTA2DI2WE.jpg?focal=1474%2C1009&auth=4511fe3c4d7774380e615d3d055ea881f4b8c8760c7b010793b5e57a4a32c3de&width=630&height=331",
+          "publishedAt": "2026-11-23T16:00:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "politics",
+            "polling",
+            "utah"
+          ]
+        },
+        {
+          "id": "2026-11-23-noon-04",
+          "type": "podcast",
+          "title": "Dr. Gregory Prince: The Mormon Faith Crisis and the Church’s Crisis of Trust",
+          "summary": "Mormon Discussion host Bill Reel talks with historian Dr. Gregory Prince about his Dialogue essay “A Close-up View of Faith Crisis” and the decades of church decisions he says helped create Mormonism’s modern faith crisis.",
+          "source": "Mormon Discussions",
+          "url": "https://mormondiscussionpodcast.org/2026/11/dr-gregory-prince-the-mormon-faith-crisis-and-the-churchs-crisis-of-trust/",
+          "thumbnailUrl": "https://i.ytimg.com/vi/jHFg_3Qocvg/hqdefault.jpg",
+          "publishedAt": "2026-11-23T14:26:03.000Z",
+          "paywalled": false,
+          "tags": [
+            "podcast",
+            "history",
+            "faith-crisis"
+          ]
+        },
+        {
+          "id": "2026-11-23-noon-05",
+          "type": "video",
+          "title": "The Deseret News Exposes Mormonism!",
+          "summary": "A Generally Unquotable video responds to a Deseret News interview with author Melissa Dalton-Bradford on authoritarianism, comparing the characteristics she describes with Mormon church history, policies and leadership.",
+          "source": "Generally Unquotable",
+          "url": "https://www.youtube.com/watch?v=nOFc3iNbGg4",
+          "thumbnailUrl": "https://i3.ytimg.com/vi/nOFc3iNbGg4/hqdefault.jpg",
+          "publishedAt": "2026-11-23T14:00:14.000Z",
+          "paywalled": false,
+          "tags": [
+            "video",
+            "commentary",
+            "history"
+          ]
+        }
+      ]
     }
   ]
 }
