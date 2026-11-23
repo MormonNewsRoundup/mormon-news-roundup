@@ -9,16 +9,47 @@
         {
           "id": "2026-11-22-midnight-01",
           "type": "video",
-          "title": "The Mormon Truth Test Is Broken: 4 Flaws in the “Burning in the Bosom”",
-          "summary": "A Mormon News Roundup YouTube Short argues that the emotional feeling members are told confirms Mormonism cannot distinguish truth from sincere belief, and outlines four flaws in the \"burning in the bosom\" test.",
+          "title": "The \"Impossible\" Book of Mormon Challenge | Hugh Nibley REFUTED",
+          "summary": "A Mormon News Roundup YouTube video takes up the claim that Joseph Smith's translation of the Book of Mormon cannot be explained, arguing the book mirrors its 1820s American setting and pointing to its use of King James Bible language, anachronisms and DNA evidence.",
           "source": "Mormon News Roundup",
-          "url": "https://www.youtube.com/shorts/ef-8jvg1AJw",
-          "thumbnailUrl": "https://i.ytimg.com/vi/ef-8jvg1AJw/maxresdefault.jpg",
-          "publishedAt": "2026-11-22T05:00:05.000Z",
+          "url": "https://www.youtube.com/watch?v=IvI_ozd5_aQ",
+          "thumbnailUrl": "https://i.ytimg.com/vi/IvI_ozd5_aQ/hqdefault.jpg",
+          "publishedAt": "2026-11-23T02:30:10.000Z",
           "paywalled": false,
           "tags": [
             "mormon-news-roundup",
             "own-channel"
+          ]
+        },
+        {
+          "id": "2026-11-22-midnight-02",
+          "type": "article",
+          "title": "Top Latter-day Saints leader's brother, accused of abusing girls at his Crystal Lake home and church, gets 45 years in prison",
+          "summary": "The Lake and McHenry County Scanner reports that Wade S. Christofferson, 73, brother of a top Latter-day Saints leader, was sentenced to 45 years in federal prison for enticing a 7-year-old girl in Utah. The article says two women allege he sexually abused them as girls in Crystal Lake, Illinois.",
+          "source": "Lake and McHenry County Scanner",
+          "url": "https://www.lakemchenryscanner.com/2026/11/22/top-latter-day-saints-leaders-brother-accused-of-abusing-girls-at-his-crystal-lake-home-and-church-gets-45-years-in-prison/",
+          "thumbnailUrl": "https://www.lakemchenryscanner.com/wp-content/uploads/2026/11/christofferson-crystal-lake-cover-1.jpg",
+          "publishedAt": "2026-11-22T19:52:41.000Z",
+          "paywalled": false,
+          "tags": [
+            "abuse",
+            "court",
+            "christofferson"
+          ]
+        },
+        {
+          "id": "2026-11-22-midnight-03",
+          "type": "article",
+          "title": "Elder Cook dedicates Modesto California Temple, ‘a place of thanksgiving’",
+          "summary": "Church News reports that Elder Quentin L. Cook dedicated the Modesto California Temple, calling the temple a place of thanksgiving, refuge, instruction and understanding.",
+          "source": "Church News",
+          "url": "https://www.thechurchnews.com/temples/2026/11/22/elder-quentin-l-cook-dedicates-modesto-california-temple-place-of-thanksgiving/",
+          "thumbnailUrl": "https://www.thechurchnews.com/resizer/v2/64SXXYWUANB6FLF5KZTFJALKN4.JPG?focal=1399%2C543&auth=8b3475029fe5ab32229b7611178e05e208ad92d6356821a3b4ae7cfe01e98e65&width=630&height=331",
+          "publishedAt": "2026-11-23T01:11:46.000Z",
+          "paywalled": false,
+          "tags": [
+            "temples",
+            "church-source"
           ]
         }
       ]
