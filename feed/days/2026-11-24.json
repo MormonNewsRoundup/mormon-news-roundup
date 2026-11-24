@@ -1,0 +1,27 @@
+{
+  "date": "2026-11-24",
+  "sample": false,
+  "editions": [
+    {
+      "name": "midnight",
+      "publishedAt": "2026-11-24T05:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-11-24-midnight-01",
+          "type": "video",
+          "title": "Why Practically Nobody Will Ever End Up in LDS Outer Darkness",
+          "summary": "A Mormon News Roundup YouTube Short looks at the Latter-day Saint idea of outer darkness and why, under church teaching, practically nobody will end up there.",
+          "source": "Mormon News Roundup",
+          "url": "https://www.youtube.com/shorts/ewn4gmBPW_k",
+          "thumbnailUrl": "https://i.ytimg.com/vi/ewn4gmBPW_k/hqdefault.jpg",
+          "publishedAt": "2026-11-24T05:00:27.000Z",
+          "paywalled": false,
+          "tags": [
+            "mormon-news-roundup",
+            "own-channel"
+          ]
+        }
+      ]
+    }
+  ]
+}
