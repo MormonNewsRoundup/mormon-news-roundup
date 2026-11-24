@@ -22,6 +22,59 @@
           ]
         }
       ]
+    },
+    {
+      "name": "noon",
+      "publishedAt": "2026-11-24T17:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-11-24-noon-01",
+          "type": "article",
+          "title": "The First Straw",
+          "summary": "An Exponent II blog post recalls a point when the author was all in on expected sacrifice and then, for probably the first time, thought \"But.\"",
+          "source": "Exponent II",
+          "url": "https://exponentii.org/blog/the-first-straw/",
+          "thumbnailUrl": "https://exponentii.org/wp-content/uploads/2026/11/vera-davidova-syADksVMrKk-unsplash-768x1024.jpg",
+          "publishedAt": "2026-11-24T14:00:00.000Z",
+          "paywalled": false,
+          "tags": [
+            "blog",
+            "exponent-ii"
+          ]
+        },
+        {
+          "id": "2026-11-24-noon-02",
+          "type": "article",
+          "title": "Popular LDS twin influencers draw flak for A.I. use in their memoir. Book is removed from BYU Store website.",
+          "summary": "The Salt Lake Tribune reports that \"The Paris Twins,\" French Latter-day Saint influencers, acknowledged using ChatGPT and Google Translate on their memoir after fellow Latter-day Saints alleged it was largely A.I.-generated. The book was removed from the BYU Store website but remains available on Amazon.",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/religion/2026/12/04/the-paris-twins-french-soccer/",
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/AH3QMV3ZZNCVVL3D6IW2FVNRP4.jpg?auth=9d44c3fbd8f3bf0e6548bbc9f6c9a252e749cc9157807de3861170515c6a8c4e&width=1200&height=630&quality=88&smart=true",
+          "publishedAt": "2026-11-24T13:00:01.000Z",
+          "paywalled": false,
+          "tags": [
+            "ai",
+            "byu",
+            "influencers"
+          ]
+        },
+        {
+          "id": "2026-11-24-noon-03",
+          "type": "article",
+          "title": "‘Mormon’ Trademark Case Pits Church Against Critical Podcaster",
+          "summary": "Bloomberg Law reports that a Utah federal judge was set to hear arguments on whether to dismiss the Church's trademark lawsuit against John Dehlin's Mormon Stories podcast. Dehlin calls the suit a free-speech threat, while the Church's attorney says the issue is \"calculated confusion.\"",
+          "source": "Bloomberg Law",
+          "url": "https://news.bloomberglaw.com/ip-law/mormon-trademark-case-pits-church-against-critical-podcaster",
+          "thumbnailUrl": "https://news-api.bloomberglaw.com/v1/resize-image?url=https%3A%2F%2Fbloomberg-bna-brightspot.s3.us-east-1.amazonaws.com%2Faf%2F5a%2Fab1f98604a34857d72878df9c0c9%2F2026-11-mormon.png&width=1200&height=630&fit=cover&removeAnimation=true",
+          "publishedAt": "2026-11-24T10:00:07.000Z",
+          "paywalled": true,
+          "tags": [
+            "lawsuit",
+            "mormon-stories",
+            "trademark"
+          ]
+        }
+      ]
     }
   ]
 }
