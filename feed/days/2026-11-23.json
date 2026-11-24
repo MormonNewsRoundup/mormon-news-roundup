@@ -9,16 +9,78 @@
         {
           "id": "2026-11-23-midnight-01",
           "type": "video",
-          "title": "The Mormon “Divine Tentacles” Doctrine Comes From a Botched 1843 Sermon?",
-          "summary": "A Mormon News Roundup YouTube Short examines the idea taught to Latter-day Saint parents that faithful parents will remain spiritually connected to wayward children, and asks whether it comes from an 1843 sermon.",
+          "title": "The Pearl of Great Price: Unearthing the 19th-Century Composite Mormon 'Scripture'",
+          "summary": "A Mormon News Roundup YouTube video examines the Pearl of Great Price, a book of Latter-day Saint scripture, and argues it is a composite of 19th-century material.",
           "source": "Mormon News Roundup",
-          "url": "https://www.youtube.com/shorts/P7LAOz8384g",
-          "thumbnailUrl": "https://i.ytimg.com/vi/P7LAOz8384g/hqdefault.jpg",
-          "publishedAt": "2026-11-23T05:00:02.000Z",
+          "url": "https://www.youtube.com/watch?v=DKkFhEBLW5U",
+          "thumbnailUrl": "https://i.ytimg.com/vi/DKkFhEBLW5U/hqdefault.jpg",
+          "publishedAt": "2026-11-24T02:30:06.000Z",
           "paywalled": false,
           "tags": [
             "mormon-news-roundup",
             "own-channel"
+          ]
+        },
+        {
+          "id": "2026-11-23-midnight-02",
+          "type": "article",
+          "title": "We now know when the Salt Lake LDS Temple will truly be a ‘temple’ again",
+          "summary": "The Salt Lake Tribune reports that the First Presidency announced the renovated Salt Lake Temple will be rededicated Dec. 5, 2027, with members holding temple recommends able to attend ceremonies the following Monday. The Tribune says the gap after the open house ends is meant to give crews time to clean and repair the building.",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/religion/2026/11/23/lds-church-announces-rededication/",
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/PVPYWMUBRZGUDF5KX44PHHUJEI.JPG?auth=bfd0a4328a23cbf310c1b09f6b2e9b378862801d231ed78d14fbbb036a37d182&smart=true&width=1200&height=630",
+          "publishedAt": "2026-11-23T21:01:20.000Z",
+          "paywalled": false,
+          "tags": [
+            "salt-lake-temple",
+            "rededication"
+          ]
+        },
+        {
+          "id": "2026-11-23-midnight-03",
+          "type": "article",
+          "title": "How the LDS Church Endangers Children—and What Must Change",
+          "summary": "An Exponent II blog post by a contributor says Wade Christofferson, brother of President D. Todd Christofferson, was sentenced to 45 years in federal prison on Nov. 17, and asks who authorized removing a warning from his membership record. The post also criticizes a youth activity in a church magazine and calls for stronger child-protection practices.",
+          "source": "Exponent II",
+          "url": "https://exponentii.org/blog/how-the-lds-church-endangers-children-and-what-must-change/",
+          "thumbnailUrl": "https://exponentii.org/wp-content/uploads/2026/11/dev-asangbam-_sh9vkVbVgo-unsplash-1-683x1024.jpg",
+          "publishedAt": "2026-11-23T17:00:36.000Z",
+          "paywalled": false,
+          "tags": [
+            "child-safety",
+            "blog",
+            "wade-christofferson"
+          ]
+        },
+        {
+          "id": "2026-11-23-midnight-04",
+          "type": "article",
+          "title": "(Not So) Hot Take: Let’s Stop Defending Institutional Racism",
+          "summary": "A By Common Consent post by MDH argues that common faithful responses to the temple and priesthood ban from 1852 to 1978 defend the policy, and says the church’s own essays show it was rooted in racism. The author asks why church leadership does not say so plainly.",
+          "source": "By Common Consent",
+          "url": "https://bycommonconsent.com/2026/11/23/not-so-hot-take-lets-stop-defending-institutional-racism/",
+          "thumbnailUrl": "https://i0.wp.com/bycommonconsent.com/wp-content/uploads/2026/11/Picture1.jpg",
+          "publishedAt": "2026-11-23T22:34:07.000Z",
+          "paywalled": false,
+          "tags": [
+            "race",
+            "priesthood-ban",
+            "blog"
+          ]
+        },
+        {
+          "id": "2026-11-23-midnight-05",
+          "type": "podcast",
+          "title": "Former Mormon Church Abuse Hotline Lawyer!",
+          "summary": "On Radio Free Mormon, Meggan Hayes and Kolby Reddish discuss an interview with Kate Lauck, a former Kirton-McConkie lawyer who worked on the church’s abuse hotline, and question her account of the hotline and her grasp of the law.",
+          "source": "Radio Free Mormon",
+          "url": "https://radiofreemormon.org/2026/11/former-mormon-church-abuse-hotline-lawyer/",
+          "thumbnailUrl": "https://radiofreemormon.org/wp-content/uploads/2026/11/abusehotline-930x620.jpg",
+          "publishedAt": "2026-11-23T22:41:46.000Z",
+          "paywalled": false,
+          "tags": [
+            "abuse-hotline",
+            "radio-free-mormon"
           ]
         }
       ]
