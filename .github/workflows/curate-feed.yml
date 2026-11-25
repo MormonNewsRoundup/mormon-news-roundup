@@ -1,0 +1,73 @@
+name: Curate the feed
+
+# 12:20 a.m. and 12:20 p.m. America/New_York.
+# GitHub cron is UTC, so both EST (UTC-5) and EDT (UTC-4) are scheduled.
+# scripts/curate-feed.mjs publishes only when the Eastern hour is midnight or
+# noon, and it exits successfully when this run is the off-season hour or the
+# edition is already in the feed.
+on:
+  schedule:
+    - cron: '20 4 * * *'
+    - cron: '20 5 * * *'
+    - cron: '20 16 * * *'
+    - cron: '20 17 * * *'
+  workflow_dispatch:
+    inputs:
+      edition:
+        description: Edition to publish
+        required: true
+        type: choice
+        options:
+          - midnight
+          - noon
+      dry_run:
+        description: Write the would-be items to the job summary and do not commit
+        required: true
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: curate-feed
+  cancel-in-progress: false
+
+jobs:
+  curate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Require GEMINI_API_KEY
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          if [ -z "$GEMINI_API_KEY" ]; then
+            echo "::error::GEMINI_API_KEY is missing. Add it under Settings > Secrets and variables > Actions. The secret name must be exactly GEMINI_API_KEY."
+            exit 1
+          fi
+
+      - name: Curate and publish
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          CURATE_EDITION: ${{ github.event_name == 'workflow_dispatch' && inputs.edition || '' }}
+          CURATE_DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || 'false' }}
+        run: node scripts/curate-feed.mjs
