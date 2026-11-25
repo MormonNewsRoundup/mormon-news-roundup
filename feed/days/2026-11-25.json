@@ -1,0 +1,27 @@
+{
+  "date": "2026-11-25",
+  "sample": false,
+  "editions": [
+    {
+      "name": "midnight",
+      "publishedAt": "2026-11-25T05:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-11-25-midnight-01",
+          "type": "video",
+          "title": "The Mormon Debate That Sparked a Civil War Among Christians",
+          "summary": "The Mormon News Roundup channel reports that a public friendship tour between evangelical pastor Greg Johnson and LDS scholar Robert Millet sparked a bitter civil war among Christian ministries.",
+          "source": "Mormon News Roundup",
+          "url": "https://www.youtube.com/shorts/O4py1x2VYhc",
+          "publishedAt": "2026-11-25T05:00:01.000Z",
+          "paywalled": false,
+          "tags": [
+            "mormon-news-roundup",
+            "own-channel"
+          ],
+          "thumbnailUrl": "https://i.ytimg.com/vi/O4py1x2VYhc/hqdefault.jpg"
+        }
+      ]
+    }
+  ]
+}

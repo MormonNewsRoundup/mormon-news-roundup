@@ -73,6 +73,66 @@
             "mormon-stories",
             "trademark"
           ]
+        },
+        {
+          "id": "2026-11-24-noon-04",
+          "type": "video",
+          "title": "MORMON LAWSUIT GOES NATIONAL #shorts",
+          "summary": "Mormon Stories Podcast discusses MORMON LAWSUIT GOES NATIONAL #shorts.",
+          "source": "Mormon Stories Podcast",
+          "url": "https://www.youtube.com/shorts/9J4URYQtSAA",
+          "publishedAt": "2026-11-24T17:27:10.000Z",
+          "paywalled": false,
+          "tags": [],
+          "thumbnailUrl": "https://i.ytimg.com/vi/9J4URYQtSAA/hqdefault.jpg"
+        },
+        {
+          "id": "2026-11-24-noon-05",
+          "type": "article",
+          "title": "Mormon Stories Trademark Case Tests the Limits of Religious Free Speech",
+          "summary": "The Mormon Newscast reports that a federal judge in Utah is scheduled to hear arguments on a motion to dismiss the trademark lawsuit brought by The Church of Jesus Christ of Latter-day Saints against Mormon Stories and its founder, John Dehlin.",
+          "source": "The Mormon Newscast",
+          "url": "https://mormonnewscast.org/mormon-stories-trademark-case-tests-the-limits-of-religious-free-speech/",
+          "publishedAt": "2026-11-24T17:13:18.000Z",
+          "paywalled": false,
+          "tags": [],
+          "thumbnailUrl": "https://mormonnewscast.org/wp-content/uploads/2026/11/cropped-LOGO-32x32.png"
+        },
+        {
+          "id": "2026-11-24-noon-06",
+          "type": "article",
+          "title": "BYU Influencers Paris Twins Solicited Travel Funds From LDS Wards - The Cougar Chronicle",
+          "summary": "The Cougar Chronicle reports that BYU influencers the Paris twins solicited travel funds from LDS wards.",
+          "source": "The Cougar Chronicle",
+          "url": "https://thecougarchronicle.com/paris-twins-solicit-lds-fireside-funds",
+          "publishedAt": "2026-11-24T23:46:58.000Z",
+          "paywalled": false,
+          "tags": [],
+          "thumbnailUrl": "https://cdn.thecougarchronicle.com/uploads/1795540433599-uql9meba-download.jpg"
+        },
+        {
+          "id": "2026-11-24-noon-07",
+          "type": "article",
+          "title": "Is the church’s lawsuit really about the word ‘Mormon’? - Deseret News",
+          "summary": "Deseret News reports Is the church’s lawsuit really about the word ‘Mormon’? - Deseret News.",
+          "source": "Deseret News",
+          "url": "https://www.deseret.com/faith/2026/11/24/church-john-dehlin-mormon-stories-confusion-judge-hears-lawsuit/",
+          "publishedAt": "2026-11-25T02:43:00.000Z",
+          "paywalled": false,
+          "tags": [],
+          "thumbnailUrl": "https://www.deseret.com/resizer/v2/OFIO6T4C3JDXFEVLAVRWKZZ2OA.JPG?focal=0%2C0&auth=45ad71d3c1364c0d6bf3fd9304c930941528b5ec0df04d73ad658a0cb95f8557&width=630&height=331"
+        },
+        {
+          "id": "2026-11-24-noon-08",
+          "type": "article",
+          "title": "The Use and Abuse of Anonymity",
+          "summary": "A Wheat & Tares post argues The Use and Abuse of Anonymity.",
+          "source": "Wheat & Tares",
+          "url": "https://wheatandtares.org/2026/11/24/the-use-and-abuse-of-anonymity/",
+          "publishedAt": "2026-11-24T20:58:42.000Z",
+          "paywalled": false,
+          "tags": [],
+          "thumbnailUrl": "https://wheatandtares.org/wp-content/uploads/2026/11/aa-book.jpeg"
         }
       ]
     }
