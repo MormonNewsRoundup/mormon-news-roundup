@@ -20,6 +20,15 @@ export async function writeJson(file, value) {
   await writeFile(file, `${JSON.stringify(value, null, 2)}\n`);
 }
 
+/** Editions still missing for this clock. Noon also catches up midnight first. */
+export function editionsToPublish(day, targetEdition) {
+  const have = new Set((day?.editions || []).map((edition) => edition.name));
+  const plan = [];
+  if (targetEdition === 'noon' && !have.has('midnight')) plan.push('midnight');
+  if (!have.has(targetEdition)) plan.push(targetEdition);
+  return plan;
+}
+
 export function nextItemNumber(day, editionName) {
   const edition = day?.editions?.find((entry) => entry.name === editionName);
   let max = 0;

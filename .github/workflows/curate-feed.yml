@@ -1,30 +1,38 @@
 name: Curate the feed
 
-# 12:20 a.m. and 12:20 p.m. America/New_York.
-# GitHub cron is UTC, so both EST (UTC-5) and EDT (UTC-4) are scheduled.
-# scripts/curate-feed.mjs publishes only when the Eastern hour is midnight or
-# noon, and it exits successfully when this run is the off-season hour or the
-# edition is already in the feed.
+# Every hour at :20 UTC. Eastern midnight is due from 00:00 through 11:59,
+# and noon from 12:00 through 23:59. A late runner publishes whichever of
+# those is still missing, and exits before Gemini when that edition is already
+# in the feed. Hourly :20 also covers the EST/EDT shift.
 on:
   schedule:
-    - cron: '20 4 * * *'
-    - cron: '20 5 * * *'
-    - cron: '20 16 * * *'
-    - cron: '20 17 * * *'
+    - cron: '20 * * * *'
   workflow_dispatch:
     inputs:
       edition:
-        description: Edition to publish
+        description: Edition to publish, or auto to follow the Eastern clock
         required: true
         type: choice
         options:
+          - auto
           - midnight
           - noon
+        default: auto
       dry_run:
         description: Write the would-be items to the job summary and do not commit
         required: true
         type: boolean
         default: false
+      now:
+        description: Dry run only. ISO time used instead of the clock.
+        required: false
+        type: string
+        default: ''
+      omit_edition:
+        description: Dry run only. Pretend this edition is not in the feed yet.
+        required: false
+        type: string
+        default: ''
 
 permissions:
   contents: write
@@ -44,19 +52,33 @@ jobs:
           ref: main
           fetch-depth: 0
 
+      - name: See if an edition is missing
+        id: decide
+        env:
+          CURATE_DECIDE_ONLY: '1'
+          CURATE_EDITION: ${{ github.event_name == 'workflow_dispatch' && inputs.edition != 'auto' && inputs.edition || '' }}
+          CURATE_DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || 'false' }}
+          CURATE_NOW: ${{ github.event_name == 'workflow_dispatch' && (inputs.dry_run == true || inputs.dry_run == 'true') && inputs.now || '' }}
+          CURATE_OMIT_EDITION: ${{ github.event_name == 'workflow_dispatch' && (inputs.dry_run == true || inputs.dry_run == 'true') && inputs.omit_edition || '' }}
+        run: node scripts/curate-feed.mjs
+
       - name: Setup Node
+        if: steps.decide.outputs.publish == 'true'
         uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
 
       - name: Install dependencies
+        if: steps.decide.outputs.publish == 'true'
         run: npm ci
 
       - name: Install ffmpeg
+        if: steps.decide.outputs.publish == 'true'
         run: sudo apt-get update && sudo apt-get install -y ffmpeg
 
       - name: Require GEMINI_API_KEY
+        if: steps.decide.outputs.publish == 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
@@ -66,8 +88,11 @@ jobs:
           fi
 
       - name: Curate and publish
+        if: steps.decide.outputs.publish == 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          CURATE_EDITION: ${{ github.event_name == 'workflow_dispatch' && inputs.edition || '' }}
+          CURATE_EDITION: ${{ github.event_name == 'workflow_dispatch' && inputs.edition != 'auto' && inputs.edition || '' }}
           CURATE_DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || 'false' }}
+          CURATE_NOW: ${{ github.event_name == 'workflow_dispatch' && (inputs.dry_run == true || inputs.dry_run == 'true') && inputs.now || '' }}
+          CURATE_OMIT_EDITION: ${{ github.event_name == 'workflow_dispatch' && (inputs.dry_run == true || inputs.dry_run == 'true') && inputs.omit_edition || '' }}
         run: node scripts/curate-feed.mjs

@@ -60,14 +60,16 @@ export function editionPublishedAt(ymd, edition) {
 }
 
 /**
- * Cron fires at both the EST and EDT hours. Publish only when Eastern Time
- * is actually in the 12:00 a.m. hour or the 12:00 p.m. hour.
+ * A late runner still publishes the edition that is due and missing.
+ * Midnight is due from 00:00 through 11:59 Eastern. Noon is due from 12:00
+ * through 23:59 Eastern. Callers skip an edition that is already in the feed.
  */
 export function editionDue(now) {
   const parts = etParts(now);
-  if (parts.hour === 0) return { edition: 'midnight', date: parts.date };
-  if (parts.hour === 12) return { edition: 'noon', date: parts.date };
-  return null;
+  return {
+    edition: parts.hour < 12 ? 'midnight' : 'noon',
+    date: parts.date,
+  };
 }
 
 export function formatEditionMessage(ymd, edition) {

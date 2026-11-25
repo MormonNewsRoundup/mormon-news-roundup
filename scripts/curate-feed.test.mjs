@@ -20,6 +20,9 @@ import {
   usableSummary,
 } from './curate/rules.mjs';
 import { attachRedditImages, curate } from './curate/run.mjs';
+import { editionsToPublish } from './curate/publish.mjs';
+import { parseSelectionText } from './curate/gemini.mjs';
+import { descriptionSummary, isGenericSports, stripPublisherSuffix } from './curate/rules.mjs';
 import { editionDue, editionPublishedAt, etDate } from './curate/time.mjs';
 import { ogImageFromHtml, paywallFromHtml } from './curate/validate.mjs';
 
@@ -60,18 +63,32 @@ test('Eastern Time schedule covers both EST and EDT', () => {
   assert.equal(editionPublishedAt('2026-07-15', 'noon'), '2026-07-15T16:00:00.000Z');
 
   assert.deepEqual(editionDue(new Date('2026-11-25T05:20:00.000Z')), { edition: 'midnight', date: '2026-11-25' });
-  assert.equal(editionDue(new Date('2026-11-25T04:20:00.000Z')), null);
+  assert.deepEqual(editionDue(new Date('2026-11-25T14:32:00.000Z')), { edition: 'midnight', date: '2026-11-25' });
+  assert.deepEqual(editionDue(new Date('2026-11-25T15:46:00.000Z')), { edition: 'midnight', date: '2026-11-25' });
+  assert.deepEqual(editionDue(new Date('2026-11-25T04:20:00.000Z')), { edition: 'noon', date: '2026-11-24' });
   assert.deepEqual(editionDue(new Date('2026-07-15T04:20:00.000Z')), { edition: 'midnight', date: '2026-07-15' });
-  assert.equal(editionDue(new Date('2026-07-15T05:20:00.000Z')), null);
+  assert.deepEqual(editionDue(new Date('2026-07-15T05:20:00.000Z')), { edition: 'midnight', date: '2026-07-15' });
   assert.deepEqual(editionDue(new Date('2026-11-25T17:20:00.000Z')), { edition: 'noon', date: '2026-11-25' });
   assert.deepEqual(editionDue(new Date('2026-07-15T16:20:00.000Z')), { edition: 'noon', date: '2026-07-15' });
-  assert.equal(editionDue(new Date('2026-07-15T17:20:00.000Z')), null);
+  assert.deepEqual(editionDue(new Date('2026-07-15T17:20:00.000Z')), { edition: 'noon', date: '2026-07-15' });
   assert.equal(etDate('2026-11-24T02:30:06.000Z'), '2026-11-23');
+  assert.deepEqual(editionsToPublish(null, 'noon'), ['midnight', 'noon']);
+  assert.deepEqual(editionsToPublish({ editions: [{ name: 'midnight' }] }, 'noon'), ['noon']);
+  assert.deepEqual(editionsToPublish({ editions: [{ name: 'midnight' }, { name: 'noon' }] }, 'noon'), []);
+  assert.deepEqual(editionsToPublish({ editions: [{ name: 'midnight' }] }, 'midnight'), []);
 });
 
-test('an off-hour run and a missing key stop before any publish', async () => {
+test('a late runner exits before Gemini when the due edition is already published', async () => {
+  const lateMorning = await curate({ now: '2026-11-25T15:46:00.000Z', env: {}, readRoot: root });
+  assert.equal(lateMorning.action, 'already-published');
+  assert.match(lateMorning.summary, /Not calling Gemini/);
+  assert.match(lateMorning.summary, /midnight/);
+  const afternoon = await curate({ now: '2026-11-25T18:05:00.000Z', env: {}, readRoot: root });
+  assert.equal(afternoon.action, 'already-published');
+  assert.match(afternoon.summary, /noon/);
+  assert.match(afternoon.summary, /Not calling Gemini/);
   const early = await curate({ now: '2026-11-25T04:20:00.000Z', env: {}, readRoot: root });
-  assert.equal(early.action, 'not-due');
+  assert.equal(early.action, 'already-published');
   const published = await curate({
     edition: 'noon',
     date: '2026-11-24',
@@ -83,11 +100,11 @@ test('an off-hour run and a missing key stop before any publish', async () => {
   await assert.rejects(
     () => curate({
       edition: 'noon',
-      date: '2026-11-25',
+      date: '2026-12-01',
       offline: false,
       env: {},
       readRoot: root,
-      now: '2026-11-25T17:20:00.000Z',
+      now: '2026-12-01T17:20:00.000Z',
     }),
     /GEMINI_API_KEY is missing/,
   );
@@ -156,6 +173,64 @@ test('caps keep one own-channel video, one of each subreddit, and the source lim
     ),
     'own-channel-cap',
   );
+});
+
+test('one show per edition, sports stay out, and descriptions replace templates', () => {
+  const own = candidate({
+    candidateId: 'own',
+    type: 'video',
+    source: 'Mormon News Roundup',
+    ownChannel: true,
+    show: 'own-channel',
+    title: 'Nightly episode',
+  });
+  const headlines = [
+    'Lawsuit over tithing receipts',
+    'Excommunication of a mission president',
+    'Temple zoning protest in Fairview',
+    'Ensign Peak investment disclosure',
+    'Abuse hotline recording released',
+    'Honor code investigation findings',
+    'Apostle statement about garments',
+    'Settlement memo from the law firm',
+  ];
+  const articles = headlines.map((title, index) => candidate({
+    candidateId: `article-${index}`,
+    type: 'article',
+    source: `Outlet ${index}`,
+    show: `outlet-${index}`,
+    title,
+  }));
+  const chosen = chooseItems([
+    candidate({ candidateId: 'md1', type: 'podcast', source: 'Mormon Discussions', show: 'mormon-discussions', title: 'Court hearing on the trademark case' }),
+    candidate({ candidateId: 'md2', type: 'podcast', source: 'Mormon Discussion Inc.', show: 'mormon-discussions', title: 'Glenn Beck and the on-air apology' }),
+    ...articles,
+  ], [own], { ...openCaps, editionName: 'noon' });
+  assert.equal(chosen.filter((item) => item.show === 'mormon-discussions').length, 1);
+
+  const thin = chooseItems([
+    candidate({ candidateId: 'only1', type: 'podcast', source: 'Mormon Discussions', show: 'mormon-discussions', title: 'Trademark hearing about the church filing' }),
+    candidate({ candidateId: 'only2', type: 'podcast', source: 'Mormon Discussions', show: 'mormon-discussions', title: 'Separate interview about an apostle apology' }),
+  ], [own], { ...openCaps, editionName: 'noon' });
+  assert.equal(thin.filter((item) => item.show === 'mormon-discussions').length, 2);
+
+  assert.equal(isGenericSports({ title: 'CFP Chair Groups BYU in 4 Team Debate', description: '' }), true);
+  assert.equal(isGenericSports({ title: 'Week 13 picks: BYU cover and betting trends', description: '' }), true);
+  assert.equal(isGenericSports({ title: 'BYU honor code football scandal leads to a lawsuit', description: '' }), false);
+  assert.equal(stripPublisherSuffix('Temple Square is open for Christmas - LDS Living', 'LDS Living'), 'Temple Square is open for Christmas');
+  const fromDescription = descriptionSummary(candidate({
+    source: 'The Salt Lake Tribune',
+    title: 'Judge questions a trademark filing - The Salt Lake Tribune',
+    description: 'The Salt Lake Tribune says a federal judge questioned the church trademark filing.',
+  }));
+  assert.match(fromDescription, /federal judge questioned/);
+  assert.doesNotMatch(fromDescription, /discusses|reports Judge/);
+});
+
+test('Gemini selection text keeps fenced JSON', () => {
+  const parsed = parseSelectionText('```json\n{"items":[{"candidateId":"c1","summary":"The Salt Lake Tribune says a judge questioned the filing.","major":false}]}\n```');
+  assert.equal(parsed.items[0].candidateId, 'c1');
+  assert.equal(parsed.items[0].major, false);
 });
 
 test('summaries name the source and drop time-of-day wording', () => {
@@ -326,7 +401,8 @@ test('live sources, stub selection, validation, and file writing', { timeout: 18
     const day = JSON.parse(await readFile(path.join(tmp, 'feed', 'days', '2026-11-24.json'), 'utf8'));
     const writtenIndex = JSON.parse(await readFile(path.join(tmp, 'feed', 'index.json'), 'utf8'));
     assert.equal(writtenIndex.pinned.id, 'keep-me');
-    assert.equal(writtenIndex.days[0], '2026-11-24');
+    assert.equal(writtenIndex.days[0], '2026-11-25');
+    assert.ok(writtenIndex.days.includes('2026-11-24'));
     const items = day.editions.flatMap((edition) => edition.items);
     assert.equal(day.editions.filter((edition) => edition.name === 'midnight').length, 1);
     assert.equal(day.editions[0].publishedAt, '2026-11-24T05:00:00.000Z');
