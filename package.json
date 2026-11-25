@@ -42,6 +42,8 @@
     "web": "expo start --web",
     "typecheck": "tsc --noEmit",
     "check-feed": "node scripts/check-feed.mjs && node --experimental-strip-types --test scripts/latest-own-channel-check.mjs",
+    "curate-feed": "node scripts/curate-feed.mjs",
+    "test:curate": "node --test scripts/curate-feed.test.mjs",
     "export:web": "expo export --platform web && node scripts/prepare-pages.mjs"
   },
   "private": true
