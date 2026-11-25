@@ -22,6 +22,134 @@
           "thumbnailUrl": "https://i.ytimg.com/vi/O4py1x2VYhc/hqdefault.jpg"
         }
       ]
+    },
+    {
+      "name": "noon",
+      "publishedAt": "2026-11-25T17:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-11-25-noon-01",
+          "type": "podcast",
+          "title": "Inside Today’s Mormon Church v. Mormon Stories Court Hearing!",
+          "summary": "Mormon Discussions discusses Inside Today’s Mormon Church v. Mormon Stories Court Hearing.",
+          "source": "Mormon Discussions",
+          "url": "https://mormondiscussionpodcast.org/2026/11/inside-todays-mormon-church-v-mormon-stories-court-hearing/",
+          "publishedAt": "2026-11-25T13:43:39.000Z",
+          "paywalled": false,
+          "tags": [],
+          "thumbnailUrl": "https://mormondiscussionpodcast.org/wp-content/uploads/sites/2/powerpress/umbrella_logo.jpg",
+          "audioUrl": "https://media.blubrry.com/mormondiscussions/ins.blubrry.com/mormondiscussions/_Mormon_Trademark_Lawsuit_Dismissed_Inside_Today_s_Court_Hearing.mp3"
+        },
+        {
+          "id": "2026-11-25-noon-02",
+          "type": "video",
+          "title": "Mormon Bishops Are NOT Jesus Christ | Responding to Becky Squire",
+          "summary": "Generally Unquotable discusses Mormon Bishops Are NOT Jesus Christ | Responding to Becky Squire.",
+          "source": "Generally Unquotable",
+          "url": "https://www.youtube.com/watch?v=ZF6gihwYJNo",
+          "publishedAt": "2026-11-25T16:00:18.000Z",
+          "paywalled": false,
+          "tags": [],
+          "thumbnailUrl": "https://i.ytimg.com/vi/ZF6gihwYJNo/hqdefault.jpg"
+        },
+        {
+          "id": "2026-11-25-noon-03",
+          "type": "video",
+          "title": "The Mormon Prophet Who Apologized Regarding the Polynesian Cultural Center",
+          "summary": "Mormon Discussion Inc. discusses The Mormon Prophet Who Apologized Regarding the Polynesian Cultural Center.",
+          "source": "Mormon Discussion Inc.",
+          "url": "https://www.youtube.com/shorts/FEHxA2haHnI",
+          "publishedAt": "2026-11-25T16:00:01.000Z",
+          "paywalled": false,
+          "tags": [],
+          "thumbnailUrl": "https://i.ytimg.com/vi/FEHxA2haHnI/hqdefault.jpg"
+        },
+        {
+          "id": "2026-11-25-noon-04",
+          "type": "article",
+          "title": "Judge takes skeptical view of ‘Mormon Stories’ podcaster’s efforts to toss LDS Church trademark case",
+          "summary": "The Salt Lake Tribune reports Judge takes skeptical view of ‘Mormon Stories’ podcaster’s efforts to toss LDS Church trademark case.",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/religion/2026/11/25/lds-churchs-trademark-lawsuit/",
+          "publishedAt": "2026-11-25T13:00:01.000Z",
+          "paywalled": false,
+          "tags": [],
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/BRQI5HULVNAERG6A363TIF3MXU.jpg?auth=c800108c876dcfe84b112294b8f2b5f49eb7d5f61ce6c810c62d1619e642b334&smart=true&width=4000&height=2667"
+        },
+        {
+          "id": "2026-11-25-noon-05",
+          "type": "article",
+          "title": "After 7 years, Temple Square is fully open for Christmas. Here’s what to see - LDS Living",
+          "summary": "LDS Living reports After 7 years, Temple Square is fully open for Christmas. Here’s what to see - LDS Living.",
+          "source": "LDS Living",
+          "url": "https://www.ldsliving.com/after-7-years-temple-square-is-fully-open-for-christmas-heres-what-to-see/s/13520",
+          "publishedAt": "2026-11-25T17:36:00.000Z",
+          "paywalled": false,
+          "tags": [],
+          "thumbnailUrl": "https://cdn.ldsliving.com/dims4/default/824387d/2147483647/strip/true/crop/1600x840+0+113/resize/1200x630!/quality/90/?url=http%3A%2F%2Flds-living-brightspot-us-east-2.s3.us-east-2.amazonaws.com%2F16%2Fbd%2Ff0c1104d46d3b486edc1fdd04bab%2Fyour-paragraph-text-10-1.png"
+        },
+        {
+          "id": "2026-11-25-noon-06",
+          "type": "article",
+          "title": "Week 13 picks: USC beats UCLA, Arizona and BYU cover and our deep dive into Oregon-Washington betting trends - The Mercury News",
+          "summary": "The Mercury News reports Week 13 picks: USC beats UCLA, Arizona and BYU cover and our deep dive into Oregon-Washington betting trends - The Mercury News.",
+          "source": "The Mercury News",
+          "url": "https://www.mercurynews.com/2026/11/25/cfb-picks-oregon-washington-betting-trends-usc-ucla/",
+          "publishedAt": "2026-11-25T16:08:53.000Z",
+          "paywalled": true,
+          "tags": [],
+          "thumbnailUrl": "https://www.mercurynews.com/wp-content/uploads/2022/03/SJM-SPORTSGAMBLING.jpg?w=6853&h=4502"
+        },
+        {
+          "id": "2026-11-25-noon-07",
+          "type": "article",
+          "title": "CFP Chair Groups BYU in 4 Team Debate for Spots 8 to 11 - Sports Illustrated",
+          "summary": "Sports Illustrated reports CFP Chair Groups BYU in 4 Team Debate for Spots 8 to 11 - Sports Illustrated.",
+          "source": "Sports Illustrated",
+          "url": "https://www.si.com/college/byu/football/cfp-chair-groups-byu-in-4-team-debate-for-spots-8-to-11",
+          "publishedAt": "2026-11-25T15:23:11.000Z",
+          "paywalled": false,
+          "tags": [],
+          "thumbnailUrl": "https://images2.minutemediacdn.com/image/upload/c_crop,x_0,y_0,w_2560,h_1440/c_fill,w_1440,ar_1440:810,f_auto,q_auto,g_auto/images/voltaxMediaLibrary/mmsport/cougs_daily/01m83ahnx99d84ekqth0.jpg"
+        },
+        {
+          "id": "2026-11-25-noon-08",
+          "type": "article",
+          "title": "Twin LDS influencers’ book partially yanked over claims 86% was written by AI - New York Post",
+          "summary": "New York Post reports Twin LDS influencers’ book partially yanked over claims 86% was written by AI - New York Post.",
+          "source": "New York Post",
+          "url": "https://nypost.com/2026/11/25/us-news/twin-lds-influencers-book-partially-yanked-over-claims-86-was-written-by-ai/",
+          "publishedAt": "2026-11-25T14:09:00.000Z",
+          "paywalled": false,
+          "tags": [],
+          "thumbnailUrl": "https://nypost.com/wp-content/uploads/sites/2/2026/11/150004257.jpg?quality=75&strip=all&w=1200"
+        },
+        {
+          "id": "2026-11-25-noon-09",
+          "type": "podcast",
+          "title": "Did Glenn Beck Cross the Line?",
+          "summary": "Mormon Discussions discusses Did Glenn Beck Cross the Line.",
+          "source": "Mormon Discussions",
+          "url": "https://mormondiscussionpodcast.org/2026/11/did-glenn-beck-cross-the-line/",
+          "publishedAt": "2026-11-25T13:40:52.000Z",
+          "paywalled": false,
+          "tags": [],
+          "thumbnailUrl": "https://mormondiscussionpodcast.org/wp-content/uploads/sites/2/powerpress/umbrella_logo.jpg",
+          "audioUrl": "https://media.blubrry.com/mormondiscussions/ins.blubrry.com/mormondiscussions/Mormon_Political_Pundit_Glenn_Beck_Spews_Racism.mp3"
+        },
+        {
+          "id": "2026-11-25-noon-10",
+          "type": "article",
+          "title": "‘Mormon Land’: Should you confess your sins to A.I.? Some Latter-day Saints say yes.",
+          "summary": "The Salt Lake Tribune reports ‘Mormon Land’: Should you confess your sins to A.I.? Some Latter-day Saints say yes.",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/religion/2026/11/25/mormon-land-podcast-lds-leaders/",
+          "publishedAt": "2026-11-25T13:00:01.000Z",
+          "paywalled": false,
+          "tags": [],
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/V5IRNLATINGEBL7E3ZLFQP7FUA.JPG?auth=f14cd39041044d058ed1268c62c81764b342c3e0cd325b0cdd4ef6973d18c377&smart=true&width=2048&height=1360"
+        }
+      ]
     }
   ]
 }
