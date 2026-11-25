@@ -5,6 +5,8 @@ import {
   TOPIC_RE,
   canonicalUrl,
   culturalHallIsNews,
+  isGenericSports,
+  stripPublisherSuffix,
   isBlog,
   isChurch,
   isOwnChannel,
@@ -72,6 +74,7 @@ function baseCandidate(raw, meta) {
     major: false,
     googleNews: Boolean(meta.googleNews),
   };
+  item.title = stripPublisherSuffix(item.title, source);
   item.score = scoreCandidate(item);
   if (item.ownChannel) item.satire = false;
   return item;
@@ -191,6 +194,7 @@ export async function gatherCandidates({
   const seen = new Set();
   candidates = candidates.filter((item) => {
     if (item.culturalHall && !item.culturalHallNews) return false;
+    if (isGenericSports(item)) return false;
     const key = canonicalUrl(item.url);
     if (seen.has(key)) return false;
     seen.add(key);
@@ -211,7 +215,12 @@ export async function gatherCandidates({
       }
       item.url = url;
       Object.assign(item, refreshFlags(item));
+      item.title = stripPublisherSuffix(item.title, item.source);
       item.googleNews = false;
+      if (isGenericSports(item)) {
+        item.drop = true;
+        return;
+      }
       if (!TOPIC_RE.test(`${item.title} ${item.description} ${item.source}`)) {
         item.drop = true;
         return;

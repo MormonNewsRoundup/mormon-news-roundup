@@ -7,6 +7,7 @@
  * CURATE_DRY_RUN=true writes the job summary and does not commit.
  * CURATE_REDDIT_IMAGES defaults on. Set it to 0 to skip Reddit items.
  */
+import { appendFile } from 'node:fs/promises';
 import path from 'node:path';
 import { spawn } from 'node:child_process';
 import { fileURLToPath, pathToFileURL } from 'node:url';
@@ -33,6 +34,9 @@ export async function main() {
     dryRun: ['1', 'true', 'yes'].includes(String(process.env.CURATE_DRY_RUN || '').toLowerCase()),
   });
   console.log(result.summary || result.action);
+  if (process.env.CURATE_DECIDE_ONLY === '1' && process.env.GITHUB_OUTPUT) {
+    await appendFile(process.env.GITHUB_OUTPUT, `publish=${result.action === 'due' ? 'true' : 'false'}\n`);
+  }
   if (result.action !== 'published') return result;
   if (path.resolve(result.writeRoot) !== repoRoot) return result;
   try {

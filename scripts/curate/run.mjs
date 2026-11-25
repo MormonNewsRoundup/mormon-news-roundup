@@ -8,6 +8,7 @@ import { geminiImage, geminiSelect, requireGeminiKey, selectionPrompt } from './
 import { toFeedJpeg } from './images.mjs';
 import {
   editionForLateItems,
+  editionsToPublish,
   loadFeed,
   nextItemNumber,
   placeEdition,
@@ -59,6 +60,7 @@ async function pickWithGemini(pool, context, warnings) {
       model: context.model,
       prompt: selectionPrompt(pool, context),
     });
+    warnings.push(`Gemini JSON selection: ${JSON.stringify(picks)}`);
     const byId = new Map(picks.map((pick) => [pick.candidateId, pick]));
     for (const item of pool) {
       const pick = byId.get(item.candidateId);
@@ -68,8 +70,8 @@ async function pickWithGemini(pool, context, warnings) {
     }
     return picks.map((pick) => pick.candidateId);
   } catch (error) {
-    if (error.code === 'MISSING_GEMINI_API_KEY' || /rejected GEMINI_API_KEY/.test(error.message)) throw error;
-    warnings.push(`Gemini selection failed (${error.message}). The code picker filled the edition from verified candidates.`);
+    if (error.code === 'MISSING_GEMINI_API_KEY' || error.code === 'GEMINI_AUTH' || /rejected GEMINI_API_KEY/.test(error.message)) throw error;
+    warnings.push(`Gemini selection failed (${error.message}). The code picker filled the edition from source descriptions.`);
     return [];
   }
 }
@@ -152,6 +154,16 @@ function assignIds(items, date, edition, day, generateImage, writeRoot, dryRun, 
   return attachRedditImages([...identified, ...reddit], { writeRoot, generateImage, dryRun, warnings });
 }
 
+function formatCatchUp(now, decision, plan, omitted) {
+  const parts = etParts(now);
+  const clock = `${String(parts.hour).padStart(2, '0')}:${String(parts.minute).padStart(2, '0')}`;
+  const pretend = omitted ? ` Dry run is treating ${omitted} as not yet published.` : '';
+  if (!plan.length) {
+    return `Catch-up: ${clock} Eastern on ${decision.date}. Due edition: ${decision.edition}. It is already in the feed. Not calling Gemini.${pretend}`;
+  }
+  return `Catch-up: ${clock} Eastern on ${decision.date}. Due edition: ${decision.edition}. Missing: ${plan.join(' then ')}.${pretend}`;
+}
+
 function describe(item) {
   const lines = [
     `- **${item.id || 'new'}** (${item.type}, ${item.source}) ${item.title}`,
@@ -165,7 +177,10 @@ function describe(item) {
 }
 
 export async function curate(options = {}) {
-  const now = options.now ? new Date(options.now) : new Date();
+  const dryRunPreview = options.dryRun === true || ['1', 'true', 'yes'].includes(String((options.env || process.env).CURATE_DRY_RUN || '').toLowerCase());
+  const requestedNow = options.now || (dryRunPreview ? (options.env || process.env).CURATE_NOW : '');
+  const parsedNow = requestedNow ? new Date(requestedNow) : new Date();
+  const now = Number.isNaN(parsedNow.getTime()) ? new Date() : parsedNow;
   const env = options.env || process.env;
   const readRoot = options.readRoot || repoRoot;
   const writeRoot = options.writeRoot || readRoot;
@@ -188,20 +203,39 @@ export async function curate(options = {}) {
   }
 
   const loaded = await loadFeed(readRoot);
-  const current = loaded.days.get(decision.date);
-  if (current?.editions?.some((edition) => edition.name === decision.edition)) {
+  let current = loaded.days.get(decision.date) || null;
+  const omitEdition = dryRun && (env.CURATE_OMIT_EDITION === 'midnight' || env.CURATE_OMIT_EDITION === 'noon')
+    ? env.CURATE_OMIT_EDITION
+    : '';
+  if (omitEdition && current) {
+    current = {
+      ...current,
+      editions: (current.editions || []).filter((edition) => edition.name !== omitEdition),
+    };
+  }
+  const plan = editionsToPublish(current, decision.edition);
+  const catchup = formatCatchUp(now, decision, plan, omitEdition);
+  if (env.CURATE_DECIDE_ONLY === '1') {
+    return {
+      action: plan.length ? 'due' : 'already-published',
+      date: decision.date,
+      edition: decision.edition,
+      summary: catchup,
+    };
+  }
+  if (!plan.length) {
     return {
       action: 'already-published',
       date: decision.date,
       edition: decision.edition,
-      summary: `${decision.date} ${decision.edition} is already in the feed.`,
+      summary: catchup,
     };
   }
 
   const apiKey = offline ? '' : requireGeminiKey(env);
   const warnings = [];
   const gathered = await gatherCandidates({
-    edition: decision.edition,
+    edition: plan.includes('midnight') ? 'midnight' : 'noon',
     date: decision.date,
     allowReddit,
     googleNewsLimit: options.googleNewsLimit ?? 12,
@@ -209,142 +243,154 @@ export async function curate(options = {}) {
   });
   warnings.push(...gathered.warnings);
 
-  const todayExisting = feedItemsOn(current).map(annotateFeedItem);
   const yesterday = previousDate(decision.date);
   const yesterdayFile = loaded.days.get(yesterday);
   const yesterdayExisting = feedItemsOn(yesterdayFile).map(annotateFeedItem);
   const seen = new Set();
   for (const file of loaded.days.values()) {
     for (const item of feedItemsOn(file)) {
+      if (omitEdition && file.date === decision.date && item.edition === omitEdition) continue;
       if (!item.url) continue;
       seen.add(canonicalUrl(item.url));
       const video = youtubeId(item.url);
       if (video) seen.add(`yt:${video}`);
     }
   }
-  const fresh = gathered.candidates.filter((item) => {
+  const satireAllowed = !satireRecently(loaded.days, decision.date);
+  const generateImage = options.generateImage
+    || (offline ? async () => null : (item) => geminiImage({ apiKey, item, model: options.imageModel || IMAGE_MODEL }));
+  let workingDay = current;
+  let nextYesterday = yesterdayFile;
+  let swap = null;
+  let lateItems = [];
+  const numberedByEdition = [];
+  const freshFor = () => gathered.candidates.filter((item) => {
     if (seen.has(canonicalUrl(item.url))) return false;
     if (item.videoId && seen.has(`yt:${item.videoId}`)) return false;
     return true;
   });
-  const selectOptions = {
-    blockedShows: blockedShowsFrom([...todayExisting, ...yesterdayExisting]),
-    allowReddit,
-    satireAllowed: !satireRecently(loaded.days, decision.date),
-  };
-  const todayPool = fresh.filter((item) => onDate(item.publishedAt, decision.date));
-  const latePool = decision.edition === 'midnight' ? fresh.filter((item) => itemIsLate(item.publishedAt, yesterday)) : [];
 
-  let preferredToday = [];
-  if (!offline) {
-    preferredToday = await pickWithGemini(todayPool, {
-      apiKey,
-      model: options.model || TEXT_MODEL,
-      edition: decision.edition,
-      date: decision.date,
-      existingSummary: existingSummary(todayExisting),
-    }, warnings);
-  }
-  const keptToday = await keepValid(todayPool, todayExisting, decision.date, { ...selectOptions, preferredIds: preferredToday }, warnings);
-  const ownCount = [...todayExisting, ...keptToday].filter((item) => item.ownChannel).length;
-  if (ownCount !== 1) {
-    throw new Error(
-      `${decision.date} would have ${ownCount} Mormon News Roundup videos after this ${decision.edition} run. The channel posts a long episode at 9:30 p.m. Eastern and a Short around midnight. Nothing was written.`,
-    );
-  }
-
-  let lateKept = [];
-  if (latePool.length && yesterdayFile) {
-    let preferredLate = [];
+  for (const editionName of plan) {
+    const todayExisting = feedItemsOn(workingDay).map(annotateFeedItem);
+    const fresh = freshFor();
+    const todayPool = fresh.filter((item) => onDate(item.publishedAt, decision.date));
+    const latePool = editionName === 'midnight' ? fresh.filter((item) => itemIsLate(item.publishedAt, yesterday)) : [];
+    const selectOptions = {
+      blockedShows: blockedShowsFrom([...todayExisting, ...yesterdayExisting]),
+      allowReddit,
+      satireAllowed,
+      editionName,
+    };
+    let preferredToday = [];
     if (!offline) {
-      preferredLate = await pickWithGemini(latePool, {
+      preferredToday = await pickWithGemini(todayPool, {
         apiKey,
         model: options.model || TEXT_MODEL,
-        edition: 'noon',
-        date: yesterday,
-        existingSummary: existingSummary(yesterdayExisting),
+        edition: editionName,
+        date: decision.date,
+        existingSummary: existingSummary(todayExisting),
       }, warnings);
     }
-    lateKept = await keepValid(
-      latePool,
-      yesterdayExisting,
-      yesterday,
-      {
+    const keptToday = await keepValid(todayPool, todayExisting, decision.date, { ...selectOptions, preferredIds: preferredToday }, warnings);
+    const ownCount = [...todayExisting, ...keptToday].filter((item) => item.ownChannel).length;
+    if (ownCount !== 1) {
+      throw new Error(
+        `${decision.date} would have ${ownCount} Mormon News Roundup videos after this ${editionName} run. The channel posts a long episode at 9:30 p.m. Eastern and a Short around midnight. Nothing was written.`,
+      );
+    }
+    let lateKept = [];
+    if (editionName === 'midnight' && latePool.length && yesterdayFile) {
+      let preferredLate = [];
+      if (!offline) {
+        preferredLate = await pickWithGemini(latePool, {
+          apiKey,
+          model: options.model || TEXT_MODEL,
+          edition: 'noon',
+          date: yesterday,
+          existingSummary: existingSummary(yesterdayExisting),
+        }, warnings);
+      }
+      lateKept = await keepValid(latePool, yesterdayExisting, yesterday, {
         ...selectOptions,
+        editionName: editionForLateItems(yesterdayFile) || 'midnight',
         blockedShows: blockedShowsFrom([...todayExisting, ...yesterdayExisting, ...keptToday]),
         preferredIds: preferredLate,
-      },
-      warnings,
-    );
-  }
-
-  let swap = null;
-  if (decision.edition === 'midnight') {
-    const own = yesterdayExisting.filter((item) => item.ownChannel);
-    const shorts = own.filter((item) => item.short || /\/shorts\//.test(item.url));
-    const longs = own.filter((item) => !shorts.includes(item));
-    if (shorts.length && !longs.length) {
-      const longform = gathered.candidates
-        .filter((item) => item.ownChannel && !item.short && onDate(item.publishedAt, yesterday))
-        .sort((left, right) => right.publishedAt.localeCompare(left.publishedAt))[0];
-      if (longform) {
-        const validated = await validateCandidate(longform, yesterday);
-        const summary = usableSummary(longform.modelSummary, longform);
-        if (validated.ok && summary) {
-          swap = {
-            id: shorts[0].id,
-            title: longform.title,
-            summary,
-            url: `https://www.youtube.com/watch?v=${validated.fields.videoId || longform.videoId}`,
-            thumbnailUrl: validated.fields.thumbnailUrl,
-            publishedAt: longform.publishedAt,
-          };
-        } else {
-          warnings.push(`Own-channel swap skipped: ${validated.error || 'summary failed'}`);
+      }, warnings);
+    }
+    if (editionName === 'midnight') {
+      const own = yesterdayExisting.filter((item) => item.ownChannel);
+      const shorts = own.filter((item) => item.short || /\/shorts\//.test(item.url));
+      const longs = own.filter((item) => !shorts.includes(item));
+      if (shorts.length && !longs.length) {
+        const longform = gathered.candidates
+          .filter((item) => item.ownChannel && !item.short && onDate(item.publishedAt, yesterday))
+          .sort((left, right) => right.publishedAt.localeCompare(left.publishedAt))[0];
+        if (longform) {
+          const validated = await validateCandidate(longform, yesterday);
+          const summary = usableSummary(longform.modelSummary, longform);
+          if (validated.ok && summary) {
+            swap = {
+              id: shorts[0].id,
+              title: longform.title,
+              summary,
+              url: `https://www.youtube.com/watch?v=${validated.fields.videoId || longform.videoId}`,
+              thumbnailUrl: validated.fields.thumbnailUrl,
+              publishedAt: longform.publishedAt,
+            };
+          } else {
+            warnings.push(`Own-channel swap skipped: ${validated.error || 'summary failed'}`);
+          }
         }
+      }
+    }
+    const todayNumbered = await assignIds(keptToday, decision.date, editionName, workingDay, generateImage, writeRoot, dryRun, warnings);
+    const todayItems = todayNumbered.map(toFeedItem);
+    for (const item of todayItems) {
+      seen.add(canonicalUrl(item.url));
+      const video = youtubeId(item.url);
+      if (video) seen.add(`yt:${video}`);
+    }
+    const base = workingDay || { date: decision.date, sample: false, editions: [] };
+    if (todayItems.length) {
+      workingDay = placeEdition(base, editionName, editionPublishedAt(decision.date, editionName), todayItems);
+    }
+    numberedByEdition.push({ editionName, numbered: todayNumbered, items: todayItems });
+    if (editionName === 'midnight' && lateKept.length) {
+      const lateEdition = editionForLateItems(yesterdayFile);
+      const lateNumbered = await assignIds(lateKept, yesterday, lateEdition, nextYesterday, generateImage, writeRoot, dryRun, warnings);
+      lateItems = lateNumbered.map(toFeedItem);
+      if (lateItems.length) {
+        nextYesterday = placeEdition(
+          nextYesterday,
+          lateEdition,
+          nextYesterday.editions.find((edition) => edition.name === lateEdition).publishedAt,
+          lateItems,
+        );
       }
     }
   }
 
-  const generateImage = options.generateImage
-    || (offline ? async () => null : (item) => geminiImage({ apiKey, item, model: options.imageModel || IMAGE_MODEL }));
-  const todayNumbered = await assignIds(
-    keptToday,
-    decision.date,
-    decision.edition,
-    current,
-    generateImage,
-    writeRoot,
-    dryRun,
-    warnings,
-  );
-  const todayItems = todayNumbered.map(toFeedItem);
-  const lateEdition = editionForLateItems(yesterdayFile);
-  const lateNumbered = lateEdition
-    ? await assignIds(lateKept, yesterday, lateEdition, yesterdayFile, generateImage, writeRoot, dryRun, warnings)
-    : [];
-  const lateItems = lateNumbered.map(toFeedItem);
-
-  if (!todayItems.length && !lateItems.length && !swap) {
+  const publishedItems = numberedByEdition.flatMap((entry) => entry.items);
+  if (!publishedItems.length && !lateItems.length && !swap) {
     return {
       action: 'nothing-new',
       date: decision.date,
       edition: decision.edition,
       warnings,
-      summary: [`Nothing new passed validation for ${decision.date} ${decision.edition}.`, ...warnings].join('\n'),
+      summary: [catchup, '', `Nothing new passed validation for ${decision.date}.`, ...warnings].join('\n'),
     };
   }
 
   const lines = [
-    `# ${decision.date} ${decision.edition}`,
+    catchup,
     '',
     `Text model: ${TEXT_MODEL}. Image model: ${IMAGE_MODEL}. Reddit images: ${allowReddit ? 'on' : 'off'}.`,
-    '',
-    '## This edition',
-    ...todayNumbered.map(describe),
   ];
+  for (const entry of numberedByEdition) {
+    lines.push('', `## ${decision.date} ${entry.editionName}`, ...entry.numbered.map(describe));
+  }
   if (lateItems.length) {
-    lines.push('', `## Late items added to ${yesterday} ${lateEdition}`, ...lateItems.map(describe));
+    lines.push('', `## Late items added to ${yesterday}`, ...lateItems.map(describe));
   }
   if (swap) {
     lines.push('', `## Own-channel swap in ${yesterday}`, `- ${swap.id} becomes ${swap.title}`, `  ${swap.url}`);
@@ -355,42 +401,44 @@ export async function curate(options = {}) {
   const summary = lines.join('\n');
   if (env.GITHUB_STEP_SUMMARY) await appendFile(env.GITHUB_STEP_SUMMARY, `${summary}\n`);
 
+  const message = plan.length > 1
+    ? formatEditionMessage(decision.date, 'midnight').replace('midnight edition.', 'midnight and noon editions.')
+    : formatEditionMessage(decision.date, plan[0]);
   if (dryRun) {
-    return { action: 'dry-run', date: decision.date, edition: decision.edition, items: todayItems, lateItems, swap, warnings, summary };
+    return {
+      action: 'dry-run',
+      date: decision.date,
+      edition: decision.edition,
+      items: publishedItems,
+      lateItems,
+      swap,
+      warnings,
+      summary,
+    };
   }
 
   const generatedAt = now.toISOString();
   const files = [];
-  let nextIndex = { ...loaded.index, generatedAt };
-  if (todayItems.length) {
-    const base = current || { date: decision.date, sample: false, editions: [] };
-    const nextDay = placeEdition(base, decision.edition, editionPublishedAt(decision.date, decision.edition), todayItems);
+  let nextIndex = withDate({ ...loaded.index, pinned: loaded.index.pinned ?? null }, decision.date, generatedAt);
+  if (workingDay && publishedItems.length) {
     const file = path.join(writeRoot, 'feed', 'days', `${decision.date}.json`);
-    await writeJson(file, nextDay);
+    await writeJson(file, workingDay);
     files.push(file);
-    nextIndex = withDate(loaded.index, decision.date, generatedAt);
   }
   if (yesterdayFile && (lateItems.length || swap)) {
-    let nextYesterday = yesterdayFile;
-    if (swap) nextYesterday = replaceItem(nextYesterday, swap.id, {
-      id: swap.id,
-      type: 'video',
-      title: swap.title,
-      summary: swap.summary,
-      source: 'Mormon News Roundup',
-      url: swap.url,
-      thumbnailUrl: swap.thumbnailUrl,
-      publishedAt: swap.publishedAt,
-      paywalled: false,
-      tags: ['mormon-news-roundup', 'own-channel'],
-    });
-    if (lateItems.length) {
-      nextYesterday = placeEdition(
-        nextYesterday,
-        lateEdition,
-        nextYesterday.editions.find((edition) => edition.name === lateEdition).publishedAt,
-        lateItems,
-      );
+    if (swap) {
+      nextYesterday = replaceItem(nextYesterday, swap.id, {
+        id: swap.id,
+        type: 'video',
+        title: swap.title,
+        summary: swap.summary,
+        source: 'Mormon News Roundup',
+        url: swap.url,
+        thumbnailUrl: swap.thumbnailUrl,
+        publishedAt: swap.publishedAt,
+        paywalled: false,
+        tags: ['mormon-news-roundup', 'own-channel'],
+      });
     }
     const file = path.join(writeRoot, 'feed', 'days', `${yesterday}.json`);
     await writeJson(file, nextYesterday);
@@ -404,13 +452,13 @@ export async function curate(options = {}) {
     action: 'published',
     date: decision.date,
     edition: decision.edition,
-    items: todayItems,
+    items: publishedItems,
     lateItems,
     swap,
     warnings,
     summary,
     files,
-    message: formatEditionMessage(decision.date, decision.edition),
+    message,
     writeRoot,
     readRoot,
   };
