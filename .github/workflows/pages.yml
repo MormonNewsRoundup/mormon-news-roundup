@@ -1,9 +1,15 @@
 name: Deploy to GitHub Pages
 
+# A commit pushed with GITHUB_TOKEN, including "Curate the feed", does not
+# start the push trigger. workflow_run does. Check out main rather than the
+# curator's starting SHA, which is the commit from before that push.
 on:
   push:
     branches: [main]
   workflow_dispatch:
+  workflow_run:
+    workflows: ["Curate the feed"]
+    types: [completed]
 
 permissions:
   contents: read
@@ -16,10 +22,13 @@ concurrency:
 
 jobs:
   build:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -49,6 +58,7 @@ jobs:
 
   deploy:
     needs: build
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
