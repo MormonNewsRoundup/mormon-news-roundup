@@ -34,6 +34,73 @@
           "thumbnailUrl": "https://timesandseasons.org/wp-content/uploads/2022/10/cropped-TS-v3-32x32.png"
         }
       ]
+    },
+    {
+      "name": "noon",
+      "publishedAt": "2026-11-26T17:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-11-26-noon-01",
+          "type": "video",
+          "title": "Did the LDS church finally admit the rebrand away from the word Mormon was largely unsuccessful?",
+          "summary": "Mormonish Podcast discusses statements made during the hearing to dismiss the church's case against John Dehlin.",
+          "source": "Mormonish Podcast",
+          "url": "https://www.youtube.com/shorts/ph-07YrLUhg",
+          "publishedAt": "2026-11-26T16:33:04.000Z",
+          "paywalled": false,
+          "tags": [],
+          "thumbnailUrl": "https://i.ytimg.com/vi/ph-07YrLUhg/hqdefault.jpg"
+        },
+        {
+          "id": "2026-11-26-noon-02",
+          "type": "article",
+          "title": "Latest from Mormon Land: A 35-hour ‘workweek’ for LDS missionaries?",
+          "summary": "The Salt Lake Tribune reports that a blogger has crafted a Bill of Rights for Latter-day Saint missionaries proposing a 35-hour workweek.",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/religion/2026/11/26/lds-missionary-bill-rights-calls/",
+          "publishedAt": "2026-11-26T13:00:00.000Z",
+          "paywalled": false,
+          "tags": [],
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/OHZIIAIFVVFA7CESL3CUBVTXCA.jpg?auth=734ee64d5bcdd72d98cbcdaedc890b6442b7cb13e72c8a3988cd0102d6d7b63f&smart=true&width=2800&height=1867"
+        },
+        {
+          "id": "2026-11-26-noon-03",
+          "type": "article",
+          "title": "Thankful",
+          "summary": "Wheat & Tares writes about the complex feelings surrounding gratitude for those raised Mormon.",
+          "source": "Wheat & Tares",
+          "url": "https://wheatandtares.org/2026/11/26/thankful/",
+          "publishedAt": "2026-11-26T14:00:00.000Z",
+          "paywalled": false,
+          "tags": [],
+          "thumbnailUrl": "https://wheatandtares.org/wp-content/uploads/2026/11/overflowing-autumn-cornucopia-still-life.jpg"
+        },
+        {
+          "id": "2026-11-26-noon-04",
+          "type": "video",
+          "title": "The Conveniently Forgotten Wife | Mormon News 11.26.26",
+          "summary": "Generally Unquotable examines internal LDS Church correspondence revealing a reduction in congregations in a rapidly growing Arizona community.",
+          "source": "Generally Unquotable",
+          "url": "https://www.youtube.com/watch?v=0sVkKQLjnHY",
+          "publishedAt": "2026-11-26T16:00:35.000Z",
+          "paywalled": false,
+          "tags": [],
+          "thumbnailUrl": "https://i.ytimg.com/vi/0sVkKQLjnHY/hqdefault.jpg"
+        },
+        {
+          "id": "2026-11-26-noon-05",
+          "type": "podcast",
+          "title": "Did an LDS Church Historian Just Make Racist Remarks?",
+          "summary": "Radio Free Mormon reports lDS Church Historian Kyle McKay made racist comments at a stake conference on Sunday, June 7, 2026.",
+          "source": "Radio Free Mormon",
+          "url": "https://mormondiscussionpodcast.org/2026/11/rfm-video-palljvva3g0/",
+          "publishedAt": "2026-11-26T14:39:05.000Z",
+          "paywalled": false,
+          "tags": [],
+          "thumbnailUrl": "https://mormondiscussionpodcast.org/wp-content/uploads/sites/2/powerpress/umbrella_logo.jpg",
+          "audioUrl": "https://media.blubrry.com/mormondiscussions/ins.blubrry.com/mormondiscussions/Did_an_LDS_Church_Historian_Just_Make_Racist_Remarks_.mp3"
+        }
+      ]
     }
   ]
 }
