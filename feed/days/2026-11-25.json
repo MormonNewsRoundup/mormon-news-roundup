@@ -9,17 +9,17 @@
         {
           "id": "2026-11-25-midnight-01",
           "type": "video",
-          "title": "The Mormon Debate That Sparked a Civil War Among Christians",
-          "summary": "The Mormon News Roundup channel reports that a public friendship tour between evangelical pastor Greg Johnson and LDS scholar Robert Millet sparked a bitter civil war among Christian ministries.",
+          "title": "Did Joseph Smith Copy the Apocrypha? The Shocking Book of Mormon Connection",
+          "summary": "Mormon News Roundup examines whether Joseph Smith borrowed from the Apocrypha while writing the Book of Mormon.",
           "source": "Mormon News Roundup",
-          "url": "https://www.youtube.com/shorts/O4py1x2VYhc",
-          "publishedAt": "2026-11-25T05:00:01.000Z",
+          "url": "https://www.youtube.com/watch?v=Q8G1SGIIGvQ",
+          "thumbnailUrl": "https://i.ytimg.com/vi/Q8G1SGIIGvQ/hqdefault.jpg",
+          "publishedAt": "2026-11-26T02:30:06.000Z",
           "paywalled": false,
           "tags": [
             "mormon-news-roundup",
             "own-channel"
-          ],
-          "thumbnailUrl": "https://i.ytimg.com/vi/O4py1x2VYhc/hqdefault.jpg"
+          ]
         }
       ]
     },
@@ -148,6 +148,31 @@
           "paywalled": false,
           "tags": [],
           "thumbnailUrl": "https://www.sltrib.com/resizer/v2/V5IRNLATINGEBL7E3ZLFQP7FUA.JPG?auth=f14cd39041044d058ed1268c62c81764b342c3e0cd325b0cdd4ef6973d18c377&smart=true&width=2048&height=1360"
+        },
+        {
+          "id": "2026-11-25-noon-11",
+          "type": "article",
+          "title": "KUER: LDS Church land donation helps make Salt Lake affordable-housing project possible",
+          "summary": "The Mormon Newscast writes that The Church of Jesus Christ of Latter-day Saints donated 2.5 acres and a historic recreation center for an affordable-housing development in Salt Lake City.",
+          "source": "The Mormon Newscast",
+          "url": "https://mormonnewscast.org/recovered-https-www-kuer-org-business-economy-2026-11-20-yigby-yes-in-gods-backyard-salt-lake-city-housing-lutheran-lds-churches/",
+          "publishedAt": "2026-11-26T04:48:47.000Z",
+          "paywalled": false,
+          "tags": [],
+          "thumbnailUrl": "https://mormonnewscast.org/wp-content/uploads/2026/11/cropped-LOGO-32x32.png"
+        },
+        {
+          "id": "2026-11-25-noon-12",
+          "type": "podcast",
+          "title": "The Cost of a Mormon Mixed Orientation Marriage - Lolly Weed Pt. 2 | Ep. 2237",
+          "summary": "In Part One, Laurel “Lolly” Shae shared the story of how she came to marry her gay best friend, Josh Weed, after years of navigating Mormon expectations around sexuality, marriage, and eternal families.",
+          "source": "Mormon Stories Podcast",
+          "url": "https://podcasters.spotify.com/pod/show/mormonstories/episodes/The-Cost-of-a-Mormon-Mixed-Orientation-Marriage---Lolly-Weed-Pt--2--Ep--2237-e3t186t",
+          "publishedAt": "2026-11-25T18:00:01.000Z",
+          "paywalled": false,
+          "tags": [],
+          "thumbnailUrl": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo/41473873/41473873-1774439842873-4051333073691.jpg",
+          "audioUrl": "https://traffic.megaphone.fm/APO1302890989.mp3"
         }
       ]
     }
