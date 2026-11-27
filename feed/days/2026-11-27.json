@@ -57,6 +57,85 @@
           "thumbnailUrl": "https://s.yimg.com/lo/mysterio/api/acbf5b10af80a789abd56ff70244e825548600bd43216ca416d011c40e0c3de3/lightyear_networkapi/resizefill_w1200%3Bquality_80%3Bformat_jpg/https%3A%2F%2Fmedia.zenfs.com%2Fen%2Fwealth_of_geeks_188%2F5efb49340b6cb0ad17e5f132cfb717f9.jpg"
         }
       ]
+    },
+    {
+      "name": "noon",
+      "publishedAt": "2026-11-27T17:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-11-27-noon-01",
+          "type": "podcast",
+          "title": "Mormon Men... The God of Woman? - Brigham Young Podcast Pt. 7 | Ep. 2238",
+          "summary": "Mormon Stories Podcast continues its series discussing Brigham Young: Pioneer Prophet with historian John Turner, focusing on the evolving theology of polygamy and priesthood.",
+          "source": "Mormon Stories Podcast",
+          "url": "https://podcasters.spotify.com/pod/show/mormonstories/episodes/Mormon-Men----The-God-of-Woman----Brigham-Young-Podcast-Pt--7--Ep--2238-e3t4k3e",
+          "publishedAt": "2026-11-27T19:00:00.000Z",
+          "paywalled": false,
+          "tags": [],
+          "thumbnailUrl": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo400/41473873/41473873-1774439840527-6498221cff4b5.jpg",
+          "audioUrl": "https://traffic.megaphone.fm/APO6110160298.mp3"
+        },
+        {
+          "id": "2026-11-27-noon-02",
+          "type": "video",
+          "title": "Broadcasting from Washington, D.C.",
+          "summary": "For the first time in history, Mormonism After Dark is broadcasting from the east coast of the United States.",
+          "source": "Mormon Discussion Inc.",
+          "url": "https://www.youtube.com/watch?v=z1t2Tsc3Rrk",
+          "publishedAt": "2026-11-27T14:23:25.000Z",
+          "paywalled": false,
+          "tags": [],
+          "thumbnailUrl": "https://i3.ytimg.com/vi/z1t2Tsc3Rrk/hqdefault.jpg"
+        },
+        {
+          "id": "2026-11-27-noon-03",
+          "type": "article",
+          "title": "Will BYU produce a complete game against Cincinnati? It better",
+          "summary": "Yahoo Sports reports will BYU produce a complete game against Cincinnati?",
+          "source": "Yahoo Sports",
+          "url": "https://sports.yahoo.com/college-football/articles/byu-produce-complete-game-against-203000149.html",
+          "publishedAt": "2026-11-27T20:30:00.000Z",
+          "paywalled": false,
+          "tags": [],
+          "thumbnailUrl": "https://s.yimg.com/lo/mysterio/api/50f712ecef9e44cbc0b5cbe870489c2a61ff249da2b115d1cb47f9533e311a7e/lightyear_networkapi/resizefill_w1200_h675%3Bquality_80%3Bformat_webp/https%3A%2F%2Fmedia.zenfs.com%2Fen%2Fdeseret_news_992%2F9576457d7ccb34ba5d14801b8d5e12b7.jpg_up.jpg"
+        },
+        {
+          "id": "2026-11-27-noon-04",
+          "type": "article",
+          "title": "Polygamy and Hypersexuality",
+          "summary": "Wheat & Tares reports the image for today’s post is a photo I snapped in the Utah Museum of Fine Arts.",
+          "source": "Wheat & Tares",
+          "url": "https://wheatandtares.org/2026/11/27/polygamy-and-hypersexuality/",
+          "publishedAt": "2026-11-27T15:47:22.000Z",
+          "paywalled": false,
+          "tags": [],
+          "thumbnailUrl": "https://wheatandtares.org/wp-content/uploads/2026/11/polygamy-bonnet.jpg"
+        },
+        {
+          "id": "2026-11-27-noon-05",
+          "type": "article",
+          "title": "Disney+ Black Friday deal: Get Marvel, Star Wars, ‘Secret Lives of Mormon Wives’ and more for just $5 a month",
+          "summary": "Disney+ Black Friday deal: Get Marvel, Star Wars, ‘Secret Lives of Mormon Wives’ and more for just $5 a month &nbsp;&nbsp; Yahoo.",
+          "source": "Yahoo",
+          "url": "https://www.yahoo.com/entertainment/tv/article/disney-black-friday-deal-get-marvel-star-wars-secret-lives-of-mormon-wives-and-more-for-just-5-a-month-132914187.html",
+          "publishedAt": "2026-11-27T13:29:14.000Z",
+          "paywalled": false,
+          "tags": [],
+          "thumbnailUrl": "https://s.yimg.com/lo/mysterio/api/47bdb0b936709bc8b414528ccb026e4224cdba5b3b091506a31d82cf1282cbe6/lightyear_networkapi/resizefill_w1200%3Bquality_80%3Bformat_jpg/https%3A%2F%2Fd29szjachogqwa.cloudfront.net%2Fimages%2Fuser-uploaded%2Fdisneyblack-friday_2306.png"
+        },
+        {
+          "id": "2026-11-27-noon-06",
+          "type": "article",
+          "title": "‘Eternity’ board game? ‘Think Telestial’ or ‘Occupy Missouri’ shirt? A gift guide for LDS of all stripes.",
+          "summary": "The Salt Lake Tribune reports stumped about what to buy your LDS cousin for Christmas or your brother-in-law who left the church but loves to talk about the faith?",
+          "source": "The Salt Lake Tribune",
+          "url": "https://www.sltrib.com/religion/2026/11/27/christmas-gifts-every-kind-latter/",
+          "publishedAt": "2026-11-27T13:00:00.000Z",
+          "paywalled": false,
+          "tags": [],
+          "thumbnailUrl": "https://www.sltrib.com/resizer/v2/J3JYJEZUO5AGNHY4VLSXNPGCNY.JPG?auth=4c8930f30fd43e385599208069ca45de9b1a2442ca6a02c77d6e8b3eaa3517ac&width=1200&height=630&quality=88&smart=true"
+        }
+      ]
     }
   ]
 }
