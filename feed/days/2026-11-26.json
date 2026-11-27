@@ -9,17 +9,17 @@
         {
           "id": "2026-11-26-midnight-01",
           "type": "video",
-          "title": "The Parallels Behind Lehi’s Famous Dream: Joseph Smith Sr.’s 1811 Vision",
-          "summary": "Mormon News Roundup examines four parallels between Joseph Smith Sr.’s 1811 vision and Lehi’s vision of the tree of life.",
+          "title": "The Evolution of Elohim: How Mormonism's View of God Changed",
+          "summary": "How did the definition of God in Mormonism shift from the 1830 Book of Mormon to Brigham Young's Adam-God doctrine?",
           "source": "Mormon News Roundup",
-          "url": "https://www.youtube.com/shorts/IVuRAii8xt8",
-          "publishedAt": "2026-11-26T05:00:11.000Z",
+          "url": "https://www.youtube.com/watch?v=xvq6XU8OKhk",
+          "thumbnailUrl": "https://i.ytimg.com/vi/xvq6XU8OKhk/hqdefault.jpg",
+          "publishedAt": "2026-11-27T02:30:10.000Z",
           "paywalled": false,
           "tags": [
             "mormon-news-roundup",
             "own-channel"
-          ],
-          "thumbnailUrl": "https://i.ytimg.com/vi/IVuRAii8xt8/hqdefault.jpg"
+          ]
         },
         {
           "id": "2026-11-26-midnight-02",
@@ -99,6 +99,18 @@
           "tags": [],
           "thumbnailUrl": "https://mormondiscussionpodcast.org/wp-content/uploads/sites/2/powerpress/umbrella_logo.jpg",
           "audioUrl": "https://media.blubrry.com/mormondiscussions/ins.blubrry.com/mormondiscussions/Did_an_LDS_Church_Historian_Just_Make_Racist_Remarks_.mp3"
+        },
+        {
+          "id": "2026-11-26-noon-06",
+          "type": "article",
+          "title": "Church of Jesus Christ leaders share Thanksgiving messages of gratitude",
+          "summary": "Church of Jesus Christ leaders share Thanksgiving messages of gratitude &nbsp;&nbsp; Deseret News.",
+          "source": "Deseret News",
+          "url": "https://www.deseret.com/faith/2026/11/26/church-of-jesus-christ-apostles-share-thanksgiving-gratitude-messages/",
+          "publishedAt": "2026-11-26T23:52:34.000Z",
+          "paywalled": false,
+          "tags": [],
+          "thumbnailUrl": "https://www.deseret.com/resizer/v2/4EBX3H4CNFEDFOQHBJPCDWVY3Q.JPG?focal=0%2C0&auth=8eaefd84ebf3f00d2679b8186e5c300cb6f4d9c8abfc9edb8d608c6fe0fedeaf&width=630&height=331"
         }
       ]
     }

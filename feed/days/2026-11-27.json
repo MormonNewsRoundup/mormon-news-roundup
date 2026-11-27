@@ -1,0 +1,63 @@
+{
+  "date": "2026-11-27",
+  "sample": false,
+  "editions": [
+    {
+      "name": "midnight",
+      "publishedAt": "2026-11-27T05:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-11-27-midnight-01",
+          "type": "video",
+          "title": "If God Had to Obey Eternal Law… Who Created the Rules? | Mormonism’s Cosmic Paradox",
+          "summary": "Mormon News Roundup discusses Mormonism's cosmic paradox regarding whether God has to obey eternal law.",
+          "source": "Mormon News Roundup",
+          "url": "https://www.youtube.com/shorts/4IFaXC3V6Ew",
+          "publishedAt": "2026-11-27T05:00:18.000Z",
+          "paywalled": false,
+          "tags": [
+            "mormon-news-roundup",
+            "own-channel"
+          ],
+          "thumbnailUrl": "https://i.ytimg.com/vi/4IFaXC3V6Ew/hqdefault.jpg"
+        },
+        {
+          "id": "2026-11-27-midnight-02",
+          "type": "article",
+          "title": "Neurodivergence, Church History, and W. W. Phelps.",
+          "summary": "Times & Seasons writes about neurodivergence, church history, and W.",
+          "source": "Times & Seasons",
+          "url": "https://timesandseasons.org/index.php/2026/11/neurodivergence-church-history-and-w-w-phelps/",
+          "publishedAt": "2026-11-27T12:32:10.000Z",
+          "paywalled": false,
+          "tags": [],
+          "thumbnailUrl": "https://timesandseasons.org/wp-content/uploads/2022/10/cropped-TS-v3-32x32.png"
+        },
+        {
+          "id": "2026-11-27-midnight-03",
+          "type": "article",
+          "title": "Wild Reckonings: Motherhood, Mormon history, and wildness collide in Amy Irvine’s memoir",
+          "summary": "Santa Fe New Mexican reviews Amy Irvine's memoir where motherhood, Mormon history, and wildness collide.",
+          "source": "Santa Fe New Mexican",
+          "url": "https://www.santafenewmexican.com/pasatiempo/books/wild-reckonings-motherhood-mormon-history-and-wildness-collide-in-amy-irvine-s-memoir/article_ba0b5a28-a333-4fb2-99e4-b6944626a1fc.html",
+          "publishedAt": "2026-11-27T12:00:00.000Z",
+          "paywalled": true,
+          "tags": [],
+          "thumbnailUrl": "https://bloximages.newyork1.vip.townnews.com/santafenewmexican.com/content/tncms/assets/v3/editorial/0/d9/0d971410-804d-448b-88fd-f0f4ceeca1ac/6b07034c3a618.image.jpg?crop=1171%2C615%2C0%2C577"
+        },
+        {
+          "id": "2026-11-27-midnight-04",
+          "type": "article",
+          "title": "Pregnant 'Mormon Wives' Star Jen Affleck Shares Hospital Photo After Fearing Baby No. 4 Was Coming Early",
+          "summary": "Yahoo reports pregnant 'Mormon Wives' Star Jen Affleck Shares Hospital Photo After Fearing Baby No.",
+          "source": "Yahoo",
+          "url": "https://www.yahoo.com/entertainment/celebrity/articles/pregnant-mormon-wives-star-jen-113010734.html",
+          "publishedAt": "2026-11-27T11:30:10.000Z",
+          "paywalled": false,
+          "tags": [],
+          "thumbnailUrl": "https://s.yimg.com/lo/mysterio/api/acbf5b10af80a789abd56ff70244e825548600bd43216ca416d011c40e0c3de3/lightyear_networkapi/resizefill_w1200%3Bquality_80%3Bformat_jpg/https%3A%2F%2Fmedia.zenfs.com%2Fen%2Fwealth_of_geeks_188%2F5efb49340b6cb0ad17e5f132cfb717f9.jpg"
+        }
+      ]
+    }
+  ]
+}
