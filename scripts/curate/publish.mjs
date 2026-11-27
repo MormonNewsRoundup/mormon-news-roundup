@@ -58,14 +58,10 @@ export function toFeedItem(item) {
     paywalled: item.paywalled === true,
     tags,
   };
-  if (item.type === 'reddit') {
-    if (typeof item.thumbnailUrl === 'string' && item.thumbnailUrl.includes('/feed/images/reddit/')) {
-      feed.thumbnailUrl = item.thumbnailUrl;
-    }
-    if (item.subreddit) feed.subreddit = item.subreddit;
-  } else {
+  if (typeof item.thumbnailUrl === 'string' && item.thumbnailUrl.startsWith('https://')) {
     feed.thumbnailUrl = item.thumbnailUrl;
   }
+  if (item.type === 'reddit' && item.subreddit) feed.subreddit = item.subreddit;
   if (item.satire === true && !item.ownChannel) feed.satire = true;
   if (typeof item.audioUrl === 'string' && item.audioUrl.startsWith('https://')) feed.audioUrl = item.audioUrl;
   return feed;

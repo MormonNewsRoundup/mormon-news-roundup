@@ -55,6 +55,7 @@ function baseCandidate(raw, meta) {
     publishedAt: raw.publishedAt,
     description: raw.description || '',
     thumbnailUrl: raw.thumbnailUrl || '',
+    rssImages: raw.rssImages || [],
     audioUrl: raw.audioUrl || '',
     videoId,
     categories: raw.categories || [],

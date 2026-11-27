@@ -208,12 +208,9 @@ for (const date of index.days ?? []) {
       }
       const thumb = typeof entry.thumbnailUrl === 'string' ? entry.thumbnailUrl.trim() : '';
       const thumbMissing = entry.thumbnailUrl == null || thumb === '';
-      const redditWithoutImage = entry.type === 'reddit' && thumbMissing;
-      if (entry.type !== 'reddit' && thumbMissing) {
-        fail(`${label} is missing thumbnailUrl`);
-      } else if (entry.type === 'reddit' && !thumbMissing && typeof entry.thumbnailUrl !== 'string') {
+      if (!thumbMissing && typeof entry.thumbnailUrl !== 'string') {
         fail(`${label} thumbnailUrl must be a string when present`);
-      } else if (!redditWithoutImage) {
+      } else if (!thumbMissing) {
         if (index.sample) {
           if (!/^https?:\/\//.test(thumb) && !/^sample:[a-z0-9-]+$/.test(thumb)) {
             fail(`${label} thumbnailUrl must be an https image or a sample: token`);

@@ -234,8 +234,40 @@ function namesSource(summary, source) {
   return Boolean(token && text.includes(token));
 }
 
-function firstSentences(text, count) {
-  return text.split(/(?<=[.!?])\s+/).filter(Boolean).slice(0, count).join(' ').trim();
+const ABBREVIATIONS = new Set([
+  'mr', 'mrs', 'ms', 'dr', 'st', 'jr', 'sr', 'prof', 'rev', 'gen', 'sen', 'rep', 'gov',
+  'lt', 'col', 'sgt', 'inc', 'ltd', 'co', 'no', 'vol', 'fig', 'etc', 'vs', 'al', 'mt', 'ft',
+  'jan', 'feb', 'mar', 'apr', 'jun', 'jul', 'aug', 'sep', 'sept', 'oct', 'nov', 'dec',
+]);
+
+function isAbbreviation(token) {
+  if (/^(?:[A-Za-z]\.){1,3}[A-Za-z]?\.?$/.test(token)) return true;
+  const bare = token.replace(/\.+$/, '');
+  if (/^[A-Za-z]$/.test(bare)) return true;
+  return ABBREVIATIONS.has(bare.toLowerCase());
+}
+
+/** First sentences, without cutting at initials such as "W." or "U.S." */
+export function firstSentences(text, count) {
+  const sentences = [];
+  let start = 0;
+  for (let index = 0; index < text.length && sentences.length < count; index += 1) {
+    const mark = text[index];
+    if ((mark !== '.' && mark !== '!' && mark !== '?') || !/\s/.test(text[index + 1] || '')) continue;
+    let wordStart = index;
+    while (wordStart > start && !/\s/.test(text[wordStart - 1])) wordStart -= 1;
+    const token = text.slice(wordStart, index + 1);
+    if (mark === '.' && isAbbreviation(token)) continue;
+    sentences.push(text.slice(start, index + 1).trim());
+    start = index + 1;
+    while (text[start] === ' ') start += 1;
+    index = start - 1;
+  }
+  if (sentences.length < count && start < text.length) {
+    const rest = text.slice(start).trim();
+    if (rest) sentences.push(rest);
+  }
+  return sentences.slice(0, count).join(' ');
 }
 
 /** One sentence from the source description. Used when Gemini does not answer. */

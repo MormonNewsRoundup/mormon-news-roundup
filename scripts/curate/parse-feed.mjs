@@ -48,7 +48,8 @@ function absolute(base, value) {
   }
 }
 
-function firstImage(block, pageUrl) {
+export function listedImages(block, pageUrl) {
+  const found = [];
   const tags = block.match(/<(?:media:content|media:thumbnail|itunes:image|enclosure)\b[^>]*>/gi) || [];
   for (const tag of tags) {
     const type = attr(tag, 'type');
@@ -56,11 +57,19 @@ function firstImage(block, pageUrl) {
     if (!url) continue;
     const imageType = /image/i.test(type) || /\.(?:jpe?g|png|webp)(?:$|\?)/i.test(url);
     const audio = /audio/i.test(type) || /\.(?:mp3|m4a)(?:$|\?)/i.test(url);
-    if (imageType && !audio) return absolute(pageUrl, url);
+    if (!imageType || audio) continue;
+    const declared = Number(attr(tag, 'width')) || 0;
+    found.push({ url: absolute(pageUrl, url), width: declared });
   }
   const img = block.match(/<img\b[^>]*\bsrc=(["'])(.*?)\1/i);
-  if (img) return absolute(pageUrl, decodeEntities(img[2]));
-  return '';
+  if (img) found.push({ url: absolute(pageUrl, decodeEntities(img[2])), width: 0 });
+  return found.filter((image) => image.url);
+}
+
+function firstImage(block, pageUrl) {
+  const images = listedImages(block, pageUrl);
+  images.sort((left, right) => (right.width || 0) - (left.width || 0));
+  return images[0]?.url || '';
 }
 
 function audioUrl(block) {
@@ -102,6 +111,7 @@ function parseRssItem(block, feed) {
     url: link,
     publishedAt,
     description,
+    rssImages: listedImages(stripped, link).concat(feed.channelImage ? [{ url: feed.channelImage, width: 0 }] : []),
     thumbnailUrl: firstImage(stripped, link) || feed.channelImage || '',
     audioUrl: audioUrl(stripped),
     sourceName,
@@ -123,6 +133,7 @@ function parseAtomEntry(block) {
     url,
     publishedAt,
     description,
+    rssImages: listedImages(block, url),
     thumbnailUrl: firstImage(block, url),
     audioUrl: '',
     sourceName: '',
