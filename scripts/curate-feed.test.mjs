@@ -22,7 +22,8 @@ import {
 import { attachRedditImages, curate } from './curate/run.mjs';
 import { editionsToPublish } from './curate/publish.mjs';
 import { parseSelectionText } from './curate/gemini.mjs';
-import { descriptionSummary, isGenericSports, stripPublisherSuffix } from './curate/rules.mjs';
+import { descriptionSummary, firstSentences, isGenericSports, stripPublisherSuffix } from './curate/rules.mjs';
+import { imageSize, looksLikeIcon } from './curate/thumbnails.mjs';
 import { editionDue, editionPublishedAt, etDate } from './curate/time.mjs';
 import { ogImageFromHtml, paywallFromHtml } from './curate/validate.mjs';
 
@@ -227,6 +228,23 @@ test('one show per edition, sports stay out, and descriptions replace templates'
   assert.doesNotMatch(fromDescription, /discusses|reports Judge/);
 });
 
+test('sentence trim keeps initials and icon urls are rejected', () => {
+  const sentence = firstSentences('It covers church history, and W. Paul Reeve writes about the ban. A second sentence follows.', 1);
+  assert.match(sentence, /W\. Paul Reeve writes about the ban\./);
+  assert.equal(firstSentences('Mr. Smith went home. Then he left.', 1), 'Mr. Smith went home.');
+  assert.equal(looksLikeIcon('https://timesandseasons.org/wp-content/uploads/2022/10/cropped-TS-v3-32x32.png'), true);
+  assert.equal(looksLikeIcon('https://mormondiscussionpodcast.org/wp-content/uploads/sites/2/powerpress/umbrella_logo.jpg'), true);
+  assert.equal(looksLikeIcon('https://cdn.example.com/podcast_uploaded_nologo/artwork.jpg'), false);
+  assert.equal(looksLikeIcon('https://cdn.example.com/story-1200x630.jpg'), false);
+  const png = Buffer.alloc(24);
+  png.writeUInt32BE(0x89504e47, 0);
+  png.writeUInt32BE(0x0d0a1a0a, 4);
+  png.write('IHDR', 12);
+  png.writeUInt32BE(32, 16);
+  png.writeUInt32BE(32, 20);
+  assert.deepEqual(imageSize(png), { width: 32, height: 32 });
+});
+
 test('Gemini selection text keeps fenced JSON', () => {
   const parsed = parseSelectionText('```json\n{"items":[{"candidateId":"c1","summary":"The Salt Lake Tribune says a judge questioned the filing.","major":false}]}\n```');
   assert.equal(parsed.items[0].candidateId, 'c1');
@@ -401,8 +419,11 @@ test('live sources, stub selection, validation, and file writing', { timeout: 18
     const day = JSON.parse(await readFile(path.join(tmp, 'feed', 'days', '2026-11-24.json'), 'utf8'));
     const writtenIndex = JSON.parse(await readFile(path.join(tmp, 'feed', 'index.json'), 'utf8'));
     assert.equal(writtenIndex.pinned.id, 'keep-me');
-    assert.equal(writtenIndex.days[0], '2026-11-25');
     assert.ok(writtenIndex.days.includes('2026-11-24'));
+    assert.notEqual(writtenIndex.days[0], '2026-11-24');
+    for (let index = 1; index < writtenIndex.days.length; index += 1) {
+      assert.ok(writtenIndex.days[index] < writtenIndex.days[index - 1]);
+    }
     const items = day.editions.flatMap((edition) => edition.items);
     assert.equal(day.editions.filter((edition) => edition.name === 'midnight').length, 1);
     assert.equal(day.editions[0].publishedAt, '2026-11-24T05:00:00.000Z');
@@ -412,7 +433,7 @@ test('live sources, stub selection, validation, and file writing', { timeout: 18
     assert.ok(items.filter((item) => item.source === 'Generally Unquotable').length <= 1);
     assert.ok(items.every((item) => item.id.startsWith('2026-11-24-midnight-')));
     assert.ok(items.every((item) => etDate(item.publishedAt) === '2026-11-24'));
-    assert.ok(items.filter((item) => item.type !== 'reddit').every((item) => item.thumbnailUrl.startsWith('https://')));
+    assert.ok(items.filter((item) => item.thumbnailUrl).every((item) => item.thumbnailUrl.startsWith('https://')));
     assert.equal(items.some((item) => /redd\.it|preview\.redd/.test(item.thumbnailUrl || '')), false);
     const repoStatus = await new Promise((resolve, reject) => {
       const child = spawn('git', ['status', '--porcelain', '--', 'feed'], { cwd: root });

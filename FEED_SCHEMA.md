@@ -99,7 +99,7 @@ There is no third edition. A later fix would be a new `name` plus an app update.
 | `summary` | yes | string | One or two sentences. Shown in full on the card. |
 | `source` | yes | string | Publication or show name. Search matches this. For a Reddit post this is often the subreddit, such as `r/exmormon`. |
 | `url` | yes | string | Absolute `http` or `https` link opened when the card is tapped. A `reddit` item must be a reddit.com post permalink: host `reddit.com` or a subdomain such as `www`, `old`, or `np`, and a path that contains `/comments/` plus the post id. |
-| `thumbnailUrl` | yes, except `reddit` | string | Absolute `https` image URL. The bundled sample uses `sample:article` and similar tokens; don’t use those in a hosted feed. A `reddit` item may omit this field or set it to `""` when the post has no image. If it is set to a non-empty value, that value must still be `https`. A generated Reddit picture is committed at `feed/images/reddit/<item-id>.jpg` and linked as `https://mormonnewsroundup.github.io/mormon-news-roundup/feed/images/reddit/<item-id>.jpg`. The card crops that picture to fill the frame. |
+| `thumbnailUrl` | no | string | Absolute `https` image URL when the curator has a real picture. Omit it, or leave it empty, when the only image is a site icon. The card then shows the type name (Article, Video, Podcast) on the brand color, or the orange `r/` tile for Reddit. If it is set, it must be `https` (the bundled sample may use `sample:article` and similar tokens). A generated Reddit picture is committed at `feed/images/reddit/<item-id>.jpg` and linked as `https://mormonnewsroundup.github.io/mormon-news-roundup/feed/images/reddit/<item-id>.jpg`. The card crops that picture to fill the frame. |
 | `publishedAt` | yes | string | ISO-8601. Must fall on the file’s Eastern Time date. Newest items in an edition are shown first. |
 | `paywalled` | yes | boolean | `true` draws a lock. The card still opens `url`. It does not mean the app sells the article. |
 | `tags` | yes | string[] | For the curator. v1 search does **not** look at tags. Use `[]` if you have none. |
@@ -224,7 +224,7 @@ From the project folder, someone technical can run:
 npm run check-feed
 ```
 
-That checks ids, types, dates, edition names, newest-first order, and that each `publishedAt` falls on the file’s Eastern Time date. A real item’s `thumbnailUrl` must be `https`, except a `reddit` item may omit it. A thumbnail on this site’s `feed/images/` path must match a file already in the repo. A `reddit` url must be a reddit.com post permalink. While `index.json` has `"sample": true`, every title and summary must contain “Sample”. If `pinned` is present and not null, its `date` must be in `days` and its `id` must exist in that day’s file.
+That checks ids, types, dates, edition names, newest-first order, and that each `publishedAt` falls on the file’s Eastern Time date. A real item’s `thumbnailUrl`, when set, must be `https`. Any item may omit it when there is no usable picture. A thumbnail on this site’s `feed/images/` path must match a file already in the repo. A `reddit` url must be a reddit.com post permalink. While `index.json` has `"sample": true`, every title and summary must contain “Sample”. If `pinned` is present and not null, its `date` must be in `days` and its `id` must exist in that day’s file.
 
 A short day, a missing podcast, or fewer than two titles that mention lawsuit is a warning, not a failure. The command still exits successfully so that edition can be pushed. A `tiktok` type fails the check.
 
