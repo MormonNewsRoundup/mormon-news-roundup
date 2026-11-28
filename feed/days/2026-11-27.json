@@ -9,17 +9,17 @@
         {
           "id": "2026-11-27-midnight-01",
           "type": "video",
-          "title": "If God Had to Obey Eternal Law… Who Created the Rules? | Mormonism’s Cosmic Paradox",
-          "summary": "Mormon News Roundup discusses Mormonism's cosmic paradox regarding whether God has to obey eternal law.",
+          "title": "How the Mormon Church Suppressed Evidence in the Hofmann Murders",
+          "summary": "Mormon News Roundup argues that the journals of early apostle William E. McLellin were inside the First Presidency's vault during the 1985 Mark Hofmann murder investigation.",
           "source": "Mormon News Roundup",
-          "url": "https://www.youtube.com/shorts/4IFaXC3V6Ew",
-          "publishedAt": "2026-11-27T05:00:18.000Z",
+          "url": "https://www.youtube.com/watch?v=FmJZIFxEb4A",
+          "thumbnailUrl": "https://i3.ytimg.com/vi/FmJZIFxEb4A/hqdefault.jpg",
+          "publishedAt": "2026-11-28T02:30:07.000Z",
           "paywalled": false,
           "tags": [
             "mormon-news-roundup",
             "own-channel"
-          ],
-          "thumbnailUrl": "https://i.ytimg.com/vi/4IFaXC3V6Ew/hqdefault.jpg"
+          ]
         },
         {
           "id": "2026-11-27-midnight-02",
@@ -123,6 +123,18 @@
           "paywalled": false,
           "tags": [],
           "thumbnailUrl": "https://www.sltrib.com/resizer/v2/J3JYJEZUO5AGNHY4VLSXNPGCNY.JPG?auth=4c8930f30fd43e385599208069ca45de9b1a2442ca6a02c77d6e8b3eaa3517ac&width=1200&height=630&quality=88&smart=true"
+        },
+        {
+          "id": "2026-11-27-noon-07",
+          "type": "article",
+          "title": "Latter-day Saints’ Giving Machines in Arkansas offer easy way to donate to worthy causes",
+          "summary": "Latter-day Saints’ Giving Machines in Arkansas offer easy way to donate to worthy causes &nbsp;&nbsp; The Arkansas Democrat-Gazette.",
+          "source": "The Arkansas Democrat-Gazette",
+          "url": "https://www.arkansasonline.com/news/2026/nov/27/latter-day-saints-giving-machines-in-arkansas/",
+          "publishedAt": "2026-11-28T01:30:00.000Z",
+          "paywalled": true,
+          "tags": [],
+          "thumbnailUrl": "https://wehco.media.clients.ellingtoncms.com/img/photos/2026/11/27/Giving_Machine_crop_t1200.jpg?57a0c2296240c280e9492005c3cad63e7cbe80f4"
         }
       ]
     }

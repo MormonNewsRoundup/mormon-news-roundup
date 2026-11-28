@@ -1,0 +1,51 @@
+{
+  "date": "2026-11-28",
+  "sample": false,
+  "editions": [
+    {
+      "name": "midnight",
+      "publishedAt": "2026-11-28T05:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-11-28-midnight-01",
+          "type": "video",
+          "title": "Joseph Smith Claimed He Outdid Jesus Christ — His UNREAL Arrogance",
+          "summary": "Mormon News Roundup details how Joseph Smith made a public claim regarding his leadership and compared himself to Jesus Christ before his death in June 1844.",
+          "source": "Mormon News Roundup",
+          "url": "https://www.youtube.com/shorts/t6qFGXKKrKU",
+          "publishedAt": "2026-11-28T05:00:39.000Z",
+          "paywalled": false,
+          "tags": [
+            "mormon-news-roundup",
+            "own-channel"
+          ],
+          "thumbnailUrl": "https://i1.ytimg.com/vi/t6qFGXKKrKU/hqdefault.jpg"
+        },
+        {
+          "id": "2026-11-28-midnight-02",
+          "type": "article",
+          "title": "‘The Secret Lives of Mormon Wives’ Beauty Evolution: From Utah Curls to Bouncy Blowouts",
+          "summary": "‘The Secret Lives of Mormon Wives’ Beauty Evolution: From Utah Curls to Bouncy Blowouts &nbsp;&nbsp; WWD.",
+          "source": "WWD",
+          "url": "https://wwd.com/pop-culture/celebrity-news/the-secret-lives-of-mormon-wives-beauty-evolution-1239405032/",
+          "publishedAt": "2026-11-28T06:18:43.000Z",
+          "paywalled": true,
+          "tags": [],
+          "thumbnailUrl": "https://wwd.com/wp-content/uploads/2026/11/177302_1618_R2.jpg?w=1000&h=563&crop=1"
+        },
+        {
+          "id": "2026-11-28-midnight-03",
+          "type": "article",
+          "title": "Mormon Wives’ Whitney Leavitt Transforms Into a Blonde for Broadway’s ‘Just In Time’",
+          "summary": "Mormon Wives’ Whitney Leavitt Transforms Into a Blonde for Broadway’s ‘Just In Time’ &nbsp;&nbsp; Us Weekly.",
+          "source": "Us Weekly",
+          "url": "https://www.usmagazine.com/stylish/news/mormon-wives-whitney-leavitt-transforms-into-a-blonde/",
+          "publishedAt": "2026-11-28T05:41:21.000Z",
+          "paywalled": false,
+          "tags": [],
+          "thumbnailUrl": "https://www.usmagazine.com/wp-content/uploads/2026/11/GettyImages-2256325466Mormon-Wives-Whitney-Leavitt-Transforms-Into-a-Blonde-for-Broadway.jpg?crop=160px%2C78px%2C1054px%2C553px&resize=1200%2C630&quality=40&strip=all"
+        }
+      ]
+    }
+  ]
+}
