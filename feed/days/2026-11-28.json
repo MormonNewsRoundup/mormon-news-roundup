@@ -46,6 +46,36 @@
           "thumbnailUrl": "https://www.usmagazine.com/wp-content/uploads/2026/11/GettyImages-2256325466Mormon-Wives-Whitney-Leavitt-Transforms-Into-a-Blonde-for-Broadway.jpg?crop=160px%2C78px%2C1054px%2C553px&resize=1200%2C630&quality=40&strip=all"
         }
       ]
+    },
+    {
+      "name": "noon",
+      "publishedAt": "2026-11-28T17:00:00.000Z",
+      "items": [
+        {
+          "id": "2026-11-28-noon-01",
+          "type": "article",
+          "title": "BYU QB Bear Bachmeier Covers Elvis Presley Christmas Song in New Music Video",
+          "summary": "Bleacher Report notes that BYU quarterback Bear Bachmeier covers an Elvis Presley Christmas song in a new music video.",
+          "source": "Bleacher Report",
+          "url": "https://bleacherreport.com/articles/25538476-byu-qb-bear-bachmeier-covers-elvis-presley-christmas-song-new-music-video",
+          "publishedAt": "2026-11-28T18:36:17.000Z",
+          "paywalled": false,
+          "tags": [],
+          "thumbnailUrl": "https://gsp-image-cdn.wmsports.io/cms/prod/bleacher-report/getty_images/2026-11/2305054559_large_cropped.jpg?w=1120&h=630"
+        },
+        {
+          "id": "2026-11-28-noon-02",
+          "type": "article",
+          "title": "BYU: Building hope: New technology designed to help body’s immune system recognize, fight cancer",
+          "summary": "heraldextra.com reports one person dies every 50 seconds in the U.S. from cancer, and an estimated 39% of people in the country will develop cancer during their lifetime.",
+          "source": "heraldextra.com",
+          "url": "https://www.heraldextra.com/health/2026/nov/28/byu-building-hope-new-technology-designed-to-help-bodys-immune-system-recognize-fight-cancer/",
+          "publishedAt": "2026-11-28T20:14:31.000Z",
+          "paywalled": false,
+          "tags": [],
+          "thumbnailUrl": "https://ogden_images.s3.amazonaws.com/www.heraldextra.com/images/2026/11/25161103/BYU-Photo-2.jpeg"
+        }
+      ]
     }
   ]
 }
