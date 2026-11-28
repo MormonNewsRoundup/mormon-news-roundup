@@ -1,10 +1,18 @@
 export function decodeEntities(value) {
   return value
     .replace(/&amp;/g, '&')
+    .replace(/&nbsp;|&#0*160;|&#x0*a0;/gi, ' ')
     .replace(/&lt;/g, '<')
     .replace(/&gt;/g, '>')
     .replace(/&quot;/g, '"')
-    .replace(/&apos;|&#0*39;/g, "'")
+    .replace(/&apos;|&#0*39;|&#x0*27;/gi, "'")
+    .replace(/&rsquo;|&#0*8217;|&#x0*2019;/gi, '’')
+    .replace(/&lsquo;|&#0*8216;|&#x0*2018;/gi, '‘')
+    .replace(/&rdquo;|&#0*8221;|&#x0*201d;/gi, '”')
+    .replace(/&ldquo;|&#0*8220;|&#x0*201c;/gi, '“')
+    .replace(/&ndash;|&#0*8211;|&#x0*2013;/gi, '–')
+    .replace(/&mdash;|&#0*8212;|&#x0*2014;/gi, '—')
+    .replace(/&hellip;|&#0*8230;|&#x0*2026;/gi, '…')
     .replace(/&#(\d+);/g, (_, digits) => {
       const code = Number(digits);
       return Number.isFinite(code) ? String.fromCodePoint(code) : _;
