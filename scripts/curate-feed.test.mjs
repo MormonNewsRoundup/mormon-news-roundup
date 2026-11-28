@@ -17,6 +17,7 @@ import {
   firstSentences,
   isGenericSports,
   isShoppingPost,
+  isTitleEcho,
   redditImagesEnabled,
   rejectionReason,
   sourceKey,
@@ -235,6 +236,18 @@ test('one source in the newest headlines, sports and deals stay out, and descrip
   assert.equal(isGenericSports({ title: 'BYU football preview against Cincinnati', description: 'A game preview of the matchup.' }), false);
   assert.equal(isShoppingPost({ title: 'Disney+ Black Friday deal: Get Marvel, Star Wars, and more for just $5 a month', description: '' }), true);
   assert.equal(isShoppingPost({ title: 'Church and state reach a plea deal in the lawsuit', description: '' }), false);
+  const echo = {
+    title: 'Mormon Wives’ Whitney Leavitt Transforms Into a Blonde for Broadway’s ‘Just In Time’',
+    source: 'Us Weekly',
+    description: 'Mormon Wives’ Whitney Leavitt Transforms Into a Blonde for Broadway’s ‘Just In Time’ &nbsp;&nbsp; Us Weekly.',
+  };
+  assert.equal(isTitleEcho(echo.description, echo), true);
+  const fromPage = descriptionSummary({
+    ...echo,
+    pageDescription: 'Us Weekly says Whitney Leavitt of The Secret Lives of Mormon Wives went blonde for her Broadway role in Just in Time.',
+  });
+  assert.match(fromPage, /went blonde for her Broadway role/);
+  assert.doesNotMatch(fromPage, /nbsp/);
   assert.equal(stripPublisherSuffix('Temple Square is open for Christmas - LDS Living', 'LDS Living'), 'Temple Square is open for Christmas');
   const fromDescription = descriptionSummary(candidate({
     source: 'The Salt Lake Tribune',

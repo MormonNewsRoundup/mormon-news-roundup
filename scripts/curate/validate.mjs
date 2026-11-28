@@ -10,6 +10,22 @@ export function paywallFromHtml(html) {
   );
 }
 
+export function pageDescriptionFromHtml(html) {
+  const patterns = [
+    /<meta[^>]+property=["']og:description["'][^>]*content=["']([^"']+)["']/i,
+    /<meta[^>]+content=["']([^"']+)["'][^>]*property=["']og:description["']/i,
+    /<meta[^>]+name=["'](?:description|twitter:description)["'][^>]*content=["']([^"']+)["']/i,
+    /<meta[^>]+content=["']([^"']+)["'][^>]*name=["'](?:description|twitter:description)["']/i,
+  ];
+  for (const pattern of patterns) {
+    const match = html.match(pattern);
+    if (!match) continue;
+    const text = decodeEntities(match[1].replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim();
+    if (text) return text;
+  }
+  return '';
+}
+
 export function ogImageFromHtml(html, pageUrl) {
   const patterns = [
     /<meta[^>]+property=["']og:image(?::secure_url)?["'][^>]*content=["']([^"']+)["']/gi,
@@ -54,11 +70,13 @@ export async function validateCandidate(candidate, date) {
 
   let html = '';
   let paywalled = false;
+  let pageDescription = '';
   const videoId = candidate.videoId || youtubeId(candidate.url);
   if (candidate.type !== 'reddit') {
     try {
       html = await fetchText(candidate.url, { maxBytes: 400_000 });
       paywalled = paywallFromHtml(html);
+      pageDescription = pageDescriptionFromHtml(html);
     } catch {
       html = '';
     }
@@ -75,6 +93,7 @@ export async function validateCandidate(candidate, date) {
     ok: true,
     fields: {
       thumbnailUrl: thumbnail || undefined,
+      pageDescription,
       paywalled,
       audioUrl: candidate.audioUrl && candidate.audioUrl.startsWith('https://') ? candidate.audioUrl : undefined,
       videoId,

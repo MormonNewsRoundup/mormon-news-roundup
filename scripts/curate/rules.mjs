@@ -1,3 +1,4 @@
+import { decodeEntities } from './parse-feed.mjs';
 import { etDate, etHour, previousDate } from './time.mjs';
 
 export function redditImagesEnabled(env = process.env) {
@@ -193,6 +194,43 @@ export function isOwnSource(item) {
 
 export const HEADLINE_LIMIT = 15;
 
+function headlineGroup(item) {
+  if (item.subreddit === 'r/exmormon' || item.subreddit === 'r/mormon') return item.subreddit;
+  const blob = `${item.source || ''} ${item.channel || ''}`.toLowerCase();
+  if (item.type === 'video' && blob.includes('generally unquotable')) return 'generally-unquotable';
+  if (item.generallyUnquotable) return 'generally-unquotable';
+  return '';
+}
+
+/**
+ * The 15 headlines the app would show, in its order: newest publishedAt first.
+ * Older own-channel videos, and older copies of a capped subreddit or
+ * Generally Unquotable, do not take a slot. Source repeats are left in place
+ * so the caller can see them.
+ */
+export function headlineWindow(items, limit = HEADLINE_LIMIT) {
+  const ordered = [...items].sort((left, right) => String(right.publishedAt || '').localeCompare(String(left.publishedAt || '')));
+  const newestOwn = ordered.find((item) => isOwnSource(item) && item.type === 'video');
+  const picked = [];
+  const groups = new Set();
+  for (const item of ordered) {
+    const own = isOwnSource(item) && item.type === 'video';
+    if (own && item !== newestOwn) continue;
+    const group = headlineGroup(item);
+    if (group) {
+      if (groups.has(group)) continue;
+      groups.add(group);
+    }
+    picked.push(item);
+    if (picked.length >= limit) break;
+  }
+  if (newestOwn && !picked.includes(newestOwn)) {
+    if (picked.length < limit) picked.push(newestOwn);
+    else if (limit > 0) picked[picked.length - 1] = newestOwn;
+  }
+  return picked;
+}
+
 /**
  * True when this candidate would put its source in the newest 15 twice.
  * Mormon News Roundup is exempt. A repeat that falls outside that window is allowed.
@@ -209,8 +247,8 @@ export function repeatsHeadlineSource(candidate, prior, chosen) {
     seen.add(id);
     pool.push(item);
   }
-  pool.sort((left, right) => String(right.publishedAt || '').localeCompare(String(left.publishedAt || '')));
-  const top = pool.slice(0, HEADLINE_LIMIT);
+  pool.sort((left, right) => String(right.publishedAt || '').localeCompare(String(left.publishedAt || '')) || String(right.id || '').localeCompare(String(left.id || '')));
+  const top = headlineWindow(pool);
   if (!top.includes(candidate)) return false;
   return top.some((item) => item !== candidate && !isOwnSource(item) && sourceKey(item.source) === key);
 }
@@ -266,6 +304,7 @@ export function summaryProblems(summary, candidate) {
   const sentences = text.split(/(?<=[.!?])\s+/).filter((part) => part.trim());
   if (sentences.length < 1 || sentences.length > 2) problems.push('sentences');
   if (TIME_WORDS_RE.test(text)) problems.push('time-of-day');
+  if (isTitleEcho(text, candidate)) problems.push('title-echo');
   if (candidate.subreddit) {
     const expected = new RegExp(`^An ${candidate.subreddit} post claims\\b`, 'i');
     if (!expected.test(text)) problems.push('reddit-wording');
@@ -328,9 +367,29 @@ export function firstSentences(text, count) {
   return sentences.slice(0, count).join(' ');
 }
 
+function plainText(value) {
+  return decodeEntities(String(value || '').replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim();
+}
+
+/** Google News descriptions are the headline, a gap, and the publisher name. */
+export function isTitleEcho(text, candidate) {
+  const body = plainText(text).replace(/[.!?]+$/g, '').trim().toLowerCase();
+  const title = plainText(candidate?.title).replace(/[.!?]+$/g, '').trim().toLowerCase();
+  if (!body || !title || body.length < 12) return false;
+  const source = plainText(candidate?.source).toLowerCase();
+  let stripped = body;
+  if (source) {
+    const escaped = source.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    stripped = stripped.replace(new RegExp(`(?:\\s*[-–—|:]+\\s*|\\s+)${escaped}\\s*$`, 'i'), '').trim();
+  }
+  return stripped === title;
+}
+
 /** One sentence from the source description. Used when Gemini does not answer. */
 export function descriptionSummary(candidate) {
-  let text = String(candidate.description || '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  let text = plainText(candidate.description);
+  if (!text || isTitleEcho(text, candidate)) text = plainText(candidate.pageDescription);
+  if (!text || isTitleEcho(text, candidate)) return '';
   text = text.replace(TIME_WORDS_RE, '').replace(/\s{2,}/g, ' ').replace(/\s+([.!?])/g, '$1').trim();
   if (!text) return '';
   let summary = firstSentences(text, 1);
