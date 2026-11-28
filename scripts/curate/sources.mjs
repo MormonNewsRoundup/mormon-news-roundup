@@ -239,5 +239,12 @@ export const TEXT_MODEL_FALLBACK = process.env.GEMINI_MODEL_FALLBACK || 'gemini-
  */
 export const IMAGE_MODEL = process.env.GEMINI_IMAGE_MODEL || 'gemini-2.5-flash-image';
 
-export const PAGES_REDDIT_IMAGE = (id) =>
-  `https://mormonnewsroundup.github.io/mormon-news-roundup/feed/images/reddit/${id}.jpg`;
+export function pagesImage(folder, id) {
+  return `https://mormonnewsroundup.github.io/mormon-news-roundup/feed/images/${folder}/${id}.jpg`;
+}
+
+export const PAGES_REDDIT_IMAGE = (id) => pagesImage('reddit', id);
+
+export const PAGES_CARD_IMAGE = (id) => pagesImage('cards', id);
+
+export const PAGES_FALLBACK_IMAGE = (type) => pagesImage('fallback', type);

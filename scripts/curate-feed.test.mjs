@@ -12,17 +12,21 @@ import { toFeedJpeg } from './curate/images.mjs';
 import { parseFeed } from './curate/parse-feed.mjs';
 import { toFeedItem, withDate } from './curate/publish.mjs';
 import {
-  blockedShowsFrom,
   chooseItems,
+  descriptionSummary,
+  firstSentences,
+  isGenericSports,
+  isShoppingPost,
   redditImagesEnabled,
   rejectionReason,
+  sourceKey,
+  stripPublisherSuffix,
   templateSummary,
   usableSummary,
 } from './curate/rules.mjs';
 import { attachRedditImages, curate } from './curate/run.mjs';
 import { editionsToPublish } from './curate/publish.mjs';
 import { parseSelectionText } from './curate/gemini.mjs';
-import { descriptionSummary, firstSentences, isGenericSports, stripPublisherSuffix } from './curate/rules.mjs';
 import { imageSize, looksLikeIcon } from './curate/thumbnails.mjs';
 import { editionDue, editionPublishedAt, etDate } from './curate/time.mjs';
 import { ogImageFromHtml, paywallFromHtml } from './curate/validate.mjs';
@@ -153,30 +157,39 @@ test('caps keep one own-channel video, one of each subreddit, and the source lim
   assert.equal(ids.includes('hall'), false);
   assert.equal(chosen.filter((item) => item.ownChannel && item.satire).length, 0);
 
-  const blocked = blockedShowsFrom([
-    candidate({ type: 'podcast', source: 'Mormon Stories Podcast', show: 'mormon-stories', publishedAt: '2026-11-23T20:00:00.000Z' }),
-  ]);
+  const olderStories = candidate({
+    id: 'old-stories',
+    type: 'podcast',
+    source: 'Mormon Stories Podcast',
+    show: 'mormon-stories',
+    publishedAt: '2026-11-27T18:00:00.000Z',
+    title: 'An earlier episode',
+  });
   assert.equal(
     rejectionReason(
-      candidate({ type: 'video', source: 'Mormon Stories Podcast', show: 'mormon-stories', title: 'A later episode' }),
+      candidate({ type: 'video', source: 'Mormon Stories Podcast', show: 'mormon-stories', publishedAt: '2026-11-27T20:00:00.000Z', title: 'A later episode' }),
       [],
       [],
-      { ...openCaps, blockedShows: blocked },
+      { ...openCaps, headlineItems: [olderStories] },
     ),
-    'repeat-show',
+    'repeat-source',
   );
   assert.equal(
     rejectionReason(
-      candidate({ type: 'video', source: 'Mormon News Roundup', ownChannel: true, show: 'own-channel', title: 'Tonight episode' }),
-      [candidate({ type: 'video', source: 'Mormon News Roundup', ownChannel: true, show: 'own-channel', publishedAt: '2026-11-23T20:00:00.000Z' })],
+      candidate({ type: 'video', source: 'Mormon News Roundup', ownChannel: true, show: 'own-channel', publishedAt: '2026-11-27T21:00:00.000Z', title: 'Tonight episode' }),
       [],
-      { ...openCaps, blockedShows: blocked },
+      [],
+      {
+        ...openCaps,
+        headlineItems: [candidate({ id: 'old-own', type: 'video', source: 'Mormon News Roundup', ownChannel: true, show: 'own-channel', publishedAt: '2026-11-27T12:00:00.000Z' })],
+      },
     ),
-    'own-channel-cap',
+    '',
   );
+  assert.equal(sourceKey('Wheat & Tares'), sourceKey('The Wheat and Tares'));
 });
 
-test('one show per edition, sports stay out, and descriptions replace templates', () => {
+test('one source in the newest headlines, sports and deals stay out, and descriptions replace templates', () => {
   const own = candidate({
     candidateId: 'own',
     type: 'video',
@@ -207,17 +220,21 @@ test('one show per edition, sports stay out, and descriptions replace templates'
     candidate({ candidateId: 'md2', type: 'podcast', source: 'Mormon Discussion Inc.', show: 'mormon-discussions', title: 'Glenn Beck and the on-air apology' }),
     ...articles,
   ], [own], { ...openCaps, editionName: 'noon' });
-  assert.equal(chosen.filter((item) => item.show === 'mormon-discussions').length, 1);
+  assert.equal(chosen.filter((item) => item.show === 'mormon-discussions').length, 2);
 
   const thin = chooseItems([
     candidate({ candidateId: 'only1', type: 'podcast', source: 'Mormon Discussions', show: 'mormon-discussions', title: 'Trademark hearing about the church filing' }),
     candidate({ candidateId: 'only2', type: 'podcast', source: 'Mormon Discussions', show: 'mormon-discussions', title: 'Separate interview about an apostle apology' }),
   ], [own], { ...openCaps, editionName: 'noon' });
-  assert.equal(thin.filter((item) => item.show === 'mormon-discussions').length, 2);
+  assert.equal(thin.filter((item) => item.source === 'Mormon Discussions').length, 1);
 
   assert.equal(isGenericSports({ title: 'CFP Chair Groups BYU in 4 Team Debate', description: '' }), true);
   assert.equal(isGenericSports({ title: 'Week 13 picks: BYU cover and betting trends', description: '' }), true);
   assert.equal(isGenericSports({ title: 'BYU honor code football scandal leads to a lawsuit', description: '' }), false);
+  assert.equal(isGenericSports({ title: 'Will BYU produce a complete game against Cincinnati? It better', description: '', source: 'Yahoo Sports', url: 'https://sports.yahoo.com/college-football/articles/byu' }), false);
+  assert.equal(isGenericSports({ title: 'BYU football preview against Cincinnati', description: 'A game preview of the matchup.' }), false);
+  assert.equal(isShoppingPost({ title: 'Disney+ Black Friday deal: Get Marvel, Star Wars, and more for just $5 a month', description: '' }), true);
+  assert.equal(isShoppingPost({ title: 'Church and state reach a plea deal in the lawsuit', description: '' }), false);
   assert.equal(stripPublisherSuffix('Temple Square is open for Christmas - LDS Living', 'LDS Living'), 'Temple Square is open for Christmas');
   const fromDescription = descriptionSummary(candidate({
     source: 'The Salt Lake Tribune',
@@ -324,7 +341,7 @@ test('reddit cards do not keep a Reddit preview image', () => {
   assert.deepEqual(index.days.slice(0, 2), ['2026-11-25', '2026-11-24']);
 });
 
-test('a failed Gemini image drops the Reddit item and does not keep a preview', async () => {
+test('a failed Gemini image uses the brand card and does not keep a Reddit preview', async () => {
   const tmp = await mkdtemp(path.join(os.tmpdir(), 'mnr-reddit-'));
   const warnings = [];
   try {
@@ -349,11 +366,22 @@ test('a failed Gemini image drops the Reddit item and does not keep a preview', 
           thumbnailUrl: 'https://preview.redd.it/preview.jpg',
           subreddit: 'r/exmormon',
         },
+        {
+          id: '2026-11-25-noon-03',
+          type: 'article',
+          title: 'No photo',
+          summary: 'Times & Seasons writes about a temple lawsuit.',
+          source: 'Times & Seasons',
+          url: 'https://timesandseasons.org/story',
+        },
       ],
       { writeRoot: tmp, generateImage: async () => null, dryRun: false, warnings },
     );
-    assert.deepEqual(kept.map((item) => item.type), ['article']);
-    assert.match(warnings.join('\n'), /image generation failed/);
+    assert.deepEqual(kept.map((item) => item.id), ['2026-11-25-noon-01', '2026-11-25-noon-02', '2026-11-25-noon-03']);
+    assert.equal(kept[0].thumbnailUrl, 'https://www.sltrib.com/photo.jpg');
+    assert.match(kept[1].thumbnailUrl, /\/feed\/images\/fallback\/reddit\.jpg$/);
+    assert.match(kept[2].thumbnailUrl, /\/feed\/images\/fallback\/article\.jpg$/);
+    assert.match(warnings.join('\n'), /using the reddit card/);
     assert.equal(kept.some((item) => /redd\.it/.test(item.thumbnailUrl || '')), false);
   } finally {
     await rm(tmp, { recursive: true, force: true });

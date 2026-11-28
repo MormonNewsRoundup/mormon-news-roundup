@@ -19,7 +19,6 @@ import {
 } from './publish.mjs';
 import {
   annotateFeedItem,
-  blockedShowsFrom,
   canonicalUrl,
   chooseItems,
   feedItemsOn,
@@ -30,7 +29,7 @@ import {
   usableSummary,
   youtubeId,
 } from './rules.mjs';
-import { IMAGE_MODEL, PAGES_REDDIT_IMAGE, TEXT_MODEL } from './sources.mjs';
+import { IMAGE_MODEL, PAGES_CARD_IMAGE, PAGES_FALLBACK_IMAGE, PAGES_REDDIT_IMAGE, TEXT_MODEL } from './sources.mjs';
 import { editionDue, editionPublishedAt, etDate, etParts, formatEditionMessage, previousDate } from './time.mjs';
 import { validateCandidate } from './validate.mjs';
 
@@ -106,34 +105,60 @@ async function keepValid(pool, existing, date, options, warnings) {
   return kept;
 }
 
-export async function attachRedditImages(items, { writeRoot, generateImage, dryRun, warnings }) {
+function needsPicture(item) {
+  const url = typeof item.thumbnailUrl === 'string' ? item.thumbnailUrl.trim() : '';
+  if (item.type === 'reddit') return true;
+  return !url.startsWith('https://');
+}
+
+function fallbackImage(type) {
+  if (type === 'video' || type === 'podcast' || type === 'reddit' || type === 'article') {
+    return PAGES_FALLBACK_IMAGE(type);
+  }
+  return PAGES_FALLBACK_IMAGE('article');
+}
+
+/**
+ * Reddit posts, and any other item with no real photo, get a generated picture.
+ * If generation fails, the type's brand card is used so thumbnailUrl is never empty.
+ */
+export async function attachImages(items, { writeRoot, generateImage, dryRun, warnings }) {
   const kept = [];
-  let numberOwner = items;
-  for (const item of numberOwner) {
-    if (item.type !== 'reddit') {
+  for (const item of items) {
+    if (!needsPicture(item)) {
       kept.push(item);
       continue;
     }
+    const fallback = fallbackImage(item.type);
     if (dryRun) {
-      kept.push({ ...item, thumbnailNote: `Image would be generated with ${IMAGE_MODEL}.` });
+      kept.push({
+        ...item,
+        thumbnailUrl: fallback,
+        thumbnailNote: `Image would be generated with ${IMAGE_MODEL}. If that fails, the ${item.type} card is used.`,
+      });
       continue;
     }
+    const folder = item.type === 'reddit' ? 'reddit' : 'cards';
+    const relative = path.join('feed', 'images', folder, `${item.id}.jpg`);
     try {
       const bytes = await generateImage(item);
       if (!bytes) throw new Error(`${IMAGE_MODEL} returned no image`);
       const jpeg = await toFeedJpeg(bytes);
-      const relative = path.join('feed', 'images', 'reddit', `${item.id}.jpg`);
       const file = path.join(writeRoot, relative);
       await mkdir(path.dirname(file), { recursive: true });
       await writeFile(file, jpeg);
-      kept.push({ ...item, thumbnailUrl: PAGES_REDDIT_IMAGE(item.id) });
+      const thumbnailUrl = item.type === 'reddit' ? PAGES_REDDIT_IMAGE(item.id) : PAGES_CARD_IMAGE(item.id);
+      kept.push({ ...item, thumbnailUrl });
     } catch (error) {
-      warnings.push(`Dropped ${item.id} after image generation failed: ${error.message}`);
-      await rm(path.join(writeRoot, 'feed', 'images', 'reddit', `${item.id}.jpg`), { force: true });
+      warnings.push(`Image generation failed for ${item.id}; using the ${item.type} card. ${error.message}`);
+      await rm(path.join(writeRoot, relative), { force: true });
+      kept.push({ ...item, thumbnailUrl: fallback });
     }
   }
   return kept;
 }
+
+export const attachRedditImages = attachImages;
 
 function assignIds(items, date, edition, day, generateImage, writeRoot, dryRun, warnings) {
   let number = nextItemNumber(day, edition);
@@ -151,7 +176,7 @@ function assignIds(items, date, edition, day, generateImage, writeRoot, dryRun, 
     number += 1;
     reddit.push({ ...item, id, thumbnailUrl: '' });
   }
-  return attachRedditImages([...identified, ...reddit], { writeRoot, generateImage, dryRun, warnings });
+  return attachImages([...identified, ...reddit], { writeRoot, generateImage, dryRun, warnings });
 }
 
 function formatCatchUp(now, decision, plan, omitted) {
@@ -264,6 +289,24 @@ export async function curate(options = {}) {
   let swap = null;
   let lateItems = [];
   const numberedByEdition = [];
+  const publishedHeadlines = () => {
+    const map = new Map();
+    const add = (file) => {
+      if (!file) return;
+      for (const item of feedItemsOn(file)) {
+        if (!item.id) continue;
+        if (omitEdition && file.date === decision.date && item.edition === omitEdition) continue;
+        map.set(item.id, annotateFeedItem(item));
+      }
+    };
+    for (const file of loaded.days.values()) {
+      if (omitEdition && file.date === decision.date) continue;
+      add(file);
+    }
+    add(workingDay);
+    add(nextYesterday);
+    return [...map.values()];
+  };
   const freshFor = () => gathered.candidates.filter((item) => {
     if (seen.has(canonicalUrl(item.url))) return false;
     if (item.videoId && seen.has(`yt:${item.videoId}`)) return false;
@@ -276,10 +319,10 @@ export async function curate(options = {}) {
     const todayPool = fresh.filter((item) => onDate(item.publishedAt, decision.date));
     const latePool = editionName === 'midnight' ? fresh.filter((item) => itemIsLate(item.publishedAt, yesterday)) : [];
     const selectOptions = {
-      blockedShows: blockedShowsFrom([...todayExisting, ...yesterdayExisting]),
       allowReddit,
       satireAllowed,
       editionName,
+      headlineItems: publishedHeadlines(),
     };
     let preferredToday = [];
     if (!offline) {
@@ -313,7 +356,7 @@ export async function curate(options = {}) {
       lateKept = await keepValid(latePool, yesterdayExisting, yesterday, {
         ...selectOptions,
         editionName: editionForLateItems(yesterdayFile) || 'midnight',
-        blockedShows: blockedShowsFrom([...todayExisting, ...yesterdayExisting, ...keptToday]),
+        headlineItems: [...publishedHeadlines(), ...keptToday],
         preferredIds: preferredLate,
       }, warnings);
     }
@@ -469,8 +512,8 @@ export async function commitPublished(result) {
   const cwd = result.writeRoot;
   const git = (args) => runCommand('git', args, cwd);
   const paths = result.files.map((file) => path.relative(cwd, file));
-  const imageDir = path.join(cwd, 'feed', 'images', 'reddit');
-  await git(['add', '--', ...paths, imageDir]).catch(() => git(['add', '--', ...paths]));
+  const imageDirs = ['reddit', 'cards'].map((folder) => path.join(cwd, 'feed', 'images', folder));
+  await git(['add', '--', ...paths, ...imageDirs]).catch(() => git(['add', '--', ...paths]));
   await git([
     '-c',
     'user.name=github-actions[bot]',
@@ -498,5 +541,5 @@ export async function commitPublished(result) {
 export async function restoreFeed(root) {
   const git = (args) => runCommand('git', args, root);
   await git(['checkout', '--', 'feed']).catch(() => {});
-  await git(['clean', '-f', '--', 'feed/images/reddit']).catch(() => {});
+  await git(['clean', '-f', '--', 'feed/images/reddit', 'feed/images/cards']).catch(() => {});
 }

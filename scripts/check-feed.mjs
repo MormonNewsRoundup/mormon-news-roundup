@@ -208,7 +208,9 @@ for (const date of index.days ?? []) {
       }
       const thumb = typeof entry.thumbnailUrl === 'string' ? entry.thumbnailUrl.trim() : '';
       const thumbMissing = entry.thumbnailUrl == null || thumb === '';
-      if (!thumbMissing && typeof entry.thumbnailUrl !== 'string') {
+      if (thumbMissing && !index.sample) {
+        fail(`${label} is missing thumbnailUrl`);
+      } else if (!thumbMissing && typeof entry.thumbnailUrl !== 'string') {
         fail(`${label} thumbnailUrl must be a string when present`);
       } else if (!thumbMissing) {
         if (index.sample) {
