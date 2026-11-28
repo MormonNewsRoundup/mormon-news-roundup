@@ -1,0 +1,53 @@
+name: Fill missing thumbnails
+
+# One-shot helper. Generates card images for recent items that only have a
+# brand fallback, then commits them on the branch that was dispatched.
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: Branch to update
+        required: true
+        type: string
+        default: main
+
+permissions:
+  contents: write
+
+jobs:
+  fill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.branch }}
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Generate pictures
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: node scripts/fill-missing-thumbnails.mjs
+
+      - name: Commit generated pictures
+        run: |
+          git add -- feed/days feed/images/cards
+          if git diff --cached --quiet; then
+            echo "No new pictures."
+            exit 0
+          fi
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m "Add generated card images for items that had no photo."
+          git push origin HEAD

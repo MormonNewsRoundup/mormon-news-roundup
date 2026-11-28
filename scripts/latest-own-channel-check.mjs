@@ -123,7 +123,7 @@ test('older own-channel videos are skipped and the list backfills', () => {
     ]),
     day('2026-10-27', [
       story('own-old', '2026-10-27T21:30:00.000Z', 'Mormon News Roundup').item,
-      story('other-b', '2026-10-27T20:00:00.000Z', 'KSL', 'article').item,
+      story('other-b', '2026-10-27T20:00:00.000Z', 'Deseret News', 'article').item,
     ]),
   ];
   const latest = latestStories(days, 3);
@@ -137,7 +137,7 @@ test('an own-channel video older than the first 15 takes the last slot', () => {
   const items = [];
   for (let n = 0; n < 16; n += 1) {
     const hour = String(20 - Math.floor(n / 2)).padStart(2, '0');
-    items.push(story(`other-${n}`, `2026-10-28T${hour}:00:00.000Z`, 'KSL', 'article').item);
+    items.push(story(`other-${n}`, `2026-10-28T${hour}:00:00.000Z`, `Outlet ${n}`, 'article').item);
   }
   items.push(story('own-late', '2026-10-20T12:00:00.000Z', 'Mormon News Roundup').item);
   const latest = latestStories([day('2026-10-28', items.slice(0, 16)), day('2026-10-20', [items[16]])], 15);
@@ -197,12 +197,28 @@ test('an older Generally Unquotable video is skipped and the list backfills', ()
 test('a feed with no own-channel video stays the plain newest 15', () => {
   const items = [];
   for (let n = 0; n < 16; n += 1) {
-    items.push(story(`other-${n}`, `2026-10-28T${String(n).padStart(2, '0')}:00:00.000Z`, 'KSL', 'article').item);
+    items.push(story(`other-${n}`, `2026-10-28T${String(n).padStart(2, '0')}:00:00.000Z`, `Outlet ${n}`, 'article').item);
   }
   const latest = latestStories([day('2026-10-28', items)]);
   assert.equal(latest.filter((entry) => isOwnChannelItem(entry.item)).length, 0);
   assert.equal(latest[0].item.id, 'other-15');
   assert.equal(latest.length, 15);
+});
+
+test('an older story from the same source is skipped and the list backfills', () => {
+  const days = [
+    day('2026-10-28', [
+      story('wheat-new', '2026-10-28T16:00:00.000Z', 'Wheat & Tares', 'article').item,
+      story('trib', '2026-10-28T15:00:00.000Z', 'The Salt Lake Tribune', 'article').item,
+      story('wheat-old', '2026-10-28T14:00:00.000Z', 'Wheat & Tares', 'article').item,
+      story('ksl', '2026-10-28T13:00:00.000Z', 'KSL', 'article').item,
+    ]),
+  ];
+  const latest = latestStories(days, 3);
+  assert.deepEqual(latest.map((entry) => entry.item.id), ['wheat-new', 'trib', 'ksl']);
+  const archive = orderedStories(days);
+  assert.equal(latest.some((entry) => entry.item.id === 'wheat-old'), false);
+  assert.ok(archive.findIndex((entry) => entry.item.id === 'wheat-old') >= 3);
 });
 
 test('a pinned item lands first and is not duplicated', async () => {
@@ -222,7 +238,7 @@ test('a missing pin is ignored and Latest stays newest-first', () => {
   const days = [
     day('2026-10-28', [
       story('a', '2026-10-28T16:00:00.000Z', 'KSL', 'article').item,
-      story('b', '2026-10-28T15:00:00.000Z', 'KSL', 'article').item,
+      story('b', '2026-10-28T15:00:00.000Z', 'Deseret News', 'article').item,
     ]),
   ];
   const latest = latestStories(days, 2, { id: 'does-not-exist', date: '2026-10-28' });
@@ -256,7 +272,7 @@ test('a pin on an old day does not pull that day’s other stories into Latest e
   for (let n = 0; n < 20; n += 1) {
     const hour = String(23 - Math.floor(n / 2)).padStart(2, '0');
     const minute = n % 2 === 0 ? '30' : '00';
-    articles.push(story(`new-${n}`, `2026-11-12T${hour}:${minute}:00.000Z`, 'KSL', 'article').item);
+    articles.push(story(`new-${n}`, `2026-11-12T${hour}:${minute}:00.000Z`, `Outlet ${n}`, 'article').item);
   }
   const old = [];
   for (let n = 0; n < 12; n += 1) {

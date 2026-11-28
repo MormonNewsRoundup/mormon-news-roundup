@@ -145,16 +145,74 @@ export function culturalHallIsNews(title, description) {
 const GAME_RE =
   /\b(cfp|college football playoff|playoff ranking|heisman|\bodds\b|\bspread\b|betting|sportsbook|game preview|matchup|kickoff|touchdown|quarterback|\bpicks?\b)\b/i;
 
+const BETTING_RE =
+  /\b(cfp|college football playoff|playoff ranking|heisman|\bodds\b|\bspread\b|betting|sportsbook|\bpicks?\b)\b/i;
+
+const BYU_RE = /\bbyu\b/i;
+
 const CHURCH_ITSELF_RE =
   /\b(honor code|title ix|abuse|scandal|bishop|prophet|apostle|excommunicat|temple|tithing|garment|missionary|lawsuit|sued|church discipline)\b/i;
 
-/** Generic sports and betting. A church scandal that mentions a team still stays. */
+const SHOPPING_RE =
+  /\b(black friday|cyber monday|coupon|coupons|promo code|discount code|% off|door ?busters?|shopping (?:deal|spree|haul)|for just \$\d)\b/i;
+
+/**
+ * Generic sports and betting. BYU game news and previews stay.
+ * A church scandal that mentions a team still stays.
+ */
 export function isGenericSports(item) {
   const blob = `${item.title || ''} ${item.description || ''}`;
   const sportsy = SPORTS_RE.test(blob) || GAME_RE.test(blob);
   if (!sportsy) return false;
   if (CHURCH_ITSELF_RE.test(blob)) return false;
+  if (BYU_RE.test(blob) && !BETTING_RE.test(blob)) return false;
   return true;
+}
+
+/** Deals, coupons, and shopping posts, including a Mormon show mentioned only as a product. */
+export function isShoppingPost(item) {
+  const blob = `${item.title || ''} ${item.description || ''}`;
+  if (SHOPPING_RE.test(blob)) return true;
+  return /\bdeals?\b/i.test(blob) && /\b(\$\d|per month|a month|subscription|discount|% off|\bsale\b)\b/i.test(blob);
+}
+
+/** Lowercase source name used to compare shows, blogs, and sites. */
+export function sourceKey(source) {
+  return String(source || '')
+    .toLowerCase()
+    .replace(/&/g, ' and ')
+    .replace(/[^a-z0-9]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .replace(/^the /, '');
+}
+
+export function isOwnSource(item) {
+  return item?.ownChannel === true || sourceKey(item?.source) === 'mormon news roundup';
+}
+
+export const HEADLINE_LIMIT = 15;
+
+/**
+ * True when this candidate would put its source in the newest 15 twice.
+ * Mormon News Roundup is exempt. A repeat that falls outside that window is allowed.
+ */
+export function repeatsHeadlineSource(candidate, prior, chosen) {
+  if (isOwnSource(candidate)) return false;
+  const key = sourceKey(candidate.source);
+  if (!key) return false;
+  const seen = new Set();
+  const pool = [];
+  for (const item of [...prior, ...chosen, candidate]) {
+    const id = item.id || item.candidateId || canonicalUrl(item.url || '');
+    if (!id || seen.has(id)) continue;
+    seen.add(id);
+    pool.push(item);
+  }
+  pool.sort((left, right) => String(right.publishedAt || '').localeCompare(String(left.publishedAt || '')));
+  const top = pool.slice(0, HEADLINE_LIMIT);
+  if (!top.includes(candidate)) return false;
+  return top.some((item) => item !== candidate && !isOwnSource(item) && sourceKey(item.source) === key);
 }
 
 export function stripPublisherSuffix(title, source = '') {
@@ -362,24 +420,16 @@ function majorEnough(item) {
 }
 
 export function rejectionReason(candidate, existing, chosen, options = {}) {
-  const { blockedShows = new Set(), allowReddit = true, satireAllowed = true } = options;
+  const { allowReddit = true, satireAllowed = true } = options;
   if (isGenericSports(candidate)) return 'sports';
+  if (isShoppingPost(candidate)) return 'shopping';
   if (candidate.type === 'tiktok' || /tiktok\.com/i.test(candidate.url)) return 'tiktok';
   if (candidate.type === 'reddit' && !allowReddit) return 'reddit-images-off';
   if (candidate.culturalHall && !candidate.culturalHallNews) return 'cultural-hall';
   const combined = [...existing, ...chosen];
   if (combined.some((item) => canonicalUrl(item.url) === canonicalUrl(candidate.url))) return 'duplicate-url';
-  if ((candidate.type === 'video' || candidate.type === 'podcast') && !candidate.ownChannel && !options.allowRepeatShow) {
-    const editionName = options.editionName;
-    const sameEdition = [
-      ...existing.filter((item) => !editionName || item.edition === editionName),
-      ...chosen,
-    ];
-    if (sameEdition.some((item) => item.show === candidate.show && (item.type === 'video' || item.type === 'podcast'))) {
-      return 'repeat-show';
-    }
-    if (blockedShows.has(candidate.show)) return 'repeat-show';
-  }
+  const prior = options.headlineItems || existing;
+  if (repeatsHeadlineSource(candidate, prior, chosen)) return 'repeat-source';
   if (candidate.ownChannel && combined.some((item) => item.ownChannel)) return 'own-channel-cap';
   if (candidate.generallyUnquotable && combined.filter((item) => item.generallyUnquotable).length >= 1) return 'gu-cap';
   if (candidate.subreddit === 'r/exmormon' && combined.some((item) => item.subreddit === 'r/exmormon')) return 'subreddit-cap';

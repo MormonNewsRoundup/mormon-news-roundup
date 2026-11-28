@@ -61,6 +61,17 @@ export function cappedSubreddit(item: FeedItem): CappedSubreddit | null {
   return null;
 }
 
+/** Lowercase source name. "Wheat & Tares" and "The Wheat and Tares" match. */
+export function sourceKey(source: string): string {
+  return source
+    .toLowerCase()
+    .replace(/&/g, ' and ')
+    .replace(/[^a-z0-9]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .replace(/^the /, '');
+}
+
 /** Groups that may appear at most once in Latest: the newest item only. */
 function cappedGroup(item: FeedItem): string | null {
   const subreddit = cappedSubreddit(item);
@@ -102,8 +113,9 @@ function findPinned(all: DatedStory[], pinned?: PinnedStory | null): DatedStory 
  * Latest Headlines. Newest first. Exactly one own-channel video when the feed
  * has any: the newest one, placed in the last slot if it would otherwise fall
  * off the list. At most one r/exmormon post, one r/mormon post, and one
- * Generally Unquotable video: the newest of each. Older ones are skipped and
- * the next eligible stories fill the list.
+ * Generally Unquotable video: the newest of each. A source (show, blog, or
+ * site) appears at most once; Mormon News Roundup is exempt because the
+ * own-channel rule already keeps its newest video. Older copies stay in Search.
  *
  * When `pinned` is set and that item is in `days`, it is shown first, once,
  * and is exempt from the own-channel / subreddit / Generally Unquotable caps.
@@ -126,11 +138,15 @@ export function latestStories(
     if (group && !newestCapped.has(group)) newestCapped.set(group, entry.item.id);
   }
   const picked: DatedStory[] = [];
+  const seenSources = new Set<string>();
   for (const entry of pool) {
     if (isOwnChannelItem(entry.item) && entry.item.id !== newestOwn?.item.id) continue;
     const group = cappedGroup(entry.item);
     if (group && newestCapped.get(group) !== entry.item.id) continue;
+    const key = sourceKey(entry.item.source);
+    if (!isOwnChannelItem(entry.item) && key && seenSources.has(key)) continue;
     picked.push(entry);
+    if (!isOwnChannelItem(entry.item) && key) seenSources.add(key);
     if (picked.length >= restLimit) break;
   }
   if (newestOwn && !picked.some((entry) => entry.item.id === newestOwn.item.id)) {
@@ -221,8 +237,8 @@ export function recentStories(
 
 /**
  * Latest first, then every other unique story newest first.
- * Skipped older own-channel videos, subreddit posts, and Generally Unquotable
- * videos stay in this list so Search can find them.
+ * Skipped older own-channel videos, repeated sources, subreddit posts, and
+ * Generally Unquotable videos stay in this list so Search can find them.
  */
 export function orderedStories(days: DayFile[], pinned?: PinnedStory | null): DatedStory[] {
   const latest = latestStories(days, TODAY_STORY_LIMIT, pinned);
